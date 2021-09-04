@@ -16,6 +16,7 @@ public enum Screen: String, StoryboardScreen {
     
     // Articles
     case articles   = "ArticlesViewController"
+    case article    = "ArticleViewController"
     
 }
 
@@ -38,6 +39,9 @@ extension Screen {
             
             // Articles
         case .articles:
+            return .Articles
+            
+        case .article:
             return .Articles
             
         }

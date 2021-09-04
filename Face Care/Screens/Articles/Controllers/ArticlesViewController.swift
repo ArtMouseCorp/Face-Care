@@ -4,11 +4,11 @@ class ArticlesViewController: BaseViewController {
 
     // MARK: - @IBOutlets
     
-    // Views
     // Labels
-    // Buttons
-    // Image Views
-    // ...
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    // Table Views
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
     
@@ -16,11 +16,11 @@ class ArticlesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.configure(tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         configureUI()
-        setupGestures()
     }
     
     // MARK: - Custom functions
@@ -29,13 +29,32 @@ class ArticlesViewController: BaseViewController {
         
     }
     
-    private func setupGestures() {
-        
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Article.articles.count
     }
     
-    // MARK: - Gesture actions
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.article.id, for: indexPath) as! ArticleTableViewCell
+         
+        let article = Article.articles[indexPath.row]
+        
+        cell.initialize(title: article.title, image: UIImage(named: article.image))
+        
+        return cell
+    }
     
-    // MARK: - @IBActions
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = Article.articles[indexPath.row]
+        let articleVC = ArticleViewController.load(from: Screen.article)
+        articleVC.article = article
+        self.navigationController?.pushViewController(articleVC, animated: true)
+    }
     
 }
 

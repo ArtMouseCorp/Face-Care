@@ -3,12 +3,11 @@ import UIKit
 public enum Cell: String {
     
     // Main
-    case cell = "Cell"
     
     // Progress
     
     // Atricles
-    
+    case article = "ArticleTableViewCell"
     
 }
 
