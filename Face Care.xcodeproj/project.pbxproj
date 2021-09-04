@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2818359926E3A4210038E826 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818359826E3A4210038E826 /* Article.swift */; };
+		2818359C26E3A56F0038E826 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818359B26E3A56F0038E826 /* TabBarController.swift */; };
 		28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392026DF69EE00FB3803 /* AppDelegate.swift */; };
 		28BC392326DF69EE00FB3803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392226DF69EE00FB3803 /* SceneDelegate.swift */; };
 		28BC392826DF69EE00FB3803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BC392626DF69EE00FB3803 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2818359826E3A4210038E826 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		2818359B26E3A56F0038E826 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		28BC391D26DF69EE00FB3803 /* Face Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BC392026DF69EE00FB3803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28BC392226DF69EE00FB3803 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2818359A26E3A5550038E826 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2818359B26E3A56F0038E826 /* TabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		28BC391426DF69EE00FB3803 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +156,7 @@
 		28BC393B26DF6B1D00FB3803 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2818359A26E3A5550038E826 /* Controllers */,
 				28BC392626DF69EE00FB3803 /* Main.storyboard */,
 			);
 			path = Main;
@@ -229,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				28BC398026DF7FC300FB3803 /* State.swift */,
+				2818359826E3A4210038E826 /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,12 +407,14 @@
 			files = (
 				28BC396926DF7D0E00FB3803 /* UICollectionView.swift in Sources */,
 				28BC397F26DF7FA000FB3803 /* Constants.swift in Sources */,
+				2818359926E3A4210038E826 /* Article.swift in Sources */,
 				28BC396526DF7CBF00FB3803 /* UIView.swift in Sources */,
 				28BC398126DF7FC300FB3803 /* State.swift in Sources */,
 				28BC398326DF7FE600FB3803 /* Util.swift in Sources */,
 				28BC394C26DF77EB00FB3803 /* ProgressViewController.swift in Sources */,
 				28BC398626DF807E00FB3803 /* UIFont.swift in Sources */,
 				28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */,
+				2818359C26E3A56F0038E826 /* TabBarController.swift in Sources */,
 				28BC395F26DF7B3F00FB3803 /* Popups.swift in Sources */,
 				28BC396B26DF7D2000FB3803 /* UIColor.swift in Sources */,
 				28BC396D26DF7D2D00FB3803 /* UIImage.swift in Sources */,

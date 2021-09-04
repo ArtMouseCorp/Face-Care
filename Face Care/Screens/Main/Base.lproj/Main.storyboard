@@ -4,22 +4,24 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="tzc-C2-onC">
             <objects>
-                <tabBarController id="Rl0-pm-WgI" sceneMemberID="viewController">
+                <tabBarController id="Rl0-pm-WgI" customClass="TabBarController" customModule="Face_Care" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XVh-Nx-nmb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="FC Iris"/>
                     </tabBar>
                     <connections>
-                        <segue destination="G0Z-oN-NPN" kind="relationship" relationship="viewControllers" id="qkc-KH-db6"/>
-                        <segue destination="2es-Lp-x3b" kind="relationship" relationship="viewControllers" id="AJz-RW-0VL"/>
-                        <segue destination="chz-VA-rhw" kind="relationship" relationship="viewControllers" id="UiK-Gc-u8G"/>
+                        <segue destination="hOH-ZN-8Au" kind="relationship" relationship="viewControllers" id="qkc-KH-db6"/>
+                        <segue destination="x5H-3F-cVh" kind="relationship" relationship="viewControllers" id="AJz-RW-0VL"/>
+                        <segue destination="hpv-bA-88X" kind="relationship" relationship="viewControllers" id="UiK-Gc-u8G"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoR-S8-sdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -30,31 +32,93 @@
         <scene sceneID="zbB-BS-Lbs">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="G0Z-oN-NPN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="b9C-kT-Xsf"/>
+                    <navigationItem key="navigationItem" id="fRm-dO-npI"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6K4-1A-afH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="192"/>
+            <point key="canvasLocation" x="938" y="-241"/>
         </scene>
         <!--Progress-->
         <scene sceneID="Hy0-Yv-GqJ">
             <objects>
                 <viewControllerPlaceholder storyboardName="Progress" id="2es-Lp-x3b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="K7b-QU-U2l"/>
+                    <navigationItem key="navigationItem" id="CYU-TY-hfH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVP-PB-ead" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37" y="483"/>
+            <point key="canvasLocation" x="938" y="481"/>
         </scene>
         <!--Articles-->
         <scene sceneID="fs3-Ce-osf">
             <objects>
                 <viewControllerPlaceholder storyboardName="Articles" id="chz-VA-rhw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hjJ-Pl-ibv"/>
+                    <navigationItem key="navigationItem" id="S58-Qq-Eas"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5u-7y-ty7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="774"/>
+            <point key="canvasLocation" x="933" y="1209"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Cpb-uG-iYk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hOH-ZN-8Au" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Main" image="FC Home" selectedImage="FC Home" id="b9C-kT-Xsf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dMk-l0-nGq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G0Z-oN-NPN" kind="relationship" relationship="rootViewController" id="1NZ-l4-BU9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znM-zK-3Tm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="-241"/>
+        </scene>
+        <!--Progress-->
+        <scene sceneID="KLk-Wt-1FK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="x5H-3F-cVh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" image="FC User" selectedImage="FC User" id="K7b-QU-U2l"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fiW-nx-CbO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2es-Lp-x3b" kind="relationship" relationship="rootViewController" id="jIG-Yd-O1j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ijz-50-Kl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="482"/>
+        </scene>
+        <!--Articles-->
+        <scene sceneID="ams-HL-isb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hpv-bA-88X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Articles" image="FC Article" selectedImage="FC Article" id="hjJ-Pl-ibv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X8W-vP-4mX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="chz-VA-rhw" kind="relationship" relationship="rootViewController" id="w3S-Eq-IN5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADf-bt-tfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="1210"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FC Article" width="24" height="24"/>
+        <image name="FC Home" width="24" height="24"/>
+        <image name="FC User" width="24" height="24"/>
+        <namedColor name="FC Iris">
+            <color red="0.3411764705882353" green="0.33725490196078434" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
