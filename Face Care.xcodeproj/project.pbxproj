@@ -12,13 +12,20 @@
 		281835A426E3CA0D0038E826 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */; };
 		281835A626E3DD100038E826 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A526E3DD100038E826 /* ArticleViewController.swift */; };
 		281835A826E3E08A0038E826 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A726E3E08A0038E826 /* UILabel.swift */; };
+		28883FFF26E7885B0002292E /* DailyTrainingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28883FFD26E7885B0002292E /* DailyTrainingCollectionViewCell.swift */; };
+		2888400026E7885B0002292E /* DailyTrainingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28883FFE26E7885B0002292E /* DailyTrainingCollectionViewCell.xib */; };
+		2888400326E788780002292E /* ExclusiveTrainingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888400126E788780002292E /* ExclusiveTrainingCollectionViewCell.swift */; };
+		2888400426E788780002292E /* ExclusiveTrainingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2888400226E788780002292E /* ExclusiveTrainingCollectionViewCell.xib */; };
+		2888400726E788910002292E /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888400526E788910002292E /* ExerciseTableViewCell.swift */; };
+		2888400826E788910002292E /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2888400626E788910002292E /* ExerciseTableViewCell.xib */; };
+		2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */; };
+		2888400D26E7B0F60002292E /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400C26E7B0F60002292E /* PanModal */; };
+		2888401026E7B1190002292E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400F26E7B1190002292E /* IQKeyboardManagerSwift */; };
 		28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392026DF69EE00FB3803 /* AppDelegate.swift */; };
 		28BC392326DF69EE00FB3803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392226DF69EE00FB3803 /* SceneDelegate.swift */; };
 		28BC392826DF69EE00FB3803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BC392626DF69EE00FB3803 /* Main.storyboard */; };
 		28BC392A26DF69F200FB3803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BC392926DF69F200FB3803 /* Assets.xcassets */; };
 		28BC392D26DF69F200FB3803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BC392B26DF69F200FB3803 /* LaunchScreen.storyboard */; };
-		28BC393626DF6A2300FB3803 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 28BC393526DF6A2300FB3803 /* IQKeyboardManagerSwift */; };
-		28BC393A26DF6A3C00FB3803 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 28BC393926DF6A3C00FB3803 /* PanModal */; };
 		28BC394126DF6B9500FB3803 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BC394026DF6B9500FB3803 /* Home.storyboard */; };
 		28BC394326DF779A00FB3803 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BC394226DF779A00FB3803 /* Progress.storyboard */; };
 		28BC394526DF77AF00FB3803 /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BC394426DF77AF00FB3803 /* Articles.storyboard */; };
@@ -55,6 +62,13 @@
 		281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		281835A526E3DD100038E826 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		281835A726E3E08A0038E826 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		28883FFD26E7885B0002292E /* DailyTrainingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingCollectionViewCell.swift; sourceTree = "<group>"; };
+		28883FFE26E7885B0002292E /* DailyTrainingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTrainingCollectionViewCell.xib; sourceTree = "<group>"; };
+		2888400126E788780002292E /* ExclusiveTrainingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusiveTrainingCollectionViewCell.swift; sourceTree = "<group>"; };
+		2888400226E788780002292E /* ExclusiveTrainingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExclusiveTrainingCollectionViewCell.xib; sourceTree = "<group>"; };
+		2888400526E788910002292E /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		2888400626E788910002292E /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
+		2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		28BC391D26DF69EE00FB3803 /* Face Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BC392026DF69EE00FB3803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28BC392226DF69EE00FB3803 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28BC393A26DF6A3C00FB3803 /* PanModal in Frameworks */,
-				28BC393626DF6A2300FB3803 /* IQKeyboardManagerSwift in Frameworks */,
+				2888400D26E7B0F60002292E /* PanModal in Frameworks */,
+				2888401026E7B1190002292E /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +133,43 @@
 				281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		28883FF926E787B90002292E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				28883FFB26E787F00002292E /* Daily Training Collection Cell */,
+				28883FFC26E7881C0002292E /* Exclusive Training Collection Cell */,
+				28883FFA26E787BF0002292E /* Exercise Table Cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		28883FFA26E787BF0002292E /* Exercise Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2888400526E788910002292E /* ExerciseTableViewCell.swift */,
+				2888400626E788910002292E /* ExerciseTableViewCell.xib */,
+			);
+			path = "Exercise Table Cell";
+			sourceTree = "<group>";
+		};
+		28883FFB26E787F00002292E /* Daily Training Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				28883FFD26E7885B0002292E /* DailyTrainingCollectionViewCell.swift */,
+				28883FFE26E7885B0002292E /* DailyTrainingCollectionViewCell.xib */,
+			);
+			path = "Daily Training Collection Cell";
+			sourceTree = "<group>";
+		};
+		28883FFC26E7881C0002292E /* Exclusive Training Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2888400126E788780002292E /* ExclusiveTrainingCollectionViewCell.swift */,
+				2888400226E788780002292E /* ExclusiveTrainingCollectionViewCell.xib */,
+			);
+			path = "Exclusive Training Collection Cell";
 			sourceTree = "<group>";
 		};
 		28BC391426DF69EE00FB3803 = {
@@ -206,6 +257,7 @@
 		28BC393F26DF6B8500FB3803 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				28883FF926E787B90002292E /* Cells */,
 				28BC394626DF77B400FB3803 /* Controllers */,
 				28BC394026DF6B9500FB3803 /* Home.storyboard */,
 			);
@@ -292,6 +344,7 @@
 		28BC395426DF789400FB3803 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,8 +405,8 @@
 			);
 			name = "Face Care";
 			packageProductDependencies = (
-				28BC393526DF6A2300FB3803 /* IQKeyboardManagerSwift */,
-				28BC393926DF6A3C00FB3803 /* PanModal */,
+				2888400C26E7B0F60002292E /* PanModal */,
+				2888400F26E7B1190002292E /* IQKeyboardManagerSwift */,
 			);
 			productName = "Face Care";
 			productReference = 28BC391D26DF69EE00FB3803 /* Face Care.app */;
@@ -384,8 +437,8 @@
 			);
 			mainGroup = 28BC391426DF69EE00FB3803;
 			packageReferences = (
-				28BC393426DF6A2300FB3803 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				28BC393826DF6A3C00FB3803 /* XCRemoteSwiftPackageReference "PanModal" */,
+				2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */,
+				2888400E26E7B1190002292E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 28BC391E26DF69EE00FB3803 /* Products */;
 			projectDirPath = "";
@@ -401,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2888400426E788780002292E /* ExclusiveTrainingCollectionViewCell.xib in Resources */,
 				28BC392D26DF69F200FB3803 /* LaunchScreen.storyboard in Resources */,
 				28BC392A26DF69F200FB3803 /* Assets.xcassets in Resources */,
 				28BC394326DF779A00FB3803 /* Progress.storyboard in Resources */,
@@ -411,6 +465,8 @@
 				28BC397A26DF7EAC00FB3803 /* Raleway-Medium.ttf in Resources */,
 				28BC397B26DF7EAC00FB3803 /* Raleway-Bold.ttf in Resources */,
 				28BC394526DF77AF00FB3803 /* Articles.storyboard in Resources */,
+				2888400826E788910002292E /* ExerciseTableViewCell.xib in Resources */,
+				2888400026E7885B0002292E /* DailyTrainingCollectionViewCell.xib in Resources */,
 				28BC397726DF7EAC00FB3803 /* Raleway-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,9 +495,13 @@
 				28BC396D26DF7D2D00FB3803 /* UIImage.swift in Sources */,
 				28BC396126DF7BD000FB3803 /* UIViewController.swift in Sources */,
 				28BC394E26DF77FD00FB3803 /* ArticlesViewController.swift in Sources */,
+				2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */,
 				28BC395B26DF7A7300FB3803 /* Screens.swift in Sources */,
+				28883FFF26E7885B0002292E /* DailyTrainingCollectionViewCell.swift in Sources */,
 				28BC397D26DF7EF400FB3803 /* BasePopupViewController.swift in Sources */,
 				28BC395626DF79CA00FB3803 /* BaseViewController.swift in Sources */,
+				2888400726E788910002292E /* ExerciseTableViewCell.swift in Sources */,
+				2888400326E788780002292E /* ExclusiveTrainingCollectionViewCell.swift in Sources */,
 				28BC392326DF69EE00FB3803 /* SceneDelegate.swift in Sources */,
 				28BC394A26DF77DD00FB3803 /* HomeViewController.swift in Sources */,
 				28BC396326DF7CA200FB3803 /* UINavigationController.swift in Sources */,
@@ -676,15 +736,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		28BC393426DF6A2300FB3803 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		28BC393826DF6A3C00FB3803 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+		2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/slackhq/PanModal.git";
 			requirement = {
@@ -692,18 +744,26 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		2888400E26E7B1190002292E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		28BC393526DF6A2300FB3803 /* IQKeyboardManagerSwift */ = {
+		2888400C26E7B0F60002292E /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 28BC393426DF6A2300FB3803 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		28BC393926DF6A3C00FB3803 /* PanModal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 28BC393826DF6A3C00FB3803 /* XCRemoteSwiftPackageReference "PanModal" */;
+			package = 2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */;
 			productName = PanModal;
+		};
+		2888400F26E7B1190002292E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2888400E26E7B1190002292E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -3,11 +3,14 @@ import UIKit
 public enum Cell: String {
     
     // Main
+    case dailyTraining      = "DailyTrainingCollectionViewCell"
+    case exclusiveTraining  = "ExclusiveTrainingCollectionViewCell"
+    case exercise           = "ExerciseTableViewCell"
     
     // Progress
     
     // Atricles
-    case article = "ArticleTableViewCell"
+    case article            = "ArticleTableViewCell"
     
 }
 

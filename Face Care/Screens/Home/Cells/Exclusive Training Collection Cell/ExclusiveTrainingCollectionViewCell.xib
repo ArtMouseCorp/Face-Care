@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19158" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </array>
+        <array key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExclusiveTrainingCollectionViewCell" id="gTV-IL-0wX" customClass="ExclusiveTrainingCollectionViewCell" customModule="Face_Care" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="152" height="244"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="152" height="244"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRT-mZ-T4C" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="152" height="244"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G22-1D-raw">
+                                <rect key="frame" x="0.0" y="0.0" width="152" height="244"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallImage" translatesAutoresizingMaskIntoConstraints="NO" id="wWv-Fj-LOD">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="131"/>
+                                        <color key="backgroundColor" name="FC Gainsboro"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="131" id="cBy-b8-HXs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aye-U9-M1f">
+                                        <rect key="frame" x="34" y="212" width="84" height="24"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Timer" translatesAutoresizingMaskIntoConstraints="NO" id="r4x-pi-yUs">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <color key="tintColor" name="FC Gainsboro"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="Pwq-F7-cMP"/>
+                                                    <constraint firstAttribute="height" constant="24" id="weV-1f-md1"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 минут" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="9c5-Jp-UfN">
+                                                <rect key="frame" x="24" y="0.0" width="60" height="24"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                <color key="textColor" name="FC Davy's Grey"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="zkg-WP-o0u"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="A2M-EA-3wx">
+                                        <rect key="frame" x="8" y="143" width="136" height="57"/>
+                                        <string key="text">Шейпинг от
+носа до 
+побородка</string>
+                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="16"/>
+                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="FC White"/>
+                                <constraints>
+                                    <constraint firstItem="aye-U9-M1f" firstAttribute="centerX" secondItem="G22-1D-raw" secondAttribute="centerX" id="5ko-Ti-fub"/>
+                                    <constraint firstAttribute="trailing" secondItem="wWv-Fj-LOD" secondAttribute="trailing" id="Dfc-ri-2hd"/>
+                                    <constraint firstAttribute="width" constant="152" id="NOQ-0N-FM2"/>
+                                    <constraint firstAttribute="height" constant="244" id="Nfy-dH-gX7"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aye-U9-M1f" secondAttribute="trailing" constant="8" id="QV4-PP-tCM"/>
+                                    <constraint firstItem="wWv-Fj-LOD" firstAttribute="leading" secondItem="G22-1D-raw" secondAttribute="leading" id="aej-9y-Bl2"/>
+                                    <constraint firstAttribute="bottom" secondItem="aye-U9-M1f" secondAttribute="bottom" constant="8" id="aou-ni-J2Z"/>
+                                    <constraint firstItem="aye-U9-M1f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G22-1D-raw" secondAttribute="leading" constant="8" id="czJ-6O-15w"/>
+                                    <constraint firstItem="A2M-EA-3wx" firstAttribute="top" secondItem="wWv-Fj-LOD" secondAttribute="bottom" constant="12" id="eKA-41-rOk"/>
+                                    <constraint firstAttribute="trailing" secondItem="A2M-EA-3wx" secondAttribute="trailing" constant="8" id="g04-hm-zXQ"/>
+                                    <constraint firstItem="aye-U9-M1f" firstAttribute="top" secondItem="A2M-EA-3wx" secondAttribute="bottom" constant="12" id="wY3-ka-Ky9"/>
+                                    <constraint firstItem="A2M-EA-3wx" firstAttribute="leading" secondItem="G22-1D-raw" secondAttribute="leading" constant="8" id="wds-gO-EPY"/>
+                                    <constraint firstItem="wWv-Fj-LOD" firstAttribute="top" secondItem="G22-1D-raw" secondAttribute="top" id="ymO-J5-isJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G22-1D-raw" firstAttribute="top" secondItem="gRT-mZ-T4C" secondAttribute="top" id="3IN-BH-bt9"/>
+                            <constraint firstItem="G22-1D-raw" firstAttribute="leading" secondItem="gRT-mZ-T4C" secondAttribute="leading" id="AMc-Lm-2Ps"/>
+                            <constraint firstAttribute="trailing" secondItem="G22-1D-raw" secondAttribute="trailing" id="Qrg-6X-26c"/>
+                            <constraint firstAttribute="bottom" secondItem="G22-1D-raw" secondAttribute="bottom" id="rU9-Gv-HTN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gRT-mZ-T4C" secondAttribute="trailing" id="2mt-xc-y5w"/>
+                <constraint firstItem="gRT-mZ-T4C" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ahH-Rs-KsP"/>
+                <constraint firstAttribute="bottom" secondItem="gRT-mZ-T4C" secondAttribute="bottom" id="cOb-aT-EdS"/>
+                <constraint firstItem="gRT-mZ-T4C" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="egZ-M7-AMO"/>
+            </constraints>
+            <size key="customSize" width="152" height="243"/>
+            <connections>
+                <outlet property="cellBackgroundView" destination="G22-1D-raw" id="I97-j9-F2e"/>
+                <outlet property="durationLabel" destination="9c5-Jp-UfN" id="vae-ju-UYL"/>
+                <outlet property="nameLabel" destination="A2M-EA-3wx" id="5rV-qT-Tqx"/>
+                <outlet property="trainingImageView" destination="wWv-Fj-LOD" id="xlc-Op-o2P"/>
+            </connections>
+            <point key="canvasLocation" x="205.79710144927537" y="69.308035714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="FC Timer" width="24" height="24"/>
+        <image name="smallImage" width="152" height="131"/>
+        <namedColor name="FC Dark Charcoal">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FC Davy's Grey">
+            <color red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FC Gainsboro">
+            <color red="0.85490196078431369" green="0.83137254901960789" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FC White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
