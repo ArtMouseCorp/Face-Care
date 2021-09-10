@@ -19,7 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciseTableViewCell" rowHeight="117" id="KGk-i7-Jjw" customClass="ExerciseTableViewCell" customModule="Face_Care" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExerciseTableViewCell" rowHeight="117" id="KGk-i7-Jjw" customClass="ExerciseTableViewCell" customModule="Face_Care" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="343" height="106"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -27,64 +27,53 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewy-OJ-zYl">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="92"/>
+                        <rect key="frame" x="16" y="0.0" width="311" height="92"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="CmU-qr-cr1">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="92"/>
+                                <color key="backgroundColor" name="FC Gainsboro"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="VhS-ft-OD0"/>
+                                    <constraint firstAttribute="width" secondItem="CmU-qr-cr1" secondAttribute="height" multiplier="15:23" id="3A2-Sm-aDs"/>
+                                    <constraint firstAttribute="width" constant="60" id="5RM-Qf-Bt3"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQk-Rv-QIO">
-                                <rect key="frame" x="60" y="0.0" width="283" height="92"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Избавление от хмурого взгляда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-qn-GMp">
-                                        <rect key="frame" x="12" y="8" width="259" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Tmm-UG-20E"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="16"/>
-                                        <color key="textColor" name="FC Dark Charcoal"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разгладьте вертикальные морщины на лбу, расслабив межбровные мышцы." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="qVh-SR-MFY">
-                                        <rect key="frame" x="12" y="36" width="259" height="48"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
-                                        <color key="textColor" name="FC Davy's Grey"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="FC White"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Избавление от хмурого взгляда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-qn-GMp">
+                                <rect key="frame" x="72" y="8" width="227" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qVh-SR-MFY" secondAttribute="trailing" constant="12" id="7Yh-el-wc7"/>
-                                    <constraint firstItem="qVh-SR-MFY" firstAttribute="top" secondItem="jAH-qn-GMp" secondAttribute="bottom" constant="8" id="EQ9-2G-Hmv"/>
-                                    <constraint firstItem="qVh-SR-MFY" firstAttribute="leading" secondItem="RQk-Rv-QIO" secondAttribute="leading" constant="12" id="IDa-Ho-RUw"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qVh-SR-MFY" secondAttribute="bottom" constant="8" id="Yz5-md-KZR"/>
-                                    <constraint firstAttribute="trailing" secondItem="jAH-qn-GMp" secondAttribute="trailing" constant="12" id="lcQ-x8-sz6"/>
-                                    <constraint firstItem="jAH-qn-GMp" firstAttribute="top" secondItem="RQk-Rv-QIO" secondAttribute="top" constant="8" id="qu5-38-P8j"/>
-                                    <constraint firstItem="jAH-qn-GMp" firstAttribute="leading" secondItem="RQk-Rv-QIO" secondAttribute="leading" constant="12" id="wHd-3a-KYh"/>
+                                    <constraint firstAttribute="height" constant="20" id="Tmm-UG-20E"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="16"/>
+                                <color key="textColor" name="FC Dark Charcoal"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разгладьте вертикальные морщины на лбу, расслабив межбровные мышцы." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="qVh-SR-MFY">
+                                <rect key="frame" x="72" y="34.5" width="227" height="49.5"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                                <color key="textColor" name="FC Davy's Grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" name="FC Gainsboro"/>
+                        <color key="backgroundColor" name="FC White"/>
                         <constraints>
-                            <constraint firstItem="RQk-Rv-QIO" firstAttribute="top" secondItem="ewy-OJ-zYl" secondAttribute="top" id="3Fa-TG-FDg"/>
+                            <constraint firstAttribute="trailing" secondItem="jAH-qn-GMp" secondAttribute="trailing" constant="12" id="4Jv-1C-3vp"/>
                             <constraint firstItem="CmU-qr-cr1" firstAttribute="leading" secondItem="ewy-OJ-zYl" secondAttribute="leading" id="5q0-JX-SLW"/>
+                            <constraint firstAttribute="bottom" secondItem="qVh-SR-MFY" secondAttribute="bottom" constant="8" id="7Kc-S3-FR0"/>
                             <constraint firstAttribute="bottom" secondItem="CmU-qr-cr1" secondAttribute="bottom" id="Ha7-Sr-VDs"/>
-                            <constraint firstAttribute="bottom" secondItem="RQk-Rv-QIO" secondAttribute="bottom" id="K4p-mm-QNU"/>
                             <constraint firstItem="CmU-qr-cr1" firstAttribute="top" secondItem="ewy-OJ-zYl" secondAttribute="top" id="Rbt-36-t87"/>
-                            <constraint firstAttribute="height" constant="92" id="VpC-66-xKT"/>
-                            <constraint firstItem="RQk-Rv-QIO" firstAttribute="leading" secondItem="CmU-qr-cr1" secondAttribute="trailing" id="nyy-2B-1ES"/>
-                            <constraint firstAttribute="trailing" secondItem="RQk-Rv-QIO" secondAttribute="trailing" id="uw1-IV-Wfh"/>
+                            <constraint firstItem="qVh-SR-MFY" firstAttribute="top" secondItem="jAH-qn-GMp" secondAttribute="bottom" constant="6.5" id="alZ-cO-Lp5"/>
+                            <constraint firstAttribute="trailing" secondItem="qVh-SR-MFY" secondAttribute="trailing" constant="12" id="jrO-du-LRq"/>
+                            <constraint firstItem="jAH-qn-GMp" firstAttribute="top" secondItem="ewy-OJ-zYl" secondAttribute="top" constant="8" id="lNc-Wp-yCj"/>
+                            <constraint firstItem="qVh-SR-MFY" firstAttribute="leading" secondItem="CmU-qr-cr1" secondAttribute="trailing" constant="12" id="ov9-Gu-wyp"/>
+                            <constraint firstItem="jAH-qn-GMp" firstAttribute="leading" secondItem="CmU-qr-cr1" secondAttribute="trailing" constant="12" id="vsg-VS-OIG"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="ewy-OJ-zYl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FQi-T9-OtK"/>
+                    <constraint firstItem="ewy-OJ-zYl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="FQi-T9-OtK"/>
                     <constraint firstItem="ewy-OJ-zYl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fE9-H3-Cur"/>
                     <constraint firstAttribute="bottom" secondItem="ewy-OJ-zYl" secondAttribute="bottom" constant="14" id="jGF-Cn-nAW"/>
-                    <constraint firstAttribute="trailing" secondItem="ewy-OJ-zYl" secondAttribute="trailing" id="mMJ-Ss-Kue"/>
+                    <constraint firstAttribute="trailing" secondItem="ewy-OJ-zYl" secondAttribute="trailing" constant="16" id="mMJ-Ss-Kue"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -95,7 +84,7 @@
                 <outlet property="exerciseImageView" destination="CmU-qr-cr1" id="Khi-fo-mdg"/>
                 <outlet property="nameLabel" destination="jAH-qn-GMp" id="hsn-CS-anE"/>
             </connections>
-            <point key="canvasLocation" x="175.36231884057972" y="124.21875"/>
+            <point key="canvasLocation" x="174.63768115942031" y="123.88392857142857"/>
         </tableViewCell>
     </objects>
     <resources>

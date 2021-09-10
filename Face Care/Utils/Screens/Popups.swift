@@ -3,11 +3,11 @@ import UIKit
 public enum Popup: String, StoryboardScreen {
     
     // Main
-    case mainPopup = "MainPopup"
-    case exercises = "ExercisePopupViewController"
+    case mainPopup  = "MainPopup"
+    case exercises  = "ExercisePopupViewController"
     
     // Progress
-    case image = "ImagePopup"
+    case image      = "ImagePopup"
 
     // Articles
     

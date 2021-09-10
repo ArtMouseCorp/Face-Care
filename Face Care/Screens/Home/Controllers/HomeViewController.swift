@@ -20,9 +20,47 @@ class HomeViewController: BaseViewController {
     // Collection Views
     @IBOutlet weak var dailyTrainingsCollectionView: UICollectionView!
     @IBOutlet weak var exclusiveTrainingsCollectionView: UICollectionView!
-    @IBOutlet weak var exercisesTableViewView: UITableView!
+    
+    // Table Views
+    @IBOutlet weak var eyesExercisesTableView: UITableView!
+    @IBOutlet weak var foreheadExercisesTableView: UITableView!
+    @IBOutlet weak var neckExercisesTableView: UITableView!
+    @IBOutlet weak var chinExercisesTableView: UITableView!
+    @IBOutlet weak var cheeksExercisesTableView: UITableView!
+    
+    // Constraints
+    @IBOutlet weak var eyesExercisesTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var foreheadExercisesTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var neckExercisesTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var chinExercisesTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var cheeksExercisesTableViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Variables
+    
+    var eyesExercisesTableViewHeight: CGFloat {
+        eyesExercisesTableView.layoutIfNeeded()
+        return eyesExercisesTableView.contentSize.height
+    }
+    
+    var foreheadExercisesTableViewHeight: CGFloat {
+        foreheadExercisesTableView.layoutIfNeeded()
+        return foreheadExercisesTableView.contentSize.height
+    }
+    
+    var neckExercisesTableViewHeight: CGFloat {
+        neckExercisesTableView.layoutIfNeeded()
+        return neckExercisesTableView.contentSize.height
+    }
+    
+    var chinExercisesTableViewHeight: CGFloat {
+        chinExercisesTableView.layoutIfNeeded()
+        return chinExercisesTableView.contentSize.height
+    }
+    
+    var cheeksExercisesTableViewHeight: CGFloat {
+        cheeksExercisesTableView.layoutIfNeeded()
+        return cheeksExercisesTableView.contentSize.height
+    }
     
     var isSubviewed = false
     let cellWidth: CGFloat = UIScreen.main.bounds.width - 42
@@ -34,12 +72,18 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         super.configure(dailyTrainingsCollectionView, with: .dailyTraining)
         super.configure(exclusiveTrainingsCollectionView, with: .exclusiveTraining)
-//        super.configure(exercisesTableViewView, with: .exercise)
+        super.configure(eyesExercisesTableView, with: .exercise)
+        super.configure(foreheadExercisesTableView, with: .exercise)
+        super.configure(neckExercisesTableView, with: .exercise)
+        super.configure(chinExercisesTableView, with: .exercise)
+        super.configure(cheeksExercisesTableView, with: .exercise)
     }
     
     override func viewDidLayoutSubviews() {
         if !isSubviewed {
             configureCollectionViews()
+            configureTableViews()
+            configureTableViews()
           isSubviewed = true
         }
     }
@@ -51,7 +95,6 @@ class HomeViewController: BaseViewController {
     // MARK: - Custom functions
     
     private func configureUI() {
-        
     }
     
     private func configureCollectionViews() {
@@ -70,10 +113,24 @@ class HomeViewController: BaseViewController {
         dailyTrainingsCollectionView.decelerationRate = .fast
         dailyTrainingsCollectionView.collectionViewLayout = layout
         
-        print("\n\n\n", dailyTrainingsCollectionView.collectionViewLayout, "\n\n\n")
-        
         exclusiveTrainingsCollectionView.backgroundColor = .clear
         exclusiveTrainingsCollectionView.layer.masksToBounds = false
+    }
+    
+    private func configureTableViews() {
+        
+        eyesExercisesTableView.layer.masksToBounds = false
+        foreheadExercisesTableView.layer.masksToBounds = false
+        neckExercisesTableView.layer.masksToBounds = false
+        chinExercisesTableView.layer.masksToBounds = false
+        cheeksExercisesTableView.layer.masksToBounds = false
+        
+        eyesExercisesTableViewHeightConstraint.constant = eyesExercisesTableViewHeight
+        foreheadExercisesTableViewHeightConstraint.constant = foreheadExercisesTableViewHeight
+        neckExercisesTableViewHeightConstraint.constant = neckExercisesTableViewHeight
+        chinExercisesTableViewHeightConstraint.constant = chinExercisesTableViewHeight
+        cheeksExercisesTableViewHeightConstraint.constant = cheeksExercisesTableViewHeight
+        
     }
     
     // MARK: - @IBActions
@@ -82,6 +139,55 @@ class HomeViewController: BaseViewController {
         let settingsViewController = SettingsViewController.load(from: Screen.settings)
         self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        switch tableView {
+            
+        case eyesExercisesTableView:
+            return 3
+        case foreheadExercisesTableView:
+            return 3
+        case neckExercisesTableView:
+            return 3
+        case chinExercisesTableView:
+            return 3
+        case cheeksExercisesTableView:
+            return 3
+        default:
+            return 0
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.exercise.id, for: indexPath) as! ExerciseTableViewCell
+        
+        switch tableView {
+            
+        case eyesExercisesTableView: ()
+        case foreheadExercisesTableView: ()
+        case neckExercisesTableView: ()
+        case chinExercisesTableView: ()
+        case cheeksExercisesTableView: ()
+        default: ()
+        }
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let exerciseVC = ExercisesViewController.load(from: Screen.exercises)
+        self.navigationController?.pushViewController(exerciseVC, animated: true)
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -138,7 +244,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case exclusiveTrainingsCollectionView:
             
             () // TODO: - Open exclusive training
-        
+            let exerciseVC = ExercisesViewController.load(from: Screen.exercises)
+            self.navigationController?.pushViewController(exerciseVC, animated: true)
+            
         default:
             break
         }

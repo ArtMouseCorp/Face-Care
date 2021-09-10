@@ -25,8 +25,8 @@ class ProgressTableViewCell: UITableViewCell {
     // MARK: - Custom functions
     
     private func configureUI() {
-        progressView.layer.cornerRadius = 4
-        insideProgressView.layer.cornerRadius = 4
+        progressView.capsuleCorners(corners: .allCorners)
+        insideProgressView.capsuleCorners(corners: .allCorners)
     }
         
 }
