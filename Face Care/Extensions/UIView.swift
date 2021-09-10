@@ -15,6 +15,10 @@ extension UIView {
         self.roundCorners(radius: self.frame.height / 2, corners: corners)
     }
     
+    func capsuleCorners() {
+        self.roundCorners(radius: self.frame.height / 2, corners: .allCorners)
+    }
+    
     func setBorder(width: CGFloat, color: UIColor) {
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor

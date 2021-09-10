@@ -35,13 +35,20 @@ class PhotoOfferViewController: UIViewController {
         
     // MARK: - @IBActions
     @IBAction func makePhotoButtonPressed(_ sender: Any) {
-        let tabBar = TabBarController.load(from: Screen.tabBar)
-        tabBar.modalPresentationStyle = .fullScreen
-        self.present(tabBar, animated: true, completion: nil)
+        
+        let planGeneration = PlanGenerationViewController.load(from: Screen.planGeneration)
+        planGeneration.modalPresentationStyle = .fullScreen
+        self.present(planGeneration, animated: true)
+        
+//        let tabBar = TabBarController.load(from: Screen.tabBar)
+//        tabBar.modalPresentationStyle = .fullScreen
+//        self.present(tabBar, animated: true, completion: nil)
     }
     
     @IBAction func skipButtonPressed(_ sender: Any) {
-        
+        let planGeneration = PlanGenerationViewController.load(from: Screen.planGeneration)
+        planGeneration.modalPresentationStyle = .fullScreen
+        self.present(planGeneration, animated: true)
     }
     
 }

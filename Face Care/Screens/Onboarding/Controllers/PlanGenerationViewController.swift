@@ -41,9 +41,10 @@ class PlanGenerationViewController: BaseViewController {
     
     private func configureUI() {
         imageView.whiteGradient(locations: [0.55, 1], opacity: 1)
-        progressBackgroundView.capsuleCorners(corners: .allCorners)
+        progressBackgroundView.capsuleCorners()
         
-        progressView.frame = CGRect(x: 0, y: 0, width: progressBackgroundView.frame.width, height: progressBackgroundView.frame.height)
+        progressView.frame = CGRect(x: 0, y: 0, width: 0, height: progressBackgroundView.frame.height)
+        progressView.capsuleCorners()
         progressBackgroundView.addSubview(progressView)
         
         updatePageContent()
@@ -51,7 +52,7 @@ class PlanGenerationViewController: BaseViewController {
     
     private func updatePageContent() {
         
-//        progressView.frame.size.width = 0
+        progressView.frame.size.width = 0
         
         switch currentPage {
             
@@ -82,7 +83,11 @@ class PlanGenerationViewController: BaseViewController {
     
     private func timerStart() {
         
-        progressTimer = Timer.scheduledTimer(timeInterval: 0.05,
+        UIView.animate(withDuration: 4) {
+            self.progressView.frame.size.width = UIScreen.main.bounds.width - 32
+        }
+        
+        progressTimer = Timer.scheduledTimer(timeInterval: 0.04,
                                              target: self,
                                              selector: #selector(updateProgressView),
                                              userInfo: nil, repeats: true)
@@ -95,10 +100,12 @@ class PlanGenerationViewController: BaseViewController {
             
             progressTimer.invalidate()
             
-            guard currentPage < 3 else {
+            if currentPage == 2 {
+                
                 let tabBar = TabBarController.load(from: Screen.tabBar)
                 tabBar.modalPresentationStyle = .fullScreen
                 self.present(tabBar, animated: true)
+                
                 return
             }
             
@@ -106,10 +113,6 @@ class PlanGenerationViewController: BaseViewController {
             updatePageContent()
             currentProgress = 0
             timerStart()
-            
-        } else {
-            
-//            progressView.frame.size.width += 1 / progressBackgroundView.frame.width
             
         }
         

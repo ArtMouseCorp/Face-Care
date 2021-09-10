@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ExJ-mV-tb2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19158" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ExJ-mV-tb2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать в " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kh-rk-FBL">
-                                <rect key="frame" x="96" y="113" width="222" height="26"/>
+                                <rect key="frame" x="95" y="113" width="224" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="buZ-GP-rQj"/>
                                 </constraints>
@@ -166,16 +166,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ты хочешь выглядеть моложе?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baH-dP-5ru">
-                                <rect key="frame" x="67.5" y="76" width="279" height="163"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="279" id="pTo-FX-jlO"/>
-                                </constraints>
+                                <rect key="frame" x="44" y="128" width="326" height="26"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="22"/>
                                 <color key="textColor" name="FC Dark Charcoal"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Of1-FL-588">
-                                <rect key="frame" x="25" y="239" width="364" height="336"/>
+                                <rect key="frame" x="25" y="280" width="364" height="336"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjt-kE-8gt" customClass="FCButton" customModule="Face_Care" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="48"/>
@@ -270,6 +267,8 @@
                             <constraint firstItem="6XT-LQ-Tlv" firstAttribute="leading" secondItem="bxL-6m-PBn" secondAttribute="leading" constant="36" id="7AJ-mW-zOt"/>
                             <constraint firstItem="Of1-FL-588" firstAttribute="leading" secondItem="bxL-6m-PBn" secondAttribute="leading" constant="25" id="8Na-xa-aYW"/>
                             <constraint firstItem="pcF-f2-B3Q" firstAttribute="centerY" secondItem="7iY-at-K24" secondAttribute="centerY" id="ALg-Xg-WJK"/>
+                            <constraint firstItem="Of1-FL-588" firstAttribute="centerY" secondItem="UcP-1a-Pfv" secondAttribute="centerY" id="CG2-io-hiN"/>
+                            <constraint firstItem="bxL-6m-PBn" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="baH-dP-5ru" secondAttribute="trailing" constant="16" id="DFX-MG-ENj"/>
                             <constraint firstItem="yoR-6V-3gM" firstAttribute="top" secondItem="fcn-Kj-N4p" secondAttribute="bottom" constant="127" id="DVE-N6-LBx"/>
                             <constraint firstItem="fcn-Kj-N4p" firstAttribute="centerY" secondItem="UcP-1a-Pfv" secondAttribute="centerY" id="G2D-ej-Ahh"/>
                             <constraint firstItem="fcn-Kj-N4p" firstAttribute="centerX" secondItem="UcP-1a-Pfv" secondAttribute="centerX" id="Hbe-Uk-fIl"/>
@@ -280,15 +279,15 @@
                             <constraint firstItem="bxL-6m-PBn" firstAttribute="trailing" secondItem="pcF-f2-B3Q" secondAttribute="trailing" constant="25" id="MfZ-7G-SNp"/>
                             <constraint firstItem="bxL-6m-PBn" firstAttribute="bottom" secondItem="yoR-6V-3gM" secondAttribute="bottom" constant="30" id="QUz-Bh-dtn"/>
                             <constraint firstItem="yoR-6V-3gM" firstAttribute="width" secondItem="7iY-at-K24" secondAttribute="width" id="Rwg-d1-3AG"/>
-                            <constraint firstItem="baH-dP-5ru" firstAttribute="top" secondItem="xd3-NC-Ms4" secondAttribute="bottom" id="Zi0-zq-zRu"/>
+                            <constraint firstItem="baH-dP-5ru" firstAttribute="top" secondItem="xd3-NC-Ms4" secondAttribute="bottom" constant="52" id="Zi0-zq-zRu"/>
                             <constraint firstItem="bxL-6m-PBn" firstAttribute="trailing" secondItem="Of1-FL-588" secondAttribute="trailing" constant="25" id="bCp-Kv-bfi"/>
                             <constraint firstItem="Of1-FL-588" firstAttribute="centerX" secondItem="UcP-1a-Pfv" secondAttribute="centerX" id="bOc-EQ-iaD"/>
                             <constraint firstItem="baH-dP-5ru" firstAttribute="centerX" secondItem="UcP-1a-Pfv" secondAttribute="centerX" id="e9F-XB-BZw"/>
                             <constraint firstItem="bxL-6m-PBn" firstAttribute="trailing" secondItem="xd3-NC-Ms4" secondAttribute="trailing" constant="16" id="j2D-wE-qZz"/>
+                            <constraint firstItem="baH-dP-5ru" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bxL-6m-PBn" secondAttribute="leading" constant="16" id="kcp-S6-paA"/>
                             <constraint firstItem="pcF-f2-B3Q" firstAttribute="leading" secondItem="bxL-6m-PBn" secondAttribute="leading" constant="25" id="rli-G7-Sue"/>
-                            <constraint firstItem="fcn-Kj-N4p" firstAttribute="top" secondItem="baH-dP-5ru" secondAttribute="bottom" id="tTl-gt-TOm"/>
                             <constraint firstItem="bxL-6m-PBn" firstAttribute="trailing" secondItem="6XT-LQ-Tlv" secondAttribute="trailing" constant="36" id="vwj-43-gy2"/>
-                            <constraint firstItem="Of1-FL-588" firstAttribute="top" secondItem="fcn-Kj-N4p" secondAttribute="top" id="wQ3-j9-BXx"/>
+                            <constraint firstItem="yoR-6V-3gM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Of1-FL-588" secondAttribute="bottom" constant="50" id="wUq-uF-b6S"/>
                             <constraint firstItem="6XT-LQ-Tlv" firstAttribute="centerY" secondItem="UcP-1a-Pfv" secondAttribute="centerY" id="yBC-j4-yZ3"/>
                         </constraints>
                     </view>
@@ -350,13 +349,13 @@
                                 <rect key="frame" x="16" y="384" width="382" height="280"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Это поможет тебе следить за прогрессом во время курса йоги для лица" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STC-xc-aaN">
-                                <rect key="frame" x="24" y="298.5" width="366" height="37.5"/>
+                                <rect key="frame" x="24" y="298" width="366" height="38"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                 <color key="textColor" red="0.56470588235294117" green="0.6588235294117647" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сделай первое фото и добавь его в свой Дневник!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a9-R6-8ut">
-                                <rect key="frame" x="24" y="199" width="366" height="51.5"/>
+                                <rect key="frame" x="24" y="198" width="366" height="52"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="22"/>
                                 <color key="textColor" name="FC Dark Charcoal"/>
                                 <nil key="highlightedColor"/>
@@ -404,55 +403,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подготовка персонального плана тренировок" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4F1-qf-ETX">
-                                <rect key="frame" x="16" y="104" width="382" height="51.5"/>
+                                <rect key="frame" x="16" y="104" width="382" height="52"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="22"/>
                                 <color key="textColor" name="FC Dark Charcoal"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-generation-image-1" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-jB-DPE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-generation-image-1" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-jB-DPE">
                                 <rect key="frame" x="50" y="248.5" width="314" height="399"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MvR-jB-DPE" secondAttribute="height" multiplier="1:1.27" id="ZrS-49-dxy"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-13-EcO">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UXB-Bb-XYY">
                                 <rect key="frame" x="16" y="707.5" width="382" height="47"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Анализ проблемных зон" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR9-Wj-5SY">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="19"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
-                                        <color key="textColor" name="FC Dark Charcoal"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q4-cR-tK1">
-                                        <rect key="frame" x="348" y="0.0" width="34" height="19"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
-                                        <color key="textColor" name="FC Dark Charcoal"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-9m-IN5">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d5K-Hr-kXR">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Анализ проблемных зон" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-F8-0nW">
+                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                <color key="textColor" name="FC Dark Charcoal"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alL-pE-2Pu">
+                                                <rect key="frame" x="341.5" y="0.0" width="40.5" height="19"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40.5" id="PuC-Tf-sO8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
+                                                <color key="textColor" name="FC Dark Charcoal"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7C-Go-fRf">
                                         <rect key="frame" x="0.0" y="39" width="382" height="8"/>
                                         <color key="backgroundColor" name="FC Bright Gray"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="8" id="739-bX-Szc"/>
+                                            <constraint firstAttribute="height" constant="8" id="O0Y-mb-DJX"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="FC White"/>
-                                <constraints>
-                                    <constraint firstItem="7gU-9m-IN5" firstAttribute="top" secondItem="AR9-Wj-5SY" secondAttribute="bottom" constant="20" id="35P-uI-4Te"/>
-                                    <constraint firstItem="2q4-cR-tK1" firstAttribute="leading" secondItem="AR9-Wj-5SY" secondAttribute="trailing" constant="30" id="49P-Yv-6yT"/>
-                                    <constraint firstItem="2q4-cR-tK1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="b8n-13-EcO" secondAttribute="top" id="79y-W8-ziQ"/>
-                                    <constraint firstItem="AR9-Wj-5SY" firstAttribute="leading" secondItem="b8n-13-EcO" secondAttribute="leading" id="RFA-wj-Fqg"/>
-                                    <constraint firstAttribute="trailing" secondItem="7gU-9m-IN5" secondAttribute="trailing" id="UWg-Lv-dXB"/>
-                                    <constraint firstItem="2q4-cR-tK1" firstAttribute="centerY" secondItem="AR9-Wj-5SY" secondAttribute="centerY" id="ddT-4g-OSF"/>
-                                    <constraint firstAttribute="trailing" secondItem="2q4-cR-tK1" secondAttribute="trailing" id="frV-H4-XNY"/>
-                                    <constraint firstItem="7gU-9m-IN5" firstAttribute="leading" secondItem="b8n-13-EcO" secondAttribute="leading" id="hDf-iq-vlg"/>
-                                    <constraint firstItem="AR9-Wj-5SY" firstAttribute="top" secondItem="b8n-13-EcO" secondAttribute="top" id="imT-RU-Hkb"/>
-                                    <constraint firstAttribute="bottom" secondItem="7gU-9m-IN5" secondAttribute="bottom" id="kXl-wy-C01"/>
-                                    <constraint firstItem="7gU-9m-IN5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2q4-cR-tK1" secondAttribute="bottom" constant="20" id="mlm-xM-XLa"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O2b-ZD-MUB"/>
                         <color key="backgroundColor" name="FC White"/>
@@ -460,27 +453,27 @@
                             <constraint firstItem="MvR-jB-DPE" firstAttribute="leading" secondItem="O2b-ZD-MUB" secondAttribute="leading" constant="50" id="1qJ-d7-xQx"/>
                             <constraint firstItem="4F1-qf-ETX" firstAttribute="top" secondItem="O2b-ZD-MUB" secondAttribute="top" constant="60" id="42O-qX-5IN"/>
                             <constraint firstItem="MvR-jB-DPE" firstAttribute="centerY" secondItem="Wpg-JX-672" secondAttribute="centerY" id="9Qi-iL-8kH"/>
-                            <constraint firstItem="b8n-13-EcO" firstAttribute="top" secondItem="MvR-jB-DPE" secondAttribute="bottom" constant="60" id="Qlj-Qe-pAw"/>
+                            <constraint firstAttribute="trailing" secondItem="UXB-Bb-XYY" secondAttribute="trailing" constant="16" id="Bhz-2i-1mW"/>
+                            <constraint firstItem="O2b-ZD-MUB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UXB-Bb-XYY" secondAttribute="bottom" constant="50" id="FEo-0J-JtA"/>
                             <constraint firstItem="MvR-jB-DPE" firstAttribute="centerX" secondItem="Wpg-JX-672" secondAttribute="centerX" id="S6K-9W-n8y"/>
                             <constraint firstItem="O2b-ZD-MUB" firstAttribute="trailing" secondItem="4F1-qf-ETX" secondAttribute="trailing" constant="16" id="TNJ-jn-mZk"/>
                             <constraint firstItem="4F1-qf-ETX" firstAttribute="leading" secondItem="O2b-ZD-MUB" secondAttribute="leading" constant="16" id="UiW-VK-oUd"/>
-                            <constraint firstItem="b8n-13-EcO" firstAttribute="leading" secondItem="O2b-ZD-MUB" secondAttribute="leading" constant="16" id="cma-P5-bCq"/>
                             <constraint firstItem="O2b-ZD-MUB" firstAttribute="trailing" secondItem="MvR-jB-DPE" secondAttribute="trailing" constant="50" id="dQV-Fu-QFf"/>
-                            <constraint firstItem="O2b-ZD-MUB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="b8n-13-EcO" secondAttribute="bottom" constant="50" id="ica-Vi-bge"/>
-                            <constraint firstItem="O2b-ZD-MUB" firstAttribute="trailing" secondItem="b8n-13-EcO" secondAttribute="trailing" constant="16" id="uwJ-QL-H0p"/>
+                            <constraint firstItem="UXB-Bb-XYY" firstAttribute="top" secondItem="MvR-jB-DPE" secondAttribute="bottom" constant="60" id="dy3-nx-E8Y"/>
+                            <constraint firstItem="UXB-Bb-XYY" firstAttribute="leading" secondItem="O2b-ZD-MUB" secondAttribute="leading" constant="16" id="oMy-ZM-VDD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="MvR-jB-DPE" id="7b0-Ih-VDk"/>
-                        <outlet property="percentLabel" destination="2q4-cR-tK1" id="abp-9z-Yuh"/>
-                        <outlet property="processLabel" destination="AR9-Wj-5SY" id="7Kd-pW-cOo"/>
-                        <outlet property="progressBackgroundView" destination="7gU-9m-IN5" id="xuc-uV-cot"/>
+                        <outlet property="percentLabel" destination="alL-pE-2Pu" id="0Ea-wm-g5S"/>
+                        <outlet property="processLabel" destination="Pql-F8-0nW" id="hpT-un-2Hq"/>
+                        <outlet property="progressBackgroundView" destination="h7C-Go-fRf" id="vBF-x5-81z"/>
                         <outlet property="titleLabel" destination="4F1-qf-ETX" id="mns-Fm-JTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hiv-Ke-Pnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="727"/>
+            <point key="canvasLocation" x="786.95652173913049" y="726.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iLU-Ev-6Zh">

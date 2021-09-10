@@ -160,10 +160,18 @@ class OnboardingViewController: BaseViewController {
         mainLabel.text = "Как тебя зовут?"
         continueButton.isHidden = false
         textField.isHidden = false
+        textField.text = ""
+        textField.autocapitalizationType = .words
+        textField.textContentType = .name
+        textField.keyboardType = .default
     }
     
     func setupNineView() {
         mainLabel.text = "Сколько тебе лет?"
+        textField.text = ""
+        textField.autocapitalizationType = .none
+        textField.textContentType = .none
+        textField.keyboardType = .numberPad
     }
     
     // MARK: - @IBActions
