@@ -25,6 +25,8 @@ class HomeViewController: BaseViewController {
     // MARK: - Variables
     
     var isSubviewed = false
+    let cellWidth: CGFloat = UIScreen.main.bounds.width - 42
+    let cellHeight: CGFloat = 436
     
     // MARK: - Awake functions
     
@@ -59,17 +61,12 @@ class HomeViewController: BaseViewController {
         
         let layout = PagingCollectionViewLayout()
         
-        let cellWidth: CGFloat = UIScreen.main.bounds.width - 42
-        let cellHeight: CGFloat = 436
-        
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 16)
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.minimumLineSpacing = 30
+        layout.minimumLineSpacing = 8
         layout.velocityThresholdPerPage = 5
-        
-        print("\n\n\n", layout, "\n\n\n")
-        
+                
         dailyTrainingsCollectionView.decelerationRate = .fast
         dailyTrainingsCollectionView.collectionViewLayout = layout
         
@@ -82,7 +79,8 @@ class HomeViewController: BaseViewController {
     // MARK: - @IBActions
     
     @IBAction func menuButtonPressed(_ sender: Any) {
-        // TODO: - Go to menu
+        let settingsViewController = SettingsViewController.load(from: Screen.settings)
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
 }
 
@@ -134,7 +132,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case dailyTrainingsCollectionView:
             
-            () // TODO: - Open daily training
+            let exerciseVC = ExercisesViewController.load(from: Screen.exercises)
+            self.navigationController?.pushViewController(exerciseVC, animated: true)
             
         case exclusiveTrainingsCollectionView:
             
@@ -150,8 +149,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch collectionView {
             
-//        case dailyTrainingsCollectionView:
-//            return 8
+        case dailyTrainingsCollectionView:
+            return 8
+        case exclusiveTrainingsCollectionView:
+            return 16
+        default:
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+            
+        case dailyTrainingsCollectionView:
+            return 8
         case exclusiveTrainingsCollectionView:
             return 16
         default:
@@ -163,8 +174,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch collectionView {
 
-//        case dailyTrainingsCollectionView:
-//            return UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 16)
+        case dailyTrainingsCollectionView:
+            return UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 24)
         case exclusiveTrainingsCollectionView:
             return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         default:
@@ -174,9 +185,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
         
         switch collectionView {
-            
+        case dailyTrainingsCollectionView:
+            return CGSize(width: cellWidth, height: cellHeight)
         case exclusiveTrainingsCollectionView:
             return CGSize(width: 152, height: 244)
         default:

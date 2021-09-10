@@ -15,12 +15,16 @@ public enum Screen: String, StoryboardScreen {
     case start              = "StartViewController"
     case onboarding         = "OnboardingViewController"
     case planGeneration     = "PlanGenerationViewController"
+    case photoOffer         = "PhotoOfferViewController"
     
     // Home
     case home               = "HomeViewController"
+    case settings           = "SettingsViewController"
+    case exercises          = "ExercisesViewController"
     
     // Progress
     case progress           = "ProgressViewController"
+    case progressSettings   = "ProgressSettingsViewController"
     
     // Articles
     case articles           = "ArticlesViewController"
@@ -44,24 +48,28 @@ extension Screen {
             // Onboarding
         case .start,
              .onboarding,
+             .photoOffer,
              .planGeneration:
             return .Onboarding
             
             // Home
-        case .home:
+        case .home,
+             .settings,
+             .exercises:
             return .Home
             
             // Progress
-        case .progress:
+        case .progress,
+             .progressSettings:
             return .Progress
             
             // Articles
         case .articles,
              .article:
             return .Articles
-            
         }
     }
+        
     
     public var storyboard: UIStoryboard {
         return UIStoryboard(name: self.location.rawValue, bundle: nil)

@@ -64,6 +64,12 @@
 		4A09D9E426EB1D34000F573E /* ProgressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A09D9E226EB1D34000F573E /* ProgressCollectionViewCell.xib */; };
 		4A09D9EB26EB2B65000F573E /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09D9E926EB2B65000F573E /* ProgressTableViewCell.swift */; };
 		4A09D9EC26EB2B65000F573E /* ProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A09D9EA26EB2B65000F573E /* ProgressTableViewCell.xib */; };
+		4A0EC25326EBC4E800F48A0C /* ImagePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25226EBC4E800F48A0C /* ImagePopup.swift */; };
+		4A0EC25526EBD07500F48A0C /* ProgressSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25426EBD07500F48A0C /* ProgressSettingsViewController.swift */; };
+		4A0EC25726EBD68F00F48A0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */; };
+		4A0EC25A26EBE25300F48A0C /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25926EBE25300F48A0C /* ExercisesViewController.swift */; };
+		4A0EC25C26EBE82800F48A0C /* ExercisePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25B26EBE82800F48A0C /* ExercisePopupViewController.swift */; };
+		4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +130,12 @@
 		4A09D9E226EB1D34000F573E /* ProgressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A09D9E926EB2B65000F573E /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		4A09D9EA26EB2B65000F573E /* ProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressTableViewCell.xib; sourceTree = "<group>"; };
+		4A0EC25226EBC4E800F48A0C /* ImagePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopup.swift; sourceTree = "<group>"; };
+		4A0EC25426EBD07500F48A0C /* ProgressSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSettingsViewController.swift; sourceTree = "<group>"; };
+		4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4A0EC25926EBE25300F48A0C /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		4A0EC25B26EBE82800F48A0C /* ExercisePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePopupViewController.swift; sourceTree = "<group>"; };
+		4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfferViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +263,7 @@
 		28BC393C26DF6B2600FB3803 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				4A0EC25126EBC4BC00F48A0C /* Popups */,
 				4A09D9E026EB1D14000F573E /* Cells */,
 				28BC394726DF77BB00FB3803 /* Controllers */,
 				28BC394226DF779A00FB3803 /* Progress.storyboard */,
@@ -290,6 +303,9 @@
 			isa = PBXGroup;
 			children = (
 				28BC394926DF77DD00FB3803 /* HomeViewController.swift */,
+				4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */,
+				4A0EC25926EBE25300F48A0C /* ExercisesViewController.swift */,
+				4A0EC25B26EBE82800F48A0C /* ExercisePopupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -298,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				28BC394B26DF77EB00FB3803 /* ProgressViewController.swift */,
+				4A0EC25426EBD07500F48A0C /* ProgressSettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -427,6 +444,7 @@
 				28E5B42126EA2B2C004FECF8 /* StartViewController.swift */,
 				28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */,
 				28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */,
+				4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -456,6 +474,14 @@
 				4A09D9EA26EB2B65000F573E /* ProgressTableViewCell.xib */,
 			);
 			path = "Progress Table View Cell";
+			sourceTree = "<group>";
+		};
+		4A0EC25126EBC4BC00F48A0C /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				4A0EC25226EBC4E800F48A0C /* ImagePopup.swift */,
+			);
+			path = Popups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,10 +581,12 @@
 				28BC397F26DF7FA000FB3803 /* Constants.swift in Sources */,
 				2818359926E3A4210038E826 /* Article.swift in Sources */,
 				28BC396526DF7CBF00FB3803 /* UIView.swift in Sources */,
+				4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */,
 				281835A826E3E08A0038E826 /* UILabel.swift in Sources */,
 				28BC398126DF7FC300FB3803 /* State.swift in Sources */,
 				28BC398326DF7FE600FB3803 /* Util.swift in Sources */,
 				28E5B42A26EA831F004FECF8 /* OnboardingViewController.swift in Sources */,
+				4A0EC25C26EBE82800F48A0C /* ExercisePopupViewController.swift in Sources */,
 				28BC394C26DF77EB00FB3803 /* ProgressViewController.swift in Sources */,
 				28BC398626DF807E00FB3803 /* UIFont.swift in Sources */,
 				28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */,
@@ -572,8 +600,11 @@
 				28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */,
 				28BC394E26DF77FD00FB3803 /* ArticlesViewController.swift in Sources */,
 				2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */,
+				4A0EC25326EBC4E800F48A0C /* ImagePopup.swift in Sources */,
+				4A0EC25726EBD68F00F48A0C /* SettingsViewController.swift in Sources */,
 				28BC395B26DF7A7300FB3803 /* Screens.swift in Sources */,
 				28883FFF26E7885B0002292E /* DailyTrainingCollectionViewCell.swift in Sources */,
+				4A0EC25526EBD07500F48A0C /* ProgressSettingsViewController.swift in Sources */,
 				28BC397D26DF7EF400FB3803 /* BasePopupViewController.swift in Sources */,
 				28E5B42426EA2C2C004FECF8 /* FCButton.swift in Sources */,
 				28BC395626DF79CA00FB3803 /* BaseViewController.swift in Sources */,
@@ -588,6 +619,7 @@
 				28E5B42626EA2E6D004FECF8 /* PlanGenerationViewController.swift in Sources */,
 				28E5B42226EA2B2C004FECF8 /* StartViewController.swift in Sources */,
 				28BC396726DF7D0000FB3803 /* UITableView.swift in Sources */,
+				4A0EC25A26EBE25300F48A0C /* ExercisesViewController.swift in Sources */,
 				4A09D9EB26EB2B65000F573E /* ProgressTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -71,7 +71,6 @@ class ProgressViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         configureUI()
-        setupGestures()
     }
     
     // MARK: - Custom functions
@@ -82,16 +81,11 @@ class ProgressViewController: BaseViewController {
         tableViewHeightConstraint.constant = tableViewHeight
     }
     
-    private func setupGestures() {
-        
-    }
-    
-    // MARK: - Gesture actions
-    
     // MARK: - @IBActions
     
     @IBAction func settingsButtonPressed(_ sender: Any) {
-        
+        let settingsViewController = ProgressSettingsViewController.load(from: Screen.progressSettings)
+        self.navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     @IBAction func watchDemonstrationButtonPressed(_ sender: Any) {
@@ -132,6 +126,12 @@ extension ProgressViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: - Show popup
+        let popup = ImagePopup.load(from: Popup.image)
+        self.addChild(popup)
+        popup.view.frame = self.view.frame
+        UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+            self.view.addSubview(popup.view)
+        }, completion: nil)
     }
     
 }

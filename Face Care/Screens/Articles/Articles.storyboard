@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19158" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полезные статьи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aN-Pk-vKj">
-                                        <rect key="frame" x="108" y="14" width="198.5" height="28"/>
+                                        <rect key="frame" x="110" y="14" width="194" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="GyJ-ZK-MEr"/>
                                         </constraints>
@@ -52,11 +52,11 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3xp-Sy-L9B">
-                                <rect key="frame" x="0.0" y="125" width="414" height="737"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleTableViewCell" rowHeight="302" id="fWI-sW-y8r" customClass="ArticleTableViewCell" customModule="Face_Care" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="302"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="302"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fWI-sW-y8r" id="Uw9-Wk-dam">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="302"/>
@@ -69,7 +69,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="282"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лифтинг сыворотки для лица" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZO-gB-fsU">
-                                                            <rect key="frame" x="16" y="237.5" width="350" height="28.5"/>
+                                                            <rect key="frame" x="16" y="238" width="350" height="28"/>
                                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
                                                             <color key="textColor" name="FC White"/>
                                                             <nil key="highlightedColor"/>
@@ -100,6 +100,7 @@
                                             <outlet property="articleImageView" destination="VZR-bE-won" id="E8G-27-JvW"/>
                                             <outlet property="articleTitleLabel" destination="cZO-gB-fsU" id="hX5-Ys-WHz"/>
                                             <outlet property="cellBackgroundView" destination="gES-Hx-9zN" id="gOz-FY-NQn"/>
+                                            <outlet property="cellTopConstraint" destination="CHe-Uw-7MK" id="l2x-gq-OKm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,7 +110,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Y8h-5x-EMf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="10v-eI-oC7"/>
-                            <constraint firstItem="3xp-Sy-L9B" firstAttribute="top" secondItem="Y8h-5x-EMf" secondAttribute="bottom" constant="25" id="4OJ-Bs-Zh9"/>
+                            <constraint firstItem="3xp-Sy-L9B" firstAttribute="top" secondItem="Y8h-5x-EMf" secondAttribute="bottom" id="4OJ-Bs-Zh9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3xp-Sy-L9B" secondAttribute="trailing" id="GBo-NP-kOk"/>
                             <constraint firstItem="3xp-Sy-L9B" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XKf-hn-Xkq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Y8h-5x-EMf" secondAttribute="trailing" id="goc-7O-AYh"/>
@@ -146,13 +147,13 @@
                                         </constraints>
                                         <color key="tintColor" name="FC Iris"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="chevron.left" catalog="system"/>
+                                        <state key="normal" image="FC Left Chevron"/>
                                         <connections>
                                             <action selector="backButtonPressed:" destination="QCh-f3-MS7" eventType="touchUpInside" id="dJm-3I-gCk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полезные статьи" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bps-JK-Rl9">
-                                        <rect key="frame" x="108" y="14" width="198.5" height="28"/>
+                                        <rect key="frame" x="110" y="14" width="194" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="ICd-ah-fyT"/>
                                         </constraints>
@@ -185,7 +186,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="285"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лифтинг сыворотки для лица" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUR-eE-seM">
-                                                        <rect key="frame" x="16" y="240.5" width="350" height="28.5"/>
+                                                        <rect key="frame" x="16" y="241" width="350" height="28"/>
                                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
                                                         <color key="textColor" name="FC White"/>
                                                         <nil key="highlightedColor"/>
@@ -270,8 +271,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         </scene>
     </scenes>
     <resources>
+        <image name="FC Left Chevron" width="32" height="32"/>
         <image name="article-1" width="343" height="285"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <namedColor name="FC Dark Charcoal">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

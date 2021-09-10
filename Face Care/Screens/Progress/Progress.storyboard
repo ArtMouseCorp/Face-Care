@@ -191,24 +191,354 @@
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="79.6875"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Popup-->
         <scene sceneID="ZRZ-qC-sFF">
             <objects>
-                <viewController id="qTv-9C-imp" sceneMemberID="viewController">
-                    <view key="view" alpha="0.59999999999999998" contentMode="scaleToFill" id="H6y-5m-mBz">
+                <viewController storyboardIdentifier="ImagePopup" id="qTv-9C-imp" customClass="ImagePopup" customModule="Face_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H6y-5m-mBz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-iV-wcU">
+                                <rect key="frame" x="16" y="231" width="382" height="434"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeW-Fq-eLB">
+                                        <rect key="frame" x="26" y="26" width="330" height="382"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="BV5-qL-6vV">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="382"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B99-Ad-s6h">
+                                                <rect key="frame" x="285" y="12" width="33" height="33"/>
+                                                <color key="tintColor" name="FC White"/>
+                                                <state key="normal" image="FC Close"/>
+                                                <connections>
+                                                    <action selector="closeButtonPressed:" destination="qTv-9C-imp" eventType="touchUpInside" id="KfC-bG-vVv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="BV5-qL-6vV" secondAttribute="bottom" id="8cN-TU-GAR"/>
+                                            <constraint firstItem="B99-Ad-s6h" firstAttribute="trailing" secondItem="BV5-qL-6vV" secondAttribute="trailing" constant="-12" id="HCi-Hs-9BM"/>
+                                            <constraint firstItem="B99-Ad-s6h" firstAttribute="top" secondItem="BV5-qL-6vV" secondAttribute="top" constant="12" id="LtJ-ZX-Yc5"/>
+                                            <constraint firstItem="BV5-qL-6vV" firstAttribute="top" secondItem="xeW-Fq-eLB" secondAttribute="top" id="SyG-sO-Yzs"/>
+                                            <constraint firstItem="BV5-qL-6vV" firstAttribute="leading" secondItem="xeW-Fq-eLB" secondAttribute="leading" id="oe7-GA-dUt"/>
+                                            <constraint firstAttribute="trailing" secondItem="BV5-qL-6vV" secondAttribute="trailing" id="syy-NF-Yt8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="xeW-Fq-eLB" firstAttribute="top" secondItem="Oxr-iV-wcU" secondAttribute="top" constant="26" id="7HD-MI-9Mj"/>
+                                    <constraint firstAttribute="trailing" secondItem="xeW-Fq-eLB" secondAttribute="trailing" constant="26" id="OiZ-80-ICK"/>
+                                    <constraint firstAttribute="bottom" secondItem="xeW-Fq-eLB" secondAttribute="bottom" constant="26" id="dTw-pf-4C1"/>
+                                    <constraint firstItem="xeW-Fq-eLB" firstAttribute="leading" secondItem="Oxr-iV-wcU" secondAttribute="leading" constant="26" id="u2h-rv-neo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Yz-Ae-Yqq"/>
                         <color key="backgroundColor" white="0.0" alpha="0.60239799448985931" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Yz-Ae-Yqq" firstAttribute="trailing" secondItem="Oxr-iV-wcU" secondAttribute="trailing" constant="16" id="7Ij-a3-cIp"/>
+                            <constraint firstItem="Oxr-iV-wcU" firstAttribute="centerY" secondItem="H6y-5m-mBz" secondAttribute="centerY" id="7LH-3b-85c"/>
+                            <constraint firstItem="Oxr-iV-wcU" firstAttribute="leading" secondItem="9Yz-Ae-Yqq" secondAttribute="leading" constant="16" id="kCD-R3-raT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="xeW-Fq-eLB" id="Vv5-k6-ZOx"/>
+                        <outlet property="imageView" destination="BV5-qL-6vV" id="Mai-NT-aeY"/>
+                        <outlet property="mainView" destination="Oxr-iV-wcU" id="te8-rl-zaH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp0-GA-eWJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="80"/>
+            <point key="canvasLocation" x="955" y="-583"/>
+        </scene>
+        <!--Progress Settings View Controller-->
+        <scene sceneID="lI2-C9-s07">
+            <objects>
+                <viewController storyboardIdentifier="ProgressSettingsViewController" id="avk-cG-4Uo" customClass="ProgressSettingsViewController" customModule="Face_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q7F-Ga-bxM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6v-cF-eWx">
+                                <rect key="frame" x="0.0" y="68" width="414" height="828"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gE5-e2-38y">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="828"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cM9-Qk-9bp">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="626.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки прогресса" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fly-gg-Mbi">
+                                                        <rect key="frame" x="84" y="24" width="246" height="28"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="pH8-SM-WGK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
+                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проблемные зоны" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKL-kg-im4">
+                                                        <rect key="frame" x="16" y="102" width="382" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="Mue-JJ-67z"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
+                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-dW-R1H">
+                                                        <rect key="frame" x="16" y="22" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="cJD-7r-gz2"/>
+                                                            <constraint firstAttribute="height" constant="32" id="nVa-IZ-ePd"/>
+                                                        </constraints>
+                                                        <color key="tintColor" name="FC Iris"/>
+                                                        <state key="normal" image="FC Left Chevron"/>
+                                                        <connections>
+                                                            <action selector="backButtonPressed:" destination="avk-cG-4Uo" eventType="touchUpInside" id="hpM-fY-1jH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VKc-SC-x1s">
+                                                        <rect key="frame" x="16" y="146" width="382" height="256"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-M9-rQ0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="aGh-2I-4HB">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="Kxv-OA-PI3"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="bni-tg-DQn"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Глаза" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3d-SR-y5n">
+                                                                        <rect key="frame" x="44" y="5.5" width="54" height="21"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="CnB-cl-Gg4"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="n3d-SR-y5n" firstAttribute="centerY" secondItem="ICj-M9-rQ0" secondAttribute="centerY" id="5Kk-cd-aqJ"/>
+                                                                    <constraint firstItem="n3d-SR-y5n" firstAttribute="leading" secondItem="aGh-2I-4HB" secondAttribute="trailing" constant="12" id="5bx-iA-GU1"/>
+                                                                    <constraint firstItem="aGh-2I-4HB" firstAttribute="leading" secondItem="ICj-M9-rQ0" secondAttribute="leading" id="5wl-Pa-oUe"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="lTG-1H-3Rd"/>
+                                                                    <constraint firstItem="aGh-2I-4HB" firstAttribute="centerY" secondItem="ICj-M9-rQ0" secondAttribute="centerY" id="unc-l4-drc"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iP-Ar-Ema">
+                                                                <rect key="frame" x="0.0" y="56" width="382" height="32"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="Bpi-fe-rl4">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="png-cu-rhF"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="x3q-qp-Tf7"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лоб" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBV-tW-dNN">
+                                                                        <rect key="frame" x="44" y="5.5" width="37" height="21"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="HGt-I1-acO"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="0hk-Z3-QoO"/>
+                                                                    <constraint firstItem="sBV-tW-dNN" firstAttribute="centerY" secondItem="5iP-Ar-Ema" secondAttribute="centerY" id="2rQ-ho-yob"/>
+                                                                    <constraint firstItem="Bpi-fe-rl4" firstAttribute="leading" secondItem="5iP-Ar-Ema" secondAttribute="leading" id="oKm-U3-t1t"/>
+                                                                    <constraint firstItem="Bpi-fe-rl4" firstAttribute="centerY" secondItem="5iP-Ar-Ema" secondAttribute="centerY" id="ql0-bY-EYB"/>
+                                                                    <constraint firstItem="sBV-tW-dNN" firstAttribute="leading" secondItem="Bpi-fe-rl4" secondAttribute="trailing" constant="12" id="sAf-Bh-NQ3"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hjd-So-hVk">
+                                                                <rect key="frame" x="0.0" y="112" width="382" height="32"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="zTh-2R-mhI">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="7CX-ym-dBy"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="yYt-lu-TIY"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шея" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ich-A9-Cff">
+                                                                        <rect key="frame" x="44" y="5.5" width="42" height="21"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="QgW-Ld-a7t"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="zTh-2R-mhI" firstAttribute="centerY" secondItem="Hjd-So-hVk" secondAttribute="centerY" id="5iN-hw-uSA"/>
+                                                                    <constraint firstItem="Ich-A9-Cff" firstAttribute="leading" secondItem="zTh-2R-mhI" secondAttribute="trailing" constant="12" id="7YA-kf-h8g"/>
+                                                                    <constraint firstItem="zTh-2R-mhI" firstAttribute="leading" secondItem="Hjd-So-hVk" secondAttribute="leading" id="d42-sC-YpV"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="klf-RP-waq"/>
+                                                                    <constraint firstItem="Ich-A9-Cff" firstAttribute="centerY" secondItem="Hjd-So-hVk" secondAttribute="centerY" id="mar-4y-nAW"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzR-Yy-kgA">
+                                                                <rect key="frame" x="0.0" y="168" width="382" height="32"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="177-Ik-shO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="YjM-kZ-djD"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="io0-n7-CZ0"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подбородок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnm-Tk-j2O">
+                                                                        <rect key="frame" x="44" y="5.5" width="118" height="21"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="sAL-rX-Kr9"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="pnm-Tk-j2O" firstAttribute="leading" secondItem="177-Ik-shO" secondAttribute="trailing" constant="12" id="Luz-kN-1vm"/>
+                                                                    <constraint firstItem="177-Ik-shO" firstAttribute="leading" secondItem="RzR-Yy-kgA" secondAttribute="leading" id="XzD-Vd-TS0"/>
+                                                                    <constraint firstItem="177-Ik-shO" firstAttribute="centerY" secondItem="RzR-Yy-kgA" secondAttribute="centerY" id="iXn-K1-GfN"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="sTX-qW-HTc"/>
+                                                                    <constraint firstItem="pnm-Tk-j2O" firstAttribute="centerY" secondItem="RzR-Yy-kgA" secondAttribute="centerY" id="x1p-od-DJx"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89b-RW-r9I">
+                                                                <rect key="frame" x="0.0" y="224" width="382" height="32"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="EF7-He-5Tv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="32" id="CIM-vY-qq7"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="nQ2-Io-DXn"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скулы и щеки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDo-cZ-1Yc">
+                                                                        <rect key="frame" x="44" y="5.5" width="132.5" height="21"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="fpd-Z5-fDI"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="DDo-cZ-1Yc" firstAttribute="centerY" secondItem="89b-RW-r9I" secondAttribute="centerY" id="8Sr-kP-ajl"/>
+                                                                    <constraint firstItem="EF7-He-5Tv" firstAttribute="centerY" secondItem="89b-RW-r9I" secondAttribute="centerY" id="Zth-UC-zuX"/>
+                                                                    <constraint firstItem="DDo-cZ-1Yc" firstAttribute="leading" secondItem="EF7-He-5Tv" secondAttribute="trailing" constant="12" id="gpZ-gr-cB6"/>
+                                                                    <constraint firstItem="EF7-He-5Tv" firstAttribute="leading" secondItem="89b-RW-r9I" secondAttribute="leading" id="ujn-WB-HaG"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="zrj-fG-8hB"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0V-wi-08I" customClass="FCButton" customModule="Face_Care" customModuleProvider="target">
+                                                        <rect key="frame" x="36" y="530.5" width="342" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="JAQ-3T-bID"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="16"/>
+                                                        <state key="normal" title="Обнулить прогресс"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы можете обнулить пройденные дни, историю и настройки персонального курса и начать сначала" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvf-bc-ewF">
+                                                        <rect key="frame" x="16" y="450" width="382" height="56.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56.5" id="BZu-eQ-v5N"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="VKc-SC-x1s" firstAttribute="top" secondItem="pKL-kg-im4" secondAttribute="bottom" constant="24" id="0TK-d3-uGA"/>
+                                                    <constraint firstItem="VKc-SC-x1s" firstAttribute="leading" secondItem="cM9-Qk-9bp" secondAttribute="leading" constant="16" id="4RB-Un-G1u"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Gvf-bc-ewF" secondAttribute="trailing" constant="16" id="5ih-MW-CGQ"/>
+                                                    <constraint firstItem="rYX-dW-R1H" firstAttribute="top" secondItem="cM9-Qk-9bp" secondAttribute="top" constant="22" id="HDD-1U-Lnq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pKL-kg-im4" secondAttribute="trailing" constant="16" id="LvX-HZ-Yu1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VKc-SC-x1s" secondAttribute="trailing" constant="16" id="R7h-ku-Tfo"/>
+                                                    <constraint firstItem="fly-gg-Mbi" firstAttribute="centerX" secondItem="cM9-Qk-9bp" secondAttribute="centerX" id="Tqk-0Y-qly"/>
+                                                    <constraint firstItem="L0V-wi-08I" firstAttribute="top" secondItem="Gvf-bc-ewF" secondAttribute="bottom" constant="24" id="UJv-GO-hoK"/>
+                                                    <constraint firstItem="L0V-wi-08I" firstAttribute="leading" secondItem="cM9-Qk-9bp" secondAttribute="leading" constant="36" id="XPp-ug-UP2"/>
+                                                    <constraint firstItem="pKL-kg-im4" firstAttribute="leading" secondItem="cM9-Qk-9bp" secondAttribute="leading" constant="16" id="ZCC-ic-Jof"/>
+                                                    <constraint firstItem="rYX-dW-R1H" firstAttribute="leading" secondItem="cM9-Qk-9bp" secondAttribute="leading" constant="16" id="ZLr-HU-8ob"/>
+                                                    <constraint firstItem="fly-gg-Mbi" firstAttribute="centerY" secondItem="rYX-dW-R1H" secondAttribute="centerY" id="ZWb-Nk-FTQ"/>
+                                                    <constraint firstItem="Gvf-bc-ewF" firstAttribute="leading" secondItem="cM9-Qk-9bp" secondAttribute="leading" constant="16" id="ghS-H8-MhP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="L0V-wi-08I" secondAttribute="bottom" constant="48" id="hsU-u1-2rp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="L0V-wi-08I" secondAttribute="trailing" constant="36" id="juK-Nk-pNA"/>
+                                                    <constraint firstItem="Gvf-bc-ewF" firstAttribute="top" secondItem="VKc-SC-x1s" secondAttribute="bottom" constant="48" id="kj9-ig-0Ix"/>
+                                                    <constraint firstItem="pKL-kg-im4" firstAttribute="top" secondItem="rYX-dW-R1H" secondAttribute="bottom" constant="48" id="tyL-eE-wlv"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="cM9-Qk-9bp" firstAttribute="trailing" secondItem="cNb-kj-Bz8" secondAttribute="trailing" id="30b-2J-cq3"/>
+                                            <constraint firstItem="cM9-Qk-9bp" firstAttribute="top" secondItem="cNb-kj-Bz8" secondAttribute="top" id="4uh-RQ-ibU"/>
+                                            <constraint firstItem="cM9-Qk-9bp" firstAttribute="height" secondItem="Nel-el-ca7" secondAttribute="height" priority="750" id="Ssq-P4-nSc"/>
+                                            <constraint firstItem="cM9-Qk-9bp" firstAttribute="leading" secondItem="cNb-kj-Bz8" secondAttribute="leading" id="TIh-dv-zx4"/>
+                                            <constraint firstItem="cM9-Qk-9bp" firstAttribute="bottom" secondItem="cNb-kj-Bz8" secondAttribute="bottom" id="clE-Qb-0RQ"/>
+                                            <constraint firstItem="cM9-Qk-9bp" firstAttribute="width" secondItem="Nel-el-ca7" secondAttribute="width" id="ynI-hs-JgT"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="cNb-kj-Bz8"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="Nel-el-ca7"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gE5-e2-38y" secondAttribute="trailing" id="6Jv-wT-cQv"/>
+                                    <constraint firstItem="gE5-e2-38y" firstAttribute="leading" secondItem="S6v-cF-eWx" secondAttribute="leading" id="CWt-8t-PYd"/>
+                                    <constraint firstAttribute="bottom" secondItem="gE5-e2-38y" secondAttribute="bottom" id="dyP-SO-m9I"/>
+                                    <constraint firstItem="gE5-e2-38y" firstAttribute="top" secondItem="S6v-cF-eWx" secondAttribute="top" id="rHQ-aT-juE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zGY-FO-cES"/>
+                        <color key="backgroundColor" name="FC Gainsboro"/>
+                        <constraints>
+                            <constraint firstItem="S6v-cF-eWx" firstAttribute="top" secondItem="Q7F-Ga-bxM" secondAttribute="topMargin" constant="24" id="2pL-E7-5K9"/>
+                            <constraint firstAttribute="bottom" secondItem="S6v-cF-eWx" secondAttribute="bottom" id="EC9-KQ-4iE"/>
+                            <constraint firstItem="S6v-cF-eWx" firstAttribute="leading" secondItem="Q7F-Ga-bxM" secondAttribute="leading" id="NZU-so-Jze"/>
+                            <constraint firstItem="zGY-FO-cES" firstAttribute="trailing" secondItem="S6v-cF-eWx" secondAttribute="trailing" id="RfG-Im-YGf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="fly-gg-Mbi" id="feH-W8-Q9h"/>
+                        <outlet property="mainView" destination="S6v-cF-eWx" id="mgQ-bF-ZAf"/>
+                        <outlet property="resetProgressButton" destination="L0V-wi-08I" id="wdP-UD-rHs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bao-Ut-y69" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663.7681159420292" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="FC Checked Checkbox" width="24" height="24"/>
+        <image name="FC Close" width="33" height="33"/>
+        <image name="FC Left Chevron" width="32" height="32"/>
         <image name="FC Slider" width="32" height="32"/>
+        <image name="image" width="321" height="382"/>
         <namedColor name="FC Dark Charcoal">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -217,6 +547,9 @@
         </namedColor>
         <namedColor name="FC Iris">
             <color red="0.3411764705882353" green="0.33725490196078434" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FC White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

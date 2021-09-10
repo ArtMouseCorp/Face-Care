@@ -13,6 +13,9 @@ class ArticleTableViewCell: UITableViewCell {
     // Image Views
     @IBOutlet weak var articleImageView: UIImageView!
 
+    // Constraints
+    @IBOutlet weak var cellTopConstraint: NSLayoutConstraint!
+    
     // MARK: - Variables
     
     // MARK: - Awake functions
