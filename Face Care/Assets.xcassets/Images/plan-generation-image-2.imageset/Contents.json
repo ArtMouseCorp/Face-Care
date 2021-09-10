@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "skin-care-concept-charming-young-caucasian-woman-with-perfect-makeup-photo-composition-brunette-girl-isolated-pink-background-with-copy-space(1).pdf",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

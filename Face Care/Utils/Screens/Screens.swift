@@ -9,14 +9,22 @@ public protocol StoryboardScreen {
 public enum Screen: String, StoryboardScreen {
     
     // Main
-    case home       = "HomeViewController"
+    case tabBar             = "TabBarController"
+    
+    // Onboarding
+    case start              = "StartViewController"
+    case onboarding         = "OnboardingViewController"
+    case planGeneration     = "PlanGenerationViewController"
+    
+    // Home
+    case home               = "HomeViewController"
     
     // Progress
-    case progress   = "ProgressViewController"
+    case progress           = "ProgressViewController"
     
     // Articles
-    case articles   = "ArticlesViewController"
-    case article    = "ArticleViewController"
+    case articles           = "ArticlesViewController"
+    case article            = "ArticleViewController"
     
 }
 
@@ -30,6 +38,16 @@ extension Screen {
         switch self {
             
             // Main
+        case .tabBar:
+            return .Main
+            
+            // Onboarding
+        case .start,
+             .onboarding,
+             .planGeneration:
+            return .Onboarding
+            
+            // Home
         case .home:
             return .Home
             
@@ -38,10 +56,8 @@ extension Screen {
             return .Progress
             
             // Articles
-        case .articles:
-            return .Articles
-            
-        case .article:
+        case .articles,
+             .article:
             return .Articles
             
         }

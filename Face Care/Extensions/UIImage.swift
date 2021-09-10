@@ -2,6 +2,12 @@ import UIKit
 
 extension UIImage {
     
+    
+    public static let FCPlanGeneration1             = UIImage(named: "plan-generation-image-1") ?? UIImage()
+    public static let FCPlanGeneration2             = UIImage(named: "plan-generation-image-2") ?? UIImage()
+    public static let FCPlanGeneration3             = UIImage(named: "plan-generation-image-3") ?? UIImage()
+    
+    
     public static let FCArticle: UIImage            = UIImage(named: "FC Article")          ?? UIImage()
     
     public static let FCCheckedCheckbox: UIImage    = UIImage(named: "FC Checked Checkbox") ?? UIImage()

@@ -34,6 +34,8 @@ class ExerciseTableViewCell: UITableViewCell {
         cellBackgroundView.layer.shadowRadius = 10
         cellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
         
+//        exerciseImageView.whiteGradient(locations: [0, 1], opacity: 0.3)
+        
         let gradient = CAGradientLayer()
         
         gradient.frame = exerciseImageView.frame
@@ -42,10 +44,10 @@ class ExerciseTableViewCell: UITableViewCell {
             UIColor.FCWhite.withAlphaComponent(0).cgColor,
             UIColor.FCWhite.withAlphaComponent(0.3).cgColor
         ]
-        
+
         gradient.locations = [0, 1]
         gradient.opacity = 0.3
-        
+
         exerciseImageView.layer.addSublayer(gradient)
         
     }

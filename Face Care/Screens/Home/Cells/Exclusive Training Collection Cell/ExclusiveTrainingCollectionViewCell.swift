@@ -41,6 +41,8 @@ class ExclusiveTrainingCollectionViewCell: UICollectionViewCell {
         
         trainingImageView.roundCorners(radius: 8, corners: .topLeft, .topRight)
         
+//        trainingImageView.whiteGradient(locations: [0, 1], opacity: 0.3)
+        
         let gradient = CAGradientLayer()
         
         gradient.frame = trainingImageView.frame

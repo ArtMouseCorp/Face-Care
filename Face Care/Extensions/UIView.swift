@@ -11,6 +11,15 @@ extension UIView {
         layer.maskedCorners = cornerMask
     }
     
+    func capsuleCorners(corners: UIRectCorner) {
+        self.roundCorners(radius: self.frame.height / 2, corners: corners)
+    }
+    
+    func setBorder(width: CGFloat, color: UIColor) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+    }
+    
     func addTapGesture(action: Selector) {
         let tapGesture = UITapGestureRecognizer(target: self.parentContainerViewController(), action: action)
         self.isUserInteractionEnabled = true

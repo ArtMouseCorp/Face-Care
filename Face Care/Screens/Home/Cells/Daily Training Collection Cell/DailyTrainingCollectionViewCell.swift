@@ -47,8 +47,10 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         
         startBackgroundView.roundCorners(radius: 12, corners: .bottomLeft, .bottomRight)
         
-        let gradient = CAGradientLayer()
+//        trainingImageView.whiteGradient(locations: [0.55, 1], opacity: 1)
         
+        let gradient = CAGradientLayer()
+
         gradient.frame = trainingImageView.frame
 
         gradient.colors = [

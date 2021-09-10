@@ -54,6 +54,12 @@
 		28BC398126DF7FC300FB3803 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC398026DF7FC300FB3803 /* State.swift */; };
 		28BC398326DF7FE600FB3803 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC398226DF7FE600FB3803 /* Util.swift */; };
 		28BC398626DF807E00FB3803 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC398526DF807E00FB3803 /* UIFont.swift */; };
+		28E5B41F26EA29C0004FECF8 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E5B41E26EA29C0004FECF8 /* Onboarding.storyboard */; };
+		28E5B42226EA2B2C004FECF8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42126EA2B2C004FECF8 /* StartViewController.swift */; };
+		28E5B42426EA2C2C004FECF8 /* FCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42326EA2C2C004FECF8 /* FCButton.swift */; };
+		28E5B42626EA2E6D004FECF8 /* PlanGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */; };
+		28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42726EA71EA004FECF8 /* UIImageView.swift */; };
+		28E5B42A26EA831F004FECF8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +110,12 @@
 		28BC398026DF7FC300FB3803 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		28BC398226DF7FE600FB3803 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		28BC398526DF807E00FB3803 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		28E5B41E26EA29C0004FECF8 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		28E5B42126EA2B2C004FECF8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		28E5B42326EA2C2C004FECF8 /* FCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCButton.swift; sourceTree = "<group>"; };
+		28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGenerationViewController.swift; sourceTree = "<group>"; };
+		28E5B42726EA71EA004FECF8 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +222,7 @@
 				28BC395526DF79CA00FB3803 /* BaseViewController.swift */,
 				28BC397C26DF7EF400FB3803 /* BasePopupViewController.swift */,
 				28BC393E26DF6B3F00FB3803 /* Launch Screen */,
+				28E5B41D26EA29AB004FECF8 /* Onboarding */,
 				28BC393B26DF6B1D00FB3803 /* Main */,
 				28BC393F26DF6B8500FB3803 /* Home */,
 				28BC393C26DF6B2600FB3803 /* Progress */,
@@ -337,6 +350,7 @@
 				28BC396C26DF7D2D00FB3803 /* UIImage.swift */,
 				28BC398526DF807E00FB3803 /* UIFont.swift */,
 				281835A726E3E08A0038E826 /* UILabel.swift */,
+				28E5B42726EA71EA004FECF8 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */,
+				28E5B42326EA2C2C004FECF8 /* FCButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,6 +401,25 @@
 				28BC397626DF7EAC00FB3803 /* Raleway-Bold.ttf */,
 			);
 			path = Raleway;
+			sourceTree = "<group>";
+		};
+		28E5B41D26EA29AB004FECF8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				28E5B42026EA29D5004FECF8 /* Controllers */,
+				28E5B41E26EA29C0004FECF8 /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		28E5B42026EA29D5004FECF8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28E5B42126EA2B2C004FECF8 /* StartViewController.swift */,
+				28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */,
+				28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +494,7 @@
 				28BC394326DF779A00FB3803 /* Progress.storyboard in Resources */,
 				28BC397826DF7EAC00FB3803 /* Raleway-Regular.ttf in Resources */,
 				28BC392826DF69EE00FB3803 /* Main.storyboard in Resources */,
+				28E5B41F26EA29C0004FECF8 /* Onboarding.storyboard in Resources */,
 				28BC394126DF6B9500FB3803 /* Home.storyboard in Resources */,
 				28BC397926DF7EAC00FB3803 /* Raleway-Light.ttf in Resources */,
 				28BC397A26DF7EAC00FB3803 /* Raleway-Medium.ttf in Resources */,
@@ -485,6 +520,7 @@
 				281835A826E3E08A0038E826 /* UILabel.swift in Sources */,
 				28BC398126DF7FC300FB3803 /* State.swift in Sources */,
 				28BC398326DF7FE600FB3803 /* Util.swift in Sources */,
+				28E5B42A26EA831F004FECF8 /* OnboardingViewController.swift in Sources */,
 				28BC394C26DF77EB00FB3803 /* ProgressViewController.swift in Sources */,
 				28BC398626DF807E00FB3803 /* UIFont.swift in Sources */,
 				28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */,
@@ -494,11 +530,13 @@
 				28BC396B26DF7D2000FB3803 /* UIColor.swift in Sources */,
 				28BC396D26DF7D2D00FB3803 /* UIImage.swift in Sources */,
 				28BC396126DF7BD000FB3803 /* UIViewController.swift in Sources */,
+				28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */,
 				28BC394E26DF77FD00FB3803 /* ArticlesViewController.swift in Sources */,
 				2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */,
 				28BC395B26DF7A7300FB3803 /* Screens.swift in Sources */,
 				28883FFF26E7885B0002292E /* DailyTrainingCollectionViewCell.swift in Sources */,
 				28BC397D26DF7EF400FB3803 /* BasePopupViewController.swift in Sources */,
+				28E5B42426EA2C2C004FECF8 /* FCButton.swift in Sources */,
 				28BC395626DF79CA00FB3803 /* BaseViewController.swift in Sources */,
 				2888400726E788910002292E /* ExerciseTableViewCell.swift in Sources */,
 				2888400326E788780002292E /* ExclusiveTrainingCollectionViewCell.swift in Sources */,
@@ -508,6 +546,8 @@
 				28BC395D26DF7B1F00FB3803 /* Cells.swift in Sources */,
 				281835A626E3DD100038E826 /* ArticleViewController.swift in Sources */,
 				28BC395926DF7A1100FB3803 /* Storyboards.swift in Sources */,
+				28E5B42626EA2E6D004FECF8 /* PlanGenerationViewController.swift in Sources */,
+				28E5B42226EA2B2C004FECF8 /* StartViewController.swift in Sources */,
 				28BC396726DF7D0000FB3803 /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

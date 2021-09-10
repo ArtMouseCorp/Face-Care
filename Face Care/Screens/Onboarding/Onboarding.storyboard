@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19158" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ExJ-mV-tb2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+        </array>
+        <array key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+        </array>
+        <array key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </array>
+        <array key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="Y6W-OH-hqX" customClass="StartViewController" customModule="Face_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать в " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kh-rk-FBL">
+                                <rect key="frame" x="95" y="154" width="224" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="aX9-Rj-yzJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="22"/>
+                                <color key="textColor" name="FC Dark Charcoal"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jSs-9R-Gzd">
+                                <rect key="frame" x="96" y="192" width="222" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="qDA-mU-o9d"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-generation-image-1" translatesAutoresizingMaskIntoConstraints="NO" id="dYq-ge-gBw">
+                                <rect key="frame" x="58.5" y="280" width="297" height="377"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dYq-ge-gBw" secondAttribute="height" multiplier="1:1.27" id="Iwr-jP-g9C"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Курс Face Care - это ваш путь к естественной красоте и молодости" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkY-Og-ewl">
+                                <rect key="frame" x="38" y="681" width="338" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="R48-Yc-5AE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
+                                <color key="textColor" name="FC Black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beP-OG-FJO" customClass="FCButton" customModule="Face_Care" customModuleProvider="target">
+                                <rect key="frame" x="38" y="784" width="338" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="t54-py-T7r"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Начать"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="trc-89-X2o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="FC White"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="beP-OG-FJO" secondAttribute="bottom" constant="30" id="4i1-9G-axU"/>
+                            <constraint firstItem="1Kh-rk-FBL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="5rQ-kZ-XtM"/>
+                            <constraint firstItem="dYq-ge-gBw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="74u-KT-neU"/>
+                            <constraint firstItem="UkY-Og-ewl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="97Q-I2-byS"/>
+                            <constraint firstItem="beP-OG-FJO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="E9j-uF-fu1"/>
+                            <constraint firstItem="jSs-9R-Gzd" firstAttribute="top" secondItem="1Kh-rk-FBL" secondAttribute="bottom" constant="12" id="FoX-eZ-tD9"/>
+                            <constraint firstItem="beP-OG-FJO" firstAttribute="top" secondItem="UkY-Og-ewl" secondAttribute="bottom" constant="65" id="bqd-0L-uzV"/>
+                            <constraint firstItem="jSs-9R-Gzd" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ct4-lE-FWM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Kh-rk-FBL" secondAttribute="trailing" constant="16" id="iCZ-gu-mCD"/>
+                            <constraint firstItem="1Kh-rk-FBL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="110" id="mXo-zN-fg4"/>
+                            <constraint firstItem="1Kh-rk-FBL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qNw-DM-WUO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="beP-OG-FJO" secondAttribute="trailing" constant="38" id="qhe-dy-dcO"/>
+                            <constraint firstItem="UkY-Og-ewl" firstAttribute="top" secondItem="dYq-ge-gBw" secondAttribute="bottom" constant="24" id="vgb-Px-AeK"/>
+                            <constraint firstItem="dYq-ge-gBw" firstAttribute="top" secondItem="jSs-9R-Gzd" secondAttribute="bottom" constant="32" id="x4K-d9-3kL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UkY-Og-ewl" secondAttribute="trailing" constant="38" id="zJL-DU-FKL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uNx-b7-BHo"/>
+                    <connections>
+                        <outlet property="imageView" destination="dYq-ge-gBw" id="JJu-LX-jPO"/>
+                        <outlet property="startButton" destination="beP-OG-FJO" id="12S-iL-r82"/>
+                        <outlet property="subtitleLabel" destination="UkY-Og-ewl" id="dVg-Df-mke"/>
+                        <outlet property="subtitleLabelHeightConstraint" destination="R48-Yc-5AE" id="hvm-qU-MV1"/>
+                        <outlet property="welcomeLabel" destination="1Kh-rk-FBL" id="Pwk-d0-gZJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942.02898550724649" y="67.633928571428569"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="1MK-LB-hdY">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" id="e0j-JI-76J" customClass="OnboardingViewController" customModule="Face_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UcP-1a-Pfv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xd3-NC-Ms4">
+                                <rect key="frame" x="16" y="72" width="382" height="4"/>
+                                <color key="backgroundColor" name="FC Bright Gray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="1Ih-Mm-7tR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bxL-6m-PBn"/>
+                        <color key="backgroundColor" name="FC White"/>
+                        <constraints>
+                            <constraint firstItem="xd3-NC-Ms4" firstAttribute="top" secondItem="bxL-6m-PBn" secondAttribute="top" constant="28" id="5Ob-RG-1Pe"/>
+                            <constraint firstItem="xd3-NC-Ms4" firstAttribute="leading" secondItem="bxL-6m-PBn" secondAttribute="leading" constant="16" id="JRx-fl-9nK"/>
+                            <constraint firstItem="bxL-6m-PBn" firstAttribute="trailing" secondItem="xd3-NC-Ms4" secondAttribute="trailing" constant="16" id="j2D-wE-qZz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fe-FX-IJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675" y="68"/>
+        </scene>
+        <!--Plan Generation View Controller-->
+        <scene sceneID="FKF-ie-RLU">
+            <objects>
+                <viewController storyboardIdentifier="PlanGenerationViewController" id="WW4-XZ-qEO" customClass="PlanGenerationViewController" customModule="Face_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wpg-JX-672">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подготовка персонального плана тренировок" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4F1-qf-ETX">
+                                <rect key="frame" x="16" y="104" width="382" height="52"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="22"/>
+                                <color key="textColor" name="FC Dark Charcoal"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-generation-image-1" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-jB-DPE">
+                                <rect key="frame" x="50" y="248.5" width="314" height="399"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MvR-jB-DPE" secondAttribute="height" multiplier="1:1.27" id="ZrS-49-dxy"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-13-EcO">
+                                <rect key="frame" x="16" y="707.5" width="382" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Анализ проблемных зон" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR9-Wj-5SY">
+                                        <rect key="frame" x="0.0" y="0.0" width="321.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
+                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q4-cR-tK1">
+                                        <rect key="frame" x="351.5" y="0.0" width="30.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="16"/>
+                                        <color key="textColor" name="FC Dark Charcoal"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-9m-IN5">
+                                        <rect key="frame" x="0.0" y="39" width="382" height="8"/>
+                                        <color key="backgroundColor" name="FC Bright Gray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="739-bX-Szc"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="FC White"/>
+                                <constraints>
+                                    <constraint firstItem="7gU-9m-IN5" firstAttribute="top" secondItem="AR9-Wj-5SY" secondAttribute="bottom" constant="20" id="35P-uI-4Te"/>
+                                    <constraint firstItem="2q4-cR-tK1" firstAttribute="leading" secondItem="AR9-Wj-5SY" secondAttribute="trailing" constant="30" id="49P-Yv-6yT"/>
+                                    <constraint firstItem="2q4-cR-tK1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="b8n-13-EcO" secondAttribute="top" id="79y-W8-ziQ"/>
+                                    <constraint firstItem="AR9-Wj-5SY" firstAttribute="leading" secondItem="b8n-13-EcO" secondAttribute="leading" id="RFA-wj-Fqg"/>
+                                    <constraint firstAttribute="trailing" secondItem="7gU-9m-IN5" secondAttribute="trailing" id="UWg-Lv-dXB"/>
+                                    <constraint firstItem="2q4-cR-tK1" firstAttribute="centerY" secondItem="AR9-Wj-5SY" secondAttribute="centerY" id="ddT-4g-OSF"/>
+                                    <constraint firstAttribute="trailing" secondItem="2q4-cR-tK1" secondAttribute="trailing" id="frV-H4-XNY"/>
+                                    <constraint firstItem="7gU-9m-IN5" firstAttribute="leading" secondItem="b8n-13-EcO" secondAttribute="leading" id="hDf-iq-vlg"/>
+                                    <constraint firstItem="AR9-Wj-5SY" firstAttribute="top" secondItem="b8n-13-EcO" secondAttribute="top" id="imT-RU-Hkb"/>
+                                    <constraint firstAttribute="bottom" secondItem="7gU-9m-IN5" secondAttribute="bottom" id="kXl-wy-C01"/>
+                                    <constraint firstItem="7gU-9m-IN5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2q4-cR-tK1" secondAttribute="bottom" constant="20" id="mlm-xM-XLa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O2b-ZD-MUB"/>
+                        <color key="backgroundColor" name="FC White"/>
+                        <constraints>
+                            <constraint firstItem="MvR-jB-DPE" firstAttribute="leading" secondItem="O2b-ZD-MUB" secondAttribute="leading" constant="50" id="1qJ-d7-xQx"/>
+                            <constraint firstItem="4F1-qf-ETX" firstAttribute="top" secondItem="O2b-ZD-MUB" secondAttribute="top" constant="60" id="42O-qX-5IN"/>
+                            <constraint firstItem="MvR-jB-DPE" firstAttribute="centerY" secondItem="Wpg-JX-672" secondAttribute="centerY" id="9Qi-iL-8kH"/>
+                            <constraint firstItem="b8n-13-EcO" firstAttribute="top" secondItem="MvR-jB-DPE" secondAttribute="bottom" constant="60" id="Qlj-Qe-pAw"/>
+                            <constraint firstItem="MvR-jB-DPE" firstAttribute="centerX" secondItem="Wpg-JX-672" secondAttribute="centerX" id="S6K-9W-n8y"/>
+                            <constraint firstItem="O2b-ZD-MUB" firstAttribute="trailing" secondItem="4F1-qf-ETX" secondAttribute="trailing" constant="16" id="TNJ-jn-mZk"/>
+                            <constraint firstItem="4F1-qf-ETX" firstAttribute="leading" secondItem="O2b-ZD-MUB" secondAttribute="leading" constant="16" id="UiW-VK-oUd"/>
+                            <constraint firstItem="b8n-13-EcO" firstAttribute="leading" secondItem="O2b-ZD-MUB" secondAttribute="leading" constant="16" id="cma-P5-bCq"/>
+                            <constraint firstItem="O2b-ZD-MUB" firstAttribute="trailing" secondItem="MvR-jB-DPE" secondAttribute="trailing" constant="50" id="dQV-Fu-QFf"/>
+                            <constraint firstItem="O2b-ZD-MUB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="b8n-13-EcO" secondAttribute="bottom" constant="50" id="ica-Vi-bge"/>
+                            <constraint firstItem="O2b-ZD-MUB" firstAttribute="trailing" secondItem="b8n-13-EcO" secondAttribute="trailing" constant="16" id="uwJ-QL-H0p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="MvR-jB-DPE" id="7b0-Ih-VDk"/>
+                        <outlet property="percentLabel" destination="2q4-cR-tK1" id="abp-9z-Yuh"/>
+                        <outlet property="processLabel" destination="AR9-Wj-5SY" id="7Kd-pW-cOo"/>
+                        <outlet property="progressBackgroundView" destination="7gU-9m-IN5" id="xuc-uV-cot"/>
+                        <outlet property="titleLabel" destination="4F1-qf-ETX" id="mns-Fm-JTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hiv-Ke-Pnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940.57971014492762" y="818.97321428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iLU-Ev-6Zh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ExJ-mV-tb2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eyp-xM-ncA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="bDE-rx-mrf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDU-LT-WjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="67.633928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="222" height="56"/>
+        <image name="plan-generation-image-1" width="267" height="338"/>
+        <namedColor name="FC Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FC Bright Gray">
+            <color red="0.92199999094009399" green="0.92500001192092896" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FC Dark Charcoal">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FC White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

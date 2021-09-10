@@ -3,6 +3,7 @@ import Foundation
 public enum Storyboard: String {
     case LaunchScreen   = "LaunchScreen"
     case Main           = "Main"
+    case Onboarding     = "Onboarding"
     case Home           = "Home"
     case Progress       = "Progress"
     case Articles       = "Articles"
