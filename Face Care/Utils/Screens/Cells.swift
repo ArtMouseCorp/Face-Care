@@ -8,6 +8,8 @@ public enum Cell: String {
     case exercise           = "ExerciseTableViewCell"
     
     // Progress
+    case progressImages     = "ProgressCollectionViewCell"
+    case progressStat       = "ProgressTableViewCell"
     
     // Atricles
     case article            = "ArticleTableViewCell"
