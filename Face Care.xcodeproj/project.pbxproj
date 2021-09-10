@@ -60,6 +60,10 @@
 		28E5B42626EA2E6D004FECF8 /* PlanGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */; };
 		28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42726EA71EA004FECF8 /* UIImageView.swift */; };
 		28E5B42A26EA831F004FECF8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */; };
+		4A09D9E326EB1D34000F573E /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09D9E126EB1D34000F573E /* ProgressCollectionViewCell.swift */; };
+		4A09D9E426EB1D34000F573E /* ProgressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A09D9E226EB1D34000F573E /* ProgressCollectionViewCell.xib */; };
+		4A09D9EB26EB2B65000F573E /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09D9E926EB2B65000F573E /* ProgressTableViewCell.swift */; };
+		4A09D9EC26EB2B65000F573E /* ProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A09D9EA26EB2B65000F573E /* ProgressTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +120,10 @@
 		28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGenerationViewController.swift; sourceTree = "<group>"; };
 		28E5B42726EA71EA004FECF8 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4A09D9E126EB1D34000F573E /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
+		4A09D9E226EB1D34000F573E /* ProgressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCollectionViewCell.xib; sourceTree = "<group>"; };
+		4A09D9E926EB2B65000F573E /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		4A09D9EA26EB2B65000F573E /* ProgressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +251,7 @@
 		28BC393C26DF6B2600FB3803 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				4A09D9E026EB1D14000F573E /* Cells */,
 				28BC394726DF77BB00FB3803 /* Controllers */,
 				28BC394226DF779A00FB3803 /* Progress.storyboard */,
 			);
@@ -422,6 +431,33 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		4A09D9E026EB1D14000F573E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A09D9E626EB2B35000F573E /* Progress Table View Cell */,
+				4A09D9E526EB1D3A000F573E /* Progress Collection View Cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4A09D9E526EB1D3A000F573E /* Progress Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A09D9E126EB1D34000F573E /* ProgressCollectionViewCell.swift */,
+				4A09D9E226EB1D34000F573E /* ProgressCollectionViewCell.xib */,
+			);
+			path = "Progress Collection View Cell";
+			sourceTree = "<group>";
+		};
+		4A09D9E626EB2B35000F573E /* Progress Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A09D9E926EB2B65000F573E /* ProgressTableViewCell.swift */,
+				4A09D9EA26EB2B65000F573E /* ProgressTableViewCell.xib */,
+			);
+			path = "Progress Table View Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +526,8 @@
 			files = (
 				2888400426E788780002292E /* ExclusiveTrainingCollectionViewCell.xib in Resources */,
 				28BC392D26DF69F200FB3803 /* LaunchScreen.storyboard in Resources */,
+				4A09D9EC26EB2B65000F573E /* ProgressTableViewCell.xib in Resources */,
+				4A09D9E426EB1D34000F573E /* ProgressCollectionViewCell.xib in Resources */,
 				28BC392A26DF69F200FB3803 /* Assets.xcassets in Resources */,
 				28BC394326DF779A00FB3803 /* Progress.storyboard in Resources */,
 				28BC397826DF7EAC00FB3803 /* Raleway-Regular.ttf in Resources */,
@@ -528,6 +566,7 @@
 				281835A426E3CA0D0038E826 /* ArticleTableViewCell.swift in Sources */,
 				28BC395F26DF7B3F00FB3803 /* Popups.swift in Sources */,
 				28BC396B26DF7D2000FB3803 /* UIColor.swift in Sources */,
+				4A09D9E326EB1D34000F573E /* ProgressCollectionViewCell.swift in Sources */,
 				28BC396D26DF7D2D00FB3803 /* UIImage.swift in Sources */,
 				28BC396126DF7BD000FB3803 /* UIViewController.swift in Sources */,
 				28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */,
@@ -549,6 +588,7 @@
 				28E5B42626EA2E6D004FECF8 /* PlanGenerationViewController.swift in Sources */,
 				28E5B42226EA2B2C004FECF8 /* StartViewController.swift in Sources */,
 				28BC396726DF7D0000FB3803 /* UITableView.swift in Sources */,
+				4A09D9EB26EB2B65000F573E /* ProgressTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
