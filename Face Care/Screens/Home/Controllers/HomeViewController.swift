@@ -35,6 +35,9 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var chinExercisesTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var cheeksExercisesTableViewHeightConstraint: NSLayoutConstraint!
     
+    // Page Control
+    @IBOutlet weak var dots: UIPageControl!
+    
     // MARK: - Variables
     
     var eyesExercisesTableViewHeight: CGFloat {
@@ -199,6 +202,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch collectionView {
             
         case dailyTrainingsCollectionView:
+            dots.numberOfPages = 7
             return 7
         case exclusiveTrainingsCollectionView:
             return 6
@@ -304,6 +308,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return .zero
         }
         
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dots.currentPage = Int(((dailyTrainingsCollectionView.contentOffset.x+40) / dailyTrainingsCollectionView.frame.width).rounded(.toNearestOrAwayFromZero))
     }
     
 }

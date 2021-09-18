@@ -30,6 +30,11 @@ class OnboardingViewController: BaseViewController {
     
     // Image Views
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var firstButtonCheckmarkImage: UIImageView!
+    @IBOutlet weak var secondButtonCheckmarkImage: UIImageView!
+    @IBOutlet weak var thirdButtonCheckmarkImage: UIImageView!
+    @IBOutlet weak var fourthButtonCheckmarkImage: UIImageView!
+    @IBOutlet weak var fifthButtonCheckmarkImage: UIImageView!
     
     // Constraints
     @IBOutlet weak var currentProgressViewWidthConstraint: NSLayoutConstraint!
@@ -38,6 +43,12 @@ class OnboardingViewController: BaseViewController {
     
     var currentProgress = 1
     var screenWidth = UIScreen.main.bounds.width
+    
+    var firstButtonClicked = false
+    var secondButtonCliked = false
+    var thirdButtonClicked = false
+    var fourthButtonClicked = false
+    var fifthButtonClicked = false
     
     // MARK: - Awake functions
     
@@ -115,17 +126,20 @@ class OnboardingViewController: BaseViewController {
         mainImageView.isHidden = true
         stackView.isHidden = false
         mainLabel.text = "Какой у тебя тип кожи?"
+        
         firstButton.setTitle("Нормальная", for: .normal)
         secondButton.setTitle("Комбинированная", for: .normal)
         thirdButton.setTitle("Жирная", for: .normal)
         fourthButton.setTitle("Сухая", for: .normal)
         fifthButton.isHidden = true
+        
         self.view.layoutIfNeeded()
     }
     
     func setupFourthView() {
         continueButton.isHidden = false
         mainLabel.text = "На какой области лица ты хотел(а) бы сосредоточится?"
+        
         firstButton.setTitle("Глаза", for: .normal)
         secondButton.setTitle("Лоб", for: .normal)
         thirdButton.setTitle("Шея", for: .normal)
@@ -137,11 +151,17 @@ class OnboardingViewController: BaseViewController {
     func setupFifthView() {
         continueButton.isHidden = true
         mainLabel.text = "Заметны ли морщинки на лице когда ты улыбаешься или смеёшься?"
+        
         firstButton.setTitle("Нет", for: .normal)
         secondButton.setTitle("Да, но только в области глаз", for: .normal)
         thirdButton.setTitle("Да", for: .normal)
         fourthButton.isHidden = true
         fifthButton.isHidden = true
+        
+        // Deselect
+        deselectButton(button: firstButton)
+        deselectButton(button: secondButton)
+        deselectButton(button: thirdButton)
     }
     
     func setupSixView() {
@@ -150,6 +170,7 @@ class OnboardingViewController: BaseViewController {
     
     func setupSevenView() {
         mainLabel.text = "Сколько часов обычно длится твой сон?"
+        
         firstButton.setTitle("Меньше 7 часов", for: .normal)
         secondButton.setTitle("7-8 часов", for: .normal)
         thirdButton.setTitle("Больше 8 часов", for: .normal)
@@ -174,6 +195,19 @@ class OnboardingViewController: BaseViewController {
         textField.keyboardType = .numberPad
     }
     
+    func deselectButton(button: UIButton) {
+        button.backgroundColor = UIColor.white
+        button.layer.borderColor = UIColor.FCDarkCharcoal.cgColor
+        button.setTitleColor(UIColor.FCDarkCharcoal, for: .normal)
+    }
+    
+    func selectButton(button: UIButton) {
+        button.backgroundColor = UIColor.FCIris
+        button.layer.borderColor = UIColor.FCIris.cgColor
+        button.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    
     // MARK: - @IBActions
     
     @IBAction func yesButtonClicked(_ sender: Any) {
@@ -188,33 +222,53 @@ class OnboardingViewController: BaseViewController {
         resetViews()
     }
     
+    // First button
     @IBAction func firstButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
+        } else {
+            firstButtonClicked ? deselectButton(button: firstButton) : selectButton(button: firstButton)
+            firstButtonClicked = !firstButtonClicked
         }
     }
     
+    // Second button
     @IBAction func secondButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
+        } else {
+            secondButtonCliked ? deselectButton(button: secondButton) : selectButton(button: secondButton)
+            secondButtonCliked = !secondButtonCliked
         }
     }
     
+    // Third button
     @IBAction func thirdButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
+        } else {
+            thirdButtonClicked ? deselectButton(button: thirdButton) : selectButton(button: thirdButton)
+            thirdButtonClicked = !thirdButtonClicked
         }
     }
     
+    // Fourth button
     @IBAction func fourthButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
+        } else {
+            fourthButtonClicked ? deselectButton(button: fourthButton) : selectButton(button: fourthButton)
+            fourthButtonClicked = !fourthButtonClicked
         }
     }
     
+    // Fifth button
     @IBAction func fifthButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
+        } else {
+            fifthButtonClicked ? deselectButton(button: fifthButton) : selectButton(button: fifthButton)
+            fifthButtonClicked = !fifthButtonClicked
         }
     }
     

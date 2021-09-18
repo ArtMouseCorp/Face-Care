@@ -42,11 +42,10 @@ class StartViewController: BaseViewController {
     
     // MARK: - @IBActions
     
-    
     @IBAction func startButtonPressed(_ sender: Any) {
         let onboarding = OnboardingViewController.load(from: Screen.onboarding)
         onboarding.modalPresentationStyle = .fullScreen
-        self.present(onboarding, animated: true)
+        self.present(onboarding, animated: false)
     }
 }
 

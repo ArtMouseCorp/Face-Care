@@ -12,6 +12,7 @@ public enum Screen: String, StoryboardScreen {
     case tabBar             = "TabBarController"
     
     // Onboarding
+    case load               = "LoadingViewController"
     case start              = "StartViewController"
     case onboarding         = "OnboardingViewController"
     case planGeneration     = "PlanGenerationViewController"
@@ -46,7 +47,8 @@ extension Screen {
             return .Main
             
             // Onboarding
-        case .start,
+        case .load,
+             .start,
              .onboarding,
              .photoOffer,
              .planGeneration:

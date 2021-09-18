@@ -60,6 +60,7 @@
 		28E5B42626EA2E6D004FECF8 /* PlanGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */; };
 		28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42726EA71EA004FECF8 /* UIImageView.swift */; };
 		28E5B42A26EA831F004FECF8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */; };
+		4A08974F26F5E8E600C19345 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A08974E26F5E8E600C19345 /* LoadingViewController.swift */; };
 		4A09D9E326EB1D34000F573E /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09D9E126EB1D34000F573E /* ProgressCollectionViewCell.swift */; };
 		4A09D9E426EB1D34000F573E /* ProgressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A09D9E226EB1D34000F573E /* ProgressCollectionViewCell.xib */; };
 		4A09D9EB26EB2B65000F573E /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A09D9E926EB2B65000F573E /* ProgressTableViewCell.swift */; };
@@ -70,6 +71,7 @@
 		4A0EC25A26EBE25300F48A0C /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25926EBE25300F48A0C /* ExercisesViewController.swift */; };
 		4A0EC25C26EBE82800F48A0C /* ExercisePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25B26EBE82800F48A0C /* ExercisePopupViewController.swift */; };
 		4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */; };
+		4ADACA3226F55F8700ADBFD2 /* onboarding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,7 @@
 		28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGenerationViewController.swift; sourceTree = "<group>"; };
 		28E5B42726EA71EA004FECF8 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		4A08974E26F5E8E600C19345 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		4A09D9E126EB1D34000F573E /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A09D9E226EB1D34000F573E /* ProgressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCollectionViewCell.xib; sourceTree = "<group>"; };
 		4A09D9E926EB2B65000F573E /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 		4A0EC25926EBE25300F48A0C /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
 		4A0EC25B26EBE82800F48A0C /* ExercisePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePopupViewController.swift; sourceTree = "<group>"; };
 		4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfferViewController.swift; sourceTree = "<group>"; };
+		4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboarding.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +408,7 @@
 		28BC396E26DF7D5B00FB3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */,
 				28BC396F26DF7D6500FB3803 /* Fonts */,
 			);
 			path = Resources;
@@ -445,6 +450,7 @@
 				28E5B42526EA2E6D004FECF8 /* PlanGenerationViewController.swift */,
 				28E5B42926EA831F004FECF8 /* OnboardingViewController.swift */,
 				4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */,
+				4A08974E26F5E8E600C19345 /* LoadingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				28BC392826DF69EE00FB3803 /* Main.storyboard in Resources */,
 				28E5B41F26EA29C0004FECF8 /* Onboarding.storyboard in Resources */,
 				28BC394126DF6B9500FB3803 /* Home.storyboard in Resources */,
+				4ADACA3226F55F8700ADBFD2 /* onboarding.mp4 in Resources */,
 				28BC397926DF7EAC00FB3803 /* Raleway-Light.ttf in Resources */,
 				28BC397A26DF7EAC00FB3803 /* Raleway-Medium.ttf in Resources */,
 				28BC397B26DF7EAC00FB3803 /* Raleway-Bold.ttf in Resources */,
@@ -609,6 +616,7 @@
 				28E5B42426EA2C2C004FECF8 /* FCButton.swift in Sources */,
 				28BC395626DF79CA00FB3803 /* BaseViewController.swift in Sources */,
 				2888400726E788910002292E /* ExerciseTableViewCell.swift in Sources */,
+				4A08974F26F5E8E600C19345 /* LoadingViewController.swift in Sources */,
 				2888400326E788780002292E /* ExclusiveTrainingCollectionViewCell.swift in Sources */,
 				28BC392326DF69EE00FB3803 /* SceneDelegate.swift in Sources */,
 				28BC394A26DF77DD00FB3803 /* HomeViewController.swift in Sources */,
