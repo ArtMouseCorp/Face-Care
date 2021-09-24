@@ -24,8 +24,8 @@ extension UIView {
         self.layer.borderColor = color.cgColor
     }
     
-    func addTapGesture(action: Selector) {
-        let tapGesture = UITapGestureRecognizer(target: self.parentContainerViewController(), action: action)
+    func addTapGesture(target: Any, action: Selector) {
+        let tapGesture = UITapGestureRecognizer(target: target, action: action)
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(tapGesture)
     }

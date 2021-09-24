@@ -1,12 +1,15 @@
 import UIKit
+import MessageUI
 
-class SettingsViewController: UIViewController {
-
+class SettingsViewController: BaseViewController, MFMailComposeViewControllerDelegate {
+    
     // MARK: - @IBOutlets
     
-    // MARK: - Variables
-    
     // Views
+    @IBOutlet weak var languageButtonView: UIView!
+    @IBOutlet weak var contactButtonView: UIView!
+    @IBOutlet weak var renewSubscriptionButtonView: UIView!
+    
     // Labels
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
@@ -15,16 +18,27 @@ class SettingsViewController: UIViewController {
     
     // Buttons
     
+    // Image Views
+    @IBOutlet weak var languageChevronImageView: UIImageView!
+    
+    // Stack Views
+    @IBOutlet weak var settingsStackView: UIStackView!
+    
     // Table Views
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var languageTableView: UITableView!
     
     // Constraints
-    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var languageTableViewHeightConstraint: NSLayoutConstraint!
+    
+    // MARK: - Variables
+    
+    private var languagesIsShown: Bool = false
     
     // MARK: - Awake functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.configure(languageTableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,13 +50,58 @@ class SettingsViewController: UIViewController {
     
     private func configureUI() {
         
+        languageChevronImageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+        
+        languageTableViewHeightConstraint.constant = 0
+        languageTableView.isHidden = true
+        languageTableView.alpha = 0
     }
     
     private func setupGestures() {
-        
+        languageButtonView.addTapGesture(target: self, action: #selector(languageButtonViewTapped))
+        contactButtonView.addTapGesture(target: self, action: #selector(contactButtonViewTapped))
+        renewSubscriptionButtonView.addTapGesture(target: self, action: #selector(renewSubscriptionButtonViewTapped))
+    }
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
     
     // MARK: - Gesture actions
+    
+    @objc private func languageButtonViewTapped() {
+        
+        languageChevronImageView.transform = languagesIsShown ? CGAffineTransform(rotationAngle: CGFloat.pi / 2) : CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        
+        UIView.animate(withDuration: 0.2) {
+            
+            self.languageTableView.isHidden = self.languagesIsShown
+            self.languageTableViewHeightConstraint.constant = self.languagesIsShown ? 0 : self.languageTableView.contentHeight
+            self.languageTableView.alpha = self.languagesIsShown ? 0 : 1
+            self.settingsStackView.layoutIfNeeded()
+        } completion: { _ in
+            self.languagesIsShown = !self.languagesIsShown
+        }
+        
+    }
+    
+    @objc private func contactButtonViewTapped() {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["artmousedev@gmail.com"])
+            mail.setSubject("Face Care Contact")
+            mail.setMessageBody("", isHTML: true)
+            
+            present(mail, animated: true)
+        }
+    }
+    
+    @objc private func renewSubscriptionButtonViewTapped() {
+        // TODO:  - Restore user's subscription
+    }
     
     // MARK: - @IBActions
     
@@ -51,6 +110,31 @@ class SettingsViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Language.languages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.language.id, for: indexPath) as! LanguageTableViewCell
+        
+        let index = Language.languages.firstIndex { $0.code == State.languageCode }
+        
+        cell.configure(with: Language.languages[indexPath.row], selected: indexPath.row == index)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        State.languageCode = Language.languages[indexPath.row].code
+        tableView.reloadData()
+        
+    }
+}
 /*
  //           _._
  //        .-'   `

@@ -80,6 +80,7 @@ class HomeViewController: BaseViewController {
         super.configure(neckExercisesTableView, with: .exercise)
         super.configure(chinExercisesTableView, with: .exercise)
         super.configure(cheeksExercisesTableView, with: .exercise)
+        State.tabBarController = self.tabBarController! as! TabBarController
     }
     
     override func viewDidLayoutSubviews() {
@@ -187,8 +188,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let exerciseVC = ExercisesViewController.load(from: Screen.exercises)
-        self.navigationController?.pushViewController(exerciseVC, animated: true)
+//        let trainingVC = TrainingViewController.load(from: Screen.training)
+//        trainingVC.modalPresentationStyle = .fullScreen
+//        self.present(trainingVC, animated: true)
     }
     
 }
@@ -242,14 +244,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case dailyTrainingsCollectionView:
             
-            let exerciseVC = ExercisesViewController.load(from: Screen.exercises)
-            self.navigationController?.pushViewController(exerciseVC, animated: true)
+            let trainingVC = TrainingViewController.load(from: Screen.training)
+//            trainingVC.modalPresentationStyle = .fullScreen
+//            self.present(trainingVC, animated: true)
+            self.navigationController?.pushViewController(trainingVC, animated: true)
+            self.navigationController?.hidesBottomBarWhenPushed = true
             
         case exclusiveTrainingsCollectionView:
-            
-            () // TODO: - Open exclusive training
-            let exerciseVC = ExercisesViewController.load(from: Screen.exercises)
-            self.navigationController?.pushViewController(exerciseVC, animated: true)
+
+            let trainingVC = TrainingViewController.load(from: Screen.training)
+            trainingVC.modalPresentationStyle = .fullScreen
+            self.present(trainingVC, animated: true)
             
         default:
             break
@@ -311,7 +316,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        dots.currentPage = Int(((dailyTrainingsCollectionView.contentOffset.x+40) / dailyTrainingsCollectionView.frame.width).rounded(.toNearestOrAwayFromZero))
+        dots.currentPage = Int(((dailyTrainingsCollectionView.contentOffset.x + 40) / dailyTrainingsCollectionView.frame.width).rounded(.toNearestOrAwayFromZero))
     }
     
 }

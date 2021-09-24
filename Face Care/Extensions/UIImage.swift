@@ -34,6 +34,18 @@ extension UIImage {
     
     public static let FCUser: UIImage               = UIImage(named: "FC User")             ?? UIImage()
     
+    
+    internal enum Flags {
+        
+        public static let fr: UIImage               = UIImage(named: "france") ?? UIImage()
+        public static let de: UIImage               = UIImage(named: "germany") ?? UIImage()
+        public static let ru: UIImage               = UIImage(named: "russia") ?? UIImage()
+        public static let uk: UIImage               = UIImage(named: "united-kingdom") ?? UIImage()
+        public static let it: UIImage               = UIImage(named: "italy") ?? UIImage()
+        public static let es: UIImage               = UIImage(named: "spain") ?? UIImage()
+        
+    }
+    
 }
 
 /*

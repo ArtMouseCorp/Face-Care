@@ -168,7 +168,7 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     private func setupGestures() {
-        continueButtonView.addTapGesture(action: #selector(continueTapped))
+        continueButtonView.addTapGesture(target: self, action: #selector(continueTapped))
     }
     
     // MARK: - Gesture actions

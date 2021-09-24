@@ -34,10 +34,8 @@ class StartViewController: BaseViewController {
     private func configureUI() {
         startButton.configure(as: .filled)
         
-        subtitleLabel.setLineHeight(lineHeight: 2)
+        subtitleLabelHeightConstraint.constant = subtitleLabel.contentHeight(lineSpacing: 2)
         subtitleLabel.textAlignment = .center
-        subtitleLabel.sizeToFit()
-        subtitleLabelHeightConstraint.constant = subtitleLabel.frame.height
     }
     
     // MARK: - @IBActions

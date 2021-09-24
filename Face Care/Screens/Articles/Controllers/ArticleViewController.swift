@@ -47,9 +47,7 @@ class ArticleViewController: BaseViewController {
         articleTextLabel.text = article.text
         
         // Labels
-        articleTextLabel.setLineHeight(lineHeight: 4)
-        articleTextLabel.sizeToFit()
-        articleTextLabelHeightConstraint.constant = articleTextLabel.frame.height
+        articleTextLabelHeightConstraint.constant = articleTextLabel.contentHeight(lineSpacing: 4)
         
     }
     

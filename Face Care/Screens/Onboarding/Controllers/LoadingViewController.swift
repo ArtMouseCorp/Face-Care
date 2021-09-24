@@ -1,6 +1,6 @@
 import UIKit
 
-class LoadingViewController: UIViewController {
+class LoadingViewController: BaseViewController {
 
     // MARK: - @IBOutlets
     

@@ -27,8 +27,8 @@ class BasePopupViewController: UIViewController, PanModalPresentable {
     // MARK: - Custom functions
     
     func setPopupHeight(short shortForm: CGFloat, long longForm: CGFloat) {
-        shortFormHeight = .contentHeight(shortForm)
-        longFormHeight = .contentHeight(longForm)
+        shortFormHeight = .contentHeight(shortForm + safeAreaBottomInset)
+        longFormHeight = .contentHeight(longForm + safeAreaBottomInset)
     }
     
     func setPopupHeight(_ height: CGFloat) {

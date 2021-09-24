@@ -6,6 +6,7 @@ public enum Cell: String {
     case dailyTraining      = "DailyTrainingCollectionViewCell"
     case exclusiveTraining  = "ExclusiveTrainingCollectionViewCell"
     case exercise           = "ExerciseTableViewCell"
+    case language           = "LanguageTableViewCell"
     
     // Progress
     case progressImages     = "ProgressCollectionViewCell"

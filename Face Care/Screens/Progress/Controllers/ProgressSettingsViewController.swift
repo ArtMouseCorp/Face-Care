@@ -1,6 +1,6 @@
 import UIKit
 
-class ProgressSettingsViewController: UIViewController {
+class ProgressSettingsViewController: BaseViewController {
 
     // MARK: - @IBOutlets
     

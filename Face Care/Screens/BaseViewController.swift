@@ -16,6 +16,14 @@ class BaseViewController: UIViewController {
     
     // MARK: - Custom functions
     
+    func showTabBar(_ show: Bool = true) {
+        self.tabBarController?.tabBar.isHidden = !show
+    }
+    
+    func hideTabBar() {
+        showTabBar(false)
+    }
+    
     func configure(_ tableView: UITableView, with cells: Cell...) {
         tableView.delegate = self as? UITableViewDelegate
         tableView.dataSource = self as? UITableViewDataSource

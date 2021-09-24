@@ -3,13 +3,10 @@ import UIKit
 public enum Popup: String, StoryboardScreen {
     
     // Main
-    case mainPopup  = "MainPopup"
-    case exercises  = "ExercisePopupViewController"
+    case exerciseInfo   = "ExerciseInfoPopup"
     
     // Progress
-    case image      = "ImagePopup"
-
-    // Articles
+    case image          = "ImagePopup"
     
 }
 
@@ -22,22 +19,16 @@ extension Popup {
     public var location: Storyboard {
         switch self {
             
-            // Main
-        case .mainPopup:
-            return .Main
-            
             // Home
-        case .exercises:
+        case .exerciseInfo:
             return .Home
         
             // Progress
         case .image:
             return .Progress
             
-            // Articles
-            
-            
         }
+        
     }
     
     public var storyboard: UIStoryboard {
