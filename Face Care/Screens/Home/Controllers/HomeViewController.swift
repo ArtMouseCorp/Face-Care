@@ -245,8 +245,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case dailyTrainingsCollectionView:
             
             let trainingVC = TrainingViewController.load(from: Screen.training)
-//            trainingVC.modalPresentationStyle = .fullScreen
-//            self.present(trainingVC, animated: true)
+            trainingVC.endExerciseCompletion = {
+                let endExerciseVC = ExerciseEndedViewController.load(from: Screen.exerciseEnded)
+                self.navigationController?.pushViewController(endExerciseVC, animated: true)
+            }
             self.navigationController?.pushViewController(trainingVC, animated: true)
             self.navigationController?.hidesBottomBarWhenPushed = true
             

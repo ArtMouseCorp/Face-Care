@@ -79,6 +79,8 @@
 		4A0EC25726EBD68F00F48A0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */; };
 		4A0EC25A26EBE25300F48A0C /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25926EBE25300F48A0C /* ExerciseViewController.swift */; };
 		4A0EC25C26EBE82800F48A0C /* ExerciseInfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25B26EBE82800F48A0C /* ExerciseInfoPopup.swift */; };
+		4AA4A6A826FE4A2E009CF859 /* example-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */; };
+		4AA4A6AA26FF5F95009CF859 /* ExerciseEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A926FF5F95009CF859 /* ExerciseEndedViewController.swift */; };
 		4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */; };
 		4ADACA3226F55F8700ADBFD2 /* onboarding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */; };
 /* End PBXBuildFile section */
@@ -156,6 +158,8 @@
 		4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4A0EC25926EBE25300F48A0C /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		4A0EC25B26EBE82800F48A0C /* ExerciseInfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoPopup.swift; sourceTree = "<group>"; };
+		4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "example-video.mp4"; sourceTree = "<group>"; };
+		4AA4A6A926FF5F95009CF859 /* ExerciseEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEndedViewController.swift; sourceTree = "<group>"; };
 		4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfferViewController.swift; sourceTree = "<group>"; };
 		4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboarding.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -348,6 +352,7 @@
 				4A0EC25926EBE25300F48A0C /* ExerciseViewController.swift */,
 				28F3152926FDF56800409FE9 /* ExerciseLoadingViewController.swift */,
 				28F3152C26FDFBBC00409FE9 /* TrainingViewController.swift */,
+				4AA4A6A926FF5F95009CF859 /* ExerciseEndedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 		28BC396E26DF7D5B00FB3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */,
 				4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */,
 				28BC396F26DF7D6500FB3803 /* Fonts */,
 				2813BA0326F9D3A9006C8B84 /* Exercises */,
@@ -625,6 +631,7 @@
 				28BC397B26DF7EAC00FB3803 /* Raleway-Bold.ttf in Resources */,
 				28BC394526DF77AF00FB3803 /* Articles.storyboard in Resources */,
 				2888400826E788910002292E /* ExerciseTableViewCell.xib in Resources */,
+				4AA4A6A826FE4A2E009CF859 /* example-video.mp4 in Resources */,
 				2888400026E7885B0002292E /* DailyTrainingCollectionViewCell.xib in Resources */,
 				28BC397726DF7EAC00FB3803 /* Raleway-SemiBold.ttf in Resources */,
 			);
@@ -669,6 +676,7 @@
 				28883FFF26E7885B0002292E /* DailyTrainingCollectionViewCell.swift in Sources */,
 				4A0EC25526EBD07500F48A0C /* ProgressSettingsViewController.swift in Sources */,
 				28BC397D26DF7EF400FB3803 /* BasePopupViewController.swift in Sources */,
+				4AA4A6AA26FF5F95009CF859 /* ExerciseEndedViewController.swift in Sources */,
 				28E5B42426EA2C2C004FECF8 /* FCButton.swift in Sources */,
 				28BC395626DF79CA00FB3803 /* BaseViewController.swift in Sources */,
 				2888400726E788910002292E /* ExerciseTableViewCell.swift in Sources */,

@@ -19,6 +19,9 @@ class ExerciseInfoPopup: BasePopupViewController {
     // MARK: - Variables
     
     var popupHeight: CGFloat = 24 + 32 + 24 + 0 + 24 // without descriptionLabel height
+    var onCloseCompletion: ((_ currentItem: Int)->()) = {_  in }
+    var currentItem = 0
+    var exercisePack: [Exercise] = []
     
     // MARK: - Awake functions
     
@@ -33,6 +36,12 @@ class ExerciseInfoPopup: BasePopupViewController {
     // MARK: - Custom functions
     
     private func configureUI() {
+        
+        titleLabel.text = exercisePack[currentItem].name
+        descriptionLabel.text = exercisePack[currentItem].description
+        
+        checkChevrons()
+        
         descriptionLabelHeightConstraint.constant = descriptionLabel.contentHeight(lineSpacing: 4)
         super.setPopupHeight(popupHeight + descriptionLabelHeightConstraint.constant)
         super.panModalSetNeedsLayoutUpdate()
@@ -40,14 +49,25 @@ class ExerciseInfoPopup: BasePopupViewController {
         nextButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
     
+    private func checkChevrons() {
+        prevButton.isHidden = currentItem == 0
+        nextButton.isHidden = currentItem == exercisePack.count - 1
+    }
+    
+    override func panModalDidDismiss() {
+        onCloseCompletion(currentItem)
+    }
+    
     // MARK: - @IBActions
     
     @IBAction func prevButtonPressed(_ sender: Any) {
-        // TODO: - Open previous exercise
+        currentItem -= 1
+        configureUI()
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        // TODO: - Open next exercise
+        currentItem += 1
+        configureUI()
     }
     
 }
