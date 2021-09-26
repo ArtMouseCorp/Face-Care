@@ -1,9 +1,10 @@
 import UIKit
+import AVFoundation
 
 class BaseViewController: UIViewController {
 
     // MARK: - Variables
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
     }
@@ -40,7 +41,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func showPhotoDeniedAlert() {
+    private func showPhotoDeniedAlert() {
         let deniedAlert = UIAlertController(title: "Упс..", message: "Вы запретили программе использовать камеру, но вы можете разрешить использование камеры в настройках", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { UIAlertAction in }
@@ -62,15 +63,70 @@ class BaseViewController: UIViewController {
         present(deniedAlert, animated: true, completion: nil)
     }
     
-    func showPhotoRestrictedAlert() {
+    private func showPhotoRestrictedAlert() {
         let restrictedAlert = UIAlertController(title: "Упс..", message: "Похоже что доступ к вашей камере ограничен", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Ок", style: .cancel) { UIAlertAction in }
         restrictedAlert.addAction(cancelAction)
         present(restrictedAlert, animated: true, completion: nil)
     }
     
+    private func setupCaptureSession() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            return
+        }
+        let CameraViewController = UIImagePickerController()
+        CameraViewController.sourceType = .camera
+        CameraViewController.cameraDevice = .front
+        CameraViewController.delegate = self
+        self.present(CameraViewController, animated: true)
+    }
+    
+    func takePhoto() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            DispatchQueue.main.async {
+                self.setupCaptureSession()
+            }
+            
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    DispatchQueue.main.async {
+                        self.setupCaptureSession()
+                    }
+                }
+            }
+            
+        case .denied:
+            self.showPhotoDeniedAlert()
+            
+        case .restricted:
+            self.showPhotoRestrictedAlert()
+            return
+            
+        @unknown default:
+            return
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+}
+
+extension BaseViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        let newImage = ProgressImage(context: context)
+        newImage.image = image
+        
+        do {
+            try context.save()
+        } catch {}
     }
 }
 

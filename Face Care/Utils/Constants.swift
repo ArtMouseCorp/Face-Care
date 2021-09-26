@@ -4,6 +4,7 @@ let userDefaults = UserDefaults.standard
 
 enum UDKeys {
     static let appLaunchCount: String = "appLaunchCount"
+    static let problemAreas: String = "problemAreas"
 }
 
 public var safeAreaBottomInset: CGFloat {

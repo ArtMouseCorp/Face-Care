@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -48,7 +48,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой прогресс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-iF-pmB">
-                                                        <rect key="frame" x="127.5" y="24" width="159.5" height="28"/>
+                                                        <rect key="frame" x="125" y="24" width="164.5" height="28"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="wuA-fY-MGp"/>
                                                         </constraints>
@@ -66,7 +66,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Галерея прогресса" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-Mv-ikz">
-                                                        <rect key="frame" x="99" y="130" width="216.5" height="28"/>
+                                                        <rect key="frame" x="95" y="130" width="224" height="28"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="dB7-0A-8D3"/>
                                                         </constraints>
@@ -101,7 +101,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ежедневная цель" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mks-wj-JTV">
-                                                        <rect key="frame" x="108" y="350" width="198.5" height="28"/>
+                                                        <rect key="frame" x="105" y="350" width="204" height="28"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="Yfj-v9-ouy"/>
                                                         </constraints>
@@ -200,40 +200,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-iV-wcU">
-                                <rect key="frame" x="16" y="231" width="382" height="434"/>
+                                <rect key="frame" x="16" y="222" width="382" height="452"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeW-Fq-eLB">
-                                        <rect key="frame" x="26" y="26" width="330" height="382"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="BV5-qL-6vV">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="382"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B99-Ad-s6h">
-                                                <rect key="frame" x="285" y="12" width="33" height="33"/>
-                                                <color key="tintColor" name="FC White"/>
-                                                <state key="normal" image="FC Close"/>
-                                                <connections>
-                                                    <action selector="closeButtonPressed:" destination="qTv-9C-imp" eventType="touchUpInside" id="KfC-bG-vVv"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="BV5-qL-6vV">
+                                        <rect key="frame" x="26" y="26" width="330" height="400"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="BV5-qL-6vV" secondAttribute="bottom" id="8cN-TU-GAR"/>
-                                            <constraint firstItem="B99-Ad-s6h" firstAttribute="trailing" secondItem="BV5-qL-6vV" secondAttribute="trailing" constant="-12" id="HCi-Hs-9BM"/>
-                                            <constraint firstItem="B99-Ad-s6h" firstAttribute="top" secondItem="BV5-qL-6vV" secondAttribute="top" constant="12" id="LtJ-ZX-Yc5"/>
-                                            <constraint firstItem="BV5-qL-6vV" firstAttribute="top" secondItem="xeW-Fq-eLB" secondAttribute="top" id="SyG-sO-Yzs"/>
-                                            <constraint firstItem="BV5-qL-6vV" firstAttribute="leading" secondItem="xeW-Fq-eLB" secondAttribute="leading" id="oe7-GA-dUt"/>
-                                            <constraint firstAttribute="trailing" secondItem="BV5-qL-6vV" secondAttribute="trailing" id="syy-NF-Yt8"/>
+                                            <constraint firstAttribute="width" secondItem="BV5-qL-6vV" secondAttribute="height" multiplier="165:200" id="EvM-TL-UZU"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B99-Ad-s6h">
+                                        <rect key="frame" x="307" y="42" width="33" height="33"/>
+                                        <color key="tintColor" name="FC White"/>
+                                        <state key="normal" image="FC Close"/>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="qTv-9C-imp" eventType="touchUpInside" id="KfC-bG-vVv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="xeW-Fq-eLB" firstAttribute="top" secondItem="Oxr-iV-wcU" secondAttribute="top" constant="26" id="7HD-MI-9Mj"/>
-                                    <constraint firstAttribute="trailing" secondItem="xeW-Fq-eLB" secondAttribute="trailing" constant="26" id="OiZ-80-ICK"/>
-                                    <constraint firstAttribute="bottom" secondItem="xeW-Fq-eLB" secondAttribute="bottom" constant="26" id="dTw-pf-4C1"/>
-                                    <constraint firstItem="xeW-Fq-eLB" firstAttribute="leading" secondItem="Oxr-iV-wcU" secondAttribute="leading" constant="26" id="u2h-rv-neo"/>
+                                    <constraint firstItem="BV5-qL-6vV" firstAttribute="top" secondItem="Oxr-iV-wcU" secondAttribute="top" constant="26" id="2wh-oY-XuS"/>
+                                    <constraint firstItem="BV5-qL-6vV" firstAttribute="leading" secondItem="Oxr-iV-wcU" secondAttribute="leading" constant="26" id="G7X-9r-GZz"/>
+                                    <constraint firstAttribute="trailing" secondItem="BV5-qL-6vV" secondAttribute="trailing" constant="26" id="Nte-Ua-Qp0"/>
+                                    <constraint firstItem="B99-Ad-s6h" firstAttribute="top" secondItem="BV5-qL-6vV" secondAttribute="top" constant="16" id="T4a-Gi-iC2"/>
+                                    <constraint firstAttribute="bottom" secondItem="BV5-qL-6vV" secondAttribute="bottom" constant="26" id="glv-5e-OxI"/>
+                                    <constraint firstItem="B99-Ad-s6h" firstAttribute="trailing" secondItem="BV5-qL-6vV" secondAttribute="trailing" constant="-16" id="lTl-XT-yvL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -246,7 +237,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundView" destination="xeW-Fq-eLB" id="Vv5-k6-ZOx"/>
                         <outlet property="imageView" destination="BV5-qL-6vV" id="Mai-NT-aeY"/>
                         <outlet property="mainView" destination="Oxr-iV-wcU" id="te8-rl-zaH"/>
                     </connections>
@@ -273,7 +263,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="626.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки прогресса" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fly-gg-Mbi">
-                                                        <rect key="frame" x="84" y="24" width="246" height="28"/>
+                                                        <rect key="frame" x="80" y="24" width="254.5" height="28"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="pH8-SM-WGK"/>
                                                         </constraints>
@@ -308,7 +298,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-M9-rQ0">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="aGh-2I-4HB">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Empty Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="aGh-2I-4HB">
                                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="32" id="Kxv-OA-PI3"/>
@@ -316,7 +306,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Глаза" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3d-SR-y5n">
-                                                                        <rect key="frame" x="44" y="5.5" width="54" height="21"/>
+                                                                        <rect key="frame" x="44" y="5.5" width="53" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="CnB-cl-Gg4"/>
                                                                         </constraints>
@@ -337,7 +327,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iP-Ar-Ema">
                                                                 <rect key="frame" x="0.0" y="56" width="382" height="32"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="Bpi-fe-rl4">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Empty Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="Bpi-fe-rl4">
                                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="32" id="png-cu-rhF"/>
@@ -345,7 +335,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лоб" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBV-tW-dNN">
-                                                                        <rect key="frame" x="44" y="5.5" width="37" height="21"/>
+                                                                        <rect key="frame" x="44" y="5.5" width="39" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="HGt-I1-acO"/>
                                                                         </constraints>
@@ -366,7 +356,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hjd-So-hVk">
                                                                 <rect key="frame" x="0.0" y="112" width="382" height="32"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="zTh-2R-mhI">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Empty Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="zTh-2R-mhI">
                                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="32" id="7CX-ym-dBy"/>
@@ -374,7 +364,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шея" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ich-A9-Cff">
-                                                                        <rect key="frame" x="44" y="5.5" width="42" height="21"/>
+                                                                        <rect key="frame" x="44" y="5.5" width="41.5" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="QgW-Ld-a7t"/>
                                                                         </constraints>
@@ -395,7 +385,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzR-Yy-kgA">
                                                                 <rect key="frame" x="0.0" y="168" width="382" height="32"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="177-Ik-shO">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Empty Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="177-Ik-shO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="32" id="YjM-kZ-djD"/>
@@ -403,7 +393,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подбородок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnm-Tk-j2O">
-                                                                        <rect key="frame" x="44" y="5.5" width="118" height="21"/>
+                                                                        <rect key="frame" x="44" y="5.5" width="120" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="sAL-rX-Kr9"/>
                                                                         </constraints>
@@ -424,7 +414,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89b-RW-r9I">
                                                                 <rect key="frame" x="0.0" y="224" width="382" height="32"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Checked Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="EF7-He-5Tv">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Empty Checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="EF7-He-5Tv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="32" id="CIM-vY-qq7"/>
@@ -523,8 +513,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cheecksView" destination="89b-RW-r9I" id="MNE-QT-JAr"/>
+                        <outlet property="cheecksViewCheckmark" destination="EF7-He-5Tv" id="zk7-yv-L0m"/>
+                        <outlet property="chinView" destination="RzR-Yy-kgA" id="ncU-6u-1gk"/>
+                        <outlet property="chinViewCheckmark" destination="177-Ik-shO" id="owS-co-vTv"/>
+                        <outlet property="eyesView" destination="ICj-M9-rQ0" id="5D1-Tn-6zi"/>
+                        <outlet property="eyesViewCheckmark" destination="aGh-2I-4HB" id="N29-WK-6bv"/>
+                        <outlet property="foreheadView" destination="5iP-Ar-Ema" id="Xfq-zS-Mlh"/>
+                        <outlet property="foreheadViewCheckmark" destination="Bpi-fe-rl4" id="GzA-z7-7rv"/>
                         <outlet property="mainLabel" destination="fly-gg-Mbi" id="feH-W8-Q9h"/>
                         <outlet property="mainView" destination="S6v-cF-eWx" id="mgQ-bF-ZAf"/>
+                        <outlet property="neckView" destination="Hjd-So-hVk" id="khI-nd-tpw"/>
+                        <outlet property="neckViewCheckmark" destination="zTh-2R-mhI" id="LVB-G1-CmQ"/>
                         <outlet property="resetProgressButton" destination="L0V-wi-08I" id="wdP-UD-rHs"/>
                     </connections>
                 </viewController>
@@ -534,8 +534,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FC Checked Checkbox" width="24" height="24"/>
         <image name="FC Close" width="33" height="33"/>
+        <image name="FC Empty Checkbox" width="24" height="24"/>
         <image name="FC Left Chevron" width="32" height="32"/>
         <image name="FC Slider" width="32" height="32"/>
         <image name="image" width="321" height="382"/>

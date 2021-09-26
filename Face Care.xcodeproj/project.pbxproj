@@ -83,6 +83,9 @@
 		4AA4A6AA26FF5F95009CF859 /* ExerciseEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A926FF5F95009CF859 /* ExerciseEndedViewController.swift */; };
 		4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */; };
 		4ADACA3226F55F8700ADBFD2 /* onboarding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */; };
+		789D2553270110FE006B634E /* FaceCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 789D2551270110FE006B634E /* FaceCare.xcdatamodeld */; };
+		789D255727011608006B634E /* ProgressImage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789D255527011608006B634E /* ProgressImage+CoreDataClass.swift */; };
+		789D255827011608006B634E /* ProgressImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789D255627011608006B634E /* ProgressImage+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +165,9 @@
 		4AA4A6A926FF5F95009CF859 /* ExerciseEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEndedViewController.swift; sourceTree = "<group>"; };
 		4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfferViewController.swift; sourceTree = "<group>"; };
 		4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboarding.mp4; sourceTree = "<group>"; };
+		789D2552270110FE006B634E /* FaceCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaceCare.xcdatamodel; sourceTree = "<group>"; };
+		789D255527011608006B634E /* ProgressImage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressImage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		789D255627011608006B634E /* ProgressImage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +278,7 @@
 				28BC395326DF787400FB3803 /* Extensions */,
 				28BC395026DF786700FB3803 /* Localization */,
 				28BC395126DF786E00FB3803 /* Model */,
+				789D255427011188006B634E /* Core Data */,
 				28BC396E26DF7D5B00FB3803 /* Resources */,
 				28BC393726DF6A2B00FB3803 /* Screens */,
 				28BC395226DF787100FB3803 /* Utils */,
@@ -547,6 +554,16 @@
 			path = Popups;
 			sourceTree = "<group>";
 		};
+		789D255427011188006B634E /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				789D255527011608006B634E /* ProgressImage+CoreDataClass.swift */,
+				789D255627011608006B634E /* ProgressImage+CoreDataProperties.swift */,
+				789D2551270110FE006B634E /* FaceCare.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -656,6 +673,7 @@
 				4A0EC25C26EBE82800F48A0C /* ExerciseInfoPopup.swift in Sources */,
 				28BC394C26DF77EB00FB3803 /* ProgressViewController.swift in Sources */,
 				28BC398626DF807E00FB3803 /* UIFont.swift in Sources */,
+				789D255827011608006B634E /* ProgressImage+CoreDataProperties.swift in Sources */,
 				28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */,
 				2818359C26E3A56F0038E826 /* TabBarController.swift in Sources */,
 				281835A426E3CA0D0038E826 /* ArticleTableViewCell.swift in Sources */,
@@ -667,11 +685,13 @@
 				28BC396126DF7BD000FB3803 /* UIViewController.swift in Sources */,
 				28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */,
 				28F3152826FDEAF400409FE9 /* Onboarding.swift in Sources */,
+				789D2553270110FE006B634E /* FaceCare.xcdatamodeld in Sources */,
 				28BC394E26DF77FD00FB3803 /* ArticlesViewController.swift in Sources */,
 				2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */,
 				4A0EC25326EBC4E800F48A0C /* ImagePopup.swift in Sources */,
 				2813BA0226F9D0AC006C8B84 /* Exercise.swift in Sources */,
 				4A0EC25726EBD68F00F48A0C /* SettingsViewController.swift in Sources */,
+				789D255727011608006B634E /* ProgressImage+CoreDataClass.swift in Sources */,
 				28BC395B26DF7A7300FB3803 /* Screens.swift in Sources */,
 				28883FFF26E7885B0002292E /* DailyTrainingCollectionViewCell.swift in Sources */,
 				4A0EC25526EBD07500F48A0C /* ProgressSettingsViewController.swift in Sources */,
@@ -954,6 +974,19 @@
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		789D2551270110FE006B634E /* FaceCare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				789D2552270110FE006B634E /* FaceCare.xcdatamodel */,
+			);
+			currentVersion = 789D2552270110FE006B634E /* FaceCare.xcdatamodel */;
+			path = FaceCare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 28BC391526DF69EE00FB3803 /* Project object */;
 }

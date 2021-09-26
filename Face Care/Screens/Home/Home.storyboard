@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bL6-vy-nuf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bL6-vy-nuf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -91,7 +91,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рекоммендуется на сегодня" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8L-ye-Znb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="202.5" height="56.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56.5" id="EIJ-S1-ugI"/>
@@ -127,7 +127,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="J2X-L3-0we">
-                                                <rect key="frame" x="146.5" y="584.5" width="121.5" height="12"/>
+                                                <rect key="frame" x="129.5" y="584.5" width="155.5" height="12"/>
                                                 <color key="tintColor" name="FC Iris"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="9ec-7M-3pd"/>
@@ -389,7 +389,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тренировка завершена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvg-jo-OOF">
-                                        <rect key="frame" x="75" y="24" width="264" height="29"/>
+                                        <rect key="frame" x="70.5" y="24" width="273" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="O9x-Mr-a8y"/>
                                         </constraints>
@@ -473,7 +473,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-WE-j2a">
-                                        <rect key="frame" x="146" y="14" width="122.5" height="28"/>
+                                        <rect key="frame" x="144" y="14" width="126.5" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Pm4-Fl-Kfd"/>
                                         </constraints>
@@ -513,7 +513,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Язык" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVN-9z-KZl">
-                                                                <rect key="frame" x="50" y="9.5" width="43.5" height="21"/>
+                                                                <rect key="frame" x="50" y="9.5" width="41.5" height="21.5"/>
                                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                                 <color key="textColor" name="FC Dark Charcoal"/>
                                                                 <nil key="highlightedColor"/>
@@ -546,7 +546,7 @@
                                                         </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LanguageTableViewCell" rowHeight="52" id="hNz-T5-whb" customClass="LanguageTableViewCell" customModule="Face_Care" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="24.5" width="414" height="52"/>
+                                                                <rect key="frame" x="0.0" y="44.5" width="414" height="52"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hNz-T5-whb" id="Hjk-Sx-mrz">
                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
@@ -560,7 +560,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUd-fm-y7S">
-                                                                            <rect key="frame" x="66" y="15.5" width="296" height="21"/>
+                                                                            <rect key="frame" x="66" y="15.5" width="296" height="21.5"/>
                                                                             <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                                             <color key="textColor" name="FC Dark Charcoal"/>
                                                                             <nil key="highlightedColor"/>
@@ -604,7 +604,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Связаться с нами" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4d-JM-4SV">
-                                                                <rect key="frame" x="50" y="9.5" width="150.5" height="21"/>
+                                                                <rect key="frame" x="50" y="9.5" width="148.5" height="21.5"/>
                                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                                 <color key="textColor" name="FC Dark Charcoal"/>
                                                                 <nil key="highlightedColor"/>
@@ -640,7 +640,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обновить подписку" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30N-Wg-8ps">
-                                                                <rect key="frame" x="50" y="9.5" width="166.5" height="21"/>
+                                                                <rect key="frame" x="50" y="9.5" width="169.5" height="21.5"/>
                                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                                 <color key="textColor" name="FC Dark Charcoal"/>
                                                                 <nil key="highlightedColor"/>
@@ -792,7 +792,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVB-8K-XYh">
-                                        <rect key="frame" x="120.5" y="102" width="173.5" height="56"/>
+                                        <rect key="frame" x="118.5" y="102" width="177" height="56.5"/>
                                         <string key="text">Упражнение 1:
 Подтяжка лица</string>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
@@ -879,7 +879,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Упражнения для лица" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UeQ-9I-9Bc">
-                                        <rect key="frame" x="59.5" y="2" width="247.5" height="28"/>
+                                        <rect key="frame" x="56" y="2" width="254.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="24"/>
                                         <color key="textColor" name="FC Dark Charcoal"/>
                                         <nil key="highlightedColor"/>
@@ -964,7 +964,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Упражнения для лица" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpc-S4-SsO">
-                                        <rect key="frame" x="83.5" y="24" width="247.5" height="29"/>
+                                        <rect key="frame" x="80" y="24" width="254.5" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="VBL-A8-M6G"/>
                                         </constraints>
@@ -973,7 +973,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-a6-EHm">
-                                        <rect key="frame" x="164" y="65" width="86" height="24"/>
+                                        <rect key="frame" x="163.5" y="65" width="87" height="24"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC Timer" translatesAutoresizingMaskIntoConstraints="NO" id="h76-c1-OpF">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -983,7 +983,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 минут" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1b-fr-fEH">
-                                                <rect key="frame" x="28" y="0.0" width="58" height="24"/>
+                                                <rect key="frame" x="28" y="0.0" width="59" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="2ag-yC-Y1J"/>
                                                 </constraints>
@@ -1068,18 +1068,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="eCf-wK-Ey6">
-                                <rect key="frame" x="16" y="371.5" width="382" height="153"/>
+                                <rect key="frame" x="16" y="413.5" width="382" height="69"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-bV-5xs">
-                                        <rect key="frame" x="61" y="0.0" width="260.5" height="84"/>
-                                        <string key="text">Упражнение 1:
-Подтяжка лица</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-bV-5xs">
+                                        <rect key="frame" x="191" y="0.0" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="36"/>
                                         <color key="textColor" name="FC White"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="IP3-Pz-1Gc">
-                                        <rect key="frame" x="172.5" y="116" width="37" height="37"/>
+                                        <rect key="frame" x="172.5" y="32" width="37" height="37"/>
                                         <color key="color" name="FC White"/>
                                     </activityIndicatorView>
                                 </subviews>

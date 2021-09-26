@@ -15,6 +15,11 @@ class PhotoOfferViewController: BaseViewController {
     @IBOutlet weak var outlineTitleLabel: UILabel!
     @IBOutlet weak var outlineViewLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    
+    @IBOutlet weak var bottomFirstLabel: UILabel!
+    @IBOutlet weak var bottomSecondLabel: UILabel!
+    @IBOutlet weak var bottomThirdLabel: UILabel!
+    
 
     // Image Views
     @IBOutlet weak var faceImage: UIImageView!
@@ -41,7 +46,7 @@ class PhotoOfferViewController: BaseViewController {
     
     // Other
     var isSubviewed = false
-    var isToggleOn = true
+    var isToggleOn: Bool = false
     var page = 0
     
     // MARK: - Awake functions
@@ -65,6 +70,9 @@ class PhotoOfferViewController: BaseViewController {
         configureButtons()
         configureDotViews(firstToHide: 2, secondToHide: 4)
         configureOutlineView()
+        
+        toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
+        isToggleOn = false
         
         commentLabel.isHidden = true
         starStackView.isHidden = true
@@ -145,8 +153,8 @@ class PhotoOfferViewController: BaseViewController {
             commentLabel.isHidden = false
             starStackView.isHidden = false
             configureDotViews(firstToHide: 0, secondToHide: 4)
-            toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
-            isToggleOn = true
+            toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
+            isToggleOn = false
             break
         // Third Page
         case 1:
@@ -157,6 +165,10 @@ class PhotoOfferViewController: BaseViewController {
             outlineTitleLabel.isHidden = false
             outlineTitleLabel.text = "3 дня бесплатно,"
             outlineViewLabel.text = "потом 5 290 ₽/год"
+            
+            bottomFirstLabel.text = "Информация о плане"
+            bottomSecondLabel.text = "Правила пользования"
+            bottomThirdLabel.text = "Политика конфиденциальности"
             break
         default:
             let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
@@ -174,7 +186,11 @@ class PhotoOfferViewController: BaseViewController {
     // MARK: - Gesture actions
     
     @objc func continueTapped() {
-        configureNextPage()
+        if page == 0 && isToggleOn {
+            takePhoto()
+        } else {
+            configureNextPage()
+        }
     }
         
     // MARK: - @IBActions
@@ -190,6 +206,27 @@ class PhotoOfferViewController: BaseViewController {
         self.present(planGenerationVC, animated: false, completion: nil)
     }
     
+}
+
+extension PhotoOfferViewController {
+    override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.originalImage] as? UIImage else {
+            configureNextPage()
+            return
+        }
+        let newImage = ProgressImage(context: context)
+        newImage.image = image
+        
+        do {
+            try context.save()
+        } catch {}
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.configureNextPage()
+        }
+    }
 }
 
 /*

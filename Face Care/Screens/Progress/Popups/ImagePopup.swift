@@ -6,12 +6,14 @@ class ImagePopup: UIViewController {
     
     // Views
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var backgroundView: UIView!
-    
-    // Buttons
-    
+        
     // Image Views
     @IBOutlet weak var imageView: UIImageView!
+    
+    // MARK: - Variables
+    
+    var mainImage: UIImage?
+    var onPopupClose: (()->()) = {}
     
     // MARK: - Awake functions
     
@@ -21,29 +23,23 @@ class ImagePopup: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         configureUI()
-        setupGestures()
+        imageView.image = mainImage ?? UIImage(named: "image")
     }
     
     // MARK: - Custom functions
     
     private func configureUI() {
         mainView.layer.cornerRadius = 28
-        backgroundView.layer.cornerRadius = 28
-        backgroundView.backgroundColor = UIColor(red: 218/255, green: 212/255, blue: 226/255, alpha: 1)
         imageView.layer.cornerRadius = 28
     }
-    
-    private func setupGestures() {
-        
-    }
-    
-    // MARK: - Gesture actions
     
     // MARK: - @IBActions
     
     @IBAction func closeButtonPressed(_ sender: Any) {
+        onPopupClose()
         self.view.removeFromSuperview()
     }
+    
 }
 
 /*

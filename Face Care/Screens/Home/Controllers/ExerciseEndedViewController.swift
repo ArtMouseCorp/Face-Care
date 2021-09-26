@@ -39,62 +39,16 @@ class ExerciseEndedViewController: BaseViewController {
         makePhotoButton.backgroundColor = UIColor(red: 161/255, green: 83/255, blue: 148/255, alpha: 1)
     }
     
-    private func setupCaptureSession() {
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            return
-        }
-        let CameraViewController = UIImagePickerController()
-        CameraViewController.sourceType = .camera
-        CameraViewController.cameraDevice = .front
-        CameraViewController.delegate = self
-        self.present(CameraViewController, animated: true)
-    }
-    
     // MARK: - @IBActions
     
     @IBAction func makePhotoButtonPressed(_ sender: Any) {
-        
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-            self.setupCaptureSession()
-            
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                if granted {
-                    self.setupCaptureSession()
-                }
-            }
-            
-        case .denied:
-            super.showPhotoDeniedAlert()
-            
-        case .restricted:
-            super.showPhotoRestrictedAlert()
-            return
-            
-        @unknown default:
-            return
-        }
-        
+        super.takePhoto()
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
-}
-
-extension ExerciseEndedViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true)
-
-        guard let image = info[.originalImage] as? UIImage else {
-            return
-        }
-
-        // print out the image size as a test
-        print(image.size)
-    }
 }
 
 /*

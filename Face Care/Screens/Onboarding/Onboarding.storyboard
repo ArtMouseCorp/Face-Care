@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZAh-wn-d9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZAh-wn-d9b">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -400,7 +400,7 @@
                                         <rect key="frame" x="16" y="813.5" width="382" height="28.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6W-I3-0Ky">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="28.5"/>
                                                 <string key="text">Чистая 
 кожа</string>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
@@ -408,7 +408,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZZ-sE-ICr">
-                                                <rect key="frame" x="127.5" y="0.0" width="127" height="28.5"/>
+                                                <rect key="frame" x="119" y="0.0" width="86" height="28.5"/>
                                                 <string key="text">Здоровый цвет
 лица</string>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
@@ -416,7 +416,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiV-rp-lcq">
-                                                <rect key="frame" x="254.5" y="0.0" width="127.5" height="28.5"/>
+                                                <rect key="frame" x="281" y="0.0" width="101" height="28.5"/>
                                                 <string key="text">Заряд энергии на
 целый день</string>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="12"/>
@@ -652,6 +652,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomFirstLabel" destination="l6W-I3-0Ky" id="BZ2-dQ-fum"/>
+                        <outlet property="bottomSecondLabel" destination="TZZ-sE-ICr" id="y8z-bP-yp2"/>
+                        <outlet property="bottomThirdLabel" destination="yiV-rp-lcq" id="8lh-fY-62S"/>
                         <outlet property="closeButton" destination="xpu-Rv-RdK" id="RoG-L3-MKe"/>
                         <outlet property="commentLabel" destination="C5M-2H-40I" id="DZH-NE-Xmj"/>
                         <outlet property="continueButtonView" destination="Rjh-QS-BxU" id="ZVg-DM-f4z"/>
@@ -737,7 +740,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Анализ проблемных зон" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-F8-0nW">
-                                                <rect key="frame" x="0.0" y="0.0" width="186" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                                 <color key="textColor" name="FC Dark Charcoal"/>
                                                 <nil key="highlightedColor"/>

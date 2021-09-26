@@ -43,6 +43,7 @@ class OnboardingViewController: BaseViewController {
     
     var currentProgress = 1
     var screenWidth = UIScreen.main.bounds.width
+    var problemAreaArray: [Int] = []
     
     var firstButtonClicked = false
     var secondButtonCliked = false
@@ -99,6 +100,7 @@ class OnboardingViewController: BaseViewController {
         case 4:
             setupFourthView()
         case 5:
+            userDefaults.set(problemAreaArray, forKey: UDKeys.problemAreas)
             setupFifthView()
         case 6:
             setupSixView()
@@ -207,6 +209,12 @@ class OnboardingViewController: BaseViewController {
         button.setTitleColor(UIColor.white, for: .normal)
     }
     
+    func removeFromArray(element: Int) {
+        if let index = problemAreaArray.firstIndex(of: element) {
+            problemAreaArray.remove(at: index)
+        }
+    }
+    
     
     // MARK: - @IBActions
     
@@ -226,8 +234,16 @@ class OnboardingViewController: BaseViewController {
     @IBAction func firstButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
-        } else {
-            firstButtonClicked ? deselectButton(button: firstButton) : selectButton(button: firstButton)
+        }
+        else {
+            if firstButtonClicked {
+                deselectButton(button: firstButton)
+                removeFromArray(element: 0)
+            }
+            else {
+                selectButton(button: firstButton)
+                problemAreaArray.append(0)
+            }
             firstButtonClicked = !firstButtonClicked
         }
     }
@@ -236,8 +252,16 @@ class OnboardingViewController: BaseViewController {
     @IBAction func secondButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
-        } else {
-            secondButtonCliked ? deselectButton(button: secondButton) : selectButton(button: secondButton)
+        }
+        else {
+            if secondButtonCliked {
+                deselectButton(button: secondButton)
+                removeFromArray(element: 1)
+            }
+            else {
+                selectButton(button: secondButton)
+                problemAreaArray.append(1)
+            }
             secondButtonCliked = !secondButtonCliked
         }
     }
@@ -246,8 +270,16 @@ class OnboardingViewController: BaseViewController {
     @IBAction func thirdButtonPressed(_ sender: Any) {
         if currentProgress != 4 {
             resetViews()
-        } else {
-            thirdButtonClicked ? deselectButton(button: thirdButton) : selectButton(button: thirdButton)
+        }
+        else {
+            if thirdButtonClicked {
+                deselectButton(button: thirdButton)
+                removeFromArray(element: 2)
+            }
+            else {
+                selectButton(button: thirdButton)
+                problemAreaArray.append(2)
+            }
             thirdButtonClicked = !thirdButtonClicked
         }
     }
@@ -257,7 +289,14 @@ class OnboardingViewController: BaseViewController {
         if currentProgress != 4 {
             resetViews()
         } else {
-            fourthButtonClicked ? deselectButton(button: fourthButton) : selectButton(button: fourthButton)
+            if fourthButtonClicked {
+                deselectButton(button: fourthButton)
+                removeFromArray(element: 3)
+            }
+            else {
+                selectButton(button: fourthButton)
+                problemAreaArray.append(3)
+            }
             fourthButtonClicked = !fourthButtonClicked
         }
     }
@@ -267,7 +306,14 @@ class OnboardingViewController: BaseViewController {
         if currentProgress != 4 {
             resetViews()
         } else {
-            fifthButtonClicked ? deselectButton(button: fifthButton) : selectButton(button: fifthButton)
+            if fifthButtonClicked {
+                deselectButton(button: fifthButton)
+                removeFromArray(element: 4)
+            }
+            else {
+                selectButton(button: fifthButton)
+                problemAreaArray.append(4)
+            }
             fifthButtonClicked = !fifthButtonClicked
         }
     }

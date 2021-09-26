@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class ProgressViewController: BaseViewController {
 
@@ -29,9 +30,14 @@ class ProgressViewController: BaseViewController {
     
     // MARK: - Variables
     
-    let collectionViewData = [
+    var collectionViewData: [ProgressImage]?
+    
+    let collectionViewFakeData = [
         "FC Add Photo", "progress-demo-1", "progress-demo-2", "progress-demo-1", "progress-demo-2"
     ]
+    
+    
+    
     let tableViewData = [
         [
             "title": "Глаза",
@@ -71,6 +77,7 @@ class ProgressViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         configureUI()
+        fetchImages()
     }
     
     // MARK: - Custom functions
@@ -79,6 +86,16 @@ class ProgressViewController: BaseViewController {
         mainView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         corneredView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         tableViewHeightConstraint.constant = tableViewHeight
+    }
+    
+    func fetchImages() {
+        do {
+            self.collectionViewData = try super.context.fetch(ProgressImage.fetchRequest())
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        catch { }
     }
     
     // MARK: - @IBActions
@@ -99,12 +116,16 @@ class ProgressViewController: BaseViewController {
 extension ProgressViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionViewData.count
+        return (self.collectionViewData?.count ?? 0) + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.progressImages.id, for: indexPath) as! ProgressCollectionViewCell
-        cell.mainImageView.image = UIImage(named: collectionViewData[indexPath.row])
+        if indexPath.row == 0 {
+            cell.mainImageView.image = UIImage(named: "FC Add Photo")
+        } else {
+            cell.mainImageView.image = self.collectionViewData?[indexPath.row - 1].image
+        }
         return cell
     }
     
@@ -125,18 +146,29 @@ extension ProgressViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: - Show popup
-        let popup = ImagePopup.load(from: Popup.image)
-        self.addChild(popup)
-        popup.view.frame = self.view.frame
-        UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
-            self.view.addSubview(popup.view)
-        }, completion: nil)
+        
+        if indexPath.row == 0 {
+            super.takePhoto()
+        } else {
+            self.tabBarController?.tabBar.isHidden = true
+            let cell = collectionView.cellForItem(at: indexPath) as! ProgressCollectionViewCell
+            
+            let popup = ImagePopup.load(from: Popup.image)
+            popup.mainImage = cell.mainImageView.image
+            self.addChild(popup)
+            popup.view.frame = self.view.frame
+            popup.onPopupClose = {
+                self.tabBarController?.tabBar.isHidden = false
+            }
+            UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+                self.view.addSubview(popup.view)
+            }, completion: nil)
+        }
     }
     
 }
 
-// MARK: Table View extensions
+// MARK: - Table View extensions
 
 extension ProgressViewController: UITableViewDelegate, UITableViewDataSource {
     
