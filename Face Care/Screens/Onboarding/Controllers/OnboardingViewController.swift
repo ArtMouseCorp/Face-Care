@@ -43,7 +43,6 @@ class OnboardingViewController: BaseViewController {
     
     var currentProgress = 1
     var screenWidth = UIScreen.main.bounds.width
-    var problemAreaArray: [Int] = []
     
     var firstButtonClicked = false
     var secondButtonCliked = false
@@ -100,7 +99,6 @@ class OnboardingViewController: BaseViewController {
         case 4:
             setupFourthView()
         case 5:
-            userDefaults.set(problemAreaArray, forKey: UDKeys.problemAreas)
             setupFifthView()
         case 6:
             setupSixView()
@@ -209,12 +207,6 @@ class OnboardingViewController: BaseViewController {
         button.setTitleColor(UIColor.white, for: .normal)
     }
     
-    func removeFromArray(element: Int) {
-        if let index = problemAreaArray.firstIndex(of: element) {
-            problemAreaArray.remove(at: index)
-        }
-    }
-    
     
     // MARK: - @IBActions
     
@@ -238,11 +230,11 @@ class OnboardingViewController: BaseViewController {
         else {
             if firstButtonClicked {
                 deselectButton(button: firstButton)
-                removeFromArray(element: 0)
+                State.shared.removeProblemArea(0)
             }
             else {
                 selectButton(button: firstButton)
-                problemAreaArray.append(0)
+                State.shared.addProblemArea(0)
             }
             firstButtonClicked = !firstButtonClicked
         }
@@ -256,11 +248,11 @@ class OnboardingViewController: BaseViewController {
         else {
             if secondButtonCliked {
                 deselectButton(button: secondButton)
-                removeFromArray(element: 1)
+                State.shared.removeProblemArea(1)
             }
             else {
                 selectButton(button: secondButton)
-                problemAreaArray.append(1)
+                State.shared.addProblemArea(1)
             }
             secondButtonCliked = !secondButtonCliked
         }
@@ -274,11 +266,11 @@ class OnboardingViewController: BaseViewController {
         else {
             if thirdButtonClicked {
                 deselectButton(button: thirdButton)
-                removeFromArray(element: 2)
+                State.shared.removeProblemArea(2)
             }
             else {
                 selectButton(button: thirdButton)
-                problemAreaArray.append(2)
+                State.shared.addProblemArea(2)
             }
             thirdButtonClicked = !thirdButtonClicked
         }
@@ -291,11 +283,11 @@ class OnboardingViewController: BaseViewController {
         } else {
             if fourthButtonClicked {
                 deselectButton(button: fourthButton)
-                removeFromArray(element: 3)
+                State.shared.removeProblemArea(3)
             }
             else {
                 selectButton(button: fourthButton)
-                problemAreaArray.append(3)
+                State.shared.addProblemArea(3)
             }
             fourthButtonClicked = !fourthButtonClicked
         }
@@ -308,11 +300,11 @@ class OnboardingViewController: BaseViewController {
         } else {
             if fifthButtonClicked {
                 deselectButton(button: fifthButton)
-                removeFromArray(element: 4)
+                State.shared.removeProblemArea(4)
             }
             else {
                 selectButton(button: fifthButton)
-                problemAreaArray.append(4)
+                State.shared.addProblemArea(4)
             }
             fifthButtonClicked = !fifthButtonClicked
         }

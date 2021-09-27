@@ -82,6 +82,8 @@
 		4AA4A6A826FE4A2E009CF859 /* example-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */; };
 		4AA4A6AA26FF5F95009CF859 /* ExerciseEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A926FF5F95009CF859 /* ExerciseEndedViewController.swift */; };
 		4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */; };
+		4AC75F2E2702231E00FB5E6D /* articles_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AC75F2D2702231E00FB5E6D /* articles_ru.json */; };
+		4AC75F3127022B7A00FB5E6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AC75F3327022B7A00FB5E6D /* Localizable.strings */; };
 		4ADACA3226F55F8700ADBFD2 /* onboarding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */; };
 		789D2553270110FE006B634E /* FaceCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 789D2551270110FE006B634E /* FaceCare.xcdatamodeld */; };
 		789D255727011608006B634E /* ProgressImage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789D255527011608006B634E /* ProgressImage+CoreDataClass.swift */; };
@@ -164,6 +166,8 @@
 		4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "example-video.mp4"; sourceTree = "<group>"; };
 		4AA4A6A926FF5F95009CF859 /* ExerciseEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEndedViewController.swift; sourceTree = "<group>"; };
 		4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfferViewController.swift; sourceTree = "<group>"; };
+		4AC75F2D2702231E00FB5E6D /* articles_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles_ru.json; sourceTree = "<group>"; };
+		4AC75F3427022B9F00FB5E6D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboarding.mp4; sourceTree = "<group>"; };
 		789D2552270110FE006B634E /* FaceCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaceCare.xcdatamodel; sourceTree = "<group>"; };
 		789D255527011608006B634E /* ProgressImage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressImage+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -293,8 +297,8 @@
 				28BC395526DF79CA00FB3803 /* BaseViewController.swift */,
 				28BC397C26DF7EF400FB3803 /* BasePopupViewController.swift */,
 				28BC393E26DF6B3F00FB3803 /* Launch Screen */,
-				28E5B41D26EA29AB004FECF8 /* Onboarding */,
 				28BC393B26DF6B1D00FB3803 /* Main */,
+				28E5B41D26EA29AB004FECF8 /* Onboarding */,
 				28BC393F26DF6B8500FB3803 /* Home */,
 				28BC393C26DF6B2600FB3803 /* Progress */,
 				28BC393D26DF6B3700FB3803 /* Articles */,
@@ -395,6 +399,7 @@
 		28BC395026DF786700FB3803 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				4AC75F3327022B7A00FB5E6D /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 		28BC396E26DF7D5B00FB3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AC75F2C2702228900FB5E6D /* Articles */,
 				4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */,
 				4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */,
 				28BC396F26DF7D6500FB3803 /* Fonts */,
@@ -554,6 +560,14 @@
 			path = Popups;
 			sourceTree = "<group>";
 		};
+		4AC75F2C2702228900FB5E6D /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				4AC75F2D2702231E00FB5E6D /* articles_ru.json */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
 		789D255427011188006B634E /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +624,11 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				de,
+				es,
+				it,
+				fr,
 			);
 			mainGroup = 28BC391426DF69EE00FB3803;
 			packageReferences = (
@@ -632,9 +651,11 @@
 			files = (
 				2888400426E788780002292E /* ExclusiveTrainingCollectionViewCell.xib in Resources */,
 				28BC392D26DF69F200FB3803 /* LaunchScreen.storyboard in Resources */,
+				4AC75F3127022B7A00FB5E6D /* Localizable.strings in Resources */,
 				2813BA0526F9D3A9006C8B84 /* Categories_ru.json in Resources */,
 				4A09D9EC26EB2B65000F573E /* ProgressTableViewCell.xib in Resources */,
 				4A09D9E426EB1D34000F573E /* ProgressCollectionViewCell.xib in Resources */,
+				4AC75F2E2702231E00FB5E6D /* articles_ru.json in Resources */,
 				28BC392A26DF69F200FB3803 /* Assets.xcassets in Resources */,
 				28BC394326DF779A00FB3803 /* Progress.storyboard in Resources */,
 				28BC397826DF7EAC00FB3803 /* Raleway-Regular.ttf in Resources */,
@@ -739,6 +760,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		4AC75F3327022B7A00FB5E6D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AC75F3427022B9F00FB5E6D /* ru */,
+			);
+			name = Localizable.strings;
+			path = "Face Care/Resources/Articles";
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -746,6 +776,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -807,6 +838,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

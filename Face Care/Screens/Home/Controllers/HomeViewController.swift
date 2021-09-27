@@ -80,7 +80,7 @@ class HomeViewController: BaseViewController {
         super.configure(neckExercisesTableView, with: .exercise)
         super.configure(chinExercisesTableView, with: .exercise)
         super.configure(cheeksExercisesTableView, with: .exercise)
-        State.tabBarController = self.tabBarController! as! TabBarController
+        State.shared.tabBarController = self.tabBarController! as! TabBarController
     }
     
     override func viewDidLayoutSubviews() {

@@ -19,12 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        if State.isFirstLaunch() {
-            window.rootViewController = LoadingViewController.load(from: Screen.load)
-        } else {
-            window.rootViewController = TabBarController.load(from: Screen.tabBar)
-        }
-        
+        window.rootViewController = LoadingViewController.load(from: Screen.load)
+    
         self.window = window
         window.makeKeyAndVisible()
         

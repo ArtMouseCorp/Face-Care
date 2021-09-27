@@ -29,11 +29,6 @@ struct Language {
             default: self = .en
             }
             
-            let currentIndex = languages.firstIndex(where: { language in
-                return language.code == self
-            })
-            
-            languages.swapAt(0, currentIndex ?? 0)
         }
         
     }

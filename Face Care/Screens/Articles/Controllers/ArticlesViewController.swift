@@ -36,13 +36,13 @@ class ArticlesViewController: BaseViewController {
 extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Article.articles.count
+        return Article.all.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.article.id, for: indexPath) as! ArticleTableViewCell
          
-        let article = Article.articles[indexPath.row]
+        let article = Article.all[indexPath.row]
         
         if indexPath.row == 0 {
             cell.cellTopConstraint.constant = 26
@@ -54,7 +54,7 @@ extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = Article.articles[indexPath.row]
+        let article = Article.all[indexPath.row]
         let articleVC = ArticleViewController.load(from: Screen.article)
         articleVC.article = article
         self.navigationController?.pushViewController(articleVC, animated: true)

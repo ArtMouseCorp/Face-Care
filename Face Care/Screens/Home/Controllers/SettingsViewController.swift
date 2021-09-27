@@ -121,7 +121,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.language.id, for: indexPath) as! LanguageTableViewCell
         
-        let index = Language.languages.firstIndex { $0.code == State.languageCode }
+        let index = Language.languages.firstIndex { $0.code == State.shared.getLanguage() }
         
         cell.configure(with: Language.languages[indexPath.row], selected: indexPath.row == index)
         
@@ -130,7 +130,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        State.languageCode = Language.languages[indexPath.row].code
+        State.shared.setLanguage(to: Language.languages[indexPath.row].code)
         tableView.reloadData()
         
     }
