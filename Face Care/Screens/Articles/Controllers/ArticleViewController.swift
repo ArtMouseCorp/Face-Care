@@ -1,7 +1,7 @@
 import UIKit
 
 class ArticleViewController: BaseViewController {
-
+    
     // MARK: - @IBOutlets
     
     // Views
@@ -44,12 +44,64 @@ class ArticleViewController: BaseViewController {
         
         articleTitleLabel.text = article.title
         articleImageView.image = UIImage(named: article.image)
-        articleTextLabel.text = article.text
+        styledArticleText()
+        
+        let gradient = CAGradientLayer()
+        
+        gradient.frame = self.articleImageView.frame
+        
+        gradient.colors = [
+            UIColor.FCBlack.withAlphaComponent(0).cgColor,
+            UIColor.FCBlack.withAlphaComponent(0.5).cgColor
+        ]
+        gradient.locations = [0.5, 1]
+        
+        self.articleImageView.layer.addSublayer(gradient)
         
         // Labels
-        articleTextLabelHeightConstraint.constant = articleTextLabel.contentHeight(lineSpacing: 4)
+        DispatchQueue.main.async {
+            self.articleTextLabelHeightConstraint.constant = self.articleTextLabel.contentHeight(lineSpacing: 4)
+        }
         
     }
+    
+    private func styledArticleText() {
+        
+        var text = article.text
+        var titles: [String] = []
+        
+        while let title = text.slice(from: "<t>", to: "</t>") {
+            
+            titles.append(title)
+            print(title)
+            
+            let openRange = text.range(of: "<t>")!
+            
+            text = text
+                .replacingOccurrences(of: "<t>", with: "\n\n", range: openRange)
+            
+        }
+        
+        text = text
+            .replacingOccurrences(of: "<t>", with: "\n\n")
+            .replacingOccurrences(of: "</t>", with: "\n\n")
+        
+        let attributedString = NSMutableAttributedString(string: text)
+        
+        titles.forEach { title in
+         
+            let range = text.range(of: title)!
+            let convertedRange = NSRange(range, in: text)
+            attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.ralewayFont(ofSize: 16, weight: .bold), range: convertedRange)
+            
+        }
+        
+        print(attributedString)
+        self.articleTextLabel.attributedText = attributedString
+        
+    }
+    
+    
     
     // MARK: - @IBActions
     

@@ -1,7 +1,7 @@
 import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
-
+    
     // MARK: - @IBOutlets
     
     // Views
@@ -12,7 +12,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     // Image Views
     @IBOutlet weak var articleImageView: UIImageView!
-
+    
     // Constraints
     @IBOutlet weak var cellTopConstraint: NSLayoutConstraint!
     
@@ -25,11 +25,31 @@ class ArticleTableViewCell: UITableViewCell {
         configureUI()
     }
     
+    override func prepareForReuse() {
+        articleImageView.image = UIImage()
+    }
+    
     // MARK: - Custom functions
     
     private func configureUI() {
         cellBackgroundView.roundCorners(radius: 16, corners: .allCorners)
         cellBackgroundView.clipsToBounds = true
+        
+        DispatchQueue.main.async {
+            
+            let gradient = CAGradientLayer()
+            
+            gradient.frame = self.articleImageView.frame
+            
+            gradient.colors = [
+                UIColor.FCBlack.withAlphaComponent(0).cgColor,
+                UIColor.FCBlack.withAlphaComponent(0.5).cgColor
+            ]
+            gradient.locations = [0.5, 1]
+            
+            self.articleImageView.layer.addSublayer(gradient)
+        }
+        
     }
     
     public func initialize(title: String, image: UIImage?) {

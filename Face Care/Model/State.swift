@@ -3,6 +3,7 @@ import Foundation
 class State {
     
     // MARK: - Variables
+    
     public static var shared: State = State()
     
     private var appLaunch: Int = 0

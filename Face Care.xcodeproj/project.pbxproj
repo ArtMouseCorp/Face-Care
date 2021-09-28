@@ -27,6 +27,8 @@
 		2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */; };
 		2888400D26E7B0F60002292E /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400C26E7B0F60002292E /* PanModal */; };
 		2888401026E7B1190002292E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400F26E7B1190002292E /* IQKeyboardManagerSwift */; };
+		28991C60270329140087760E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28991C5F270329140087760E /* String.swift */; };
+		28991C62270331A50087760E /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28991C61270331A50087760E /* NSMutableAttributedString.swift */; };
 		28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392026DF69EE00FB3803 /* AppDelegate.swift */; };
 		28BC392326DF69EE00FB3803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392226DF69EE00FB3803 /* SceneDelegate.swift */; };
 		28BC392826DF69EE00FB3803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BC392626DF69EE00FB3803 /* Main.storyboard */; };
@@ -109,6 +111,8 @@
 		2888400526E788910002292E /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		2888400626E788910002292E /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
 		2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
+		28991C5F270329140087760E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		28991C61270331A50087760E /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		28BC391D26DF69EE00FB3803 /* Face Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BC392026DF69EE00FB3803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28BC392226DF69EE00FB3803 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -436,8 +440,10 @@
 				28BC396626DF7D0000FB3803 /* UITableView.swift */,
 				28BC396826DF7D0E00FB3803 /* UICollectionView.swift */,
 				28BC396A26DF7D2000FB3803 /* UIColor.swift */,
+				28991C5F270329140087760E /* String.swift */,
 				28BC396C26DF7D2D00FB3803 /* UIImage.swift */,
 				28BC398526DF807E00FB3803 /* UIFont.swift */,
+				28991C61270331A50087760E /* NSMutableAttributedString.swift */,
 				281835A726E3E08A0038E826 /* UILabel.swift */,
 				28E5B42726EA71EA004FECF8 /* UIImageView.swift */,
 			);
@@ -682,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28991C60270329140087760E /* String.swift in Sources */,
 				28BC396926DF7D0E00FB3803 /* UICollectionView.swift in Sources */,
 				28BC397F26DF7FA000FB3803 /* Constants.swift in Sources */,
 				2818359926E3A4210038E826 /* Article.swift in Sources */,
@@ -705,6 +712,7 @@
 				28BC396D26DF7D2D00FB3803 /* UIImage.swift in Sources */,
 				28BC396126DF7BD000FB3803 /* UIViewController.swift in Sources */,
 				28E5B42826EA71EA004FECF8 /* UIImageView.swift in Sources */,
+				28991C62270331A50087760E /* NSMutableAttributedString.swift in Sources */,
 				28F3152826FDEAF400409FE9 /* Onboarding.swift in Sources */,
 				789D2553270110FE006B634E /* FaceCare.xcdatamodeld in Sources */,
 				28BC394E26DF77FD00FB3803 /* ArticlesViewController.swift in Sources */,

@@ -46,10 +46,11 @@ extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == 0 {
             cell.cellTopConstraint.constant = 26
+        } else {
+            cell.cellTopConstraint.constant = 0
         }
         
         cell.initialize(title: article.title, image: UIImage(named: article.image))
-        
         return cell
     }
     
