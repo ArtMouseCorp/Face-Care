@@ -50,7 +50,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         guard !isSubviewed else { return }
         configureCollectionViews()
-//        configureTableViews()
+        configureTableViews()
         isSubviewed = true
     }
     
@@ -184,19 +184,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let index = exercisesTableViews.firstIndex(of: tableView) else { return }
         exerciseLoading.exercisePack = [FaceArea.all[index].exercises[indexPath.row]]
         self.present(exerciseLoading, animated: true)
-    }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//
-//        guard let index = exercisesTableViews.firstIndex(of: tableView) else { return }
-//        let cell = cell as! ExerciseTableViewCell
-//        cell.exerciseImageView.image = FaceArea.all[index].exercises[indexPath.row].getImage()
-//
-//    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cell = cell as! ExerciseTableViewCell
-        cell.exerciseImageView.image = UIImage()
     }
     
 }
