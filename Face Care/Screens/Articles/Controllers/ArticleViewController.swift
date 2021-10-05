@@ -29,10 +29,12 @@ class ArticleViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        configureUI()
+        localize()
+        State.shared.setCurrentScreen(to: "Article Screen")
     }
     
     // MARK: - Custom functions
@@ -44,7 +46,6 @@ class ArticleViewController: BaseViewController {
         
         articleTitleLabel.text = article.title
         articleImageView.image = UIImage(named: article.image)
-        styledArticleText()
         
         let gradient = CAGradientLayer()
         
@@ -59,10 +60,15 @@ class ArticleViewController: BaseViewController {
         self.articleImageView.layer.addSublayer(gradient)
         
         // Labels
+        self.styledArticleText()
         DispatchQueue.main.async {
             self.articleTextLabelHeightConstraint.constant = self.articleTextLabel.contentHeight(lineSpacing: 4)
         }
         
+    }
+    
+    private func localize() {
+        titleLabel.localize(with: L.Atricles.title)
     }
     
     private func styledArticleText() {
@@ -73,10 +79,7 @@ class ArticleViewController: BaseViewController {
         while let title = text.slice(from: "<t>", to: "</t>") {
             
             titles.append(title)
-            print(title)
-            
             let openRange = text.range(of: "<t>")!
-            
             text = text
                 .replacingOccurrences(of: "<t>", with: "\n\n", range: openRange)
             
@@ -89,14 +92,16 @@ class ArticleViewController: BaseViewController {
         let attributedString = NSMutableAttributedString(string: text)
         
         titles.forEach { title in
-         
-            let range = text.range(of: title)!
-            let convertedRange = NSRange(range, in: text)
-            attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.ralewayFont(ofSize: 16, weight: .bold), range: convertedRange)
+            let range = NSRange(text.range(of: title)!, in: text)
+            
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.ralewayFont(ofSize: 16, weight: .bold)
+            ]
+
+            attributedString.setAttributes(attributes, range: range)
             
         }
         
-        print(attributedString)
         self.articleTextLabel.attributedText = attributedString
         
     }

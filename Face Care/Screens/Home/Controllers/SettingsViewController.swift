@@ -1,5 +1,6 @@
 import UIKit
 import MessageUI
+import Amplitude
 
 class SettingsViewController: BaseViewController, MFMailComposeViewControllerDelegate {
     
@@ -42,8 +43,10 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        localize()
         configureUI()
         setupGestures()
+        State.shared.setCurrentScreen(to: "Settings Screen")
     }
     
     // MARK: - Custom functions
@@ -55,6 +58,16 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
         languageTableViewHeightConstraint.constant = 0
         languageTableView.isHidden = true
         languageTableView.alpha = 0
+    }
+    
+    private func localize() {
+        
+        print("Localize, ", State.shared.getLanguage() )
+    
+        titleLabel.localize(with: L.Settings.title)
+        languageLabel.localize(with: L.Settings.Language.title)
+        contactusLabel.localize(with: L.Settings.contact)
+        refreshSubscriptionLabel.localize(with: L.Settings.restore)
     }
     
     private func setupGestures() {
@@ -131,7 +144,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         State.shared.setLanguage(to: Language.languages[indexPath.row].code)
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.localize()
+            self.languageTableView.reloadData()
+        }
+        
+        Amplitude.instance().logEvent(AmplitudeEvent.languageChanged, withEventProperties: [
+            "Language Changed To": Language.languages[indexPath.row].code
+        ])
         
     }
 }

@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Face Care
-//
-//  Created by Kolya Libak on 01.09.21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

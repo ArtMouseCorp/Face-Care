@@ -1,18 +1,31 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import Firebase
+import Amplitude
+import ApphudSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         State.shared.newAppLaunch()
         
+        Amplitude.instance().logEvent(State.shared.isFirstLaunch() ? AmplitudeEvent.appStartedFirst : AmplitudeEvent.appStarted)
+        
         // It enables intelligent text field behavior when the keyboard is covering the text field.
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        // Services connections
+        
+        integrateFirebase()
+        integrateFirebaseMessaging(for: application)
+        integrateAmplitude()
+        integrateApphud()
+        
         
         return true
     }
@@ -29,6 +42,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    @objc private func appMovedToBackground() {
+        Amplitude.instance().logEvent(AmplitudeEvent.appClosed,
+                                      withEventProperties: [
+                                        "Closed on screen": State.shared.getCurrentScreen()
+                                      ])
+    }
+    
+    // MARK: - Services integration functions
+    
+    private func integrateFirebase() {
+        FirebaseApp.configure()
+    }
+    
+    private func integrateFirebaseMessaging(for application: UIApplication) {
+        UNUserNotificationCenter.current().delegate = self
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { bool, _ in
+            Amplitude.instance().logEvent(bool ? AmplitudeEvent.pushNotificationsEnabled : AmplitudeEvent.pushNotificationsDisabled )
+        }
+//        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+        application.registerForRemoteNotifications()
+        
+        Messaging.messaging().delegate = self
+    }
+    
+    private func integrateAmplitude() {
+        // Enable sending automatic session events
+        Amplitude.instance().trackingSessionEvents = true
+        // Initialize SDK
+        Amplitude.instance().initializeApiKey(Keys.amplitudeApiKey)
+        // Log an event
+        Amplitude.instance().logEvent(AmplitudeEvent.appStarted)
+    }
+    
+    private func integrateApphud() {
+        Apphud.enableDebugLogs()
+        Apphud.start(apiKey: Keys.apphudApiKey)
     }
     
     // MARK: - Core Data stack
@@ -77,6 +130,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
+
+// MARK: - UNUserNotificationCenterDelegate
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler:
+                                @escaping (UNNotificationPresentationOptions) -> Void) {
+        process(notification)
+        if #available(iOS 14.0, *) {
+            completionHandler([[.banner, .sound]])
+        } else {
+            completionHandler([[.alert, .sound]])
+        }
+        
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        process(response.notification)
+        completionHandler()
+    }
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    private func process(_ notification: UNNotification) {
+        let userInfo = notification.request.content.userInfo
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+    }
+    
+}
+
+// MARK: - MessagingDelegate
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging,
+                   didReceiveRegistrationToken fcmToken: String?) {
+        let tokenDict = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(
+            name: Notification.Name("FCMToken"),
+            object: nil,
+            userInfo: tokenDict
+        )
+    }
+}
+
 
 /*
  //           _._

@@ -258,6 +258,9 @@
                                 <color key="textColor" name="FC Dark Charcoal"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="e0j-JI-76J" eventType="editingChanged" id="YmV-4d-4NC"/>
+                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZRJ-Vt-558">
                                 <rect key="frame" x="349" y="367.5" width="24" height="17.5"/>
@@ -658,6 +661,7 @@
                         <outlet property="closeButton" destination="xpu-Rv-RdK" id="RoG-L3-MKe"/>
                         <outlet property="commentLabel" destination="C5M-2H-40I" id="DZH-NE-Xmj"/>
                         <outlet property="continueButtonView" destination="Rjh-QS-BxU" id="ZVg-DM-f4z"/>
+                        <outlet property="continueButtonViewLabel" destination="kuE-al-ymd" id="gFg-aL-gLA"/>
                         <outlet property="faceImage" destination="1Ax-uo-uEh" id="Tsy-2E-qX9"/>
                         <outlet property="gradientView" destination="sVY-3q-40d" id="nh4-nq-45B"/>
                         <outlet property="outlineTitleLabel" destination="gTI-mF-9kO" id="Qy1-1Y-bab"/>

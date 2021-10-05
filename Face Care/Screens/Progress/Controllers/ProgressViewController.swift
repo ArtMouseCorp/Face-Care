@@ -1,5 +1,6 @@
 import UIKit
 import CoreData
+import Amplitude
 
 class ProgressViewController: BaseViewController {
 
@@ -31,12 +32,6 @@ class ProgressViewController: BaseViewController {
     // MARK: - Variables
     
     var collectionViewData: [ProgressImage]?
-    
-    let collectionViewFakeData = [
-        "FC Add Photo", "progress-demo-1", "progress-demo-2", "progress-demo-1", "progress-demo-2"
-    ]
-    
-    
     
     let tableViewData = [
         [
@@ -76,8 +71,11 @@ class ProgressViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        localize()
         configureUI()
         fetchImages()
+        State.shared.setCurrentScreen(to: "Progress Screen")
+        Amplitude.instance().logEvent(AmplitudeEvent.progressOpened)
     }
     
     // MARK: - Custom functions
@@ -86,6 +84,16 @@ class ProgressViewController: BaseViewController {
         mainView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         corneredView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         tableViewHeightConstraint.constant = tableViewHeight
+    }
+    
+    private func localize() {
+        userProgressMainLabel.localize(with: L.Progress.title)
+        userProgressMainDescription.localize(with: L.Progress.subtitle)
+        progressGalleryLabel.localize(with: L.Progress.gallery)
+        everydayPointLabel.localize(with: L.Progress.goal)
+        watchDemonstrationButton.localize(with: L.Progress.demonstration)
+        
+        // TODO: - Localize add image button
     }
     
     func fetchImages() {
@@ -111,7 +119,7 @@ class ProgressViewController: BaseViewController {
     
 }
 
-// MARK: - Collection View Extension
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
 extension ProgressViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -168,7 +176,7 @@ extension ProgressViewController: UICollectionViewDelegate, UICollectionViewData
     
 }
 
-// MARK: - Table View extensions
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension ProgressViewController: UITableViewDelegate, UITableViewDataSource {
     

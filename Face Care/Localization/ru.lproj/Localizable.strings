@@ -1,0 +1,143 @@
+
+"facePart.lymph"                                    = "Лимфа";
+"facePart.eyes"                                     = "Глаза";
+"facePart.forehead"                                 = "Лоб";
+"facePart.neck"                                     = "Шея";
+"facePart.chin"                                     = "Подбородок";
+"facePart.cheekbonesAndCheeks"                      = "Скулы и щеки";
+
+// MARK: - ONBOARDING
+
+"onboarding.start.welcome"                          = "Добро пожаловать в";
+"onboarding.start.description"                      = "Курс Face Care - это ваш путь к естественной красоте и молодости";
+
+"onboarding.onboardingButton.start"                 = "Начать";
+"onboarding.onboardingButton.yes"                   = "Да";
+"onboarding.onboardingButton.no"                    = "Нет";
+"onboarding.onboardingButton.eyesWrinkles"          = "Да, но только в области глаз";
+"onboarding.onboardingButton.sleep.short"           = "Меньше 7 часов";
+"onboarding.onboardingButton.sleep.normal"          = "7-8 часов";
+"onboarding.onboardingButton.sleep.long"            = "Больше 8 часов";
+"onboarding.onboardingButton.continue"              = "Продолжить";
+
+
+"onboarding.screen.title.first"                     = "Ты хочешь выглядель моложе?";
+"onboarding.screen.title.second"                    = "Ты хочешь, чтобы лицо выглядело более подтянутым?";
+"onboarding.screen.title.third"                     = "Какой у тебя тип кожи?";
+"onboarding.screen.title.fourth"                    = "На какой области лица ты хотел(а) бы сосредоточится?";
+"onboarding.screen.title.fifth"                     = "Заметны ли морщинки на лице когда ты улибаешся или смеёшься?";
+"onboarding.screen.title.sixth"                     = "Заметны ли морщинки на твоём лице, когда оно расслаблено?";
+"onboarding.screen.title.seventh"                   = "Сколько часов обычно длится твой сон?";
+"onboarding.screen.title.eighth"                    = "Как тебя зовут?";
+"onboarding.screen.title.ninth"                     = "Сколько тебе лет?";
+
+"onboarding.skinType.normal"                        = "Нормальная";
+"onboarding.skinType.combined"                      = "Комбинировання";
+"onboarding.skinType.fat"                           = "Жирная";
+"onboarding.skinType.dry"                           = "Сухая";
+
+"onboarding.loadImage"                              = "Загрузить фото";
+"onboarding.features.first"                         = "Чистая кожа";
+"onboarding.features.second"                        = "Здоровый цвет лица";
+"onboarding.features.third"                         = "Заряд энергии на целый день";
+
+"onboarding.personalPlan"                           = "Получить персональный курс";
+
+// MARK: - PLAN GENERATION
+
+"planGeneration.title"                              = "Подготовка персонально плана тренировок";
+"planGeneration.first"                              = "Анализ проблемных зон";
+"planGeneration.second"                             = "Анализ состояния кожи";
+"planGeneration.third"                              = "Подбор упражнений для лица согласно твоим потребностям";
+
+// MARK: - SUBSCRIPTION
+
+"subscription.planInfo"                             = "Информация о плане";
+"subscription.termsOfUse"                           = "Правила пользования";
+"subscription.privacy"                              = "Политика конфеденциальности";
+
+"subscription.interval.day.one"                     = "%d день";
+"subscription.interval.day.two"                     = "%d дня";
+"subscription.interval.day.five"                    = "%d дней";
+"subscription.interval.week.one"                    = "%d неделя";
+"subscription.interval.week.two"                    = "%d недели";
+"subscription.interval.week.five"                   = "%d недель";
+"subscription.interval.month.one"                   = "%d месяц";
+"subscription.interval.month.two"                   = "%d месяца";
+"subscription.interval.month.five"                  = "%d месяцев";
+"subscription.interval.year.one"                    = "%d год";
+"subscription.interval.year.two"                    = "%d года";
+"subscription.interval.year.five"                   = "%d лет";
+
+// MARK: - HOME
+
+"home.title"                                        = "Рекоммендуется на сегодня";
+
+"home.day"                                          = "День %d";
+
+"home.duration.minutes.one"                         = "%d минута";
+"home.duration.minutes.two"                         = "%d минуты";
+"home.duration.minutes.five"                        = "%d минут";
+
+"home.exclusiveTrainings"                           = "Эксклюзивные тренировки";
+"home.exercisesList"                                = "Список упражнений";
+
+// MARK: - TRAINING
+
+"training.start"                                    = "Начать тренировку";
+"training.completed"                                = "Тренировка заверешена";
+"training.takeImage"                                = "Сделать фото";
+
+// MARK: - SETTINGS
+
+"settings.title"                                    = "Настройки";
+"settings.language.title"                           = "Язык";
+"settings.language.english"                         = "Английский";
+"settings.language.russian"                         = "Русский";
+"settings.language.spanish"                         = "Испанский";
+"settings.language.italian"                         = "Итальянский";
+"settings.language.german"                          = "Немецкий";
+"settings.language.french"                          = "Франзузский";
+
+"settings.contact"                                  = "Связяться с нами";
+"settings.restore"                                  = "Восстановить покупки";
+
+// MARK: - PROGRESS
+
+"progress.title"                                    = "Мой прогресс";
+"progress.subtitle"                                 = "Для достижения нилучший результатов, выполняйте упражнения каждый день.";
+"progress.gallery"                                  = "Галерея прогресса";
+"progress.addImage"                                 = "Добавить фото";
+"progress.demonstration"                            = "Смотрите демонстрацию";
+"progress.goal"                                     = "Ежедневная цель";
+
+"progress.settings.title"                           = "Настройки прогресса";
+"progress.settings.problemAreas"                    = "Проблемные зоны";
+"progress.settings.resetDescription"                = "Вы можете обнулить пройденые дни, историю и настройки персонального курса и начать снова";
+"progress.settings.progressButton.resetProgress"    = "Обнулить прогресс";
+
+// MARK: - ARTICLES
+
+"atricles.title"                                    = "Полезные статьи";
+
+// MARK: - ALERTS
+
+"alert.action.cancel"                               = "Отменить";
+"alert.action.ok"                                   = "Ок";
+"alert.action.yes"                                  = "Да";
+
+"alert.training.title"                              = "Вы уверены, что хотите выйти?";
+
+"alert.connection.title"                            = "Нет подключения к интернету";
+"alert.connection.message"                          = "Нет подключения к интернету.  Пожалуйста, подключитесь к сети и попробуйте еще раз.";
+
+"alert.subscribed.title"                            = "Подписка оформлена";
+"alert.subscribed.message"                          = "Вы уже подписаны. Вам доступен весь функционал.";
+
+"alert.restored.title"                              = "Восстановлен";
+"alert.restored.message"                            = "Вы успешно восстановили подписку. Теперь вам доступен весь функционал.";
+
+"alert.notSubscriber.title"                         = "Не подлежит восстановлению";
+"alert.notSubscriber.message"                       = "К сожалению, вы не можете восстановить свою покупку, потому что у вас нет активной подписки.";
+
+

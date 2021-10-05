@@ -21,25 +21,19 @@ class TrainingViewController: BaseViewController {
     
     // MARK: - Variables
     
-    var exercisePack: [Exercise] = []
+    var training: Training = .default
     var endExerciseCompletion: (()->()) = {}
     
     // MARK: - Awake functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        exercisePack.append(Exercise.examples[0])
-        exercisePack.append(Exercise.examples[1])
-        exercisePack.append(Exercise.examples[2])
-        exercisePack.append(Exercise.examples[3])
-        
-        trainingNameLabel.text = exercisePack[0].name
-        trainingDescriptionLabel.text = exercisePack[0].description
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        localize()
         configureUI()
+        State.shared.setCurrentScreen(to: "Training Screen")
     }
     
     // MARK: - Custom functions
@@ -47,8 +41,26 @@ class TrainingViewController: BaseViewController {
     private func configureUI() {
         trainingInfoView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         startButton.configure(as: .filled)
-    }
         
+        trainingNameLabel.text = training.name
+        
+        let minutesNounKey = getNoun(
+            number: training.duration,
+            one: L.Home.Duration.Minutes.one,
+            two: L.Home.Duration.Minutes.two,
+            five: L.Home.Duration.Minutes.five
+        )
+        let duration = L.get(key: minutesNounKey, args: training.duration)
+        
+        trainingDurationLabel.text = duration
+        trainingDescriptionLabel.text = training.description
+        trainingDescriptionLabel.textAlignment = .center
+    }
+    
+    private func localize() {
+        startButton.localize(with: L.Training.start)
+    }
+    
     // MARK: - @IBActions
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -65,7 +77,7 @@ class TrainingViewController: BaseViewController {
                 self.endExerciseCompletion()
             }
         }
-        exerciseLoading.exercisePack = exercisePack
+        exerciseLoading.exercisePack = training.exercises
         exerciseLoading.modalPresentationStyle = .fullScreen
         exerciseLoading.modalTransitionStyle = .crossDissolve
         self.present(exerciseLoading, animated: true)

@@ -1,4 +1,5 @@
 import UIKit
+import Amplitude
 
 class ArticlesViewController: BaseViewController {
 
@@ -20,13 +21,21 @@ class ArticlesViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        localize()
         configureUI()
+        tableView.reloadData()
+        State.shared.setCurrentScreen(to: "Articles Screen")
+        Amplitude.instance().logEvent(AmplitudeEvent.articlesOpened)
     }
     
     // MARK: - Custom functions
     
     private func configureUI() {
         
+    }
+    
+    private func localize() {
+        titleLabel.localize(with: L.Atricles.title)
     }
     
 }

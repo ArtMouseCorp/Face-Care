@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 class ExerciseLoadingViewController: BaseViewController {
-
+    
     // MARK: - @IBOutlets
     
     // Labels
@@ -26,13 +26,14 @@ class ExerciseLoadingViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         configureUI()
         loadVideo()
+        State.shared.setCurrentScreen(to: "Exercise Loading Screen")
     }
     
     // MARK: - Custom functions
     
     private func configureUI() {
         if currentItem <= exercisePack.count - 1 {
-            titleLabel.text = "Упражнение \(currentItem+1): \n\(exercisePack[currentItem].name)"
+            titleLabel.text = "Упражнение \(currentItem + 1): \n\(exercisePack[currentItem].name)"
         } else {
             titleLabel.text = ""
         }
@@ -40,10 +41,12 @@ class ExerciseLoadingViewController: BaseViewController {
     
     private func loadVideo() {
         
-//        let exercise = exerciseExample[currentItem]
-//        let player = AVPlayer(url: exercise.getVideoURL()!)
-        let path = Bundle.main.path(forResource: "example-video", ofType:"mp4")
-        let player = AVPlayer(url: URL(fileURLWithPath: path!))
+        let exercise = exercisePack[currentItem]
+        
+        var player = AVPlayer()
+        
+        
+        player = AVPlayer(url: exercise.getVideoURL())
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
@@ -77,8 +80,8 @@ class ExerciseLoadingViewController: BaseViewController {
         }
         
     }
-        
 }
+
 
 /*
  //           _._

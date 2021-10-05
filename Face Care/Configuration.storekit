@@ -1,0 +1,97 @@
+{
+  "identifier" : "31B843D5",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "D55E5D34",
+      "localizations" : [
+
+      ],
+      "name" : "Full Access",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "59.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "2C426AD9",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.test.1y",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : null,
+          "subscriptionGroupID" : "D55E5D34",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "59.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "CBE91008",
+          "introductoryOffer" : {
+            "internalID" : "DB9B1F3C",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.test.1y_3d0",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : null,
+          "subscriptionGroupID" : "D55E5D34",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "7.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "9820B6C3",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.test.1w",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : null,
+          "subscriptionGroupID" : "D55E5D34",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

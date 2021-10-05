@@ -27,9 +27,12 @@ class PlanGenerationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        localize()
         configureUI()
     }
     
@@ -50,6 +53,18 @@ class PlanGenerationViewController: BaseViewController {
         updatePageContent()
     }
     
+    private func localize() {
+        titleLabel.localize(with: L.PlanGeneration.title)
+    }
+    
+    private func fetchData() {
+        
+        if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
+            Training.Daily.getTrainings()
+        }
+        
+    }
+    
     private func updatePageContent() {
         
         progressView.frame.size.width = 0
@@ -59,20 +74,26 @@ class PlanGenerationViewController: BaseViewController {
         case 0:
             
             imageView.image = .FCPlanGeneration1
-            processLabel.text = "Анализ проблемных зон"
+            processLabel.localize(with: L.PlanGeneration.first)
             progressView.backgroundColor = .FCSalmon
+            
+            State.shared.setCurrentScreen(to: "Plan Generation: First Screen")
             
         case 1:
             
             imageView.image = .FCPlanGeneration2
-            processLabel.text = "Анализ состояния кожи"
+            processLabel.localize(with: L.PlanGeneration.second)
             progressView.backgroundColor = .FCVeryLightTangelo
+            
+            State.shared.setCurrentScreen(to: "Plan Generation: Second Screen")
             
         case 2:
             
             imageView.image = .FCPlanGeneration3
-            processLabel.text = "Подбор упражнений для лица согласно твоим потребностям"
+            processLabel.localize(with: L.PlanGeneration.third)
             progressView.backgroundColor = .FCAlienArmpit
+            
+            State.shared.setCurrentScreen(to: "Plan Generation: Third Screen")
             
         default:
             break

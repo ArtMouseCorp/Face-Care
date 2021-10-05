@@ -45,6 +45,7 @@ class ExerciseViewController: BaseViewController {
         configureUI()
         setupGestures()
         configurePlayer()
+        State.shared.setCurrentScreen(to: "Exercise Screen")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,7 +96,7 @@ class ExerciseViewController: BaseViewController {
         _ = player?.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { time in
             guard let currentItem = self.player?.currentItem else {return}
             self.slider.minimumValue = 0
-            self.slider.maximumValue = Float(currentItem.duration.seconds)
+            self.slider.maximumValue = Float(currentItem.duration.seconds) == 0 ? 1 : Float(currentItem.duration.seconds)
             self.slider.value = Float(currentItem.currentTime().seconds)
             
         })

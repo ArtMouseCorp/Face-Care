@@ -2,9 +2,9 @@ import UIKit
 import AVFoundation
 
 class PhotoOfferViewController: BaseViewController {
-
+    
     // MARK: - @IBOutlets
-            
+    
     // Views
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet var dotViews: [UIView]!
@@ -12,6 +12,7 @@ class PhotoOfferViewController: BaseViewController {
     @IBOutlet weak var outlineView: UIView!
     
     // Labels
+    @IBOutlet weak var continueButtonViewLabel: UILabel!
     @IBOutlet weak var outlineTitleLabel: UILabel!
     @IBOutlet weak var outlineViewLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -20,7 +21,7 @@ class PhotoOfferViewController: BaseViewController {
     @IBOutlet weak var bottomSecondLabel: UILabel!
     @IBOutlet weak var bottomThirdLabel: UILabel!
     
-
+    
     // Image Views
     @IBOutlet weak var faceImage: UIImageView!
     
@@ -60,6 +61,7 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        localize()
         configureUI()
     }
     
@@ -68,15 +70,13 @@ class PhotoOfferViewController: BaseViewController {
     private func configureUI() {
         configureGradientView()
         configureButtons()
-        configureDotViews(firstToHide: 2, secondToHide: 4)
         configureOutlineView()
         
-        toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
-        isToggleOn = false
-        
-        commentLabel.isHidden = true
-        starStackView.isHidden = true
-        outlineTitleLabel.isHidden = true
+        configureNextPage()
+    }
+    
+    private func localize() {
+        continueButtonViewLabel.localize(with: L.Onboarding.OnboardingButton.continue)
     }
     
     private func configureVideo() {
@@ -85,7 +85,7 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     private func videoPlayerLayer() -> AVPlayerLayer {
-        let path = Bundle.main.path(forResource: "onboarding", ofType:"mp4")
+        let path = Bundle.main.path(forResource: "onboarding", ofType: "mp4")
         let player = AVPlayer(url: URL(fileURLWithPath: path!))
         let resetPlayer = {
             player.seek(to: CMTime.zero)
@@ -100,12 +100,12 @@ class PhotoOfferViewController: BaseViewController {
     
     private func configureGradientView() {
         let layer1 = CAGradientLayer()
-
+        
         layer1.colors = [
             CGColor(red: 0.271, green: 0.071, blue: 0.71, alpha: 0),
             CGColor(red: 0.271, green: 0.071, blue: 0.71, alpha: 1)
         ]
-
+        
         layer1.locations = [0.21, 0.76]
         layer1.startPoint = CGPoint(x: 0, y: 0.5)
         layer1.endPoint = CGPoint(x: 0.75, y: 0.5)
@@ -145,20 +145,51 @@ class PhotoOfferViewController: BaseViewController {
     
     private func configureNextPage() {
         // Page switcher
+        page += 1
         switch page {
-        // Second Page
-        case 0:
+            // First Page
+        case 1:
+            
+            commentLabel.isHidden = true
+            starStackView.isHidden = true
+            outlineTitleLabel.isHidden = true
+            
+            outlineViewLabel.localize(with: L.Onboarding.loadImage)
+            
+            configureDotViews(firstToHide: 2, secondToHide: 4)
+            toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
+            isToggleOn = false
+            
+            bottomFirstLabel.localize(with: L.Onboarding.Features.first)
+            bottomSecondLabel.localize(with: L.Onboarding.Features.second)
+            bottomThirdLabel.localize(with: L.Onboarding.Features.third)
+            
+            State.shared.setCurrentScreen(to: "Onboarding: Take Photo Screen")
+            
+            break
+            // Second Page
+        case 2:
             faceImage.isHidden = true
-            outlineViewLabel.text = "Получить персональный курс"
+            outlineViewLabel.localize(with: L.Onboarding.personalPlan)
             commentLabel.isHidden = false
             starStackView.isHidden = false
             configureDotViews(firstToHide: 0, secondToHide: 4)
             toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
             isToggleOn = false
+            
+            bottomFirstLabel.localize(with: L.Onboarding.Features.first)
+            bottomSecondLabel.localize(with: L.Onboarding.Features.second)
+            bottomThirdLabel.localize(with: L.Onboarding.Features.third)
+            
+            State.shared.setCurrentScreen(to: "Onboarding: Personal Plan Screen")
+            
             break
-        // Third Page
-        case 1:
-            closeButton.isHidden = false
+            // Third Page
+        case 3:
+            
+            State.shared.completeOnboarding()
+            
+            closeButton.isHidden = true
             configureDotViews(firstToHide: 0, secondToHide: 2)
             toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
             isToggleOn = true
@@ -166,9 +197,11 @@ class PhotoOfferViewController: BaseViewController {
             outlineTitleLabel.text = "3 дня бесплатно,"
             outlineViewLabel.text = "потом 5 290 ₽/год"
             
-            bottomFirstLabel.text = "Информация о плане"
-            bottomSecondLabel.text = "Правила пользования"
-            bottomThirdLabel.text = "Политика конфиденциальности"
+            bottomFirstLabel.localize(with: L.Subscription.planInfo)
+            bottomSecondLabel.localize(with: L.Subscription.termsOfUse)
+            bottomThirdLabel.localize(with: L.Subscription.privacy)
+            
+            State.shared.setCurrentScreen(to: "Onboarding: Subscription Screen")
             break
         default:
             let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
@@ -176,7 +209,6 @@ class PhotoOfferViewController: BaseViewController {
             self.present(planGenerationVC, animated: false, completion: nil)
             break
         }
-        page += 1
     }
     
     private func setupGestures() {
@@ -186,56 +218,66 @@ class PhotoOfferViewController: BaseViewController {
     // MARK: - Gesture actions
     
     @objc func continueTapped() {
-        if page == 0 && isToggleOn {
+        if page == 1 && isToggleOn {
             takePhoto()
+        } else if page == 3 && isToggleOn {
+            StoreManager.getProducts(for: ["com.test.1y_3d0"]) { products in
+                
+                StoreManager.purchase(products[0]) {
+                    let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+                    planGenerationVC.modalPresentationStyle = .fullScreen
+                    self.present(planGenerationVC, animated: false, completion: nil)
+                }
+                
+            }
         } else {
-            configureNextPage()
+                configureNextPage()
+            }
+        }
+        
+        // MARK: - @IBActions
+        
+        @IBAction func toggleButtonPressed(_ sender: Any) {
+            toggleButton.setImage(isToggleOn ? UIImage(named: "FC Toggle Off"): UIImage(named: "FC Toggle On"), for: .normal)
+            isToggleOn = !isToggleOn
+        }
+        
+        @IBAction func closeButtonPressed(_ sender: Any) {
+            let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+            planGenerationVC.modalPresentationStyle = .fullScreen
+            self.present(planGenerationVC, animated: false, completion: nil)
+        }
+        
+    }
+    
+    extension PhotoOfferViewController {
+        override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true)
+            
+            guard let image = info[.originalImage] as? UIImage else {
+                configureNextPage()
+                return
+            }
+            let newImage = ProgressImage(context: context)
+            newImage.image = image
+            
+            do {
+                try context.save()
+            } catch {}
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.configureNextPage()
+            }
         }
     }
-        
-    // MARK: - @IBActions
     
-    @IBAction func toggleButtonPressed(_ sender: Any) {
-        toggleButton.setImage(isToggleOn ? UIImage(named: "FC Toggle Off"): UIImage(named: "FC Toggle On"), for: .normal)
-        isToggleOn = !isToggleOn
-    }
-    
-    @IBAction func closeButtonPressed(_ sender: Any) {
-        let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
-        planGenerationVC.modalPresentationStyle = .fullScreen
-        self.present(planGenerationVC, animated: false, completion: nil)
-    }
-    
-}
-
-extension PhotoOfferViewController {
-    override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true)
-
-        guard let image = info[.originalImage] as? UIImage else {
-            configureNextPage()
-            return
-        }
-        let newImage = ProgressImage(context: context)
-        newImage.image = image
-        
-        do {
-            try context.save()
-        } catch {}
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.configureNextPage()
-        }
-    }
-}
-
-/*
- //           _._
- //        .-'   `
- //      __|__
- //     /     \
- //     |()_()|
- //     \{o o}/
- //      =\o/=
- //       ^ ^
- */
+    /*
+     //           _._
+     //        .-'   `
+     //      __|__
+     //     /     \
+     //     |()_()|
+     //     \{o o}/
+     //      =\o/=
+     //       ^ ^
+     */

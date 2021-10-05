@@ -20,6 +20,10 @@ extension UILabel {
         return self.frame.height
     }
     
+    public func localize(with key: String, args: CVarArg...) {
+        self.text = L.get(key: key, args: args)
+    }
+    
 }
 
 /*

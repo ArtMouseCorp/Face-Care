@@ -24,7 +24,7 @@ public enum Screen: String, StoryboardScreen {
     case training           = "TrainingViewController"
     case exerciseLoading    = "ExerciseLoadingViewController"
     case exercise           = "ExerciseViewController"
-    case exerciseEnded      = "ExerciseEndedViewController"
+    case trainingEnded      = "TrainingCompletedViewController"
     
     // Progress
     case progress           = "ProgressViewController"
@@ -63,7 +63,7 @@ extension Screen {
              .training,
              .exerciseLoading,
              .exercise,
-             .exerciseEnded:
+             .trainingEnded:
             return .Home
             
             // Progress

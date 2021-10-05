@@ -6,16 +6,19 @@ struct Language {
     let image: UIImage
     let code: Code
     
-    public static var languages = [
-        Language(name: "English",   image: .Flags.uk, code: .en),
-        Language(name: "Russian",   image: .Flags.ru, code: .ru),
-        Language(name: "French",    image: .Flags.fr, code: .fr),
-        Language(name: "German",    image: .Flags.de, code: .de),
-        Language(name: "Italian",   image: .Flags.it, code: .it),
-        Language(name: "Spanish",   image: .Flags.es, code: .es)
-    ]
+    public static var languages: [Language] = {
+        
+        return [
+            Language(name: L.get(key: L.Settings.Language.english),  image: .Flags.uk, code: .en),
+            Language(name: L.get(key: L.Settings.Language.russian),  image: .Flags.ru, code: .ru),
+            Language(name: L.get(key: L.Settings.Language.french),   image: .Flags.fr, code: .fr),
+            Language(name: L.get(key: L.Settings.Language.german),   image: .Flags.de, code: .de),
+            Language(name: L.get(key: L.Settings.Language.italian),  image: .Flags.it, code: .it),
+            Language(name: L.get(key: L.Settings.Language.spanish),  image: .Flags.es, code: .es)
+        ]
+    }()
     
-    internal enum Code: String {
+    internal enum Code: String, Codable {
         case en, ru, de, fr, es, it
         
         init(_ value: String) {

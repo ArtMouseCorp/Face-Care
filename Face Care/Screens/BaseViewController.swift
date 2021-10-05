@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import Amplitude
 
 class BaseViewController: UIViewController {
 
@@ -126,6 +127,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, UINavigationContr
         
         do {
             try context.save()
+            Amplitude.instance().logEvent(AmplitudeEvent.photoAdded)
         } catch {}
     }
 }

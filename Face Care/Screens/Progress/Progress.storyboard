@@ -449,6 +449,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="16"/>
                                                         <state key="normal" title="Обнулить прогресс"/>
+                                                        <connections>
+                                                            <action selector="resetProgressButtonPressed:" destination="avk-cG-4Uo" eventType="touchUpInside" id="8cg-3u-r0v"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы можете обнулить пройденные дни, историю и настройки персонального курса и начать сначала" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvf-bc-ewF">
                                                         <rect key="frame" x="16" y="450" width="382" height="56.5"/>
@@ -521,11 +524,18 @@
                         <outlet property="eyesViewCheckmark" destination="aGh-2I-4HB" id="N29-WK-6bv"/>
                         <outlet property="foreheadView" destination="5iP-Ar-Ema" id="Xfq-zS-Mlh"/>
                         <outlet property="foreheadViewCheckmark" destination="Bpi-fe-rl4" id="GzA-z7-7rv"/>
-                        <outlet property="mainLabel" destination="fly-gg-Mbi" id="feH-W8-Q9h"/>
                         <outlet property="mainView" destination="S6v-cF-eWx" id="mgQ-bF-ZAf"/>
                         <outlet property="neckView" destination="Hjd-So-hVk" id="khI-nd-tpw"/>
                         <outlet property="neckViewCheckmark" destination="zTh-2R-mhI" id="LVB-G1-CmQ"/>
+                        <outlet property="problemAreasTitleLabel" destination="pKL-kg-im4" id="Xsh-Ej-uSD"/>
                         <outlet property="resetProgressButton" destination="L0V-wi-08I" id="wdP-UD-rHs"/>
+                        <outlet property="resetProgressLabel" destination="Gvf-bc-ewF" id="QT7-Tg-MmV"/>
+                        <outlet property="titleLabel" destination="fly-gg-Mbi" id="feH-W8-Q9h"/>
+                        <outletCollection property="problemAreasLabels" destination="n3d-SR-y5n" collectionClass="NSMutableArray" id="jcO-Ko-OB3"/>
+                        <outletCollection property="problemAreasLabels" destination="sBV-tW-dNN" collectionClass="NSMutableArray" id="5WE-dA-xHV"/>
+                        <outletCollection property="problemAreasLabels" destination="Ich-A9-Cff" collectionClass="NSMutableArray" id="INz-Hd-zMq"/>
+                        <outletCollection property="problemAreasLabels" destination="pnm-Tk-j2O" collectionClass="NSMutableArray" id="zup-kp-V1v"/>
+                        <outletCollection property="problemAreasLabels" destination="DDo-cZ-1Yc" collectionClass="NSMutableArray" id="jj3-bW-R3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bao-Ut-y69" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

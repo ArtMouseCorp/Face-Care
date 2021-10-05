@@ -26,7 +26,9 @@ class StartViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        localize()
         configureUI()
+        State.shared.setCurrentScreen(to: "Start Screen")
     }
     
     // MARK: - Custom functions
@@ -36,6 +38,12 @@ class StartViewController: BaseViewController {
         
         subtitleLabelHeightConstraint.constant = subtitleLabel.contentHeight(lineSpacing: 2)
         subtitleLabel.textAlignment = .center
+    }
+    
+    private func localize() {
+        welcomeLabel.localize(with: L.Onboarding.Start.welcome)
+        subtitleLabel.localize(with: L.Onboarding.Start.description)
+        startButton.localize(with: L.Onboarding.OnboardingButton.start)
     }
     
     // MARK: - @IBActions

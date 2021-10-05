@@ -24,6 +24,7 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        localize()
         configureUI()
     }
     
@@ -62,13 +63,34 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         trainingImageView.layer.addSublayer(gradient)
     }
     
-    public func configure(name: String, day: String, duration: String, image: UIImage) {
+    private func localize() {
+        startLabel.localize(with: L.Training.start)
+    }
+    
+    override func prepareForReuse() {
+        self.alpha = 0.6
+    }
+    
+    public func configure(with dailyTraining: Training.Daily) {
         
-        nameLabel.text = name
+        self.alpha = 0.6
+        
+        let day = L.get(key: L.Home.day, args: dailyTraining.dayNumber)
+        
+        let minutesNounKey = getNoun(
+            number: dailyTraining.training.duration,
+            one: L.Home.Duration.Minutes.one,
+            two: L.Home.Duration.Minutes.two,
+            five: L.Home.Duration.Minutes.five
+        )
+        let duration = L.get(key: minutesNounKey, args: dailyTraining.training.duration)
+        
+        nameLabel.text = dailyTraining.training.name
         dayLabel.text = day
         durationLabel.text = duration
-        trainingImageView.image = image
+        trainingImageView.image = dailyTraining.training.exercises.first?.getImage() ?? UIImage()
         
+        localize()
     }
     
 }

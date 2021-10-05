@@ -1,0 +1,143 @@
+
+"facePart.lymph"                                    = "Lymphe";
+"facePart.eyes"                                     = "Augen";
+"facePart.forehead"                                 = "Stirn";
+"facePart.neck"                                     = "Nacken";
+"facePart.chin"                                     = "Chin";
+"facePart.cheekbonesAndCheeks"                      = "Wangenknochen und Wangen";
+
+// MARK: - ONBOARDING
+
+"onboarding.start.welcome"                          = "Willkommen bei";
+"onboarding.start.description"                      = "Gesichtspflegekurs - Ihr Weg zu natürlicher Schönheit und Jugendlichkeit";
+
+"onboarding.onboardingButton.start"                 = "Start";
+"onboarding.onboardingButton.yes"                   = "Ja";
+"onboarding.onboardingButton.no"                    = "Nein";
+"onboarding.onboardingButton.eyesWrinkles"          = "Ja, aber nur für die Augenpartie";
+"onboarding.onboardingButton.sleep.short"           = "Weniger als 7 Stunden";
+"onboarding.onboardingButton.sleep.normal"          = "7-8 Stunden";
+"onboarding.onboardingButton.sleep.long"            = "Mehr als 8 Stunden";
+"onboarding.onboardingButton.continue"              = "Weiter";
+
+
+"onboarding.screen.title.first"                     = "Möchten Sie jünger aussehen?";
+"onboarding.screen.title.second"                    = "Möchten Sie Ihr Gesicht straffer aussehen lassen?";
+"onboarding.screen.title.third"                     = "Was ist Ihr Hauttyp?";
+"onboarding.screen.title.fourth"                    = "Auf welchen Bereich Ihres Gesichts möchten Sie sich konzentrieren?";
+"onboarding.screen.title.fifth"                     = "Bemerken Sie Falten in Ihrem Gesicht, wenn Sie lächeln oder lachen?";
+"onboarding.screen.title.sixth"                     = "Bemerken Sie Falten in Ihrem Gesicht, wenn es entspannt ist?";
+"onboarding.screen.title.seventh"                   = "Wie viele Stunden schlafen Sie normalerweise?";
+"onboarding.screen.title.eighth"                    = "Wie ist Ihr Name?";
+"onboarding.screen.title.ninth"                     = "Wie alt sind Sie?";
+
+"onboarding.skinType.normal"                        = "Normal";
+"onboarding.skinType.combined"                      = "Kombiniert";
+"onboarding.skinType.fat"                           = "Fettige";
+"onboarding.skinType.dry"                           = "Trocken";
+
+"onboarding.loadImage"                              = "Foto hochladen";
+"onboarding.features.first"                         = "Saubere Haut";
+"onboarding.features.second"                        = "Gesunder Teint";
+"onboarding.features.third"                         = "Ganztägiger Energieschub";
+
+"onboarding.personalPlan"                           = "Personalisierte Kurse erhalten";
+
+// MARK: - PLAN GENERATION
+
+"planGeneration.title"                              = "Ausarbeitung eines persönlichen Trainingsplans";
+"planGeneration.first"                              = "Analyse der Problembereiche";
+"planGeneration.second"                             = "Analyse der Haut";
+"planGeneration.third"                              = "Auswahl der Gesichtsübungen nach Ihren Bedürfnissen";
+
+// MARK: - SUBSCRIPTION
+
+"subscription.planInfo"                             = "Informationen zum Plan";
+"subscription.termsOfUse"                           = "Nutzungsbedingungen";
+"subscription.privacy"                              = "Datenschutzbestimmungen";
+
+"subscription.interval.day.one"                     = "%d Tag";
+"subscription.interval.day.two"                     = "%d Tage";
+"subscription.interval.day.five"                    = "%d Tage";
+"subscription.interval.week.one"                    = "%d Woche";
+"subscription.interval.week.two"                    = "%d Wochen";
+"subscription.interval.week.five"                   = "%d Wochen";
+"subscription.interval.month.one"                   = "%d Monat";
+"subscription.interval.month.two"                   = "%d Monate";
+"subscription.interval.month.five"                  = "%d Monate";
+"subscription.interval.year.one"                    = "%d Jahr";
+"subscription.interval.year.two"                    = "%d Jahre";
+"subscription.interval.year.five"                   = "%d Jahre";
+
+// MARK: - HOME
+
+"home.title"                                        = "Empfohlen für heute";
+
+"home.day"                                          = "Tag %d";
+
+"home.duration.minutes.one"                         = "%d Minute";
+"home.duration.minutes.two"                         = "%d Minuten";
+"home.duration.minutes.five"                        = "%d Minuten";
+
+"home.exclusiveTrainings"                           = "Exklusive Schulungen";
+"home.exercisesList"                                = "Liste der Übungen";
+
+// MARK: - TRAINING
+
+"training.start"                                    = "Beginn der Ausbildung";
+"training.completed"                                = "Die Ausbildung ist vorbei";
+"training.takeImage"                                = "Ein Foto machen";
+
+// MARK: - SETTINGS
+
+"settings.title"                                    = "Einstellungen";
+"settings.language.title"                           = "Sprache";
+"settings.language.english"                         = "Englisch";
+"settings.language.russian"                         = "Russisch";
+"settings.language.spanish"                         = "Spanisch";
+"settings.language.italian"                         = "Italienisch";
+"settings.language.german"                          = "Deutsch";
+"settings.language.french"                          = "Französisch";
+
+"settings.contact"                                  = "Kontakt";
+"settings.restore"                                  = "Käufe wiederherstellen";
+
+// MARK: - PROGRESS
+
+"progress.title"                                    = "Meine Fortschritte";
+"progress.subtitle"                                 = "Die besten Ergebnisse erzielen Sie, wenn Sie jeden Tag Sport treiben.";
+"progress.gallery"                                  = "Galerie der Fortschritte";
+"progress.addImage"                                 = "Foto hinzufügen";
+"progress.demonstration"                            = "Demonstration ansehen";
+"progress.goal"                                     = "Tägliches Ziel";
+
+"progress.settings.title"                           = "Fortschrittseinstellungen";
+"progress.settings.problemAreas"                    = "Problembereiche";
+"progress.settings.resetDescription"                = "Sie können Ihre Tage, den Verlauf und die persönlichen Kurseinstellungen auf Null zurücksetzen und neu beginnen";
+"progress.settings.progressButton.resetProgress"    = "Fortschritt zurücksetzen";
+
+// MARK: - ARTICLES
+
+"atricles.title"                                    = "Nützliche Artikel";
+
+// MARK: - ALERTS
+
+"alert.action.cancel"                               = "Abbrechen";
+"alert.action.ok"                                   = "Ok";
+"alert.action.yes"                                  = "Ja";
+
+"alert.training.title"                              = "Sind Sie sicher, dass Sie aufhören wollen?";
+
+"alert.connection.title"                            = "Keine Internetverbindung";
+"alert.connection.message"                          = "Keine Internetverbindung. Bitte verbinden Sie sich mit dem Netzwerk und versuchen Sie es erneut.";
+
+"alert.subscribed.title"                            = "Abonniert";
+"alert.subscribed.message"                          = "Sie sind bereits angemeldet. Alle Funktionen sind für Sie verfügbar.";
+
+"alert.restored.title"                              = "Wiederhergestellt";
+"alert.restored.message"                            = "Sie haben Ihr Abonnement erfolgreich wiederhergestellt. Alle Funktionen stehen Ihnen jetzt zur Verfügung.";
+
+"alert.notSubscriber.title"                         = "Nicht wiederherstellbar";
+"alert.notSubscriber.message"                       = "Leider können Sie Ihren Kauf nicht wiederherstellen, da Sie kein aktives Abonnement haben.";
+
+

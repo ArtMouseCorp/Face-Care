@@ -18,7 +18,7 @@ class ExerciseInfoPopup: BasePopupViewController {
     
     // MARK: - Variables
     
-    var popupHeight: CGFloat = 24 + 32 + 24 + 0 + 24 // without descriptionLabel height
+    var popupHeight: CGFloat = 24 + 0 + 24 + 0 + 24 // without titleLabel & descriptionLabel height
     var onCloseCompletion: ((_ currentItem: Int)->()) = {_  in }
     var currentItem = 0
     var exercisePack: [Exercise] = []
@@ -43,9 +43,12 @@ class ExerciseInfoPopup: BasePopupViewController {
         checkChevrons()
         
         descriptionLabelHeightConstraint.constant = descriptionLabel.contentHeight(lineSpacing: 4)
-        super.setPopupHeight(popupHeight + descriptionLabelHeightConstraint.constant)
+        
+        super.setPopupHeight(popupHeight + titleLabel.contentHeight(lineSpacing: 4) + descriptionLabelHeightConstraint.constant)
         super.panModalSetNeedsLayoutUpdate()
         
+        descriptionLabel.textAlignment = .center
+        titleLabel.textAlignment = .center
         nextButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
     }
     
@@ -63,11 +66,13 @@ class ExerciseInfoPopup: BasePopupViewController {
     @IBAction func prevButtonPressed(_ sender: Any) {
         currentItem -= 1
         configureUI()
+        super.panModalTransition(to: .shortForm)
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
         currentItem += 1
         configureUI()
+        super.panModalTransition(to: .shortForm)
     }
     
 }
