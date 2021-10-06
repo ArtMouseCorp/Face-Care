@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+        
     // MARK: - Custom functions
     
     func showTabBar(_ show: Bool = true) {

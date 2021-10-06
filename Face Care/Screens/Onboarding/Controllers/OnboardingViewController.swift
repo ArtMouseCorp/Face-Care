@@ -276,6 +276,10 @@ class OnboardingViewController: BaseViewController {
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         
+        if currentProgress == 4 {
+            State.shared.updateProblemAreas(to: State.shared.getProblemAreas().sorted())
+        }
+        
         if currentProgress == 8 {
             let userName = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "User"
             State.shared.saveUserName(userName)

@@ -10,6 +10,7 @@ enum UDKeys {
     static let language: String                 = "language"
     static let isOnboardingCompleted: String    = "isOnboardingCompleted"
     static let openedDailyTrainings: String     = "openedDailyTrainings"
+    static let completedDailyTrainings: String  = "completedDailyTrainings"
 }
 
 enum Keys {

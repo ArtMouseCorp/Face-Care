@@ -72,6 +72,13 @@ class HomeViewController: BaseViewController {
         dailyTrainingsCollectionView.reloadData()
         exclusiveTrainingsCollectionView.reloadData()
         
+        facePartsLabels[0].localize(with: "facePart.lymph")
+        facePartsLabels[1].localize(with: L.FacePart.eyes)
+        facePartsLabels[2].localize(with: L.FacePart.forehead)
+        facePartsLabels[3].localize(with: L.FacePart.neck)
+        facePartsLabels[4].localize(with: L.FacePart.chin)
+        facePartsLabels[5].localize(with: L.FacePart.cheekbonesAndCheeks)
+        
         for exercisesTableView in exercisesTableViews {
             exercisesTableView.reloadData()
         }
@@ -111,43 +118,6 @@ class HomeViewController: BaseViewController {
         
     }
     
-//    private func setupDotImages() {
-//        let dotImages = ["dot1", "dot2", "dot3", "dot1", "dot2"]
-//
-//        let offset = self.exercisesTableView.contentHeight / CGFloat(dotImages.count)
-//
-//        for i in 0 ..< dotImages.count {
-//
-//            let imageView = UIImageView()
-//
-//            var x: CGFloat = 0
-//            let y: CGFloat = offset * CGFloat(i)
-//
-//            switch i {
-//            case 0:
-//                x = -71
-//                imageView.image = UIImage(named: "dot1")
-//            case 1:
-//                x = 225
-//                imageView.image = UIImage(named: "dot2")
-//            case 2:
-//                x = -29
-//                imageView.image = UIImage(named: "dot3")
-//            case 3:
-//                x = 216
-//                imageView.image = UIImage(named: "dot1")
-//            case 4:
-//                x = 225
-//                imageView.image = UIImage(named: "dot2")
-//            default: break
-//            }
-//
-//            imageView.frame = CGRect(x: x, y: y, width: 222, height: 222)
-//            self.exercisesTableView.insertSubview(imageView, at: 0)
-//
-//        }
-//    }
-    
     // MARK: - @IBActions
     
     @IBAction func menuButtonPressed(_ sender: Any) {
@@ -179,11 +149,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let exerciseLoading = ExerciseLoadingViewController.load(from: Screen.exerciseLoading)
-        exerciseLoading.modalPresentationStyle = .fullScreen
+        let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
+        exerciseVC.modalPresentationStyle = .fullScreen
         guard let index = exercisesTableViews.firstIndex(of: tableView) else { return }
-        exerciseLoading.exercisePack = [FaceArea.all[index].exercises[indexPath.row]]
-        self.present(exerciseLoading, animated: true)
+        exerciseVC.exercisePack = [FaceArea.all[index].exercises[indexPath.row]]
+        self.present(exerciseVC, animated: true)
     }
     
 }

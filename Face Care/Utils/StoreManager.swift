@@ -21,9 +21,14 @@ struct StoreManager {
     
     public static func getProducts(for productIds: [String], completion: @escaping (([Product]) -> ())) {
         
+        print("Get products")
+        
         var foundProducts: [StoreManager.Product] = []
         
         Apphud.paywallsDidLoadCallback { paywalls in
+            
+            
+            print("retrieve current paywall with identifier")
             
             // retrieve current paywall with identifier
             
@@ -37,7 +42,9 @@ struct StoreManager {
             
             for apphudProduct in products {
                 
-                guard let skProduct = apphudProduct.skProduct else { return }
+                guard let skProduct = apphudProduct.skProduct else {
+                    print("not found skProduct")
+                    return }
                 guard productIds.contains(skProduct.productIdentifier) else { continue }
                 
                 // Product price
@@ -51,6 +58,7 @@ struct StoreManager {
                 foundProducts.append(customProduct)
             }
             
+            print("Completion")
             completion(foundProducts)
             
         }

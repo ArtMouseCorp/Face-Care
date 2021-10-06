@@ -33,29 +33,6 @@ class ProgressViewController: BaseViewController {
     
     var collectionViewData: [ProgressImage]?
     
-    let tableViewData = [
-        [
-            "title": "Глаза",
-            "stat": 1
-        ],
-        [
-            "title": "Лоб",
-            "stat": 3
-        ],
-        [
-            "title": "Шея",
-            "stat": 6
-        ],
-        [
-            "title": "Подбородок",
-            "stat": 7
-        ],
-        [
-            "title": "Скулы и щеки",
-            "stat": 0
-        ]
-    ]
-    
     let screenWidth = UIScreen.main.bounds.width
     var tableViewHeight: CGFloat {
         tableView.layoutIfNeeded()
@@ -74,6 +51,7 @@ class ProgressViewController: BaseViewController {
         localize()
         configureUI()
         fetchImages()
+        tableView.reloadData()
         State.shared.setCurrentScreen(to: "Progress Screen")
         Amplitude.instance().logEvent(AmplitudeEvent.progressOpened)
     }
@@ -181,16 +159,16 @@ extension ProgressViewController: UICollectionViewDelegate, UICollectionViewData
 extension ProgressViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewData.count
+        return State.shared.getProblemAreas().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.progressStat.id, for: indexPath) as! ProgressTableViewCell
         
-        let data = tableViewData[indexPath.row]
-        let stat = data["stat"] as! Int
+        let faceArea = FaceArea.all.first { $0.id ==  State.shared.getProblemAreas()[indexPath.row] }
+        let stat = State.shared.getCompletedDailyTrainings()
         
-        cell.titleLabel.text = data["title"] as? String
+        cell.titleLabel.text = faceArea?.name
         cell.statLabel.text = "\(stat)/7"
         
         if stat < 2 {

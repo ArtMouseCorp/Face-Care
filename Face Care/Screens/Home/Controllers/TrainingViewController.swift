@@ -68,19 +68,23 @@ class TrainingViewController: BaseViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
-        let exerciseLoading = ExerciseLoadingViewController.load(from: Screen.exerciseLoading)
-        exerciseLoading.onDismiss = { isEnded in
-            if !isEnded {
-                self.navigationController?.popViewController(animated: false)
-            } else {
-                self.navigationController?.popViewController(animated: false)
-                self.endExerciseCompletion()
-            }
-        }
-        exerciseLoading.exercisePack = training.exercises
-        exerciseLoading.modalPresentationStyle = .fullScreen
-        exerciseLoading.modalTransitionStyle = .crossDissolve
-        self.present(exerciseLoading, animated: true)
+        
+        let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
+        
+        
+//        exerciseLoading.onDismiss = { isEnded in
+//            if !isEnded {
+//                self.navigationController?.popViewController(animated: false)
+//            } else {
+//                self.navigationController?.popViewController(animated: false)
+//                self.endExerciseCompletion()
+//            }
+//        }
+        
+        exerciseVC.exercisePack = training.exercises
+        exerciseVC.modalPresentationStyle = .fullScreen
+        exerciseVC.modalTransitionStyle = .crossDissolve
+        self.present(exerciseVC, animated: true)
     }
     
 }

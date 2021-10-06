@@ -50,6 +50,8 @@ class PhotoOfferViewController: BaseViewController {
     var isToggleOn: Bool = false
     var page = 0
     
+    var product: StoreManager.Product?
+    
     // MARK: - Awake functions
     
     override func viewDidLoad() {
@@ -58,6 +60,7 @@ class PhotoOfferViewController: BaseViewController {
         playerLayer.frame = self.view.layer.bounds
         playerLayer.videoGravity = AVLayerVideoGravity.resize
         setupGestures()
+        getProducts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -189,6 +192,7 @@ class PhotoOfferViewController: BaseViewController {
             
             State.shared.completeOnboarding()
             
+            faceImage.isHidden = true
             closeButton.isHidden = true
             configureDotViews(firstToHide: 0, secondToHide: 2)
             toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
@@ -215,69 +219,81 @@ class PhotoOfferViewController: BaseViewController {
         continueButtonView.addTapGesture(target: self, action: #selector(continueTapped))
     }
     
+    private func getProducts() {
+        
+        StoreManager.getProducts(for: ["com.test.1y_3d0"]) { products in
+            self.product = products[0]
+            print(self.product)
+        }
+        
+    }
+    
     // MARK: - Gesture actions
     
     @objc func continueTapped() {
         if page == 1 && isToggleOn {
             takePhoto()
-        } else if page == 3 && isToggleOn {
-            StoreManager.getProducts(for: ["com.test.1y_3d0"]) { products in
-                
-                StoreManager.purchase(products[0]) {
-                    let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
-                    planGenerationVC.modalPresentationStyle = .fullScreen
-                    self.present(planGenerationVC, animated: false, completion: nil)
-                }
-                
-            }
+//        } else if page == 3 && isToggleOn {
+//
+//            guard let product = product else { return }
+//            StoreManager.purchase(product) {
+//                let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+//                planGenerationVC.modalPresentationStyle = .fullScreen
+//                self.present(planGenerationVC, animated: false, completion: nil)
+//            }
+//
+//        } else if page == 3 {
+//
+//
+            
         } else {
-                configureNextPage()
-            }
-        }
-        
-        // MARK: - @IBActions
-        
-        @IBAction func toggleButtonPressed(_ sender: Any) {
-            toggleButton.setImage(isToggleOn ? UIImage(named: "FC Toggle Off"): UIImage(named: "FC Toggle On"), for: .normal)
-            isToggleOn = !isToggleOn
-        }
-        
-        @IBAction func closeButtonPressed(_ sender: Any) {
-            let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
-            planGenerationVC.modalPresentationStyle = .fullScreen
-            self.present(planGenerationVC, animated: false, completion: nil)
-        }
-        
-    }
-    
-    extension PhotoOfferViewController {
-        override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            picker.dismiss(animated: true)
-            
-            guard let image = info[.originalImage] as? UIImage else {
-                configureNextPage()
-                return
-            }
-            let newImage = ProgressImage(context: context)
-            newImage.image = image
-            
-            do {
-                try context.save()
-            } catch {}
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.configureNextPage()
-            }
+            configureNextPage()
         }
     }
     
-    /*
-     //           _._
-     //        .-'   `
-     //      __|__
-     //     /     \
-     //     |()_()|
-     //     \{o o}/
-     //      =\o/=
-     //       ^ ^
-     */
+    // MARK: - @IBActions
+    
+    @IBAction func toggleButtonPressed(_ sender: Any) {
+        toggleButton.setImage(isToggleOn ? UIImage(named: "FC Toggle Off"): UIImage(named: "FC Toggle On"), for: .normal)
+        isToggleOn = !isToggleOn
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+        planGenerationVC.modalPresentationStyle = .fullScreen
+        self.present(planGenerationVC, animated: false, completion: nil)
+    }
+    
+}
+
+extension PhotoOfferViewController {
+    override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let image = info[.originalImage] as? UIImage else {
+            configureNextPage()
+            return
+        }
+        let newImage = ProgressImage(context: context)
+        newImage.image = image
+        
+        do {
+            try context.save()
+        } catch {}
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.configureNextPage()
+        }
+    }
+}
+
+/*
+ //           _._
+ //        .-'   `
+ //      __|__
+ //     /     \
+ //     |()_()|
+ //     \{o o}/
+ //      =\o/=
+ //       ^ ^
+ */

@@ -138,9 +138,16 @@ class State {
     }
     
     public func completeDailyTraining(number: Int) {
+        
+        userDefaults.set(number, forKey: UDKeys.completedDailyTrainings)
+        
         guard number != 7 else { return }
         self.openedDailyTrainings[number] = true
         userDefaults.set(openedDailyTrainings, forKey: UDKeys.openedDailyTrainings)
+    }
+    
+    public func getCompletedDailyTrainings() -> Int {
+        return userDefaults.integer(forKey: UDKeys.completedDailyTrainings)
     }
     
     public func clearOpenedDailyTrainings() {

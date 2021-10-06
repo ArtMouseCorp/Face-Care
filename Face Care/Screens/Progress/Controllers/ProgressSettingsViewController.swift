@@ -41,10 +41,27 @@ class ProgressSettingsViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        problemAreas = State.shared.getProblemAreas()
         localize()
         configureUI()
         setupGestures()
         State.shared.setCurrentScreen(to: "Progress Settings Screen")
+        checkIfEmpty()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        guard !self.problemAreas.isEmpty else { return }
+        
+        if State.shared.getProblemAreas().sorted() != self.problemAreas.sorted() {
+            
+            print(State.shared.getProblemAreas().sorted())
+            print(self.problemAreas.sorted())
+            
+            State.shared.updateProblemAreas(to: self.problemAreas)
+            Training.Daily.getTrainings()
+            print("Trainings updated")
+        }
     }
     
     // MARK: - Custom functions
@@ -63,8 +80,7 @@ class ProgressSettingsViewController: BaseViewController {
     }
     
     private func setCheckmarks() {
-        let problemAreaIds = State.shared.getProblemAreas()
-        for id in problemAreaIds {
+        for id in self.problemAreas {
             switch id {
             case 1:
                 eyesViewCheckmark.image = UIImage.FCCheckedCheckbox
@@ -113,6 +129,14 @@ class ProgressSettingsViewController: BaseViewController {
         self.showConfirmationAlert(message: "Ваш персональный курс будет сгенерировать заново и вы сможете начать сначала", confirmButton: "Сгенерировать") {
             completion()
         }
+    }
+    
+    private func checkIfEmpty() {
+//        if self.problemAreas.isEmpty {
+//            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+//        } else {
+//            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+//        }
     }
     
     private func addProblemArea(_ element: Int) {
@@ -185,13 +209,13 @@ class ProgressSettingsViewController: BaseViewController {
     // MARK: - @IBActions
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        
-        if State.shared.getProblemAreas() != self.problemAreas {
-            State.shared.updateProblemAreas(to: self.problemAreas)
-            Training.Daily.getTrainings()
+        if !self.problemAreas.isEmpty {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            let alert = getAlert(title: "Выберите часть лица", message: "Для чтобы сгенерировать курс нужно выбрать хотя бы одну часть лица", actions: okAction)
+            self.present(alert, animated: true)
         }
-        
-        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func resetProgressButtonPressed(_ sender: Any) {
@@ -199,10 +223,33 @@ class ProgressSettingsViewController: BaseViewController {
         self.showConfirmationAlert(message: "Ваш персональный курс будет сгенерировать заново и вы сможете начать сначала", confirmButton: "Сгенерировать") {
         
             // TODO: - Reset current progress
+            self.problemAreas.removeAll()
             
+            self.eyesViewCheckmark.image = UIImage.FCEmptyCheckbox
+            self.foreheadViewCheckmark.image = UIImage.FCEmptyCheckbox
+            self.neckViewCheckmark.image = UIImage.FCEmptyCheckbox
+            self.chinViewCheckmark.image = UIImage.FCEmptyCheckbox
+            self.cheecksViewCheckmark.image = UIImage.FCEmptyCheckbox
             
         }
         
+    }
+    
+}
+
+extension ProgressSettingsViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        if self.problemAreas.isEmpty {
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            let alert = getAlert(title: "Выберите часть лица", message: "Для чтобы сгенерировать курс нужно выбрать хотя бы одну часть лица", actions: okAction)
+            self.present(alert, animated: true)
+            
+        }
+        
+        return false
     }
     
 }

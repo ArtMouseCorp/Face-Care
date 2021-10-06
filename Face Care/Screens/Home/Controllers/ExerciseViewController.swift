@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 class ExerciseViewController: BaseViewController {
-
+    
     // MARK: - @IBOutlets
     
     // Views
@@ -26,31 +26,25 @@ class ExerciseViewController: BaseViewController {
     // MARK: - Variables
     
     var onDismiss: ((_ currentItem: Int, _ isClose: Bool, _ isEnded: Bool) -> ()) = {_,_,_ in }
-    var player: AVPlayer?
+    var player: AVPlayer = AVPlayer()
     var playerLayer: AVPlayerLayer!
     var isPlaying = true
     var exercisePack: [Exercise] = []
     var currentItem = 0
     
+    let loader = ExerciseLoadingViewController.load(from: Screen.exerciseLoading)
+    
     // MARK: - Awake functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
-        exerciseNameLabel.text = "Упражнение \(currentItem + 1):\n\(exercisePack[currentItem].name)"
+        loadVideo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        configureUI()
+        updateView()
         setupGestures()
-        configurePlayer()
         State.shared.setCurrentScreen(to: "Exercise Screen")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        player!.play()
-        addTimeObserver()
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,6 +52,12 @@ class ExerciseViewController: BaseViewController {
     }
     
     // MARK: - Custom functions
+    
+    private func updateView() {
+        configureUI()
+        configurePlayer()
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+    }
     
     private func configureUI() {
         self.slider.setThumbImage(UIImage(named: "FC Slider Thumb")!, for: .normal)
@@ -90,11 +90,31 @@ class ExerciseViewController: BaseViewController {
         videoView.addTapGesture(target: self, action: #selector(pauseVideo))
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        if object as AnyObject? === player {
+            if keyPath == "status" {
+                if player.status == .readyToPlay {
+                    print("Ready to play")
+                    player.play()
+                }
+            } else if keyPath == "timeControlStatus" {
+                if player.timeControlStatus == .playing {
+                    
+                    print("Playing")
+                    loader.remove()
+                    self.addTimeObserver()
+                    
+                }
+            }
+        }
+    }
+    
     func addTimeObserver() {
         let interval = CMTime(seconds: 0.01, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let mainQueue = DispatchQueue.main
-        _ = player?.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { time in
-            guard let currentItem = self.player?.currentItem else {return}
+        _ = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { time in
+            guard let currentItem = self.player.currentItem else {return}
             self.slider.minimumValue = 0
             self.slider.maximumValue = Float(currentItem.duration.seconds) == 0 ? 1 : Float(currentItem.duration.seconds)
             self.slider.value = Float(currentItem.currentTime().seconds)
@@ -102,23 +122,46 @@ class ExerciseViewController: BaseViewController {
         })
     }
     
+    private func loadVideo() {
+        
+        
+        print("Load: current item: ", currentItem)
+        let exercise = exercisePack[currentItem]
+        player = AVPlayer(url: exercise.getVideoURL())
+        
+        let title = "Упражнение \(currentItem + 1):\n\(exercise.name)"
+        
+        loader.titleLabelText = title
+        exerciseNameLabel.text = title
+        
+        loader.view.frame = self.view.frame
+        self.view.addSubview(loader.view)
+        
+        player.addObserver(self, forKeyPath: "status", options: [.old, .new], context: nil)
+        player.addObserver(self, forKeyPath: "timeControlStatus", options: [.old, .new], context: nil)
+    }
+    
     // MARK: - Gesture actions
     
     @objc private func pauseVideo() {
-        player!.pause()
+        player.pause()
         let infoPopup = ExerciseInfoPopup.load(from: Popup.exerciseInfo)
         infoPopup.currentItem = self.currentItem
         infoPopup.exercisePack = self.exercisePack
         infoPopup.onCloseCompletion = { index in
+            
+            print("Popup closed: current item: ", index)
+            
             if self.currentItem == index {
-                self.player?.play()
+                self.player.play()
             } else {
-                self.player?.pause()
-                self.dismiss(animated: false) {
-                    self.onDismiss(index, false, false)
-                }
+                self.currentItem = index
+                self.loadVideo()
+                self.updateView()
             }
+            
         }
+        
         self.presentPanModal(infoPopup)
     }
     
@@ -127,14 +170,12 @@ class ExerciseViewController: BaseViewController {
         let index = currentItem + 1
         
         if index > exercisePack.count - 1 {
-            self.dismiss(animated: false) {
-                self.onDismiss(index, false, true)
-            }
+            // Training ended -> TrainingCompletedVC
         }
         else {
-            self.dismiss(animated: false) {
-                self.onDismiss(index, false, false)
-            }
+            currentItem = index
+            self.loadVideo()
+            self.updateView()
         }
     }
     
@@ -142,18 +183,21 @@ class ExerciseViewController: BaseViewController {
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         
-        self.player?.pause()
+        self.player.pause()
         
         let alert = UIAlertController(title: "Вы уверены, что хотите выйти?", message: nil, preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: "Да", style: .default) { _ in
-            self.dismiss(animated: true) {
-                self.onDismiss(self.currentItem, true, false)
-            }
+            
+            self.dismiss(animated: true)
+            
+//            self.dismiss(animated: true) {
+//                self.onDismiss(self.currentItem, true, false)
+//            }
         }
         
         let cancelAction = UIAlertAction(title: "Отменить", style: .cancel) { _ in
-            self.player?.play()
+            self.player.play()
         }
         
         alert.addAction(confirmAction)
@@ -164,16 +208,16 @@ class ExerciseViewController: BaseViewController {
     
     @IBAction func sliderValueChanged(_ sender: UISlider, event: UIEvent) {
         
-        player?.seek(to: CMTimeMake(value: Int64(sender.value * 1000), timescale: 1000))
+        player.seek(to: CMTimeMake(value: Int64(sender.value * 1000), timescale: 1000))
         
         if let touchEvent = event.allTouches?.first {
             switch touchEvent.phase {
             case .began:
-                player?.pause()
+                player.pause()
             case .moved:
-                player?.pause()
+                player.pause()
             case .ended:
-                player?.play()
+                player.play()
             default:
                 break
             }
@@ -191,4 +235,4 @@ class ExerciseViewController: BaseViewController {
  //     \{o o}/
  //      =\o/=
  //       ^ ^
-*/
+ */

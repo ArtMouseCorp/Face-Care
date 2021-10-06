@@ -24,14 +24,14 @@ class LoadingViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
-            if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
-
+//            if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
+//
                 let startViewController = StartViewController.load(from: Screen.start)
                 startViewController.modalPresentationStyle = .fullScreen
                 self.present(startViewController, animated: false)
-                return
-
-            }
+//                return
+//
+//            }
             
 //            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
 //                let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
@@ -41,10 +41,10 @@ class LoadingViewController: BaseViewController {
 //                return
 //            }
 
-            let tabBar = TabBarController.load(from: Screen.tabBar)
-            tabBar.modalPresentationStyle = .fullScreen
-            self.present(tabBar, animated: true)
-            
+//            let tabBar = TabBarController.load(from: Screen.tabBar)
+//            tabBar.modalPresentationStyle = .fullScreen
+//            self.present(tabBar, animated: true)
+
         }
     }
     
