@@ -8,7 +8,7 @@ class State {
     
     private var appLaunch: Int = 0
     public var isSubscribed: Bool = false
-    public var offer: Offer = .defaultOffer
+    private var offer: Offer?
     
     public var tabBarController: TabBarController = TabBarController()
     private var currenctScreen: String = ""
@@ -40,6 +40,20 @@ class State {
     
     public func isFirstLaunch() -> Bool {
         return self.appLaunch == 1
+    }
+    
+    // MARK: - Offer
+    
+    public func setOffer(to offer: Offer) {
+        self.offer = offer
+    }
+    
+    public func getOffer() -> Offer {
+        guard let offer = self.offer else {
+            return .defaultOffer
+        }
+        return offer
+
     }
     
     // MARK: - Language

@@ -7,11 +7,11 @@ extension UIViewController {
     }
     
     public func showNetworkConnectionAlert(completion: (() -> ())? = nil) {
-        let alertOk = UIAlertAction(title: L.Alert.Action.ok, style: .default) { _ in
+        let alertOk = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default) { _ in
             completion?() ?? ()
         }
-        self.present(getAlert(title: L.Alert.Connection.title,
-                              message: L.Alert.Connection.message,
+        self.present(getAlert(title: L.get(key: L.Alert.Connection.title),
+                              message: L.get(key: L.Alert.Connection.message),
                               actions: alertOk),
                      animated: true,
                      completion: nil
@@ -19,11 +19,11 @@ extension UIViewController {
     }
     
     public func showAlreadySubscribedAlert(completion: (() -> ())? = nil) {
-        let alertOk = UIAlertAction(title: L.Alert.Action.ok, style: .default) { _ in
+        let alertOk = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default) { _ in
             completion?() ?? ()
         }
-        self.present(getAlert(title: L.Alert.Subscribed.title,
-                              message: L.Alert.Subscribed.message,
+        self.present(getAlert(title: L.get(key: L.Alert.Subscribed.title),
+                              message: L.get(key: L.Alert.Subscribed.message),
                               actions: alertOk),
                      animated: true,
                      completion: nil
@@ -31,11 +31,11 @@ extension UIViewController {
     }
     
     public func showNotSubscriberAlert(completion: (() -> ())? = nil) {
-        let alertOk = UIAlertAction(title: L.Alert.Action.ok, style: .default) { _ in
+        let alertOk = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default) { _ in
             completion?() ?? ()
         }
-        self.present(getAlert(title: L.Alert.NotSubscriber.title,
-                              message: L.Alert.NotSubscriber.message,
+        self.present(getAlert(title: L.get(key: L.Alert.NotSubscriber.title),
+                              message: L.get(key: L.Alert.NotSubscriber.message),
                               actions: alertOk),
                      animated: true,
                      completion: nil
@@ -43,11 +43,11 @@ extension UIViewController {
     }
     
     public func showRestoredAlert(completion: (() -> ())? = nil) {
-        let alertOk = UIAlertAction(title: L.Alert.Action.ok, style: .default) { _ in
+        let alertOk = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default) { _ in
             completion?() ?? ()
         }
-        self.present(getAlert(title: L.Alert.Restored.title,
-                              message: L.Alert.Restored.message,
+        self.present(getAlert(title: L.get(key: L.Alert.Restored.title),
+                              message: L.get(key: L.Alert.Restored.message),
                               actions: alertOk),
                      animated: true,
                      completion: nil

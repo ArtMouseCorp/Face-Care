@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import ApphudSDK
 
 class PhotoOfferViewController: BaseViewController {
     
@@ -56,6 +57,7 @@ class PhotoOfferViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Offer.get()
         configureVideo()
         playerLayer.frame = self.view.layer.bounds
         playerLayer.videoGravity = AVLayerVideoGravity.resize
@@ -179,6 +181,7 @@ class PhotoOfferViewController: BaseViewController {
             configureDotViews(firstToHide: 0, secondToHide: 4)
             toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
             isToggleOn = false
+            commentLabel.text = State.shared.getOffer().comment
             
             bottomFirstLabel.localize(with: L.Onboarding.Features.first)
             bottomSecondLabel.localize(with: L.Onboarding.Features.second)
@@ -198,8 +201,12 @@ class PhotoOfferViewController: BaseViewController {
             toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
             isToggleOn = true
             outlineTitleLabel.isHidden = false
+            
             outlineTitleLabel.text = "3 дня бесплатно,"
             outlineViewLabel.text = "потом 5 290 ₽/год"
+            
+            commentLabel.text = State.shared.getOffer().comment
+            continueButtonViewLabel.text = State.shared.getOffer().button
             
             bottomFirstLabel.localize(with: L.Subscription.planInfo)
             bottomSecondLabel.localize(with: L.Subscription.termsOfUse)
@@ -220,10 +227,14 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     private func getProducts() {
-        
+//        StoreManager.getProducts(for: [State.shared.getOffer().purchaseId]) { products in
         StoreManager.getProducts(for: ["com.test.1y_3d0"]) { products in
             self.product = products[0]
-            print(self.product)
+            print(products[0])
+            
+            self.outlineTitleLabel.text = "3 дня бесплатно,"
+            self.outlineViewLabel.text = "потом 5 290 ₽/год"
+            
         }
         
     }
@@ -233,19 +244,18 @@ class PhotoOfferViewController: BaseViewController {
     @objc func continueTapped() {
         if page == 1 && isToggleOn {
             takePhoto()
-//        } else if page == 3 && isToggleOn {
-//
-//            guard let product = product else { return }
-//            StoreManager.purchase(product) {
-//                let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
-//                planGenerationVC.modalPresentationStyle = .fullScreen
-//                self.present(planGenerationVC, animated: false, completion: nil)
-//            }
-//
-//        } else if page == 3 {
-//
-//
+        } else if page == 3 && isToggleOn {
+
+            guard let product = product else { return }
             
+            StoreManager.purchase(product) {
+                let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+                planGenerationVC.modalPresentationStyle = .fullScreen
+                self.present(planGenerationVC, animated: false, completion: nil)
+            }
+
+        } else if page == 3 {
+
         } else {
             configureNextPage()
         }

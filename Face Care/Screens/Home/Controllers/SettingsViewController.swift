@@ -114,6 +114,21 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
     
     @objc private func renewSubscriptionButtonViewTapped() {
         // TODO:  - Restore user's subscription
+        
+        guard isConnectedToNetwork() else {
+            self.showNetworkConnectionAlert()
+            return
+        }
+        
+        StoreManager.updateStatus()
+            
+        guard !State.shared.isSubscribed else {
+            self.showAlreadySubscribedAlert()
+            return
+        }
+        
+        StoreManager.restore()
+        
     }
     
     // MARK: - @IBActions

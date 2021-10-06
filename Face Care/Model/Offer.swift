@@ -2,22 +2,11 @@ import Foundation
 
 struct Offer: Codable {
     let lang: Language.Code
-    let title: String
     let button: String
     let purchaseId: String
-    let text1: String
-    let text2: String
-    let text3: String
+    let comment: String
     
-    let view: Bool
-    let showOnCount: Int
-    let categoriesEnabled: Bool
-    
-    let giftPurchaseId: String
-    let giftPriceText: String
-    let giftOldPrice: String
-    
-    public static let defaultOffer = Offer(lang: .en, title: "Title", button: "Play", purchaseId: "7", text1: "Text1", text2: "Text2", text3: "Text3", view: true, showOnCount: 1, categoriesEnabled: true, giftPurchaseId: "", giftPriceText: "", giftOldPrice: "")
+    public static let defaultOffer = Offer(lang: .en, button: L.get(key: L.Onboarding.OnboardingButton.continue), purchaseId: "fy_1y", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!")
     
     public static func get() {
         fetch { result in
@@ -25,7 +14,7 @@ struct Offer: Codable {
             case .success(let offers):
                 offers.forEach { offer in
                     if offer.lang == State.shared.getLanguage() {
-                        State.shared.offer = offer
+                        State.shared.setOffer(to: offer)
                     }
                 }
                 break
@@ -39,7 +28,7 @@ struct Offer: Codable {
                     
                     offers.forEach { offer in
                         if offer.lang == State.shared.getLanguage() {
-                            State.shared.offer = offer
+                            State.shared.setOffer(to: offer)
                         }
                     }
                     

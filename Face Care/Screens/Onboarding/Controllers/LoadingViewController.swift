@@ -24,26 +24,26 @@ class LoadingViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
-//            if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
-//
+            if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
+
                 let startViewController = StartViewController.load(from: Screen.start)
                 startViewController.modalPresentationStyle = .fullScreen
                 self.present(startViewController, animated: false)
-//                return
-//
-//            }
-            
-//            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
-//                let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
-//                photoOfferVC.modalPresentationStyle = .fullScreen
-//                photoOfferVC.page = 2
-//                self.present(photoOfferVC, animated: true)
-//                return
-//            }
+                return
 
-//            let tabBar = TabBarController.load(from: Screen.tabBar)
-//            tabBar.modalPresentationStyle = .fullScreen
-//            self.present(tabBar, animated: true)
+            }
+            
+            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
+                let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
+                photoOfferVC.modalPresentationStyle = .fullScreen
+                photoOfferVC.page = 2
+                self.present(photoOfferVC, animated: true)
+                return
+            }
+
+            let tabBar = TabBarController.load(from: Screen.tabBar)
+            tabBar.modalPresentationStyle = .fullScreen
+            self.present(tabBar, animated: true)
 
         }
     }
@@ -54,6 +54,7 @@ class LoadingViewController: BaseViewController {
         
         Article.getAll()
         FaceArea.getAll()
+        Offer.get()
         
         if !State.shared.isFirstLaunch() && State.shared.isOnboardingCompleted() {
             Training.Daily.getTrainings()

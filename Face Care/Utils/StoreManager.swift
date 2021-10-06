@@ -40,12 +40,18 @@ struct StoreManager {
                 products = paywall.products
             }
             
+            print(products)
+            
             for apphudProduct in products {
                 
+                print(apphudProduct.productId)
+                guard productIds.contains(apphudProduct.productId) else { continue }
                 guard let skProduct = apphudProduct.skProduct else {
                     print("not found skProduct")
-                    return }
-                guard productIds.contains(skProduct.productIdentifier) else { continue }
+                    return
+                }
+                
+                print(skProduct)
                 
                 // Product price
                 let price = skProduct.localizedPrice ?? skProduct.price.stringValue
