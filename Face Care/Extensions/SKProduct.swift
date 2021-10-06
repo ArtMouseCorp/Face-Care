@@ -62,9 +62,9 @@ extension SKProduct {
         }
         
         if showOne {
-            return L.get(key: unit, args: numberOfUnits)
+            return "\(numberOfUnits) \(L.get(key: unit))"
         } else {
-            return numberOfUnits > 1 ? L.get(key: unit, args: numberOfUnits) : L.get(key: unit)
+            return numberOfUnits > 1 ? "\(numberOfUnits) \(L.get(key: unit))" : L.get(key: unit)
         }
     }
     
@@ -107,7 +107,7 @@ extension SKProduct {
             unit = "N/A"
         }
         
-        return "\(numberOfUnits) " + unit.uppercased()
+        return "\(numberOfUnits) \(L.get(key: unit))"
     }
     
 }

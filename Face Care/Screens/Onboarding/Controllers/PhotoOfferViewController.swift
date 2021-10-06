@@ -53,6 +53,9 @@ class PhotoOfferViewController: BaseViewController {
     
     var product: StoreManager.Product?
     
+    var subscriptionTitle: String = ""
+    var subscriptionSubtitle: String = ""
+    
     // MARK: - Awake functions
     
     override func viewDidLoad() {
@@ -200,10 +203,12 @@ class PhotoOfferViewController: BaseViewController {
             configureDotViews(firstToHide: 0, secondToHide: 2)
             toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
             isToggleOn = true
-            outlineTitleLabel.isHidden = false
             
-            outlineTitleLabel.text = "3 дня бесплатно,"
-            outlineViewLabel.text = "потом 5 290 ₽/год"
+            
+            self.outlineTitleLabel.isHidden = self.subscriptionTitle.isEmpty
+            
+            self.outlineTitleLabel.text = self.subscriptionTitle
+            self.outlineViewLabel.text = self.subscriptionSubtitle
             
             commentLabel.text = State.shared.getOffer().comment
             continueButtonViewLabel.text = State.shared.getOffer().button
@@ -229,11 +234,32 @@ class PhotoOfferViewController: BaseViewController {
     private func getProducts() {
 //        StoreManager.getProducts(for: [State.shared.getOffer().purchaseId]) { products in
         StoreManager.getProducts(for: ["com.test.1y_3d0"]) { products in
-            self.product = products[0]
-            print(products[0])
+            let product = products[0]
+            self.product = product
+            print(product)
             
-            self.outlineTitleLabel.text = "3 дня бесплатно,"
-            self.outlineViewLabel.text = "потом 5 290 ₽/год"
+            if let trialPeriod = product.trialPeriod {
+                
+                self.outlineTitleLabel.isHidden = false
+                
+                self.subscriptionTitle = State.shared.getOffer().trialTitle
+                    .components(separatedBy: "\n")[0]
+                    .replacingOccurrences(of: "%trial_period%", with: trialPeriod)
+                self.subscriptionSubtitle = State.shared.getOffer().trialTitle
+                    .components(separatedBy: "\n")[1]
+                    .replacingOccurrences(of: "%subscription_price%", with: product.price)
+                    .replacingOccurrences(of: "%subscription_period%", with: product.subscriptionPeriod)
+                
+            } else {
+                
+                self.subscriptionTitle = ""
+                
+                self.subscriptionSubtitle = State.shared.getOffer().notTrialTitle
+                    .replacingOccurrences(of: "%subscription_price%", with: product.price)
+                    .replacingOccurrences(of: "%subscription_period%", with: product.subscriptionPeriod)
+                
+            }
+            
             
         }
         

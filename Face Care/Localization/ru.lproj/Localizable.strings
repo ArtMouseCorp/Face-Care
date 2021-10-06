@@ -56,18 +56,18 @@
 "subscription.termsOfUse"                           = "Правила пользования";
 "subscription.privacy"                              = "Политика конфеденциальности";
 
-"subscription.interval.day.one"                     = "%d день";
-"subscription.interval.day.two"                     = "%d дня";
-"subscription.interval.day.five"                    = "%d дней";
-"subscription.interval.week.one"                    = "%d неделя";
-"subscription.interval.week.two"                    = "%d недели";
-"subscription.interval.week.five"                   = "%d недель";
-"subscription.interval.month.one"                   = "%d месяц";
-"subscription.interval.month.two"                   = "%d месяца";
-"subscription.interval.month.five"                  = "%d месяцев";
-"subscription.interval.year.one"                    = "%d год";
-"subscription.interval.year.two"                    = "%d года";
-"subscription.interval.year.five"                   = "%d лет";
+"subscription.interval.day.one"                     = "день";
+"subscription.interval.day.two"                     = "дня";
+"subscription.interval.day.five"                    = "дней";
+"subscription.interval.week.one"                    = "неделя";
+"subscription.interval.week.two"                    = "недели";
+"subscription.interval.week.five"                   = "недель";
+"subscription.interval.month.one"                   = "месяц";
+"subscription.interval.month.two"                   = "месяца";
+"subscription.interval.month.five"                  = "месяцев";
+"subscription.interval.year.one"                    = "год";
+"subscription.interval.year.two"                    = "года";
+"subscription.interval.year.five"                   = "лет";
 
 // MARK: - HOME
 

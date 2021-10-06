@@ -56,18 +56,18 @@
 "subscription.termsOfUse"                           = "Condiciones de uso";
 "subscription.privacy"                              = "Política de privacidad";
 
-"subscription.interval.day.one"                     = "%d día";
-"subscription.interval.day.two"                     = "%d días";
-"subscription.interval.day.five"                    = "%d días";
-"subscription.interval.week.one"                    = "%d semana";
-"subscription.interval.week.two"                    = "%d semanas";
-"subscription.interval.week.five"                   = "%d semanas";
-"subscription.interval.month.one"                   = "%d mes";
-"subscription.interval.month.two"                   = "%d meses";
-"subscription.interval.month.five"                  = "%d meses";
-"subscription.interval.year.one"                    = "%d año";
-"subscription.interval.year.two"                    = "%d años";
-"subscription.interval.year.five"                   = "%d años";
+"subscription.interval.day.one"                     = "día";
+"subscription.interval.day.two"                     = "días";
+"subscription.interval.day.five"                    = "días";
+"subscription.interval.week.one"                    = "semana";
+"subscription.interval.week.two"                    = "semanas";
+"subscription.interval.week.five"                   = "semanas";
+"subscription.interval.month.one"                   = "mes";
+"subscription.interval.month.two"                   = "meses";
+"subscription.interval.month.five"                  = "meses";
+"subscription.interval.year.one"                    = "año";
+"subscription.interval.year.two"                    = "años";
+"subscription.interval.year.five"                   = "años";
 
 // MARK: - HOME
 

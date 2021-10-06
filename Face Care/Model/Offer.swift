@@ -2,11 +2,13 @@ import Foundation
 
 struct Offer: Codable {
     let lang: Language.Code
+    let trialTitle: String
+    let notTrialTitle: String
     let button: String
     let purchaseId: String
     let comment: String
     
-    public static let defaultOffer = Offer(lang: .en, button: L.get(key: L.Onboarding.OnboardingButton.continue), purchaseId: "fy_1y", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!")
+    public static let defaultOffer = Offer(lang: .en, trialTitle: "", notTrialTitle: "", button: L.get(key: L.Onboarding.OnboardingButton.continue), purchaseId: "fy_1y", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!")
     
     public static func get() {
         fetch { result in
