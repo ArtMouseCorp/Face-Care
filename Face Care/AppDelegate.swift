@@ -12,8 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         State.shared.newAppLaunch()
         
-        Amplitude.instance().logEvent(State.shared.isFirstLaunch() ? AmplitudeEvent.appStartedFirst : AmplitudeEvent.appStarted)
-        
         // It enables intelligent text field behavior when the keyboard is covering the text field.
         IQKeyboardManager.shared.enable = true
         
@@ -21,11 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Services connections
         
+        integrateApphud()
+        integrateAmplitude()
         integrateFirebase()
         integrateFirebaseMessaging(for: application)
-        integrateAmplitude()
-        integrateApphud()
         
+        Amplitude.instance().logEvent(State.shared.isFirstLaunch() ? AmplitudeEvent.appStartedFirst : AmplitudeEvent.appStarted)
         
         return true
     }

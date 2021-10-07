@@ -22,7 +22,7 @@ class TrainingViewController: BaseViewController {
     // MARK: - Variables
     
     var training: Training = .default
-    var endExerciseCompletion: (()->()) = {}
+    var dayNumber: Int?
     
     // MARK: - Awake functions
     
@@ -43,6 +43,7 @@ class TrainingViewController: BaseViewController {
         startButton.configure(as: .filled)
         
         trainingNameLabel.text = training.name
+        trainingImageView.image = training.exercises.first?.getImage() ?? UIImage()
         
         let minutesNounKey = getNoun(
             number: training.duration,
@@ -71,20 +72,14 @@ class TrainingViewController: BaseViewController {
         
         let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
         
-        
-//        exerciseLoading.onDismiss = { isEnded in
-//            if !isEnded {
-//                self.navigationController?.popViewController(animated: false)
-//            } else {
-//                self.navigationController?.popViewController(animated: false)
-//                self.endExerciseCompletion()
-//            }
-//        }
-        
-        exerciseVC.exercisePack = training.exercises
+        exerciseVC.exercises = training.exercises
+        exerciseVC.trainingNumber = dayNumber
         exerciseVC.modalPresentationStyle = .fullScreen
         exerciseVC.modalTransitionStyle = .crossDissolve
-        self.present(exerciseVC, animated: true)
+        
+        self.present(exerciseVC, animated: true) {
+            self.navigationController?.popViewController(animated: false)
+        }
     }
     
 }

@@ -19,6 +19,13 @@
 		281835A426E3CA0D0038E826 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */; };
 		281835A626E3DD100038E826 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A526E3DD100038E826 /* ArticleViewController.swift */; };
 		281835A826E3E08A0038E826 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A726E3E08A0038E826 /* UILabel.swift */; };
+		283EED71270E35B20098F7CB /* ProblemAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283EED70270E35B20098F7CB /* ProblemAreaTableViewCell.swift */; };
+		283EED73270E516A0098F7CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 283EED72270E516A0098F7CB /* GoogleService-Info.plist */; };
+		283EED79270E6C540098F7CB /* faceAreas_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED74270E6C530098F7CB /* faceAreas_es.json */; };
+		283EED7A270E6C540098F7CB /* faceAreas_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED75270E6C540098F7CB /* faceAreas_en.json */; };
+		283EED7B270E6C540098F7CB /* faceAreas_it.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED76270E6C540098F7CB /* faceAreas_it.json */; };
+		283EED7C270E6C540098F7CB /* faceAreas_de.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED77270E6C540098F7CB /* faceAreas_de.json */; };
+		283EED7D270E6C540098F7CB /* faceAreas_fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED78270E6C540098F7CB /* faceAreas_fr.json */; };
 		286D331327044C7800E6761E /* articles_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 286D331227044C7800E6761E /* articles_en.json */; };
 		286D331827044CF300E6761E /* articles_it.json in Resources */ = {isa = PBXBuildFile; fileRef = 286D331427044CF300E6761E /* articles_it.json */; };
 		286D331927044CF300E6761E /* articles_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 286D331527044CF300E6761E /* articles_es.json */; };
@@ -48,7 +55,6 @@
 		289623FC2705B86900DE0D60 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289623FB2705B86900DE0D60 /* Training.swift */; };
 		289623FE2705B8A700DE0D60 /* dailyTrainings.json in Resources */ = {isa = PBXBuildFile; fileRef = 289623FD2705B8A700DE0D60 /* dailyTrainings.json */; };
 		289624002705C2C200DE0D60 /* FaceArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289623FF2705C2C200DE0D60 /* FaceArea.swift */; };
-		2896242D2705F18400DE0D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2896242C2705F18400DE0D60 /* GoogleService-Info.plist */; };
 		28991C60270329140087760E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28991C5F270329140087760E /* String.swift */; };
 		28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392026DF69EE00FB3803 /* AppDelegate.swift */; };
 		28BC392326DF69EE00FB3803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BC392226DF69EE00FB3803 /* SceneDelegate.swift */; };
@@ -102,7 +108,6 @@
 		4A0EC25726EBD68F00F48A0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */; };
 		4A0EC25A26EBE25300F48A0C /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25926EBE25300F48A0C /* ExerciseViewController.swift */; };
 		4A0EC25C26EBE82800F48A0C /* ExerciseInfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25B26EBE82800F48A0C /* ExerciseInfoPopup.swift */; };
-		4AA4A6A826FE4A2E009CF859 /* example-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */; };
 		4AA4A6AA26FF5F95009CF859 /* TrainingCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A926FF5F95009CF859 /* TrainingCompletedViewController.swift */; };
 		4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */; };
 		4AC75F2E2702231E00FB5E6D /* articles_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AC75F2D2702231E00FB5E6D /* articles_ru.json */; };
@@ -152,6 +157,13 @@
 		281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		281835A526E3DD100038E826 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		281835A726E3E08A0038E826 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		283EED70270E35B20098F7CB /* ProblemAreaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemAreaTableViewCell.swift; sourceTree = "<group>"; };
+		283EED72270E516A0098F7CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		283EED74270E6C530098F7CB /* faceAreas_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faceAreas_es.json; sourceTree = "<group>"; };
+		283EED75270E6C540098F7CB /* faceAreas_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faceAreas_en.json; sourceTree = "<group>"; };
+		283EED76270E6C540098F7CB /* faceAreas_it.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faceAreas_it.json; sourceTree = "<group>"; };
+		283EED77270E6C540098F7CB /* faceAreas_de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faceAreas_de.json; sourceTree = "<group>"; };
+		283EED78270E6C540098F7CB /* faceAreas_fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faceAreas_fr.json; sourceTree = "<group>"; };
 		286D331227044C7800E6761E /* articles_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles_en.json; sourceTree = "<group>"; };
 		286D331427044CF300E6761E /* articles_it.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles_it.json; sourceTree = "<group>"; };
 		286D331527044CF300E6761E /* articles_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles_es.json; sourceTree = "<group>"; };
@@ -187,7 +199,6 @@
 		289623FB2705B86900DE0D60 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		289623FD2705B8A700DE0D60 /* dailyTrainings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dailyTrainings.json; sourceTree = "<group>"; };
 		289623FF2705C2C200DE0D60 /* FaceArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceArea.swift; sourceTree = "<group>"; };
-		2896242C2705F18400DE0D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2896242F27083FFB00DE0D60 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		28991C5F270329140087760E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		28BC391D26DF69EE00FB3803 /* Face Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,7 +257,6 @@
 		4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4A0EC25926EBE25300F48A0C /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		4A0EC25B26EBE82800F48A0C /* ExerciseInfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoPopup.swift; sourceTree = "<group>"; };
-		4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "example-video.mp4"; sourceTree = "<group>"; };
 		4AA4A6A926FF5F95009CF859 /* TrainingCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCompletedViewController.swift; sourceTree = "<group>"; };
 		4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfferViewController.swift; sourceTree = "<group>"; };
 		4AC75F2D2702231E00FB5E6D /* articles_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles_ru.json; sourceTree = "<group>"; };
@@ -286,6 +296,11 @@
 			isa = PBXGroup;
 			children = (
 				2813BA0426F9D3A9006C8B84 /* faceAreas_ru.json */,
+				283EED77270E6C540098F7CB /* faceAreas_de.json */,
+				283EED75270E6C540098F7CB /* faceAreas_en.json */,
+				283EED74270E6C530098F7CB /* faceAreas_es.json */,
+				283EED78270E6C540098F7CB /* faceAreas_fr.json */,
+				283EED76270E6C540098F7CB /* faceAreas_it.json */,
 				289623FD2705B8A700DE0D60 /* dailyTrainings.json */,
 			);
 			path = Exercises;
@@ -314,6 +329,14 @@
 				281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		283EED6F270E35920098F7CB /* Problem Area Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				283EED70270E35B20098F7CB /* ProblemAreaTableViewCell.swift */,
+			);
+			path = "Problem Area Table View Cell";
 			sourceTree = "<group>";
 		};
 		28883FF926E787B90002292E /* Cells */ = {
@@ -503,7 +526,7 @@
 			children = (
 				28BC392026DF69EE00FB3803 /* AppDelegate.swift */,
 				28BC392226DF69EE00FB3803 /* SceneDelegate.swift */,
-				2896242C2705F18400DE0D60 /* GoogleService-Info.plist */,
+				283EED72270E516A0098F7CB /* GoogleService-Info.plist */,
 				28BC392E26DF69F200FB3803 /* Info.plist */,
 			);
 			name = Application;
@@ -592,7 +615,6 @@
 			isa = PBXGroup;
 			children = (
 				4AC75F2C2702228900FB5E6D /* Articles */,
-				4AA4A6A726FE4A2E009CF859 /* example-video.mp4 */,
 				4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */,
 				28BC396F26DF7D6500FB3803 /* Fonts */,
 				2813BA0326F9D3A9006C8B84 /* Exercises */,
@@ -653,6 +675,7 @@
 		4A09D9E026EB1D14000F573E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				283EED6F270E35920098F7CB /* Problem Area Table View Cell */,
 				4A09D9E626EB2B35000F573E /* Progress Table View Cell */,
 				4A09D9E526EB1D3A000F573E /* Progress Collection View Cell */,
 			);
@@ -834,6 +857,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283EED7B270E6C540098F7CB /* faceAreas_it.json in Resources */,
 				2888400426E788780002292E /* ExclusiveTrainingCollectionViewCell.xib in Resources */,
 				286D331327044C7800E6761E /* articles_en.json in Resources */,
 				28BC392D26DF69F200FB3803 /* LaunchScreen.storyboard in Resources */,
@@ -845,6 +869,8 @@
 				286D331F27047C2B00E6761E /* swiftgen.yml in Resources */,
 				28BC392A26DF69F200FB3803 /* Assets.xcassets in Resources */,
 				28BC394326DF779A00FB3803 /* Progress.storyboard in Resources */,
+				283EED79270E6C540098F7CB /* faceAreas_es.json in Resources */,
+				283EED73270E516A0098F7CB /* GoogleService-Info.plist in Resources */,
 				28BC397826DF7EAC00FB3803 /* Raleway-Regular.ttf in Resources */,
 				28BC392826DF69EE00FB3803 /* Main.storyboard in Resources */,
 				28E5B41F26EA29C0004FECF8 /* Onboarding.storyboard in Resources */,
@@ -853,19 +879,20 @@
 				28BC397926DF7EAC00FB3803 /* Raleway-Light.ttf in Resources */,
 				2813BA0E26F9F55B006C8B84 /* LanguageTableViewCell.xib in Resources */,
 				286D332027047C6C00E6761E /* Localizable.strings in Resources */,
+				283EED7A270E6C540098F7CB /* faceAreas_en.json in Resources */,
 				28BC397A26DF7EAC00FB3803 /* Raleway-Medium.ttf in Resources */,
 				28BC397B26DF7EAC00FB3803 /* Raleway-Bold.ttf in Resources */,
 				289623FE2705B8A700DE0D60 /* dailyTrainings.json in Resources */,
 				28BC394526DF77AF00FB3803 /* Articles.storyboard in Resources */,
+				283EED7D270E6C540098F7CB /* faceAreas_fr.json in Resources */,
 				286D331A27044CF300E6761E /* articles_fr.json in Resources */,
 				2888400826E788910002292E /* ExerciseTableViewCell.xib in Resources */,
-				4AA4A6A826FE4A2E009CF859 /* example-video.mp4 in Resources */,
 				2888400026E7885B0002292E /* DailyTrainingCollectionViewCell.xib in Resources */,
 				286D331927044CF300E6761E /* articles_es.json in Resources */,
 				286D331B27044CF300E6761E /* articles_de.json in Resources */,
 				2896223827051E8400DE0D60 /* offerScreen.json in Resources */,
+				283EED7C270E6C540098F7CB /* faceAreas_de.json in Resources */,
 				28BC397726DF7EAC00FB3803 /* Raleway-SemiBold.ttf in Resources */,
-				2896242D2705F18400DE0D60 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,6 +1008,7 @@
 				4A0EC25C26EBE82800F48A0C /* ExerciseInfoPopup.swift in Sources */,
 				28BC394C26DF77EB00FB3803 /* ProgressViewController.swift in Sources */,
 				289624002705C2C200DE0D60 /* FaceArea.swift in Sources */,
+				283EED71270E35B20098F7CB /* ProblemAreaTableViewCell.swift in Sources */,
 				28BC398626DF807E00FB3803 /* UIFont.swift in Sources */,
 				789D255827011608006B634E /* ProgressImage+CoreDataProperties.swift in Sources */,
 				28BC392126DF69EE00FB3803 /* AppDelegate.swift in Sources */,
@@ -1099,7 +1127,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoga.facecare.FirebaseNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1127,7 +1155,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoga.facecare.FirebaseNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1282,7 +1310,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoga.facecare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1317,7 +1345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoga.facecare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

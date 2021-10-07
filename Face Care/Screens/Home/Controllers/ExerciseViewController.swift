@@ -25,11 +25,11 @@ class ExerciseViewController: BaseViewController {
     
     // MARK: - Variables
     
-    var onDismiss: ((_ currentItem: Int, _ isClose: Bool, _ isEnded: Bool) -> ()) = {_,_,_ in }
     var player: AVPlayer = AVPlayer()
     var playerLayer: AVPlayerLayer!
-    var isPlaying = true
-    var exercisePack: [Exercise] = []
+    
+    var exercises: [Exercise] = []
+    var trainingNumber: Int?
     var currentItem = 0
     
     let loader = ExerciseLoadingViewController.load(from: Screen.exerciseLoading)
@@ -66,7 +66,7 @@ class ExerciseViewController: BaseViewController {
         var counter = 0
         for view in linesStackView.subviews {
             view.backgroundColor = counter <= currentItem ? UIColor(red: 1, green: 1, blue: 1, alpha: 1) : UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
-            if counter >= exercisePack.count {
+            if counter >= exercises.count {
                 view.isHidden = true
             }
             view.capsuleCorners()
@@ -126,7 +126,7 @@ class ExerciseViewController: BaseViewController {
         
         
         print("Load: current item: ", currentItem)
-        let exercise = exercisePack[currentItem]
+        let exercise = exercises[currentItem]
         player = AVPlayer(url: exercise.getVideoURL())
         
         let title = "Упражнение \(currentItem + 1):\n\(exercise.name)"
@@ -145,9 +145,10 @@ class ExerciseViewController: BaseViewController {
     
     @objc private func pauseVideo() {
         player.pause()
+        
         let infoPopup = ExerciseInfoPopup.load(from: Popup.exerciseInfo)
         infoPopup.currentItem = self.currentItem
-        infoPopup.exercisePack = self.exercisePack
+        infoPopup.exercises = self.exercises
         infoPopup.onCloseCompletion = { index in
             
             print("Popup closed: current item: ", index)
@@ -166,17 +167,30 @@ class ExerciseViewController: BaseViewController {
     }
     
     @objc func playerDidFinishPlaying() {
-        isPlaying = false
-        let index = currentItem + 1
         
-        if index > exercisePack.count - 1 {
-            // Training ended -> TrainingCompletedVC
+        if currentItem == exercises.count - 1 {
+            // was last video
+            
+            if let trainingNumber = trainingNumber {
+                State.shared.completeDailyTraining(number: trainingNumber)
+            }
+            
+            let trainingCompletedVC = TrainingCompletedViewController.load(from: Screen.trainingEnded)
+            trainingCompletedVC.modalPresentationStyle = .fullScreen
+            
+            trainingCompletedVC.onDismiss = {
+                self.dismiss(animated: true)
+                self.dismiss(animated: false)
+            }
+            
+            self.present(trainingCompletedVC, animated: true)
+            
+            return
         }
-        else {
-            currentItem = index
-            self.loadVideo()
-            self.updateView()
-        }
+        
+        currentItem += 1
+        self.loadVideo()
+        self.updateView()
     }
     
     // MARK: - @IBActions
@@ -191,9 +205,6 @@ class ExerciseViewController: BaseViewController {
             
             self.dismiss(animated: true)
             
-//            self.dismiss(animated: true) {
-//                self.onDismiss(self.currentItem, true, false)
-//            }
         }
         
         let cancelAction = UIAlertAction(title: "Отменить", style: .cancel) { _ in

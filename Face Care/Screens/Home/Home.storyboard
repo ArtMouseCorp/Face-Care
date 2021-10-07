@@ -482,7 +482,7 @@
                                 <rect key="frame" x="20" y="200" width="374" height="451"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-xK-u1G">
-                                <rect key="frame" x="0.0" y="621" width="414" height="241"/>
+                                <rect key="frame" x="0.0" y="621" width="414" height="275"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElO-ME-vm2" customClass="FCButton" customModule="Face_Care" customModuleProvider="target">
                                         <rect key="frame" x="38" y="165" width="338" height="52"/>
@@ -526,7 +526,6 @@
                                     <constraint firstItem="DBh-Mc-Nhu" firstAttribute="leading" secondItem="cGS-xK-u1G" secondAttribute="leading" constant="38" id="Mpv-Ff-bHN"/>
                                     <constraint firstAttribute="trailing" secondItem="DBh-Mc-Nhu" secondAttribute="trailing" constant="38" id="P3Y-cQ-o6x"/>
                                     <constraint firstItem="ElO-ME-vm2" firstAttribute="top" secondItem="DBh-Mc-Nhu" secondAttribute="bottom" constant="24" id="bRI-mF-YYE"/>
-                                    <constraint firstAttribute="bottom" secondItem="ElO-ME-vm2" secondAttribute="bottom" constant="24" id="kQc-7I-0uo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -534,9 +533,10 @@
                         <color key="backgroundColor" name="FC Gainsboro"/>
                         <constraints>
                             <constraint firstItem="cGS-xK-u1G" firstAttribute="leading" secondItem="Lew-ed-b83" secondAttribute="leading" id="BgB-8s-hkd"/>
-                            <constraint firstItem="Lew-ed-b83" firstAttribute="bottom" secondItem="cGS-xK-u1G" secondAttribute="bottom" id="EdX-5e-U9E"/>
+                            <constraint firstAttribute="bottom" secondItem="cGS-xK-u1G" secondAttribute="bottom" id="EdX-5e-U9E"/>
                             <constraint firstItem="ycl-7m-XvP" firstAttribute="centerX" secondItem="vFn-AD-R9V" secondAttribute="centerX" id="IsA-Of-EzL"/>
                             <constraint firstItem="cGS-xK-u1G" firstAttribute="trailing" secondItem="Lew-ed-b83" secondAttribute="trailing" id="R4T-fK-Pxe"/>
+                            <constraint firstItem="Lew-ed-b83" firstAttribute="bottom" secondItem="ElO-ME-vm2" secondAttribute="bottom" constant="24" id="fKo-57-dAY"/>
                             <constraint firstItem="ycl-7m-XvP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Lew-ed-b83" secondAttribute="top" constant="24" id="jeQ-5d-Uwx"/>
                             <constraint firstItem="Lew-ed-b83" firstAttribute="trailing" secondItem="ycl-7m-XvP" secondAttribute="trailing" constant="20" id="jsU-6p-ID5"/>
                             <constraint firstItem="cGS-xK-u1G" firstAttribute="top" secondItem="ycl-7m-XvP" secondAttribute="bottom" constant="-30" id="vkt-6R-mOt"/>
@@ -841,7 +841,7 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBD-XO-gff">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="FC Gainsboro"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-7F-sd2">
                                         <rect key="frame" x="366" y="64" width="32" height="32"/>
@@ -1052,10 +1052,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-8f-Kk1">
-                                <rect key="frame" x="0.0" y="548" width="414" height="314"/>
+                                <rect key="frame" x="0.0" y="567" width="414" height="295"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Viw-7S-c1g" customClass="FCButton" customModule="Face_Care" customModuleProvider="target">
-                                        <rect key="frame" x="38" y="238" width="338" height="52"/>
+                                        <rect key="frame" x="38" y="219" width="338" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="Gzo-lK-oWR"/>
                                         </constraints>
@@ -1065,10 +1065,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gs2-3v-r3N">
-                                        <rect key="frame" x="24" y="101" width="366" height="113"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="113" id="m9E-Qf-KKr"/>
-                                        </constraints>
+                                        <rect key="frame" x="24" y="101" width="366" height="94"/>
                                         <string key="text">Чтобы снять напряжение и усталость с глаз, посмотрите попеременно то в одну, то в другую сторону. Двигайтесь сверху вниз. Голову при этом поворачивать не надо, двигаются только глазные яблоки.</string>
                                         <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                         <color key="textColor" name="FC Dark Charcoal"/>
@@ -1137,17 +1134,19 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="mWk-3N-OYM">
-                                <rect key="frame" x="46.5" y="166" width="321" height="382"/>
+                                <rect key="frame" x="0.0" y="185" width="414" height="382"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k6O-2n-aaY"/>
                         <color key="backgroundColor" name="FC Gainsboro"/>
                         <constraints>
-                            <constraint firstItem="mWk-3N-OYM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k6O-2n-aaY" secondAttribute="top" constant="24" id="Nje-f9-eu0"/>
+                            <constraint firstItem="mWk-3N-OYM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k6O-2n-aaY" secondAttribute="top" id="Nje-f9-eu0"/>
                             <constraint firstItem="KaK-t6-B3C" firstAttribute="top" secondItem="k6O-2n-aaY" secondAttribute="top" constant="12" id="QGM-MJ-RxR"/>
                             <constraint firstItem="Tx3-8f-Kk1" firstAttribute="leading" secondItem="k6O-2n-aaY" secondAttribute="leading" id="ZA0-m5-o3H"/>
                             <constraint firstItem="k6O-2n-aaY" firstAttribute="trailing" secondItem="Tx3-8f-Kk1" secondAttribute="trailing" id="aNv-1u-ZJQ"/>
+                            <constraint firstItem="k6O-2n-aaY" firstAttribute="trailing" secondItem="mWk-3N-OYM" secondAttribute="trailing" id="beH-RK-v6N"/>
                             <constraint firstItem="KaK-t6-B3C" firstAttribute="leading" secondItem="k6O-2n-aaY" secondAttribute="leading" constant="16" id="k99-a3-V5Y"/>
+                            <constraint firstItem="mWk-3N-OYM" firstAttribute="leading" secondItem="k6O-2n-aaY" secondAttribute="leading" id="psB-83-FrL"/>
                             <constraint firstItem="mWk-3N-OYM" firstAttribute="centerX" secondItem="rF7-Hm-TOw" secondAttribute="centerX" id="s4V-y9-cMD"/>
                             <constraint firstItem="Tx3-8f-Kk1" firstAttribute="top" secondItem="mWk-3N-OYM" secondAttribute="bottom" id="tXd-hs-KXT"/>
                             <constraint firstItem="k6O-2n-aaY" firstAttribute="bottom" secondItem="Tx3-8f-Kk1" secondAttribute="bottom" id="tZr-nc-hRk"/>

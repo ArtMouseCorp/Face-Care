@@ -152,7 +152,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
         exerciseVC.modalPresentationStyle = .fullScreen
         guard let index = exercisesTableViews.firstIndex(of: tableView) else { return }
-        exerciseVC.exercisePack = [FaceArea.all[index].exercises[indexPath.row]]
+        exerciseVC.exercises = [FaceArea.all[index].exercises[indexPath.row]]
         self.present(exerciseVC, animated: true)
     }
     
@@ -187,7 +187,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let dailyTraining = Training.Daily.trainings[indexPath.row]
             
             cell.configure(with: dailyTraining)
-            cell.alpha = State.shared.getOpenedDailyTrainings()[indexPath.row] ? 1 : 0.6
+            
+            if indexPath.row <= State.shared.getCompletedDailyTrainings() {
+                cell.alpha = 1
+            } else {
+                cell.alpha = 0.6
+            }
             
             return cell
             
@@ -212,15 +217,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             let dailyTraining = Training.Daily.trainings[indexPath.row]
             
-            guard State.shared.getOpenedDailyTrainings()[indexPath.row] else { return }
+            guard indexPath.row <= State.shared.getCompletedDailyTrainings() else { return }
             
             let trainingVC = TrainingViewController.load(from: Screen.training)
             trainingVC.training = dailyTraining.training
-            trainingVC.endExerciseCompletion = {
-                let endExerciseVC = TrainingCompletedViewController.load(from: Screen.trainingEnded)
-                endExerciseVC.trainingNumber = dailyTraining.dayNumber
-                self.navigationController?.pushViewController(endExerciseVC, animated: true)
-            }
+            trainingVC.dayNumber = dailyTraining.dayNumber
+
             self.navigationController?.pushViewController(trainingVC, animated: true)
             self.navigationController?.hidesBottomBarWhenPushed = true
             

@@ -25,15 +25,16 @@ struct Training {
             
             parseDailyData { faceAreaDailyData in
                 
-                print("Problem areas array: ", State.shared.getProblemAreas())
+//                print("Problem areas array: ", State.shared.getProblemAreas())
                 let faceAreaDailyData = faceAreaDailyData.filter { State.shared.getProblemAreas().contains($0.faceAreaId) }
-                print(faceAreaDailyData)
+//                print(faceAreaDailyData)
                 let exercisesCount = Int(MAX_EXERCISES / faceAreaDailyData.count)
-                print("Exercises count: ", exercisesCount)
+//                print("Exercises count: ", exercisesCount)
                 
                 for i in 0 ..< 7 {
                     
                     var exercises: [Exercise] = []
+                    var trainingDuration: Int = 0
                     
                     for faceAreaTraining in faceAreaDailyData {
                         
@@ -45,24 +46,27 @@ struct Training {
                             exercisesIds = faceAreaTraining.days[i].random(elements: exercisesCount)
                         }
                         
-                        print("Face area trainings: ", faceAreaTraining)
-                        print("Ids: ", exercisesIds)
+//                        print("Face area trainings: ", faceAreaTraining)
+//                        print("Ids: ", exercisesIds)
                      
                         
                         if let faceArea = FaceArea.all.first(where: {$0.id == faceAreaTraining.faceAreaId} ) {
                             
-                            exercises.append(contentsOf: faceArea.exercises.filter { exercisesIds.contains($0.id) })
+                            faceArea.exercises.filter({exercisesIds.contains($0.id)}).forEach({
+                                exercises.append($0)
+                                trainingDuration += $0.duration
+                            })
                             
                         }
                         
                     }
                     
-                    print("Exercises: ", exercises)
+//                    print("Exercises: ", exercises)
                     
                     let training = Training(
                         name: "Day \(i + 1) training",
                         description: "Day \(i + 1) training description",
-                        duration: 7,
+                        duration: Int(trainingDuration / 60),
                         exercises: exercises
                     )
                     let dailyTraining = Daily(dayNumber: i + 1, isOpen: i == 0 ? true : false, training: training)

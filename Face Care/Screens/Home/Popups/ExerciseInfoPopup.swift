@@ -20,8 +20,9 @@ class ExerciseInfoPopup: BasePopupViewController {
     
     var popupHeight: CGFloat = 24 + 0 + 24 + 0 + 24 // without titleLabel & descriptionLabel height
     var onCloseCompletion: ((_ currentItem: Int)->()) = {_  in }
+    
     var currentItem = 0
-    var exercisePack: [Exercise] = []
+    var exercises: [Exercise] = []
     
     // MARK: - Awake functions
     
@@ -37,8 +38,8 @@ class ExerciseInfoPopup: BasePopupViewController {
     
     private func configureUI() {
         
-        titleLabel.text = exercisePack[currentItem].name
-        descriptionLabel.text = exercisePack[currentItem].description
+        titleLabel.text = exercises[currentItem].name
+        descriptionLabel.text = exercises[currentItem].description
         
         checkChevrons()
         
@@ -54,7 +55,7 @@ class ExerciseInfoPopup: BasePopupViewController {
     
     private func checkChevrons() {
         prevButton.isHidden = currentItem == 0
-        nextButton.isHidden = currentItem == exercisePack.count - 1
+        nextButton.isHidden = currentItem == exercises.count - 1
     }
     
     override func panModalDidDismiss() {

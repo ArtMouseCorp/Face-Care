@@ -6,6 +6,7 @@ struct Exercise: Codable {
     let id: Int
     let name: String
     let description: String
+    let duration: Int
     private let image: String
     private let url: String
 

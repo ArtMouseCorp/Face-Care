@@ -151,11 +151,19 @@ class State {
         return self.openedDailyTrainings
     }
     
+    public func clearOpenedDailyTrainings() {
+        self.openedDailyTrainings = [true, false, false, false, false, false, false]
+        userDefaults.set(openedDailyTrainings, forKey: UDKeys.openedDailyTrainings)
+    }
+    
     public func completeDailyTraining(number: Int) {
         
-        userDefaults.set(number, forKey: UDKeys.completedDailyTrainings)
+        if number > getCompletedDailyTrainings() {
+            userDefaults.set(number, forKey: UDKeys.completedDailyTrainings)            
+        }
         
         guard number != 7 else { return }
+        self.openedDailyTrainings = getOpenedDailyTrainings()
         self.openedDailyTrainings[number] = true
         userDefaults.set(openedDailyTrainings, forKey: UDKeys.openedDailyTrainings)
     }
@@ -164,9 +172,8 @@ class State {
         return userDefaults.integer(forKey: UDKeys.completedDailyTrainings)
     }
     
-    public func clearOpenedDailyTrainings() {
-        self.openedDailyTrainings = [true, false, false, false, false, false, false]
-        userDefaults.set(openedDailyTrainings, forKey: UDKeys.openedDailyTrainings)
+    public func clearCompletedDailyTrainings() {
+        userDefaults.set(0, forKey: UDKeys.completedDailyTrainings)
     }
     
 }

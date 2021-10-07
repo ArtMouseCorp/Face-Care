@@ -741,19 +741,19 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UXB-Bb-XYY">
-                                <rect key="frame" x="16" y="707.5" width="382" height="47"/>
+                                <rect key="frame" x="16" y="707.5" width="382" height="66"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d5K-Hr-kXR">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="38"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Анализ проблемных зон" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-F8-0nW">
-                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="19"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="185.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                                 <color key="textColor" name="FC Dark Charcoal"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alL-pE-2Pu">
-                                                <rect key="frame" x="341.5" y="0.0" width="40.5" height="19"/>
+                                                <rect key="frame" x="341.5" y="9.5" width="40.5" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40.5" id="PuC-Tf-sO8"/>
                                                 </constraints>
@@ -762,9 +762,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="sVw-PS-v3a"/>
+                                        </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7C-Go-fRf">
-                                        <rect key="frame" x="0.0" y="39" width="382" height="8"/>
+                                        <rect key="frame" x="0.0" y="58" width="382" height="8"/>
                                         <color key="backgroundColor" name="FC Bright Gray"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="O0Y-mb-DJX"/>

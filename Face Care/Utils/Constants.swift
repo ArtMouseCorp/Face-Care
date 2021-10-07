@@ -62,6 +62,16 @@ public func hapticFeedback(_ type: UINotificationFeedbackGenerator.FeedbackType)
     generator.notificationOccurred(type)
 }
 
+
+
+// TODO: - Translate exercises to fr, it ,de, es
+// TODO: - currentItem of video is adding two times
+// TODO: - Replace contact email
+// TODO: - Replace offer Screen json url
+// TODO: - Exclusive trainings
+// TODO: - Daily trainings cell alpha
+// TODO: - AppStoreConnect Subscriptions not working
+
 /*
  //           _._
  //        .-'   `

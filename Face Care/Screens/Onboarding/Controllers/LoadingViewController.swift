@@ -26,26 +26,26 @@ class LoadingViewController: BaseViewController {
             
             StoreManager.updateStatus()
             
-//            if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
-//
-//                let startViewController = StartViewController.load(from: Screen.start)
-//                startViewController.modalPresentationStyle = .fullScreen
-//                self.present(startViewController, animated: false)
-//                return
-//
-//            }
+            if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
+
+                let startViewController = StartViewController.load(from: Screen.start)
+                startViewController.modalPresentationStyle = .fullScreen
+                self.present(startViewController, animated: false)
+                return
+
+            }
             
-//            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
+            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
                 let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
                 photoOfferVC.modalPresentationStyle = .fullScreen
-                photoOfferVC.page = 0
+                photoOfferVC.page = 1
                 self.present(photoOfferVC, animated: true)
                 return
-//            }
+            }
 
-//            let tabBar = TabBarController.load(from: Screen.tabBar)
-//            tabBar.modalPresentationStyle = .fullScreen
-//            self.present(tabBar, animated: true)
+            let tabBar = TabBarController.load(from: Screen.tabBar)
+            tabBar.modalPresentationStyle = .fullScreen
+            self.present(tabBar, animated: true)
 
         }
     }

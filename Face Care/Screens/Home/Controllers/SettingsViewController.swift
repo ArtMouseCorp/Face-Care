@@ -61,9 +61,6 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
     }
     
     private func localize() {
-        
-        print("Localize, ", State.shared.getLanguage() )
-    
         titleLabel.localize(with: L.Settings.title)
         languageLabel.localize(with: L.Settings.Language.title)
         contactusLabel.localize(with: L.Settings.contact)
@@ -104,7 +101,7 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["artmousedev@gmail.com"])
+            mail.setToRecipients(["someemail@gmail.com"])
             mail.setSubject("Face Care Contact")
             mail.setMessageBody("", isHTML: true)
             
@@ -113,7 +110,6 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
     }
     
     @objc private func renewSubscriptionButtonViewTapped() {
-        // TODO:  - Restore user's subscription
         
         guard isConnectedToNetwork() else {
             self.showNetworkConnectionAlert()

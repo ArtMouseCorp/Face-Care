@@ -6,27 +6,20 @@ class ProgressSettingsViewController: BaseViewController {
     
     // Views
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var eyesView: UIView!
-    @IBOutlet weak var foreheadView: UIView!
-    @IBOutlet weak var neckView: UIView!
-    @IBOutlet weak var chinView: UIView!
-    @IBOutlet weak var cheecksView: UIView!
     
     // Labels
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var problemAreasTitleLabel: UILabel!
-    @IBOutlet var problemAreasLabels: [UILabel]!
     @IBOutlet weak var resetProgressLabel: UILabel!
     
     // Buttons
     @IBOutlet weak var resetProgressButton: FCButton!
     
-    // Image Views
-    @IBOutlet weak var eyesViewCheckmark: UIImageView!
-    @IBOutlet weak var foreheadViewCheckmark: UIImageView!
-    @IBOutlet weak var neckViewCheckmark: UIImageView!
-    @IBOutlet weak var chinViewCheckmark: UIImageView!
-    @IBOutlet weak var cheecksViewCheckmark: UIImageView!
+    // TableViews
+    @IBOutlet weak var problemAreasTableView: UITableView!
+    
+    // Constraints
+    @IBOutlet weak var problemAreasTableViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Variables
     
@@ -38,29 +31,29 @@ class ProgressSettingsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.configure(problemAreasTableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         problemAreas = State.shared.getProblemAreas()
         localize()
         configureUI()
-        setupGestures()
         State.shared.setCurrentScreen(to: "Progress Settings Screen")
-        checkIfEmpty()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
         guard !self.problemAreas.isEmpty else { return }
         
-        if State.shared.getProblemAreas().sorted() != self.problemAreas.sorted() {
-            
-            print(State.shared.getProblemAreas().sorted())
-            print(self.problemAreas.sorted())
+        if !State.shared.getProblemAreas().containsSameElements(as: problemAreas) {
             
             State.shared.updateProblemAreas(to: self.problemAreas)
             Training.Daily.getTrainings()
+            State.shared.clearCompletedDailyTrainings()
             print("Trainings updated")
+            
         }
     }
     
@@ -69,7 +62,8 @@ class ProgressSettingsViewController: BaseViewController {
     private func configureUI() {
         mainView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         resetProgressButton.configure(as: .filled)
-        setCheckmarks()
+        
+        problemAreasTableViewHeightConstraint.constant = problemAreasTableView.contentHeight
     }
     
     private func localize() {
@@ -77,38 +71,6 @@ class ProgressSettingsViewController: BaseViewController {
         problemAreasTitleLabel.localize(with: L.Progress.Settings.problemAreas)
         resetProgressLabel.localize(with: L.Progress.Settings.resetDescription)
         resetProgressButton.localize(with: L.Progress.Settings.ProgressButton.resetProgress)
-    }
-    
-    private func setCheckmarks() {
-        for id in self.problemAreas {
-            switch id {
-            case 1:
-                eyesViewCheckmark.image = UIImage.FCCheckedCheckbox
-                break
-            case 2:
-                foreheadViewCheckmark.image = UIImage.FCCheckedCheckbox
-                break
-            case 3:
-                neckViewCheckmark.image = UIImage.FCCheckedCheckbox
-                break
-            case 4:
-                chinViewCheckmark.image = UIImage.FCCheckedCheckbox
-                break
-            case 5:
-                cheecksViewCheckmark.image = UIImage.FCCheckedCheckbox
-                break
-            default:
-                break
-            }
-        }
-    }
-    
-    private func setupGestures() {
-        eyesView.addTapGesture(target: self, action: #selector(eyesViewTapped))
-        foreheadView.addTapGesture(target: self, action: #selector(foreheadViewTapped))
-        neckView.addTapGesture(target: self, action: #selector(neckViewTapped))
-        chinView.addTapGesture(target: self, action: #selector(chinViewTapped))
-        cheecksView.addTapGesture(target: self, action: #selector(cheecksViewTapped))
     }
     
     private func showConfirmationAlert(message: String, confirmButton: String, completion: @escaping (() -> ())) {
@@ -131,14 +93,6 @@ class ProgressSettingsViewController: BaseViewController {
         }
     }
     
-    private func checkIfEmpty() {
-//        if self.problemAreas.isEmpty {
-//            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-//        } else {
-//            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-//        }
-    }
-    
     private func addProblemArea(_ element: Int) {
         self.problemAreas.append(element)
     }
@@ -149,87 +103,28 @@ class ProgressSettingsViewController: BaseViewController {
         }
     }
     
-    // MARK: - Gesture actions
-    
-    @objc func eyesViewTapped() {
-        self.showPlanGenerationAlert {
-            
-            let faceAreaId = 1
-            let isEnabled = self.problemAreas.contains(faceAreaId)
-            isEnabled ? self.removeProblemArea(faceAreaId) : self.addProblemArea(faceAreaId)
-            self.eyesViewCheckmark.image = isEnabled ? .FCEmptyCheckbox : .FCCheckedCheckbox
-            
-        }
-    }
-    
-    @objc func foreheadViewTapped() {
-        self.showPlanGenerationAlert {
-            
-            let faceAreaId = 2
-            let isEnabled = self.problemAreas.contains(faceAreaId)
-            isEnabled ? self.removeProblemArea(faceAreaId) : self.addProblemArea(faceAreaId)
-            self.foreheadViewCheckmark.image = isEnabled ? .FCEmptyCheckbox : .FCCheckedCheckbox
-            
-        }
-    }
-    
-    @objc func neckViewTapped() {
-        self.showPlanGenerationAlert {
-            
-            let faceAreaId = 3
-            let isEnabled = self.problemAreas.contains(faceAreaId)
-            isEnabled ? self.removeProblemArea(faceAreaId) : self.addProblemArea(faceAreaId)
-            self.neckViewCheckmark.image = isEnabled ? .FCEmptyCheckbox : .FCCheckedCheckbox
-            
-        }
-    }
-    
-    @objc func chinViewTapped() {
-        self.showPlanGenerationAlert {
-            
-            let faceAreaId = 4
-            let isEnabled = self.problemAreas.contains(faceAreaId)
-            isEnabled ? self.removeProblemArea(faceAreaId) : self.addProblemArea(faceAreaId)
-            self.chinViewCheckmark.image = isEnabled ? .FCEmptyCheckbox : .FCCheckedCheckbox
-            
-        }
-    }
-    
-    @objc func cheecksViewTapped() {
-        self.showPlanGenerationAlert {
-            
-            let faceAreaId = 5
-            let isEnabled = self.problemAreas.contains(faceAreaId)
-            isEnabled ? self.removeProblemArea(faceAreaId) : self.addProblemArea(faceAreaId)
-            self.cheecksViewCheckmark.image = isEnabled ? .FCEmptyCheckbox : .FCCheckedCheckbox
-            
-        }
-    }
-    
     // MARK: - @IBActions
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        if !self.problemAreas.isEmpty {
-            self.navigationController?.popViewController(animated: true)
-        } else {
+        
+        if problemAreas.isEmpty {
+            
             let okAction = UIAlertAction(title: "Ok", style: .default)
             let alert = getAlert(title: "Выберите часть лица", message: "Для чтобы сгенерировать курс нужно выбрать хотя бы одну часть лица", actions: okAction)
             self.present(alert, animated: true)
+            
+            return
         }
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func resetProgressButtonPressed(_ sender: Any) {
         
         self.showConfirmationAlert(message: "Ваш персональный курс будет сгенерировать заново и вы сможете начать сначала", confirmButton: "Сгенерировать") {
         
-            // TODO: - Reset current progress
             self.problemAreas.removeAll()
-            
-            self.eyesViewCheckmark.image = UIImage.FCEmptyCheckbox
-            self.foreheadViewCheckmark.image = UIImage.FCEmptyCheckbox
-            self.neckViewCheckmark.image = UIImage.FCEmptyCheckbox
-            self.chinViewCheckmark.image = UIImage.FCEmptyCheckbox
-            self.cheecksViewCheckmark.image = UIImage.FCEmptyCheckbox
+            self.problemAreasTableView.reloadData()
             
         }
         
@@ -237,19 +132,38 @@ class ProgressSettingsViewController: BaseViewController {
     
 }
 
-extension ProgressSettingsViewController: UIGestureRecognizerDelegate {
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension ProgressSettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return FaceArea.all.count - 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.problemArea.id, for: indexPath) as! ProblemAreaTableViewCell
         
-        if self.problemAreas.isEmpty {
-            
-            let okAction = UIAlertAction(title: "Ok", style: .default)
-            let alert = getAlert(title: "Выберите часть лица", message: "Для чтобы сгенерировать курс нужно выбрать хотя бы одну часть лица", actions: okAction)
-            self.present(alert, animated: true)
-            
+        let faceArea = FaceArea.all[indexPath.row + 1]
+        
+        cell.configure(name: faceArea.name, isChecked: problemAreas.contains(faceArea.id))
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! ProblemAreaTableViewCell
+        let faceArea = FaceArea.all[indexPath.row + 1]
+        
+        if problemAreas.contains(faceArea.id) {
+            cell.deselect()
+            removeProblemArea(faceArea.id)
+        } else {
+            cell.select()
+            addProblemArea(faceArea.id)
         }
         
-        return false
+        problemAreas.sort()
     }
     
 }

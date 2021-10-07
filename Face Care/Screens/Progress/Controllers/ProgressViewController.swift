@@ -34,10 +34,6 @@ class ProgressViewController: BaseViewController {
     var collectionViewData: [ProgressImage]?
     
     let screenWidth = UIScreen.main.bounds.width
-    var tableViewHeight: CGFloat {
-        tableView.layoutIfNeeded()
-        return tableView.contentSize.height
-    }
     
     // MARK: - Awake functions
     
@@ -61,7 +57,10 @@ class ProgressViewController: BaseViewController {
     private func configureUI() {
         mainView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         corneredView.roundCorners(radius: 32, corners: .topLeft, .topRight)
-        tableViewHeightConstraint.constant = tableViewHeight
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.tableViewHeightConstraint.constant = self.tableView.contentHeight
+        }
     }
     
     private func localize() {
@@ -166,6 +165,7 @@ extension ProgressViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.progressStat.id, for: indexPath) as! ProgressTableViewCell
         
         let faceArea = FaceArea.all.first { $0.id ==  State.shared.getProblemAreas()[indexPath.row] }
+        
         let stat = State.shared.getCompletedDailyTrainings()
         
         cell.titleLabel.text = faceArea?.name

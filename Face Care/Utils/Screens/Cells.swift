@@ -11,6 +11,7 @@ public enum Cell: String {
     // Progress
     case progressImages     = "ProgressCollectionViewCell"
     case progressStat       = "ProgressTableViewCell"
+    case problemArea        = "ProblemAreaTableViewCell"
     
     // Atricles
     case article            = "ArticleTableViewCell"

@@ -11,7 +11,7 @@ struct FaceArea: Codable {
     public static func getAll() {
         
         self.all.removeAll()
-        guard let jsonData = readLocalJSONFile(forName: "faceAreas_ru") else { return }
+        guard let jsonData = readLocalJSONFile(forName: "faceAreas_\(State.shared.getLanguage().rawValue)") else { return }
         
         do {
             let decodedData = try JSONDecoder().decode(FaceArea.Response.self, from: jsonData)

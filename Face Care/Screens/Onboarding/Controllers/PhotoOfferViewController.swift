@@ -49,7 +49,7 @@ class PhotoOfferViewController: BaseViewController {
     // Other
     var isSubviewed = false
     var isToggleOn: Bool = false
-    var page = 0
+    var page = 1
     
     var product: StoreManager.Product?
     
@@ -80,7 +80,7 @@ class PhotoOfferViewController: BaseViewController {
         configureButtons()
         configureOutlineView()
         
-        configureNextPage()
+        configurePage()
     }
     
     private func localize() {
@@ -151,9 +151,8 @@ class PhotoOfferViewController: BaseViewController {
         }
     }
     
-    private func configureNextPage() {
+    private func configurePage() {
         // Page switcher
-        page += 1
         switch page {
             // First Page
         case 1:
@@ -181,6 +180,7 @@ class PhotoOfferViewController: BaseViewController {
             outlineViewLabel.localize(with: L.Onboarding.personalPlan)
             commentLabel.isHidden = false
             starStackView.isHidden = false
+            outlineTitleLabel.isHidden = true
             configureDotViews(firstToHide: 0, secondToHide: 4)
             toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
             isToggleOn = false
@@ -220,9 +220,6 @@ class PhotoOfferViewController: BaseViewController {
             State.shared.setCurrentScreen(to: "Onboarding: Subscription Screen")
             break
         default:
-            let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
-            planGenerationVC.modalPresentationStyle = .fullScreen
-            self.present(planGenerationVC, animated: false, completion: nil)
             break
         }
     }
@@ -232,7 +229,7 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     private func getProducts() {
-//        StoreManager.getProducts(for: [State.shared.getOffer().purchaseId]) { products in
+        //        StoreManager.getProducts(for: [State.shared.getOffer().purchaseId]) { products in
         StoreManager.getProducts(for: ["com.test.1y_3d0"]) { products in
             let product = products[0]
             self.product = product
@@ -270,8 +267,11 @@ class PhotoOfferViewController: BaseViewController {
     @objc func continueTapped() {
         if page == 1 && isToggleOn {
             takePhoto()
-        } else if page == 3 && isToggleOn {
-
+            return
+        }
+        
+        if page == 3 {
+            
             guard let product = product else { return }
             
             StoreManager.purchase(product) {
@@ -279,12 +279,13 @@ class PhotoOfferViewController: BaseViewController {
                 planGenerationVC.modalPresentationStyle = .fullScreen
                 self.present(planGenerationVC, animated: false, completion: nil)
             }
-
-        } else if page == 3 {
-
-        } else {
-            configureNextPage()
+            
+            return
+            
         }
+        
+        page += 1
+        configurePage()
     }
     
     // MARK: - @IBActions
@@ -307,9 +308,11 @@ extension PhotoOfferViewController {
         picker.dismiss(animated: true)
         
         guard let image = info[.originalImage] as? UIImage else {
-            configureNextPage()
+            self.page = 2
+            self.configurePage()
             return
         }
+        
         let newImage = ProgressImage(context: context)
         newImage.image = image
         
@@ -318,7 +321,8 @@ extension PhotoOfferViewController {
         } catch {}
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.configureNextPage()
+            self.page = 2
+            self.configurePage()
         }
     }
 }

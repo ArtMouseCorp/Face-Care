@@ -122,6 +122,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, UINavigationContr
         guard let image = info[.originalImage] as? UIImage else {
             return
         }
+        
         let newImage = ProgressImage(context: context)
         newImage.image = image
         

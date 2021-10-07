@@ -17,19 +17,15 @@ class TrainingCompletedViewController: BaseViewController {
     
     // Image Views
     @IBOutlet weak var mainImage: UIImageView!
-    
-    // MARK: - Variables
-    
-    var trainingNumber: Int?
 
+    // MARK: - Varialbles
+    
+    var onDismiss: (() -> ())? = nil
+    
     // MARK: - Awake functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let trainingNumber = trainingNumber {
-            State.shared.completeDailyTraining(number: trainingNumber)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +56,8 @@ class TrainingCompletedViewController: BaseViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+//        self.dismiss(animated: true)
+        self.onDismiss?() ?? ()
     }
     
 }
