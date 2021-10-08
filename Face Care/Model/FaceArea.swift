@@ -22,6 +22,17 @@ struct FaceArea: Codable {
     
     }
     
+    public static func getAllExercises() -> [Exercise] {
+        
+        var exercises: [Exercise] = []
+        
+        for faceArea in all {
+            exercises.append(contentsOf: faceArea.exercises)
+        }
+        
+        return exercises
+    }
+    
     internal struct Response: Codable {
         let faceAreas: [FaceArea]
     }

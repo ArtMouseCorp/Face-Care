@@ -3,7 +3,7 @@
 "facePart.eyes"                                     = "Augen";
 "facePart.forehead"                                 = "Stirn";
 "facePart.neck"                                     = "Nacken";
-"facePart.chin"                                     = "Chin";
+"facePart.chin"                                     = "Kinn";
 "facePart.cheekbonesAndCheeks"                      = "Wangenknochen und Wangen";
 
 // MARK: - ONBOARDING
@@ -85,8 +85,10 @@
 // MARK: - TRAINING
 
 "training.start"                                    = "Beginn der Ausbildung";
-"training.completed"                                = "Die Ausbildung ist vorbei";
+"training.completed"                                = "Die Training ist vorbei";
 "training.takeImage"                                = "Ein Foto machen";
+"training.exercise"                                 = "Übung %d:\n%@";
+"training.completeDay"                              = "Vollständiger Tag %d";
 
 // MARK: - SETTINGS
 
@@ -125,6 +127,7 @@
 "alert.action.cancel"                               = "Abbrechen";
 "alert.action.ok"                                   = "Ok";
 "alert.action.yes"                                  = "Ja";
+"alert.action.generate"                             = "Erzeugen";
 
 "alert.training.title"                              = "Sind Sie sicher, dass Sie aufhören wollen?";
 
@@ -140,4 +143,13 @@
 "alert.notSubscriber.title"                         = "Nicht wiederherstellbar";
 "alert.notSubscriber.message"                       = "Leider können Sie Ihren Kauf nicht wiederherstellen, da Sie kein aktives Abonnement haben.";
 
+"alert.mail.title"                                  = "E-Mail-Dienste sind nicht verfügbar";
 
+"alert.resetProgressSure.title"                     = "Sind Sie sicher?";
+"alert.resetProgressSure.message"                   = "Ihr persönlicher Kurs wird neu generiert und Sie können von vorne beginnen";
+
+"alert.problemArea.title"                           = "Wählen Sie einen Teil des Gesichts";
+"alert.problemArea.message"                         = "Um einen Kurs zu erstellen, müssen Sie mindestens einen Teil des Gesichts auswählen";
+
+"alert.dailyTrainingLocked.title"                   = "Nicht verfügbar";
+"alert.dailyTrainingLocked.message"                 = "Um Tag %d zu öffnen, müssen Sie Tag %d abschließen";

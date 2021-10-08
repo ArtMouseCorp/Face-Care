@@ -59,9 +59,8 @@ class PlanGenerationViewController: BaseViewController {
     
     private func fetchData() {
         
-        if State.shared.isFirstLaunch() || !State.shared.isOnboardingCompleted() {
-            Training.Daily.getTrainings()
-        }
+        Training.Daily.createTrainings()
+        Training.Exclusive.createTrainings()
         
     }
     

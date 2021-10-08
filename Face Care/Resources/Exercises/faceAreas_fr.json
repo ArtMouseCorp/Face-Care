@@ -2,28 +2,28 @@
 	"faceAreas": [
 		{
 			"id": 0,
-			"name": "Лимфа",
+			"name": "Lymphe",
 			"exercises": [
 				{
 					"id": 1,
-					"name": "Помпаж надключичных лимфоузлов",
-					"description": "В качестве разминки покачаем лимфу. Сделайте глубокий вдох, а на выдохе разместите ладони ребром над ключицами. Это поможет запустить лимфоотток. Не переусердствуйте, сильно нажимать не нужно.",
+					"name": "Pompage du ganglion lymphatique supraclaviculaire",
+					"description": "Pompez la lymphe en guise d'échauffement. Prenez une profonde inspiration et, en expirant, placez les paumes de vos mains avec les côtes sur vos clavicules. Cela aidera à faire circuler la lymphe. N'en faites pas trop, il n'est pas nécessaire d'appuyer trop fort.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%BE%D0%BB%D0%B8%D0%BA-1.mp4",
 					"duration": 29,
 					"image": "Exercises/Lymph/Ролик 1"
 				},
 				{
 					"id": 2,
-					"name": "Упражнение для шеи",
-					"description": "Прокачиваем лимфоузлы под линией нижней челюсти. Начинаем в центре под подбородком и идем мягкими и плавными движениями к ушам. Важно проработать сначала нижележащие лимфоузлы, чтобы обеспечить правильный отток лимфы.",
+					"name": "Exercice pour le cou",
+					"description": "Pompez les ganglions lymphatiques sous la ligne de la mâchoire inférieure. Commencez au centre, sous le menton, et déplacez-vous doucement vers les oreilles. Il est important de travailler d'abord sur les ganglions lymphatiques sous-jacents pour assurer un drainage lymphatique correct.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%BE%D0%BB%D0%B8%D0%BA-2.mp4",
 					"duration": 37,
 					"image": "Exercises/Lymph/Ролик 2"
 				},
 				{
 					"id": 3,
-					"name": "Разогрев Лимфы",
-					"description": "Очень простое и эффективное упражнение для оттока лимфы. Разместите указательные пальцы позади ушей, а средние пальцы - перед ними. Движением «ножнички», легко надавливая, медленно проведите вниз по боковым поверхностям шеи до ключиц.",
+					"name": "Réchauffement lymphatique",
+					"description": "Un exercice très simple et efficace pour le drainage lymphatique. Placez les index derrière les oreilles et les majeurs devant les oreilles. Dans un mouvement de \"ciseaux\", exercez une légère pression et descendez lentement le long des côtés du cou jusqu'aux clavicules.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%BE%D0%BB%D0%B8%D0%BA-3.mp4",
 					"duration": 35,
 					"image": "Exercises/Lymph/Ролик 3"
@@ -32,108 +32,108 @@
 		},
 		{
 			"id": 1,
-			"name": "Глаза",
+			"name": "Yeux",
 			"exercises": [
 				{
-					"id": 1,
-					"name": "Разглаживаем морщины",
-					"description": "Подушечками пальцев слегка постучите вокруг глаз по орбитальной косточке. Это поможет тонизировать кожу вокруг глаз и усилить микроциркуляцию. А если в дополнение нанести косметическое средство, то оно лучше впитается в кожу.",
+					"id": 4,
+					"name": "Lisser les rides",
+					"description": "Avec la pulpe des doigts, tapotez légèrement l'os orbital autour des yeux. Cela aidera à tonifier la peau autour des yeux et à augmenter la microcirculation. Et si un produit cosmétique est appliqué en plus, il sera mieux absorbé par la peau.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-1.mp4",
 					"duration": 54,
 					"image": "Exercises/Eyes/Разглаживаем морщины"
 				},
 				{
-					"id": 2,
-					"name": "От головной боли",
-					"description": "Разместите подушечки пальцев в области под бровями. Медленно наклоните голову вниз, создавая противодействие лба и пальцев. В конце рабочего дня такое упражнение поможет снять напряжение в зоне лба и вокруг глаз.",
+					"id": 5,
+					"name": "Pour les maux de tête",
+					"description": "Placez le bout de vos doigts sur la zone située sous les sourcils. Inclinez lentement votre tête vers le bas, en créant une opposition entre le front et les doigts. En fin de journée, cet exercice permet de soulager les tensions dans la zone du front et autour des yeux.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9E%D1%82-%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9-%D0%B1%D0%BE%D0%BB%D0%B8.mp4",
 					"duration": 42,
 					"image": "Exercises/Eyes/От головной боли"
 				},
 				{
-					"id": 3,
-					"name": "Разглаживаем морщины",
-					"description": "Сложите вместе указательный и средний пальцы на каждой руке, расположите их на переносице. Круговыми движениями двигайтесь под глазами, не затрагивая нижние веки, по направлению к вискам. Эта практика поможет разгладить морщины вокруг глаз и малярные мешки, а также сделать четкими скулы.",
+					"id": 6,
+					"name": "Lissage des rides",
+					"description": "Placez l'index et le majeur de chaque main ensemble sur l'arête du nez. Faites des mouvements circulaires sous les yeux, sans toucher les paupières inférieures, en direction des tempes. Cette pratique permet d'atténuer les rides autour des yeux et les poches malaires, ainsi que de rendre les pommettes plus définies.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-2.mp4",
 					"duration": 39,
 					"image": "Exercises/Eyes/Разглаживаем морщины 2"
 				},
 				{
-					"id": 4,
-					"name": "Акупрессура вокруг",
-					"description": "Одной рукой поднимите бровь. Указательным пальцем другой руки массируйте круговыми движениями с легким надавливанием следующие точки: — под началом брови, - в середине, - под \"хвостиком\" брови. Точечный массаж улучшает состояние кожи вокруг глаз и обеспечивает лифтинг бровей.",
+					"id": 7,
+					"name": "L'acupression autour",
+					"description": "Levez le sourcil d'une main. À l'aide de l'index de l'autre main, massez les points suivants dans un mouvement circulaire en exerçant une légère pression : - sous le début du sourcil, - au milieu, - sous la queue du sourcil. Le point-massage améliorera l'état de la peau autour des yeux et donnera un coup de fouet aux sourcils.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%90%D0%BA%D1%83%D0%BF%D1%80%D0%B5%D1%81%D1%81%D1%83%D1%80%D0%B0-%D0%B2%D0%BE%D0%BA%D1%80%D1%83%D0%B3.mp4",
 					"duration": 107,
 					"image": "Exercises/Eyes/Акупрессура вокруг"
 				},
 				{
-					"id": 5,
-					"name": "Разглаживаем морщины",
-					"description": "Мягко пощипывайте и переминайте подушечками пальцев кожу у внешнего уголка глаза. Захватите кожу и медленно проработайте всю зону мощинки. Затем сделайте то же самое на другой стороне лица. Упражнение помогает уменьшить \"гусиные лапки\" и морщины на висках, разгладить кожу.",
+					"id": 8,
+					"name": "Lisser les rides",
+					"description": "Pincez et croisez délicatement la peau du coin externe de l'œil du bout des doigts. Saisissez la peau et passez lentement sur toute la zone pincée. Puis faites de même de l'autre côté du visage. Cet exercice permet de réduire l'apparence des pattes d'oie et des rides au niveau des tempes et d'adoucir la peau.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B_1.mp4",
 					"duration": 91,
 					"image": "Exercises/Eyes/Разглаживаем морщины_1"
 				},
 				{
-					"id": 6,
-					"name": "Щеки",
-					"description": "Указательные и средние пальцы поместите на яблочки щёк. Круговыми движениями массируйте «точки красоты». Сильное и продолжительное надавливание способствует расслаблению, слабое и короткое — тонизирует. Точечный массаж снимает утомление и нервное перенапряжение, улучшает тон кожи",
+					"id": 9,
+					"name": "Joues",
+					"description": "Placez votre index et votre majeur sur les pommes des joues. Massez les grains de beauté en effectuant des mouvements circulaires. Une pression ferme et régulière favorise la relaxation ; une pression délicate et brève tonifie la peau. Le massage des points de pression élimine la fatigue et la tension nerveuse et améliore le teint de la peau.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A9%D0%B5%D0%BA%D0%B8.mp4",
 					"duration": 39,
 					"image": "Exercises/Eyes/Щеки"
 				},
 				{
-					"id": 7,
-					"name": "Разглаживаем морщины",
-					"description": "Завершим наш сеанс, применяя целительную энергию. Разотрите руки друг о друга, чтобы разогреть их, а затем поместите их возле висков и глаз. Такая медитация направлена на разглаживание морщин вокруг глаз. Сделайте несколько глубоких вдохов и представьте, как исчезают морщины, мышцы приходят в тонус, лицо становится более гладким с каждым вдохом.",
+					"id": 10,
+					"name": "Lissage des rides",
+					"description": "Terminons notre séance en appliquant l'énergie de guérison. Frottez vos mains l'une contre l'autre pour les réchauffer, puis placez-les près de vos tempes et de vos yeux. Cette méditation vise à atténuer les rides autour des yeux. Prenez quelques respirations profondes et imaginez que les rides disparaissent, que les muscles se tonifient, que le visage devient plus lisse à chaque respiration.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B_2.mp4",
 					"duration": 48,
 					"image": "Exercises/Eyes/Разглаживаем морщины_2"
 				},
 				{
-					"id": 8,
-					"name": "Лифтинг бровей",
-					"description": "Прижмите подушечки больших пальце к вискам. Боковой поверхностью указательных пальцев двигайтесь от области межбровья к \"хвостикам\" бровей. Упражнение уменьшает межбровные морщины и снимает напряжение в конце рабочего дня.",
+					"id": 11,
+					"name": "Lifting des sourcils",
+					"description": "Appuyez les coussinets de vos pouces sur vos tempes. Avec le côté de vos index, tracez d'entre les sourcils à la queue des sourcils. Ce traitement réduit les rides du front et soulage les tensions en fin de journée.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9B%D0%B8%D1%84%D1%82%D0%B8%D0%BD%D0%B3-%D0%B1%D1%80%D0%BE%D0%B2%D0%B5%D0%B9.mp4",
 					"duration": 36,
 					"image": "Exercises/Eyes/Лифтинг бровей"
 				},
 				{
-					"id": 9,
-					"name": "Разглаживаем",
-					"description": "Подушечкой среднего пальца проводите по нижнему веку от переносицы к виску. Такие движения обеспечат дренаж нижнего века, уменьшение мешков под глазами и малярных мешков.",
+					"id": 12,
+					"name": "Lissage",
+					"description": "Avec la pulpe de votre majeur, traversez la paupière inférieure de l'arête du nez à la tempe. Ces mouvements draineront la paupière inférieure, réduisant ainsi les poches sous les yeux et les poches malaires.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC.mp4",
 					"duration": 56,
 					"image": "Exercises/Eyes/Разглаживаем морщины"
 				},
 				{
-					"id": 10,
-					"name": "Лифтинг",
-					"description": "Пальцы одной ладони поместите сбоку от подбородка, фиксируя эту сторону лица. Пальцами другой ладони ведите по другой стороне лица, слегка прилагая усилие, как будто «подталкивая» щеку вдоль жевательной мышцы. Доведите до внутренней области подглазья. Задержитесь у внешнего угла глаза на З секунды. Затем, ослабив нажим, отведите пальцы к козелкам ушей и выполните завершающее движение вниз по шее к ключице. Повторите на другой стороне лица.",
+					"id": 13,
+					"name": "Levage",
+					"description": "Placez les doigts d'une paume sur le côté du menton, en fixant ce côté du visage. Avec les doigts de l'autre paume, tracez l'autre côté du visage, en exerçant une légère pression, comme si vous donniez un coup de coude à la joue le long du muscle masséter. Atteignez la zone interne de l'œil. Tenez-le dans le coin externe de l'œil pendant Z secondes. Puis, en relâchant la pression, faites descendre vos doigts jusqu'aux crêtes des oreilles et effectuez un dernier mouvement vers le bas du cou, en direction de la clavicule. Répétez l'opération de l'autre côté du visage.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9B%D0%B8%D1%84%D1%82%D0%B8%D0%BD%D0%B3.mp4",
 					"duration": 57,
 					"image": "Exercises/Eyes/Лифтинг"
 				},
 				{
-					"id": 11,
-					"name": "Упражнение для шеи",
-					"description": "Делайте повороты головы влево — вправо. Это простое упражнение - отличная растяжка для шеи, улучшающая кровоснабжение головы и укрепляющая мышцы.",
+					"id": 14,
+					"name": "Exercice de la nuque",
+					"description": "Tournez votre tête de gauche à droite. Cet exercice simple est un excellent étirement du cou, qui améliore la circulation sanguine vers la tête et renforce les muscles.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%88%D0%B5%D0%B8.mp4",
 					"duration": 65,
 					"image": "Exercises/Eyes/Упражнение для шеи"
 				},
 				{
-					"id": 12,
-					"name": "Прогон лимфы по шее",
-					"description": "Положите четыре пальца правой руки на кость чуть позади левого уха и проведите вниз по шее. Двигайтесь медленно, не нажимайте слишком сильно. Это простое упражнение активизирует лимфоток и поможет разогреть кожу.",
+					"id": 15,
+					"name": "Drainage lymphatique autour du cou",
+					"description": "Placez quatre doigts de la main droite sur l'os situé juste derrière l'oreille gauche et faites des mouvements vers le bas en direction du cou. Bougez lentement, n'appuyez pas trop fort. Cet exercice simple permet d'activer le flux lymphatique et de réchauffer la peau.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9F%D1%80%D0%BE%D0%B3%D0%BE%D0%BD-%D0%BB%D0%B8%D0%BC%D1%84%D1%8B-%D0%BF%D0%BE-%D1%88%D0%B5%D0%B5.mp4",
 					"duration": 37,
 					"image": "Exercises/Eyes/Прогон лимфы по шее"
 				},
 				{
-					"id": 13,
-					"name": "Гимнастика для глаз",
-					"description": "Чтобы снять напряжение и усталость с глаз, посмотрите попеременно то в одну, то в другую сторону. Двигайтесь сверху вниз. Голову при этом поворачивать не надо, двигаются только глазные яблоки.",
+					"id": 16,
+					"name": "Exercices pour les yeux",
+					"description": "Pour soulager la fatigue des yeux, regardez alternativement d'un côté et de l'autre. Déplacez-vous de haut en bas. Ne tournez pas la tête, seuls les globes oculaires bougent.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%93%D0%B8%D0%BC%D0%BD%D0%B0%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%B4%D0%BB%D1%8F-%D0%B3%D0%BB%D0%B0%D0%B7.mp4",
 					"duration": 61,
 					"image": "Exercises/Eyes/Гимнастика для глаз"
@@ -142,92 +142,92 @@
 		},
 		{
 			"id": 2,
-			"name": "Лоб",
+			"name": "Front",
 			"exercises": [
 				{
-					"id": 1,
-					"name": "Разглаживание лба",
-					"description": "Поместите ладони в центр лба и, сильно нажимая, плавно ведите к вискам. Затем, уменьшив силу воздействия, медленно ведите ладони от ушей вниз по шее к ключицам. Так вы сможете убрать отечность в области над бровями.",
+					"id": 17,
+					"name": "Lisser le front",
+					"description": "Placez vos paumes au centre du front et, en exerçant une pression ferme, déplacez-les doucement vers les tempes. Puis, en réduisant la pression, déplacez lentement vos paumes des oreilles vers le bas du cou jusqu'aux clavicules. Cela permettra de réduire le gonflement de la zone située au-dessus des sourcils.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B1%D0%B0.mp4",
 					"duration": 46,
 					"image": "Exercises/Forehead/Разглаживание лба"
 				},
 				{
-					"id": 2,
-					"name": "Разглаживаем морщины",
-					"description": "Подушечками пальцев поглаживайте поверхность лба круговыми движениями, двигаясь от центра к контурам. В ходе массажа старайтесь приподнять кожу вверх, вниз не тяните. Результат — снятие напряжения с лобной мышцы, уменьшение морщин на лбу.",
+					"id": 18,
+					"name": "Lissage des rides",
+					"description": "Avec la paume des doigts, massez la surface du front par des mouvements circulaires, du centre vers les contours. Tout en massant, soulevez la peau vers le haut, sans la tirer vers le bas. Le résultat est le relâchement de la tension sur les muscles du front et la réduction des rides du front.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B.mp4",
 					"duration": 22,
 					"image": "Exercises/Forehead/Разглаживаем морщины"
 				},
 				{
-					"id": 3,
-					"name": "Разглаживаем морщины",
-					"description": "Поочередно поглаживайте ладонями лоб крест-накрест, двигаясь вверх от бровей до линии роста волос. Это движение снимет напряжение со лба, уменьшит морщины на лбу, морщины гнева, обеспечит лифтинг-эффект в зоне бровей.",
+					"id": 19,
+					"name": "Lissage des rides",
+					"description": "Alternativement, avec la paume des mains, caressez le front en croix, en remontant des sourcils vers la racine des cheveux. Ce mouvement permet de soulager les tensions sur le front, de réduire les rides du front, les rides de colère, de procurer un effet de lifting sur la zone des sourcils.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-2-1.mp4",
 					"duration": 25,
 					"image": "Exercises/Forehead/Разглаживаем морщины 2"
 				},
 				{
-					"id": 4,
-					"name": "Разглаживаем морщины",
-					"description": "Поместите ладони у бровей. Делайте движения вверх, двигаясь от середины лба к вискам. Такое упражнение обеспечит лифтинг бровей и за счет этого - лифтинг верхнего века. Подходит, чтобы снять напряжение с лобной мышцы и разгладить морщины на лбу.",
+					"id": 20,
+					"name": "Lisser vos rides",
+					"description": "Placez les paumes de vos mains près des sourcils. Faites des mouvements vers le haut, en allant du milieu du front vers les tempes. Cet exercice permet de relever les sourcils et, par conséquent, la paupière supérieure. Convient pour soulager la tension des muscles du front et atténuer les rides du front.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-3.mp4",
 					"duration": 55,
 					"image": "Exercises/Forehead/Разглаживаем морщины 3"
 				},
 				{
-					"id": 5,
-					"name": "Разглаживаем морщины в межбровье",
-					"description": "Подушечки указательных пальцев поместите над крыльями носа. Выполняйте поглаживания от крыльев носа вверх к переносице, затем к основаниям бровей, далее — к \"хвостикам\" бровей. С помощью этого упражнения вы уменьшите межбровные морщины, восстановите правильное положение бровей.",
+					"id": 21,
+					"name": "Lisser les lignes entre les sourcils",
+					"description": "Placez les coussinets de vos index sur les ailes du nez. Passez des ailes vers le haut jusqu'à l'arête du nez, puis vers le haut jusqu'à la base des sourcils, puis vers le bas jusqu'à la pointe des sourcils. Grâce à cet exercice, vous réduirez les rides inter-sourcilières et rétablirez la position correcte des sourcils.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-%D0%B2-%D0%BC%D0%B5%D0%B6%D0%B1%D1%80%D0%BE%D0%B2%D1%8C%D0%B5.mp4",
 					"duration": 39,
 					"image": "Exercises/Forehead/Разглаживаем морщины в межбровье"
 				},
 				{
-					"id": 6,
-					"name": "Разглаживаем морщины на лбу",
-					"description": "Прижмите пальцы обеих ладоней горизонтально на лоб и, надавливая, двигайтесь к вискам. С помощью этого упражнения мы выводим лишнюю жидкость и подготавливаем лоб к дальнейшей работе.",
+					"id": 22,
+					"name": "Lisser les rides du front",
+					"description": "Appuyez les doigts des deux paumes horizontalement sur le front, puis descendez vers les tempes. Avec cet exercice, nous drainons l'excès de liquide et préparons le front pour la suite du travail.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-%D0%BD%D0%B0-%D0%BB%D0%B1%D1%83.mp4",
 					"duration": 26,
 					"image": "Exercises/Forehead/Разглаживаем морщины на лбу"
 				},
 				{
-					"id": 7,
-					"name": "Разглаживаем морщины на лбу",
-					"description": "Придерживайте кожу на лбу ладонями и поднимайте брови, стараясь не двигать руками. Это силовое упражнение уменьшает морщины на лбу, поднимает брови и \"открывает\" верхние веки",
+					"id": 23,
+					"name": "Lisser les lignes du front",
+					"description": "Maintenez la peau du front avec les paumes de vos mains et soulevez les sourcils, en essayant de ne pas bouger vos mains. Il s'agit d'un exercice de musculation qui réduit les rides du front, relève les sourcils et \"ouvre\" les paupières supérieures.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-%D0%BD%D0%B0-%D0%BB%D0%B1%D1%83_1.mp4",
 					"duration": 21,
 					"image": "Exercises/Forehead/Разглаживаем морщины на лбу_1"
 				},
 				{
-					"id": 8,
-					"name": "Разглаживаем морщины на лбу",
-					"description": "Указательными пальцами точечно проработайте всю область лба, с силой растягивая кожу в местах морщин. Так вы улучшите кровообращение в этой зоне, повысите плотность кожи и разгладите морщины лба.",
+					"id": 24,
+					"name": "Lisser les lignes du front",
+					"description": "Avec vos index, travaillez toute la zone du front en tirant fermement sur les zones ridées. Cela améliorera la circulation dans cette zone, augmentera la densité de la peau et atténuera les rides du front.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-%D0%BD%D0%B0-%D0%BB%D0%B1%D1%83_2.mp4",
 					"duration": 53,
 					"image": "Exercises/Forehead/Разглаживаем морщины на лбу_2"
 				},
 				{
-					"id": 9,
-					"name": "Разглаживаем морщины на лбу",
-					"description": "Поставьте кончики пальцев над бровями и с усилием проведите ими вверх до линии роста волос. Если не боитесь испортить причёску, продлите движение до макушки. Тогда лифтинг-эффект бровей и верхнего века будет более выраженным",
+					"id": 25,
+					"name": "Lisser les rides du front",
+					"description": "Placez le bout de vos doigts au-dessus des sourcils et pressez-les fermement vers le haut jusqu'à la naissance des cheveux. Si vous n'avez pas peur d'abîmer vos cheveux, étendez le mouvement à la couronne de votre tête. L'effet liftant sur les sourcils et la paupière supérieure sera alors plus prononcé.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D1%8B-%D0%BD%D0%B0-%D0%BB%D0%B1%D1%83-2.mp4",
 					"duration": 56,
 					"image": "Exercises/Forehead/Разглаживаем морщины на лбу 2"
 				},
 				{
-					"id": 10,
-					"name": "Массаж Головы",
-					"description": "Поставьте пальцы за ушами и с силой делайте круговые движения от ушей наверх. Это упражнение помогает восстановить нормальную длину мышц и добиться лифтинг эффекта всего лица.",
+					"id": 26,
+					"name": "Massage de la tête",
+					"description": "Placez vos doigts derrière vos oreilles et effectuez de forts mouvements circulaires en partant des oreilles vers le haut. Cet exercice permet de rétablir la longueur normale des muscles et d'obtenir un effet liftant sur l'ensemble du visage.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9C%D0%B0%D1%81%D1%81%D0%B0%D0%B6-%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D1%8B.mp4",
 					"duration": 64,
 					"image": "Exercises/Forehead/Массаж головы"
 				},
 				{
-					"id": 11,
-					"name": "Массаж Головы",
-					"description": "Помассируйте затылок круговыми движениями от линии роста волос до макушки. Это отличное упражнение перед нанесением средств для роста волос для улучшения их эффекта, так как оно стимулирует приток крови к голове.",
+					"id": 27,
+					"name": "Massage du cuir chevelu",
+					"description": "Massez l'arrière de la tête en effectuant un mouvement circulaire de la racine des cheveux jusqu'au sommet de la tête. Il s'agit d'un excellent exercice avant d'appliquer des produits de croissance des cheveux pour améliorer leur effet, car il stimule le flux sanguin vers la tête.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9C%D0%B0%D1%81%D1%81%D0%B0%D0%B6-%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D1%8B-3.mp4",
 					"duration": 51,
 					"image": "Exercises/Forehead/Массаж головы 3"
@@ -236,76 +236,76 @@
 		},
 		{
 			"id": 3,
-			"name": "Шея",
+			"name": "Cou",
 			"exercises": [
 				{
-					"id": 1,
-					"name": "Упражнение для шеи",
-					"description": "Обхватите щеки руками – как будто вы чем-то изумлены. Не отрывая ладоней, слегка наклоняйте голову вперед — назад. Это поможет укрепить переднюю поверхность шеи, уменьшить второй подбородок и создать красивую линию челюсти.",
+					"id": 28,
+					"name": "Exercice pour le cou",
+					"description": "Enroulez vos mains autour de vos joues comme si vous étiez étonné par quelque chose. Sans retirer les paumes, inclinez légèrement votre tête d'avant en arrière. Cela permettra de renforcer la face avant du cou, de réduire le deuxième menton et de créer une belle ligne de mâchoire.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%88%D0%B5%D0%B8.mp4",
 					"duration": 46,
 					"image": "Exercises/Neck/Упражнение для шеи"
 				},
 				{
-					"id": 2,
-					"name": "Упражнение для шеи",
-					"description": "Положите руки на затылок, сцепите пальцы, делайте небольшие наклоны головой вперед - назад. Это упражнение можно делать где угодно, а пользы от него очень много – улучшается приток крови к голове, исчезает напряжение мышц, осанка становится ровной и красивой. А в комплексе с другими упражнениями помогает поддерживать красивый шейноподбородочный угол.",
+					"id": 29,
+					"name": "Exercice pour le cou",
+					"description": "Placez vos mains à l'arrière de votre tête, joignez vos doigts et inclinez doucement votre tête d'avant en arrière. Cet exercice peut être pratiqué n'importe où et ses avantages sont nombreux : il améliore l'irrigation sanguine de la tête, les tensions musculaires disparaissent et la posture devient droite et belle. En combinaison avec d'autres exercices, il aide à maintenir un bel angle du cou et du menton.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%88%D0%B5%D0%B8_2.mp4",
 					"duration": 46,
 					"image": "Exercises/Neck/Упражнение для шеи_2"
 				},
 				{
-					"id": 3,
-					"name": "Упражнение для шеи",
-					"description": "Пальцами обеих рук аккуратно пощипывайте кожу шеи непосредственно под челюстью, двигаясь от подбородка к уху. Старайтесь, чтобы шаг движений был небольшим. Так вы улучшаете тонус кожи шеи (особенно ее передней поверхности) и уменьшаете провисание в данной зоне.",
+					"id": 30,
+					"name": "Exercice pour le cou",
+					"description": "Avec les doigts des deux mains, pincez doucement la peau du cou juste sous la mâchoire, en allant du menton vers l'oreille. Essayez de garder l'étape du mouvement aussi courte que possible. Cela améliorera la tonalité de la peau du cou (surtout sur la face avant) et réduira le relâchement de la zone.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%88%D0%B5%D0%B8-3.mp4",
 					"duration": 90,
 					"image": "Exercises/Neck/Упражнение для шеи 3"
 				},
 				{
-					"id": 4,
-					"name": "Лимфа Шеи",
-					"description": "Поместите руки за шею, затем сделайте легкое поглаживающее движение вперед. Это упражнение расслабляет мышцы шеи, активизирует циркуляцию крови и лимфы.",
+					"id": 31,
+					"name": "Cou lymphatique",
+					"description": "Placez vos mains derrière votre cou, puis effectuez un léger mouvement de caresse vers l'avant. Cet exercice détend les muscles du cou et active la circulation sanguine et lymphatique.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%9B%D0%B8%D0%BC%D1%84%D0%B0-%D0%A8%D0%B5%D0%B8-.mp4",
 					"duration": 41,
 					"image": "Exercises/Neck/Лимфа Шеи-"
 				},
 				{
-					"id": 5,
-					"name": "Упражнение для шеи",
-					"description": "Скрестите руки на груди, придерживая кожу. Медленно наклоняйте голову вперед и назад, пытаясь достать подбородком до ладоней. Результат - тонус шеи, более четкая линия подбородка и лифтинг нижней трети лица.",
+					"id": 32,
+					"name": "Exercice pour le cou",
+					"description": "Croisez vos bras sur votre poitrine, en tenant la peau. Inclinez lentement votre tête d'avant en arrière, en essayant d'amener votre menton jusqu'à vos paumes. Le résultat est une tonification du cou, une ligne du menton plus définie et un lifting du tiers inférieur du visage.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%88%D0%B5%D0%B8_1.mp4",
 					"duration": 36,
 					"image": "Exercises/Neck/Упражнение для шеи_1"
 				},
 				{
-					"id": 6,
-					"name": "Упражнение для шеи",
-					"description": "Сцепите пальцы на шее сзади. Локти держите внизу. Делайте небольшие наклоны головой назад. Это упражнение поможет расслабиться после работы и привести кожу в тонус.",
+					"id": 33,
+					"name": "Exercice pour le cou",
+					"description": "Entrecroisez vos doigts sur l'arrière de votre cou. Gardez vos coudes vers le bas. Faites de petites inclinaisons de la tête vers l'arrière. Cet exercice vous aidera à vous détendre après le travail et à tonifier votre peau.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%88%D0%B5%D0%B8-2_1.mp4",
 					"duration": 41,
 					"image": "Exercises/Neck/Упражнение для шеи 2_1"
 				},
 				{
-					"id": 7,
-					"name": "Сброс напряжения",
-					"description": "Сделайте глубокий вдох, интенсивно поднимая плечи. На выдохе опускайте плечи, словно бросая их вниз. Эта практика избавит вас от усталости и напряжения в конце рабочего дня, поможет расслабить мышцы шеи и спины.",
+					"id": 34,
+					"name": "Relief",
+					"description": "Prenez une grande inspiration en soulevant vigoureusement vos épaules. En expirant, abaissez vos épaules comme si vous les lanciez vers le bas. Cette pratique soulagera la fatigue et les tensions en fin de journée, en vous aidant à détendre les muscles du cou et du dos.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%A1%D0%B1%D1%80%D0%BE%D1%81-%D0%BD%D0%B0%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F.mp4",
 					"duration": 33,
 					"image": "Exercises/Neck/Сброс напряжения"
 				},
 				{
-					"id": 8,
-					"name": "Упражнение для шеи",
-					"description": "Быстро и интенсивно пощипывайте шею с обеих сторон, двигаясь вверх от плеч к ушам. Голову при этом старайтесь держать ровно. Это упражнение полезно при усталости и напряжении, укрепляет и тонизирует кожу шеи, а также предотвращает провисание кожи в данной зоне.",
+					"id": 35,
+					"name": "Exercice pour le cou",
+					"description": "Pincez rapidement et intensément le cou des deux côtés, en remontant des épaules vers les oreilles. Essayez de garder votre tête en position verticale. Cet exercice est bon pour les muscles fatigués et tendus, il raffermit et tonifie également le cou et empêche le relâchement de la peau.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%A3%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%88%D0%B5%D0%B8-3_1-3.mp4",
 					"duration": 75,
 					"image": "Exercises/Neck/Упражнение для шеи 3_1"
 				},
 				{
-					"id": 9,
-					"name": "Плавные вращения",
-					"description": "Медленно вращайте головой по кругу, периодически меняя направления. Не делайте резких движений, они должны быть плавными. Так вы подготовите мышцы к массажу и избавитесь от накопившейся усталости.",
+					"id": 36,
+					"name": "Des rotations fluides",
+					"description": "Faites lentement tourner votre tête en cercle, en changeant périodiquement de direction. Ne faites pas de mouvements brusques, ils doivent être fluides. De cette façon, vous préparez les muscles au massage et vous vous débarrassez de la fatigue accumulée.",
 					"url": "http://facecare.space/wp-content/uploads/2021/09/%D0%9F%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D0%B5-%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-.mp4",
 					"duration": 33,
 					"image": "Exercises/Neck/Плавные вращения-"
@@ -314,76 +314,76 @@
 		},
 		{
 			"id": 4,
-			"name": "Подбородок",
+			"name": "Menton levé",
 			"exercises": [
 				{
-					"id": 1,
-					"name": "Улучшаем цвет лица",
-					"description": "Быстрыми мелкими движениями пощипывайте щеки, двигаясь от уголков губ к вискам. Чередуйте это движение с пощипываниями зоны нижней челюсти от подбородка к мочкам ушей. Эта практика возвращает коже эластичность, упругость, делает подбородок и скулы четкими.",
+					"id": 37,
+					"name": "Améliore le teint",
+					"description": "Par petites touches rapides, pincez les joues, en allant des coins des lèvres vers les tempes. Alternez ce mouvement avec l'épilation de la zone de la mâchoire inférieure, du menton aux lobes des oreilles. Cette pratique permet de redonner de l'élasticité à la peau, rendant le menton et les pommettes plus définis.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A3%D0%BB%D1%83%D1%87%D1%88%D0%B0%D0%B5%D0%BC-%D1%86%D0%B2%D0%B5%D1%82-%D0%BB%D0%B8%D1%86%D0%B0.mp4",
 					"duration": 29,
 					"image": "Exercises/Chin/Улучшаем цвет лица"
 				},
 				{
-					"id": 2,
-					"name": "Подбородок",
-					"description": "Расположите ладонь параллельно носу, а большой палец под челюстью. Слегка надавите. Затем плавно проведите ладонью от носа к уху, а большим пальцем проработайте зону под челюстью. Это поможет поддержать четкость овала лица и бороться с провисанием тканей.",
+					"id": 38,
+					"name": "Chin",
+					"description": "Placez la paume de la main parallèlement au nez et le pouce sous la mâchoire. Appliquez une légère pression. Puis remontez doucement du nez à l'oreille et tracez sous la mâchoire avec le pouce. Cela permettra de maintenir la clarté de l'ovale du visage et de lutter contre l'affaissement des tissus.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9F%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%BA.mp4",
 					"duration": 72,
 					"image": "Exercises/Chin/Подбородок"
 				},
 				{
-					"id": 3,
-					"name": "Подбородок",
-					"description": "Упражнение эффективно против второго подбородка. Положите большие пальцы под линию нижней челюсти, остальные сожмите в кулак и положите на подбородок. Медленно, с легким нажимом разводите большие пальцы в стороны, массируя область под подбородком и нижней челюстью. Так вы предотвратите провисание кожи в нижней трети лица.",
+					"id": 39,
+					"name": "Chin",
+					"description": "L'exercice est efficace contre le double menton. Placez vos pouces sous la mâchoire, formez un poing et placez-le sur le menton. Lentement, en exerçant une légère pression, écartez les pouces et massez la zone située sous le menton et la mâchoire inférieure. Cela permet d'éviter le relâchement de la peau dans le tiers inférieur du visage.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9F%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%BA_1.mp4",
 					"duration": 60,
 					"image": "Exercises/Chin/Подбородок_1"
 				},
 				{
-					"id": 4,
-					"name": "Разглаживаем линию челюсти",
-					"description": "С достаточно сильным нажимом проведите большими пальцами под линией челюсти. Затем медленно и без давления проведите ладонями по шее к ключицам. Таким образом вы избавите ткани от лишней жидкости и сделаете линию нижней челюсти более четкой. А еще обеспечите профилактику провисания кожи.",
+					"id": 40,
+					"name": "Lisser la ligne des mâchoires",
+					"description": "En exerçant une pression modérée, passez vos pouces sous la mâchoire. Puis, lentement et sans pression, faites descendre la paume de vos mains le long du décolleté vers les clavicules. De cette manière, l'excès de liquide est drainé des tissus et la ligne de la mâchoire est affinée. Vous éviterez également le relâchement de la peau.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B8%D1%8E-%D1%87%D0%B5%D0%BB%D1%8E%D1%81%D1%82%D0%B8.mp4",
 					"duration": 59,
 					"image": "Exercises/РChin/азглаживаем линию челюсти"
 				},
 				{
-					"id": 5,
-					"name": "Лифтинг уголков рта и скул",
-					"description": "Прижмите ладони по бокам от подбородка. Слегка надавливая, проведите вверх, вдоль носа, скуловой кости, к глазам. Почувствуйте, как пальцы приподнимают щеки вверх. Затем отведите пальцы к вискам. Оттуда, ослабив нажим, доведите до ушей и выполните завершающее движение вниз по шее, к ключицам. Отличное упражнение для моделирования контуров лица и профилактики плоза.",
+					"id": 41,
+					"name": "Relèvement du coin de la bouche et des pommettes",
+					"description": "Placez vos paumes de chaque côté du menton. Pressez doucement vers le haut, le long du nez, de la pommette, vers les yeux. Sentez comment les doigts déplacent les joues vers le haut. Puis déplacez vos doigts vers les tempes. De là, en relâchant la pression, remontez jusqu'aux oreilles et suivez le mouvement final vers le bas du cou jusqu'aux clavicules. Un excellent exercice pour remodeler le visage et prévenir les flatulences.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9B%D0%B8%D1%84%D1%82%D0%B8%D0%BD%D0%B3-%D1%83%D0%B3%D0%BE%D0%BB%D0%BA%D0%BE%D0%B2-%D1%80%D1%82%D0%B0-%D0%B8-%D1%81%D0%BA%D1%83%D0%BB.mp4",
 					"duration": 33,
 					"image": "Exercises/Chin/Лифтинг уголков рта и скул"
 				},
 				{
-					"id": 6,
-					"name": "Подбородок",
-					"description": "Все пальцы, кроме большого, сожмите в кулак. Большой палец поместите на середину подбородка, остальные под челюстью. С давлением проведите вдоль нижней челюсти к мочке уха. Цель упражнения - скульптурировать лицо и предотвратить потерю четкости его контуров.",
+					"id": 42,
+					"name": "Chin",
+					"description": "Faites un poing avec tous les doigts sauf le pouce. Placez le pouce sur le milieu du menton, reposez-le sous la mâchoire. En exerçant une pression, faites-le passer le long de la mâchoire inférieure vers le lobe de l'oreille. L'objectif de l'exercice est de sculpter le visage et de prévenir la perte de clarté de ses contours.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9F%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%BA_1.mp4",
 					"duration": 60,
 					"image": "Exercises/Chin/Подбородок_1"
 				},
 				{
-					"id": 7,
-					"name": "Лимфодренаж надключичных лимфоузлов",
-					"description": "Указательный и средний палец поместите поверх и снизу ключицы. Медленно поглаживайте от центра к периферии. Отличное упражнение для стимуляции движения лимфатической жидкости.",
+					"id": 43,
+					"name": "Drainage lymphatique des ganglions lymphatiques supraclaviculaires",
+					"description": "Placez votre index et votre majeur au-dessus et au-dessous de la clavicule. Passez lentement du centre à la périphérie. Un excellent exercice pour stimuler le mouvement des fluides lymphatiques.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9B%D0%B8%D0%BC%D1%84%D0%BE%D0%B4%D1%80%D0%B5%D0%BD%D0%B0%D0%B6-%D0%BD%D0%B0%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%87%D0%BD%D1%8B%D1%85-%D0%BB%D0%B8%D0%BC%D1%84%D0%BE%D1%83%D0%B7%D0%BB%D0%BE%D0%B2-.mp4",
 					"duration": 28,
 					"image": "Exercises/Chin/Лимфодренаж надключичных лимфоузлов-"
 				},
 				{
-					"id": 8,
-					"name": "Очерчиваем линию челюсти",
-					"description": "Четыре пальца одной руки сожмите в кулак, большой палец зафиксируйте под подбородком, поддерживая его. Большим пальцем другой руки с легким нажимом проведите под челюстью, затем нежно проведите вниз по шее до ключицы. Так вы сможете усилить отток лишней жидкости и скульптурировать нижнюю часть лица.",
+					"id": 44,
+					"name": "Délimiter la ligne de la mâchoire",
+					"description": "Faites un poing avec quatre doigts d'une main et placez le pouce sous le menton, en le soutenant. Avec le pouce de l'autre main, appuyez doucement sous la mâchoire, puis descendez vers la clavicule. Cela permettra de favoriser le drainage des fluides et de sculpter le bas du visage.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9E%D1%87%D0%B5%D1%80%D1%87%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BB%D0%B8%D0%BD%D0%B8%D1%8E-%D1%87%D0%B5%D0%BB%D1%8E%D1%81%D1%82%D0%B8-.mp4",
 					"duration": 57,
 					"image": "Exercises/Chin/Очерчиваем линию челюсти-"
 				},
 				{
-					"id": 9,
-					"name": "Подбородок",
-					"description": "Поместите основания ладоней под подбородком и проведите разглаживающим движением от середины подбородка до мочек ушей по краю нижней челюсти. Это упражнение направлено на улучшение контуров лица, делает овал лица более четким, уменьшает брыли и предотвращает их появление.",
+					"id": 45,
+					"name": "Chin",
+					"description": "Placez les paumes de vos mains sous le menton et effectuez un mouvement de lissage du milieu du menton vers les lobes des oreilles, le long du bord de la mâchoire inférieure. Cet exercice vise à améliorer les contours du visage, à rendre l'ovale du visage plus net, à réduire l'apparition des boutons et à prévenir leur apparition.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9F%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%BA_2.mp4",
 					"duration": 37,
 					"image": "Exercises/Chin/Подбородок_2"
@@ -392,100 +392,100 @@
 		},
 		{
 			"id": 5,
-			"name": "Скулы и щеки",
+			"name": "Pommettes et joues",
 			"exercises": [
 				{
-					"id": 1,
-					"name": "Щеки",
-					"description": "Сожмите руки в кулаки. Поверхностью кулаков с силой надавите по бокам подбородка, а затем двигайтесь по направлению к вискам. Упражнение помогает защитить кожу от провисания, сохранить четкий овал лица.",
+					"id": 46,
+					"name": "Joues",
+					"description": "Serrez vos mains en poings. Appuyez avec force sur les côtés du menton, puis déplacez-vous vers les tempes. Cet exercice permet de protéger la peau contre le relâchement et de maintenir un contour facial net.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A9%D0%B5%D0%BA%D0%B8-1.mp4",
 					"duration": 38,
 					"image": "Exercises/Cheeks/Щеки"
 				},
 				{
-					"id": 2,
-					"name": "Разглаживаем кисетные морщинки",
-					"description": "Ладонью одной руки придерживайте уголок рта. Двумя пальцами другой руки круговыми движениями массируйте зону над верхней губой. Это упражнение эффективно при кисетных и мимических морщинках",
+					"id": 47,
+					"name": "Lisser les lignes fines",
+					"description": "Tenez le coin de la bouche avec la paume d'une main. Avec deux doigts de l'autre main, massez la zone située au-dessus de la lèvre supérieure par un mouvement circulaire. Cet exercice est efficace pour les rides et ridules.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D0%B7%D0%B3%D0%BB%D0%B0%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC-%D0%BA%D0%B8%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D0%BC%D0%BE%D1%80%D1%89%D0%B8%D0%BD%D0%BA%D0%B8-.mp4",
 					"duration": 78,
 					"image": "Exercises/Cheeks/Разглаживаем кисетные морщинки-"
 				},
 				{
-					"id": 3,
-					"name": "Расслабление жевательных мышц",
-					"description": "Разместите кулаки под скулами и массируйте круговыми движениями. После нескольких повторений переходите чуть пониже. Очень важно снимать напряжение с жевательных мышц, так как в течение дня они работают больше всего.",
+					"id": 48,
+					"name": "Détendre les muscles de la mastication",
+					"description": "Placez vos poings sous les pommettes et massez en mouvements circulaires. Après plusieurs répétitions, déplacez-vous légèrement vers le bas. Il est important de relâcher la tension sur les muscles de la mastication, qui travaillent le plus fort pendant la journée.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D1%81%D1%81%D0%BB%D0%B0%D0%B1%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BC%D1%8B%D1%88%D1%86.mp4",
 					"duration": 63,
 					"image": "Exercises/Cheeks/Расслабление жевательных мышц"
 				},
 				{
-					"id": 4,
-					"name": "Подъем лица",
-					"description": "Поместите стульчики ладоней под подбородок, слегка надавите. Затем с небольшим усилием ведите по щекам до скуловых костей, приподнимая щеки. В области скуловых костей задержитесь на 3 секунды. Затем пальцами рук проведите от козелков ушей вниз по шее к ключицам. Это поможет устранить излишки жидкости и провисание кожи в средней трети лица.",
+					"id": 49,
+					"name": "Lifting du visage",
+					"description": "Placez les paumes de vos mains sous le menton et exercez une légère pression. Puis, avec une légère pression, faites remonter vos joues jusqu'aux os zygomatiques, en soulevant les joues. Tenez pendant 3 secondes au niveau des pommettes. Puis, du bout des doigts, tracez les os des oreilles en descendant le long du décolleté jusqu'aux clavicules. Cela permettra d'éliminer l'excès de liquide et le relâchement de la peau dans le tiers moyen du visage.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9F%D0%BE%D0%B4%D1%8A%D0%B5%D0%BC-%D0%BB%D0%B8%D1%86%D0%B0.mp4",
 					"duration": 37,
 					"image": "Exercises/Cheeks/Подъем лица"
 				},
 				{
-					"id": 5,
-					"name": "Щеки",
-					"description": "Найдите полую часть под скуловыми костями. Пощипывающие движения от уголков рта до ушей помогут сделать скулы более четкими. Упражнение тонизирует мышцы, подтягивает кожу, улучшает цвет лица.",
+					"id": 50,
+					"name": "Joues",
+					"description": "Localisez le creux sous les os zygomatiques. Des mouvements de pincement des coins de la bouche vers les oreilles aideront à rendre les pommettes plus définies. Cet exercice permet de tonifier les muscles, de retendre la peau et d'améliorer le teint.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A9%D0%B5%D0%BA%D0%B8_1.mp4",
 					"duration": 34,
 					"image": "Exercises/Cheeks/Щеки_1"
 				},
 				{
-					"id": 6,
-					"name": "Щеки",
-					"description": "Положите ладонь на щёку. Сверху положите другую ладонь для усиления давления. Проведите вверх по направлению к виску, а затем медленно спуститесь вниз по шее до ключицы. Такое медитативное, подтягивающее кожу движение помогает нам завершить подтяжку лица",
+					"id": 51,
+					"name": "Joues",
+					"description": "Placez une paume sur la joue. Placez une autre paume sur le dessus pour augmenter la pression. Faites-le glisser vers la tempe, puis descendez lentement le long du cou jusqu'à la clavicule. Ce mouvement méditatif et tenseur de la peau permet de compléter le lifting.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A9%D0%B5%D0%BA%D0%B8-2.mp4",
 					"duration": 68,
 					"image": "Exercises/Cheeks/Щеки 2"
 				},
 				{
-					"id": 7,
-					"name": "Стираем подбородок",
-					"description": "Интенсивно разглаживайте подбородок пальцами обеих рук, делая вертикальные движения по направлению к нижней губе. Так вы сделаете менее заметными морщины на подбородке и поднимите уголки губ.",
+					"id": 52,
+					"name": "Frotter le menton",
+					"description": "Lissez vigoureusement le menton avec les doigts des deux mains, en effectuant un mouvement vertical vers la lèvre inférieure. Cela permettra de réduire les rides du menton et de relever les coins des lèvres.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A1%D1%82%D0%B8%D1%80%D0%B0%D0%B5%D0%BC-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%BA-.mp4",
 					"duration": 23,
 					"image": "Exercises/Cheeks/Стираем подбородок-"
 				},
 				{
-					"id": 8,
-					"name": "Подтяжка щек",
-					"description": "Проведите по щеке к виску сначала одной ладонью, затем второй. Чередуйте ладони, как бы \"подхватывая\" движение, чтобы кожа оставалась натянутой. Такое упражнение обеспечит лифтинг-эффект в области щек.",
+					"id": 53,
+					"name": "Lifting des joues",
+					"description": "Faites glisser une main le long de la joue jusqu'à la tempe, puis l'autre. Alternez les paumes, en \"reprenant\" le mouvement pour garder la peau tendue. Cet exercice aura un effet liftant sur la zone des joues.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9F%D0%BE%D0%B4%D1%82%D1%8F%D0%B6%D0%BA%D0%B0-%D1%89%D0%B5%D0%BA.mp4",
 					"duration": 79,
 					"image": "Exercises/Cheeks/Подтяжка щек"
 				},
 				{
-					"id": 9,
-					"name": "Лифтинг ушей",
-					"description": "Подушечками указательного и большого пальцев мягко надавливайте на мочки ушей и мягко тяните вниз. Разминая мочки уха, вы воздействуете на акупунктурные точки, которые отвечают за общее оздоровление организма, бодрость и энергию.",
+					"id": 54,
+					"name": "Les oreilles se soulèvent",
+					"description": "En utilisant les extrémités de votre index et de votre pouce, appuyez doucement sur vos lobes d'oreille et tirez doucement vers le bas. En pétrissant les lobes des oreilles, vous stimulez les points d'acupuncture responsables de la guérison générale, de la vigueur et de l'énergie.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9B%D0%B8%D1%84%D1%82%D0%B8%D0%BD%D0%B3-%D1%83%D1%88%D0%B5%D0%B9.mp4",
 					"duration": 26,
 					"image": "Exercises/Cheeks/Лифтинг ушей"
 				},
 				{
-					"id": 10,
-					"name": "Носогубные складки",
-					"description": "Округлите рот (как будто вы чем-то удивлены) и указательными пальцами массируйте носогубные складки вверх - вниз. Медленно двигайтесь от уголков губ до кончика носа. Это упражнение полезно для всей нижней трети лица и особенно для уменьшения носогубных складок.",
+					"id": 55,
+					"name": "Sillons nasogéniens",
+					"description": "Arrondissez votre bouche (comme si vous étiez surpris par quelque chose) et utilisez vos index pour masser les plis nasogéniens de haut en bas. Déplacez-vous lentement des coins des lèvres vers le bout du nez. Cet exercice est bon pour tout le tiers inférieur du visage et surtout pour réduire les plis nasogéniens.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9D%D0%BE%D1%81%D0%BE%D0%B3%D1%83%D0%B1%D0%BD%D1%8B%D0%B5-%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8.mp4",
 					"duration": 26,
 					"image": "Exercises/Cheeks/Носогубные складки"
 				},
 				{
-					"id": 11,
-					"name": "Расслабляем круговую мышцу рта",
-					"description": "Расслабляем круговую мышцу рта. Набираем воздух и выдуваем. Чтобы это сделать, произноси звук «ТПРУ», словно останавливая лошадь. Губы и мышцы должны вибрировать. Для достижения лучшего эффекта, можно немного опустить голову вниз. Помимо расслабления мышц, бонусы этого омолаживающего упражнения – увеличение объема губ и коррекция.",
+					"id": 56,
+					"name": "Détendre le muscle orbiculaire",
+					"description": "Détendez le muscle circulaire de la bouche. Aspirez l'air et soufflez-le. Pour ce faire, émettez un son \"TPRU\" comme si vous arrêtiez un cheval. Les lèvres et les muscles doivent vibrer. Pour un meilleur effet, vous pouvez baisser légèrement la tête. En plus de détendre les muscles, les bonus de cet exercice de rajeunissement sont l'augmentation du volume et la correction des lèvres.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%A0%D0%B0%D1%81%D1%81%D0%BB%D0%B0%D0%B1%D0%BB%D1%8F%D0%B5%D0%BC-%D0%BA%D1%80%D1%83%D0%B3%D0%BE%D0%B2%D1%83%D1%8E-%D0%BC%D1%8B%D1%88%D1%86%D1%83-%D1%80%D1%82%D0%B0-.mp4",
 					"duration": 19,
 					"image": "Exercises/Cheeks/Расслабляем круговую мышцу рта-"
 				},
 				{
-					"id": 12,
-					"name": "Лифтинг околоушной зоны",
-					"description": "Поместите указательные пальцы позади ушей, а средние пальцы - перед ними. Движением «ножнички» растирайте кожу возле ушей вверх и вниз. Это упражнение оказывает успокаивающее воздействие на нервную систему. Оно также разогреет зону вокруг уха и подготовит лицо к лифтингу.",
+					"id": 57,
+					"name": "Lifting de la parotide",
+					"description": "Placez vos index derrière vos oreilles et vos majeurs devant elles. Frottez la peau près des oreilles de haut en bas dans un mouvement de ciseaux. Cet exercice a un effet apaisant sur le système nerveux. Il réchauffe également la zone autour de l'oreille et prépare le visage à un lifting.",
 					"url": "http://facecare.space/wp-content/uploads/2021/10/%D0%9B%D0%B8%D1%84%D1%82%D0%B8%D0%BD%D0%B3-%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D1%83%D1%88%D0%BD%D0%BE%D0%B9-%D0%B7%D0%BE%D0%BD%D1%8B.mp4",
 					"duration": 32,
 					"image": "Exercises/Cheeks/Лифтинг околоушной зоны"

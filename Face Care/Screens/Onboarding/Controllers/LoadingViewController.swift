@@ -34,11 +34,12 @@ class LoadingViewController: BaseViewController {
                 return
 
             }
-            
+
             if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
                 let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
                 photoOfferVC.modalPresentationStyle = .fullScreen
-                photoOfferVC.page = 1
+                photoOfferVC.page = 3
+                photoOfferVC.isToggleOn = true
                 self.present(photoOfferVC, animated: true)
                 return
             }
@@ -58,8 +59,11 @@ class LoadingViewController: BaseViewController {
         FaceArea.getAll()
         Offer.get()
         
-        if !State.shared.isFirstLaunch() && State.shared.isOnboardingCompleted() {
-            Training.Daily.getTrainings()
+        StoreManager.updateStatus()
+        
+        if !State.shared.isFirstLaunch() && State.shared.isOnboardingCompleted() && State.shared.isSubscribed {
+            Training.Daily.loadFromJson()
+            Training.Exclusive.loadFromJson()
         }
         
     }

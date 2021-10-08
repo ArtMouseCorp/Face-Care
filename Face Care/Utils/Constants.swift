@@ -15,7 +15,7 @@ enum UDKeys {
 
 enum Keys {
     static let amplitudeApiKey: String      = "f0153fc6e379461837491d09650ec125" // "03fd438d9816aeda67706152fbf980b6"
-    static let apphudApiKey: String         = "app_rRGymCYM1iJH3QLqsEePmKN8dzWwzw"
+    static let apphudApiKey: String         = "app_veTtQ46y9Pot9hxzzGJ9U8GCpFT3W2"
 }
 
 enum AmplitudeEvent {
@@ -63,14 +63,10 @@ public func hapticFeedback(_ type: UINotificationFeedbackGenerator.FeedbackType)
 }
 
 
-
-// TODO: - Translate exercises to fr, it ,de, es
 // TODO: - currentItem of video is adding two times
 // TODO: - Replace contact email
 // TODO: - Replace offer Screen json url
-// TODO: - Exclusive trainings
 // TODO: - Daily trainings cell alpha
-// TODO: - AppStoreConnect Subscriptions not working
 
 /*
  //           _._

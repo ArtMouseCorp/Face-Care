@@ -101,12 +101,17 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["someemail@gmail.com"])
-            mail.setSubject("Face Care Contact")
+            mail.setToRecipients([Config.email])
+            mail.setSubject("Face Yoga Contact")
             mail.setMessageBody("", isHTML: true)
             
             present(mail, animated: true)
+        } else {
+            let okAction = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default)
+            let alert = getAlert(title: L.get(key: L.Alert.Mail.title), actions: okAction)
+            self.present(alert, animated: true)
         }
+        
     }
     
     @objc private func renewSubscriptionButtonViewTapped() {
@@ -117,7 +122,7 @@ class SettingsViewController: BaseViewController, MFMailComposeViewControllerDel
         }
         
         StoreManager.updateStatus()
-            
+        
         guard !State.shared.isSubscribed else {
             self.showAlreadySubscribedAlert()
             return
@@ -157,6 +162,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         State.shared.setLanguage(to: Language.languages[indexPath.row].code)
         DispatchQueue.main.async {
             self.localize()
+            Language.update()
             self.languageTableView.reloadData()
         }
         

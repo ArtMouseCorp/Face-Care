@@ -5,9 +5,17 @@ import Amplitude
 class BaseViewController: UIViewController {
 
     // MARK: - Variables
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
+    }
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        get {
+            return .portrait
+        }
     }
     
     // MARK: - Awake functions
@@ -15,6 +23,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
         
     // MARK: - Custom functions
     

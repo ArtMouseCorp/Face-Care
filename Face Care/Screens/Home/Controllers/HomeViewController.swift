@@ -72,7 +72,7 @@ class HomeViewController: BaseViewController {
         dailyTrainingsCollectionView.reloadData()
         exclusiveTrainingsCollectionView.reloadData()
         
-        facePartsLabels[0].localize(with: "facePart.lymph")
+        facePartsLabels[0].localize(with: L.FacePart.lymph)
         facePartsLabels[1].localize(with: L.FacePart.eyes)
         facePartsLabels[2].localize(with: L.FacePart.forehead)
         facePartsLabels[3].localize(with: L.FacePart.neck)
@@ -149,6 +149,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        StoreManager.updateStatus()
+        guard State.shared.isSubscribed else {
+            self.showNotSubscriberAlert()
+            return
+        }
+        
         let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
         exerciseVC.modalPresentationStyle = .fullScreen
         guard let index = exercisesTableViews.firstIndex(of: tableView) else { return }
@@ -170,7 +177,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             dots.numberOfPages = Training.Daily.trainings.count
             return Training.Daily.trainings.count
         case exclusiveTrainingsCollectionView:
-            return 6
+            return Training.Exclusive.trainings.count
         default:
             return 0
         }
@@ -187,12 +194,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let dailyTraining = Training.Daily.trainings[indexPath.row]
             
             cell.configure(with: dailyTraining)
-            
-            if indexPath.row <= State.shared.getCompletedDailyTrainings() {
-                cell.alpha = 1
-            } else {
-                cell.alpha = 0.6
-            }
+            cell.unlock(indexPath.row <= State.shared.getCompletedDailyTrainings(), dayNumber: dailyTraining.dayNumber)
             
             return cell
             
@@ -200,7 +202,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.exclusiveTraining.id, for: indexPath) as! ExclusiveTrainingCollectionViewCell
             
-            //            cell.configure(name: <#T##String#>, duration: <#T##String#>, image: <#T##UIImage#>)
+            let exclusiveTraining = Training.Exclusive.trainings[indexPath.row]
+            cell.configure(with: exclusiveTraining)
             
             return cell
             
@@ -211,13 +214,28 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        StoreManager.updateStatus()
+        guard State.shared.isSubscribed else {
+            self.showNotSubscriberAlert()
+            return
+        }
+        
         switch collectionView {
             
         case dailyTrainingsCollectionView:
             
             let dailyTraining = Training.Daily.trainings[indexPath.row]
             
-            guard indexPath.row <= State.shared.getCompletedDailyTrainings() else { return }
+            guard indexPath.row <= State.shared.getCompletedDailyTrainings() else {
+                
+                let title = L.get(key: L.Alert.DailyTrainingLocked.title)
+                let message = L.get(key: L.Alert.DailyTrainingLocked.message, args: dailyTraining.dayNumber, dailyTraining.dayNumber - 1)
+                
+                let okAction = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default)
+                let alert = getAlert(title: title, message: message, actions: okAction)
+                self.present(alert, animated: true)
+                return
+            }
             
             let trainingVC = TrainingViewController.load(from: Screen.training)
             trainingVC.training = dailyTraining.training
@@ -228,9 +246,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case exclusiveTrainingsCollectionView:
             
+            let exclusiveTraining = Training.Exclusive.trainings[indexPath.row]
+            
             let trainingVC = TrainingViewController.load(from: Screen.training)
-            trainingVC.modalPresentationStyle = .fullScreen
-            self.present(trainingVC, animated: true)
+            trainingVC.training = exclusiveTraining
+            trainingVC.isDurationHidden = true
+
+            self.navigationController?.pushViewController(trainingVC, animated: true)
+            self.navigationController?.hidesBottomBarWhenPushed = true
             
         default:
             break

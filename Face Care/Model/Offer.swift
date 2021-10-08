@@ -3,12 +3,12 @@ import Foundation
 struct Offer: Codable {
     let lang: Language.Code
     let trialTitle: String
-    let notTrialTitle: String
     let button: String
-    let purchaseId: String
+    let trialPurchaseId: String
+    let notTrialPurchaseId: String
     let comment: String
     
-    public static let defaultOffer = Offer(lang: .en, trialTitle: "", notTrialTitle: "", button: L.get(key: L.Onboarding.OnboardingButton.continue), purchaseId: "fy_1y", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!")
+    public static let defaultOffer = Offer(lang: .en, trialTitle: "", button: L.get(key: L.Onboarding.OnboardingButton.continue), trialPurchaseId: "fy_1y_3d0", notTrialPurchaseId: "fy_1y_3d0", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!")
     
     public static func get() {
         fetch { result in
@@ -47,7 +47,7 @@ struct Offer: Codable {
         
         // TODO: - Replace url
         
-        let urlString = "https://app.finanse.space/app/NeverHaveI"
+        let urlString = Config.offerUrl
         guard let url = URL(string: urlString) else { fatalError() }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in

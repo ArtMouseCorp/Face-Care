@@ -13,268 +13,290 @@
 //
 //  internal enum Alert {
 //    internal enum Action {
-//      /// Отменить
-//      internal static let cancel = L.tr("Localizable", "alert.action.cancel")
-//      /// Ок
-//      internal static let ok = L.tr("Localizable", "alert.action.ok")
-//      /// Да
-//      internal static let yes = L.tr("Localizable", "alert.action.yes")
+//      /// Cancel
+//      internal static let cancel = "alert.action.cancel"
+//      /// Generate
+//      internal static let generate = "alert.action.generate"
+//      /// Ok
+//      internal static let ok = "alert.action.ok"
+//      /// Yes
+//      internal static let yes = "alert.action.yes"
 //    }
 //    internal enum Connection {
-//      /// Нет подключения к интернету.  Пожалуйста, подключитесь к сети и попробуйте еще раз.
-//      internal static let message = L.tr("Localizable", "alert.connection.message")
-//      /// Нет подключения к интернету
-//      internal static let title = L.tr("Localizable", "alert.connection.title")
+//      /// No internet connection. Please connect to the network and try again.
+//      internal static let message = "alert.connection.message"
+//      /// No internet connection
+//      internal static let title = "alert.connection.title"
+//    }
+//    internal enum Mail {
+//      /// Mail services are not available
+//      internal static let title = "alert.mail.title"
 //    }
 //    internal enum NotSubscriber {
-//      /// К сожалению, вы не можете восстановить свою покупку, потому что у вас нет активной подписки.
-//      internal static let message = L.tr("Localizable", "alert.notSubscriber.message")
-//      /// Не подлежит восстановлению
-//      internal static let title = L.tr("Localizable", "alert.notSubscriber.title")
+//      /// Unfortunately, you cannot restore your purchase because you do not have an active subscription.
+//      internal static let message = "alert.notSubscriber.message"
+//      /// Not restorable
+//      internal static let title = "alert.notSubscriber.title"
+//    }
+//    internal enum ProblemArea {
+//      /// To generate a course, you need to select at least one part of the face
+//      internal static let message = "alert.problemArea.message"
+//      /// Choose a part of the face
+//      internal static let title = "alert.problemArea.title"
+//    }
+//    internal enum ResetProgressSure {
+//      /// Your personal course will be re-generated and you can start over
+//      internal static let message = "alert.resetProgressSure.message"
+//      /// Are you sure?
+//      internal static let title = "alert.resetProgressSure.title"
 //    }
 //    internal enum Restored {
-//      /// Вы успешно восстановили подписку. Теперь вам доступен весь функционал.
-//      internal static let message = L.tr("Localizable", "alert.restored.message")
-//      /// Восстановлен
-//      internal static let title = L.tr("Localizable", "alert.restored.title")
+//      /// You have successfully restored your subscription. All functionality is now available to you.
+//      internal static let message = "alert.restored.message"
+//      /// Restored
+//      internal static let title = "alert.restored.title"
 //    }
 //    internal enum Subscribed {
-//      /// Вы уже подписаны. Вам доступен весь функционал.
-//      internal static let message = L.tr("Localizable", "alert.subscribed.message")
-//      /// Подписка оформлена
-//      internal static let title = L.tr("Localizable", "alert.subscribed.title")
+//      /// You are already subscribed. All functionality is available to you.
+//      internal static let message = "alert.subscribed.message"
+//      /// Subscribed
+//      internal static let title = "alert.subscribed.title"
 //    }
 //    internal enum Training {
-//      /// Вы уверены, что хотите выйти?
-//      internal static let title = L.tr("Localizable", "alert.training.title")
+//      /// Are you sure you want to quit?
+//      internal static let title = "alert.training.title"
 //    }
 //  }
 //
 //  internal enum Atricles {
-//    /// Полезные статьи
-//    internal static let title = L.tr("Localizable", "atricles.title")
+//    /// Useful articles
+//    internal static let title = "atricles.title"
 //  }
 //
 //  internal enum FacePart {
 //    /// Cheekbones and cheeks
-//    internal static let cheekbonesAndCheeks = L.tr("Localizable", "facePart.cheekbonesAndCheeks")
+//    internal static let cheekbonesAndCheeks = "facePart.cheekbonesAndCheeks"
 //    /// Chin
-//    internal static let chin = L.tr("Localizable", "facePart.chin")
+//    internal static let chin = "facePart.chin"
 //    /// Eyes
-//    internal static let eyes = L.tr("Localizable", "facePart.eyes")
+//    internal static let eyes = "facePart.eyes"
 //    /// Forehead
-//    internal static let forehead = L.tr("Localizable", "facePart.forehead")
+//    internal static let forehead = "facePart.forehead"
+//    /// Lymph
+//    internal static let lymph = "facePart.lymph"
 //    /// Neck
-//    internal static let neck = L.tr("Localizable", "facePart.neck")
+//    internal static let neck = "facePart.neck"
 //  }
 //
 //  internal enum Home {
-//    /// День
-//    internal static let day = L.tr("Localizable", "home.day")
-//    /// Эксклюзивные тренировки
-//    internal static let exclusiveTrainings = L.tr("Localizable", "home.exclusiveTrainings")
-//    /// Список упражнений
-//    internal static let exercisesList = L.tr("Localizable", "home.exercisesList")
-//    /// Рекоммендуется на сегодня
-//    internal static let title = L.tr("Localizable", "home.title")
+//    /// Day %d
+//    internal static let day = "home.day"
+//    /// Exclusive trainings
+//    internal static let exclusiveTrainings = "home.exclusiveTrainings"
+//    /// List of exercises
+//    internal static let exercisesList = "home.exercisesList"
+//    /// Recommended for today
+//    internal static let title = "home.title"
 //    internal enum Duration {
 //      internal enum Minutes {
-//        /// минут
-//        internal static let five = L.tr("Localizable", "home.duration.minutes.five")
-//        /// минута
-//        internal static let one = L.tr("Localizable", "home.duration.minutes.one")
-//        /// минуты
-//        internal static let two = L.tr("Localizable", "home.duration.minutes.two")
+//        /// %d minutes
+//        internal static let five = "home.duration.minutes.five"
+//        /// %d minute
+//        internal static let one = "home.duration.minutes.one"
+//        /// %d minutes
+//        internal static let two = "home.duration.minutes.two"
 //      }
 //    }
 //  }
 //
 //  internal enum Onboarding {
-//    /// Загрузить фото
-//    internal static let loadImage = L.tr("Localizable", "onboarding.loadImage")
-//    /// Получить персональный курс
-//    internal static let personalPlan = L.tr("Localizable", "onboarding.personalPlan")
+//    /// Upload photo
+//    internal static let loadImage = "onboarding.loadImage"
+//    /// Get a personalized course
+//    internal static let personalPlan = "onboarding.personalPlan"
 //    internal enum Features {
-//      /// Чистая кожа
-//      internal static let first = L.tr("Localizable", "onboarding.features.first")
-//      /// Здоровый цвет лица
-//      internal static let second = L.tr("Localizable", "onboarding.features.second")
-//      /// Заряд энергии на целый день
-//      internal static let third = L.tr("Localizable", "onboarding.features.third")
+//      /// Clean skin
+//      internal static let first = "onboarding.features.first"
+//      /// Healthy complexion
+//      internal static let second = "onboarding.features.second"
+//      /// All-day energy boost
+//      internal static let third = "onboarding.features.third"
 //    }
 //    internal enum OnboardingButton {
-//      /// Продолжить
-//      internal static let `continue` = L.tr("Localizable", "onboarding.onboardingButton.continue")
-//      /// Да, но только в области глаз
-//      internal static let eyesWrinkles = L.tr("Localizable", "onboarding.onboardingButton.eyesWrinkles")
-//      /// Нет
-//      internal static let no = L.tr("Localizable", "onboarding.onboardingButton.no")
-//      /// Начать
-//      internal static let start = L.tr("Localizable", "onboarding.onboardingButton.start")
-//      /// Да
-//      internal static let yes = L.tr("Localizable", "onboarding.onboardingButton.yes")
+//      /// Continue
+//      internal static let `continue` = "onboarding.onboardingButton.continue"
+//      /// Yes, but only in the eye area
+//      internal static let eyesWrinkles = "onboarding.onboardingButton.eyesWrinkles"
+//      /// No
+//      internal static let no = "onboarding.onboardingButton.no"
+//      /// Start
+//      internal static let start = "onboarding.onboardingButton.start"
+//      /// Yes
+//      internal static let yes = "onboarding.onboardingButton.yes"
 //      internal enum Sleep {
-//        /// Больше 8 часов
-//        internal static let long = L.tr("Localizable", "onboarding.onboardingButton.sleep.long")
-//        /// 7-8 часов
-//        internal static let normal = L.tr("Localizable", "onboarding.onboardingButton.sleep.normal")
-//        /// Меньше 7 часов
-//        internal static let short = L.tr("Localizable", "onboarding.onboardingButton.sleep.short")
+//        /// More than 8 hours
+//        internal static let long = "onboarding.onboardingButton.sleep.long"
+//        /// 7-8 hours
+//        internal static let normal = "onboarding.onboardingButton.sleep.normal"
+//        /// Less than 7 hours
+//        internal static let short = "onboarding.onboardingButton.sleep.short"
 //      }
 //    }
 //    internal enum Screen {
 //      internal enum Title {
-//        /// Как тебя зовут?
-//        internal static let eighth = L.tr("Localizable", "onboarding.screen.title.eighth")
-//        /// Заметны ли морщинки на лице когда ты улибаешся или смеёшься?
-//        internal static let fifth = L.tr("Localizable", "onboarding.screen.title.fifth")
-//        /// Ты хочешь выглядель моложе?
-//        internal static let first = L.tr("Localizable", "onboarding.screen.title.first")
-//        /// На какой области лица ты хотел(а) бы сосредоточится?
-//        internal static let fourth = L.tr("Localizable", "onboarding.screen.title.fourth")
-//        /// Сколько тебе лет?
-//        internal static let ninth = L.tr("Localizable", "onboarding.screen.title.ninth")
-//        /// Ты хочешь, чтобы лицо выглядело более подтянутым?
-//        internal static let second = L.tr("Localizable", "onboarding.screen.title.second")
-//        /// Сколько часов обычно длится твой сон?
-//        internal static let seventh = L.tr("Localizable", "onboarding.screen.title.seventh")
-//        /// Заметны ли морщинки на твоём лице, когда оно расслаблено?
-//        internal static let sixth = L.tr("Localizable", "onboarding.screen.title.sixth")
-//        /// Какой у тебя тип кожи?
-//        internal static let third = L.tr("Localizable", "onboarding.screen.title.third")
+//        /// What's your name?
+//        internal static let eighth = "onboarding.screen.title.eighth"
+//        /// Do you notice wrinkles on your face when you smile or laugh?
+//        internal static let fifth = "onboarding.screen.title.fifth"
+//        /// Do you want to look younger?
+//        internal static let first = "onboarding.screen.title.first"
+//        /// What area of your face would you like to focus on?
+//        internal static let fourth = "onboarding.screen.title.fourth"
+//        /// How old are you?
+//        internal static let ninth = "onboarding.screen.title.ninth"
+//        /// Do you want your face to look tighter?
+//        internal static let second = "onboarding.screen.title.second"
+//        /// How many hours do you usually sleep?
+//        internal static let seventh = "onboarding.screen.title.seventh"
+//        /// Do you notice wrinkles on your face when it's relaxed?
+//        internal static let sixth = "onboarding.screen.title.sixth"
+//        /// What is your skin type?
+//        internal static let third = "onboarding.screen.title.third"
 //      }
 //    }
 //    internal enum SkinType {
-//      /// Комбинировання
-//      internal static let combined = L.tr("Localizable", "onboarding.skinType.combined")
-//      /// Сухая
-//      internal static let dry = L.tr("Localizable", "onboarding.skinType.dry")
-//      /// Жирная
-//      internal static let fat = L.tr("Localizable", "onboarding.skinType.fat")
-//      /// Нормальная
-//      internal static let normal = L.tr("Localizable", "onboarding.skinType.normal")
+//      /// Combined
+//      internal static let combined = "onboarding.skinType.combined"
+//      /// Dry
+//      internal static let dry = "onboarding.skinType.dry"
+//      /// Oily
+//      internal static let fat = "onboarding.skinType.fat"
+//      /// Normal
+//      internal static let normal = "onboarding.skinType.normal"
 //    }
 //    internal enum Start {
-//      /// Курс Face Care - это ваш путь к естественной красоте и молодости
-//      internal static let description = L.tr("Localizable", "onboarding.start.description")
-//      /// Добро пожаловать в
-//      internal static let welcome = L.tr("Localizable", "onboarding.start.welcome")
+//      /// Face Care course - your way to natural beauty and youthfulness
+//      internal static let description = "onboarding.start.description"
+//      /// Welcome to
+//      internal static let welcome = "onboarding.start.welcome"
 //    }
 //  }
 //
 //  internal enum PlanGeneration {
-//    /// Анализ проблемных зон
-//    internal static let first = L.tr("Localizable", "planGeneration.first")
-//    /// Анализ состояния кожи
-//    internal static let second = L.tr("Localizable", "planGeneration.second")
-//    /// Подбор упражнений для лица согласно твоим потребностям
-//    internal static let third = L.tr("Localizable", "planGeneration.third")
-//    /// Подготовка персонально плана тренировок
-//    internal static let title = L.tr("Localizable", "planGeneration.title")
+//    /// Analysis of problem areas
+//    internal static let first = "planGeneration.first"
+//    /// Skin analysis
+//    internal static let second = "planGeneration.second"
+//    /// Choosing facial exercises according to your needs
+//    internal static let third = "planGeneration.third"
+//    /// Preparing a personal training plan
+//    internal static let title = "planGeneration.title"
 //  }
 //
 //  internal enum Progress {
-//    /// Добавить фото
-//    internal static let addImage = L.tr("Localizable", "progress.addImage")
-//    /// Смотрите демонстрацию
-//    internal static let demonstration = L.tr("Localizable", "progress.demonstration")
-//    /// Галерея прогресса
-//    internal static let gallery = L.tr("Localizable", "progress.gallery")
-//    /// Ежедневная цель
-//    internal static let goal = L.tr("Localizable", "progress.goal")
-//    /// Для достижения нилучший результатов, выполняйте упражнения каждый день.
-//    internal static let subtitle = L.tr("Localizable", "progress.subtitle")
-//    /// Мой прогресс
-//    internal static let title = L.tr("Localizable", "progress.title")
+//    /// Add photo
+//    internal static let addImage = "progress.addImage"
+//    /// Watch a demonstration
+//    internal static let demonstration = "progress.demonstration"
+//    /// Progress Gallery
+//    internal static let gallery = "progress.gallery"
+//    /// Daily goal
+//    internal static let goal = "progress.goal"
+//    /// For best results, exercise every day.
+//    internal static let subtitle = "progress.subtitle"
+//    /// My progress
+//    internal static let title = "progress.title"
 //    internal enum Settings {
-//      /// Проблемные зоны
-//      internal static let problemAreas = L.tr("Localizable", "progress.settings.problemAreas")
-//      /// Вы можете обнулить пройденые дни, историю и настройки персонального курса и начать снова
-//      internal static let resetDescription = L.tr("Localizable", "progress.settings.resetDescription")
-//      /// Настройки прогресса
-//      internal static let title = L.tr("Localizable", "progress.settings.title")
+//      /// Problem areas
+//      internal static let problemAreas = "progress.settings.problemAreas"
+//      /// You can reset your days, history, and personal course settings to zero and start again
+//      internal static let resetDescription = "progress.settings.resetDescription"
+//      /// Progress Settings
+//      internal static let title = "progress.settings.title"
 //      internal enum ProgressButton {
-//        /// Обнулить прогресс
-//        internal static let resetProgress = L.tr("Localizable", "progress.settings.progressButton.resetProgress")
+//        /// Zero Progress
+//        internal static let resetProgress = "progress.settings.progressButton.resetProgress"
 //      }
 //    }
 //  }
 //
 //  internal enum Settings {
-//    /// Связяться с нами
-//    internal static let contact = L.tr("Localizable", "settings.contact")
-//    /// Восстановить покупки
-//    internal static let restore = L.tr("Localizable", "settings.restore")
-//    /// Настройки
-//    internal static let title = L.tr("Localizable", "settings.title")
+//    /// Contact us
+//    internal static let contact = "settings.contact"
+//    /// Restore purchases
+//    internal static let restore = "settings.restore"
+//    /// Settings
+//    internal static let title = "settings.title"
 //    internal enum Language {
-//      /// Английский
-//      internal static let english = L.tr("Localizable", "settings.language.english")
-//      /// Франзузский
-//      internal static let french = L.tr("Localizable", "settings.language.french")
-//      /// Немецкий
-//      internal static let german = L.tr("Localizable", "settings.language.german")
-//      /// Итальянский
-//      internal static let italian = L.tr("Localizable", "settings.language.italian")
-//      /// Русский
-//      internal static let russian = L.tr("Localizable", "settings.language.russian")
-//      /// Испанский
-//      internal static let spanish = L.tr("Localizable", "settings.language.spanish")
-//      /// Язык
-//      internal static let title = L.tr("Localizable", "settings.language.title")
+//      /// English
+//      internal static let english = "settings.language.english"
+//      /// French
+//      internal static let french = "settings.language.french"
+//      /// German
+//      internal static let german = "settings.language.german"
+//      /// Italian
+//      internal static let italian = "settings.language.italian"
+//      /// Russian
+//      internal static let russian = "settings.language.russian"
+//      /// Spanish
+//      internal static let spanish = "settings.language.spanish"
+//      /// Language
+//      internal static let title = "settings.language.title"
 //    }
 //  }
 //
 //  internal enum Subscription {
-//    /// Информация о плане
-//    internal static let planInfo = L.tr("Localizable", "subscription.planInfo")
-//    /// Политика конфеденциальности
-//    internal static let privacy = L.tr("Localizable", "subscription.privacy")
-//    /// Правила пользования
-//    internal static let termsOfUse = L.tr("Localizable", "subscription.termsOfUse")
+//    /// Plan information
+//    internal static let planInfo = "subscription.planInfo"
+//    /// Privacy Policy
+//    internal static let privacy = "subscription.privacy"
+//    /// Terms of Use
+//    internal static let termsOfUse = "subscription.termsOfUse"
 //    internal enum Interval {
 //      internal enum Day {
-//        /// дней
-//        internal static let five = L.tr("Localizable", "subscription.interval.day.five")
-//        /// день
-//        internal static let one = L.tr("Localizable", "subscription.interval.day.one")
-//        /// дня
-//        internal static let two = L.tr("Localizable", "subscription.interval.day.two")
+//        /// days
+//        internal static let five = "subscription.interval.day.five"
+//        /// day
+//        internal static let one = "subscription.interval.day.one"
+//        /// days
+//        internal static let two = "subscription.interval.day.two"
 //      }
 //      internal enum Month {
-//        /// месяцев
-//        internal static let five = L.tr("Localizable", "subscription.interval.month.five")
-//        /// месяц
-//        internal static let one = L.tr("Localizable", "subscription.interval.month.one")
-//        /// месяца
-//        internal static let two = L.tr("Localizable", "subscription.interval.month.two")
+//        /// months
+//        internal static let five = "subscription.interval.month.five"
+//        /// month
+//        internal static let one = "subscription.interval.month.one"
+//        /// months
+//        internal static let two = "subscription.interval.month.two"
 //      }
 //      internal enum Week {
-//        /// недель
-//        internal static let five = L.tr("Localizable", "subscription.interval.week.five")
-//        /// неделя
-//        internal static let one = L.tr("Localizable", "subscription.interval.week.one")
-//        /// недели
-//        internal static let two = L.tr("Localizable", "subscription.interval.week.two")
+//        /// weeks
+//        internal static let five = "subscription.interval.week.five"
+//        /// week
+//        internal static let one = "subscription.interval.week.one"
+//        /// weeks
+//        internal static let two = "subscription.interval.week.two"
 //      }
 //      internal enum Year {
-//        /// лет
-//        internal static let five = L.tr("Localizable", "subscription.interval.year.five")
-//        /// год
-//        internal static let one = L.tr("Localizable", "subscription.interval.year.one")
-//        /// года
-//        internal static let two = L.tr("Localizable", "subscription.interval.year.two")
+//        /// years
+//        internal static let five = "subscription.interval.year.five"
+//        /// year
+//        internal static let one = "subscription.interval.year.one"
+//        /// years
+//        internal static let two = "subscription.interval.year.two"
 //      }
 //    }
 //  }
 //
 //  internal enum Training {
-//    /// Тренировка заверешена
-//    internal static let completed = L.tr("Localizable", "training.completed")
-//    /// Начать тренировку
-//    internal static let start = L.tr("Localizable", "training.start")
-//    /// Сделать фото
-//    internal static let takeImage = L.tr("Localizable", "training.takeImage")
+//    /// Training is over
+//    internal static let completed = "training.completed"
+//    /// Exercise %d:\n%@
+//    internal static let exercise = "training.exercise"
+//    /// Start training
+//    internal static let start = "training.start"
+//    /// Take a photo
+//    internal static let takeImage = "training.takeImage"
 //  }
 //}
 //// swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
@@ -282,21 +304,23 @@
 //
 //// MARK: - Implementation Details
 //
-//extension L {
-//    private static func tr(_ table: String = "Localizable", _ key: String, _ args: CVarArg...) -> String {
-//        print("Working")
-//        let path = Bundle.main.path(forResource: State.shared.getLanguage().rawValue, ofType: "lproj")
-//        let bundle = Bundle(path: path!) ?? Bundle.main
-//        let format = bundle.localizedString(forKey: key, value: nil, table: table)
-//        return String(format: format, arguments: args)
-//    }
+//extension L10n {
+//  private static func tr(_ table: String, _ key: String, _ args: CVarArg... -> String {
+//      let path = Bundle.main.path(forResource: State.shared.getLanguage(.rawValue, ofType: "lproj"
+//      let bundle = Bundle(path: path! ?? Bundle.main
+//      let format = bundle.localizedString(forKey: key, value: nil, table: table
+//      return String(format: format, arguments: args
+//  }
 //}
 //
 //// swiftlint:disable convenience_type
 //private final class BundleToken {
-//    static let bundle: Bundle = {
-//        let path = Bundle.main.path(forResource: State.shared.getLanguage().rawValue, ofType: "lproj")
-//        return Bundle(path: path!) ?? Bundle.main
-//    }()
+//  static let bundle: Bundle = {
+//    #if SWIFT_PACKAGE
+//    return Bundle.module
+//    #else
+//    return Bundle(for: BundleToken.self
+//    #endif
+//  }(
 //}
 //// swiftlint:enable convenience_type

@@ -50,7 +50,7 @@ class ProgressSettingsViewController: BaseViewController {
         if !State.shared.getProblemAreas().containsSameElements(as: problemAreas) {
             
             State.shared.updateProblemAreas(to: self.problemAreas)
-            Training.Daily.getTrainings()
+            Training.Daily.createTrainings()
             State.shared.clearCompletedDailyTrainings()
             print("Trainings updated")
             
@@ -72,25 +72,18 @@ class ProgressSettingsViewController: BaseViewController {
         resetProgressLabel.localize(with: L.Progress.Settings.resetDescription)
         resetProgressButton.localize(with: L.Progress.Settings.ProgressButton.resetProgress)
     }
-    
-    private func showConfirmationAlert(message: String, confirmButton: String, completion: @escaping (() -> ())) {
+
+    private func showPlanGenerationAlert(completion: @escaping (() -> ())) {
         
-        let generateAction = UIAlertAction(title: confirmButton, style: .default) { _ in
+        let generateAction = UIAlertAction(title: L.get(key: L.Alert.Action.generate), style: .default) { _ in
             completion()
         }
         
-        let cancelAction = UIAlertAction(title: "Отменить", style: .cancel)
+        let cancelAction = UIAlertAction(title: L.get(key: L.Alert.Action.cancel), style: .cancel)
         
-        let alert = getAlert(title: "Вы уверены?", message: message, actions: generateAction, cancelAction)
+        let alert = getAlert(title: L.get(key: L.Alert.ResetProgressSure.title), message: L.get(key: L.Alert.ResetProgressSure.message), actions: generateAction, cancelAction)
         
         self.present(alert, animated: true)
-        
-    }
-    
-    private func showPlanGenerationAlert(completion: @escaping (() -> ())) {
-        self.showConfirmationAlert(message: "Ваш персональный курс будет сгенерировать заново и вы сможете начать сначала", confirmButton: "Сгенерировать") {
-            completion()
-        }
     }
     
     private func addProblemArea(_ element: Int) {
@@ -109,8 +102,8 @@ class ProgressSettingsViewController: BaseViewController {
         
         if problemAreas.isEmpty {
             
-            let okAction = UIAlertAction(title: "Ok", style: .default)
-            let alert = getAlert(title: "Выберите часть лица", message: "Для чтобы сгенерировать курс нужно выбрать хотя бы одну часть лица", actions: okAction)
+            let okAction = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default)
+            let alert = getAlert(title: L.get(key: L.Alert.ProblemArea.title), message: L.get(key: L.Alert.ProblemArea.message), actions: okAction)
             self.present(alert, animated: true)
             
             return
@@ -121,7 +114,7 @@ class ProgressSettingsViewController: BaseViewController {
     
     @IBAction func resetProgressButtonPressed(_ sender: Any) {
         
-        self.showConfirmationAlert(message: "Ваш персональный курс будет сгенерировать заново и вы сможете начать сначала", confirmButton: "Сгенерировать") {
+        self.showPlanGenerationAlert() {
         
             self.problemAreas.removeAll()
             self.problemAreasTableView.reloadData()
@@ -152,18 +145,23 @@ extension ProgressSettingsViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! ProblemAreaTableViewCell
-        let faceArea = FaceArea.all[indexPath.row + 1]
-        
-        if problemAreas.contains(faceArea.id) {
-            cell.deselect()
-            removeProblemArea(faceArea.id)
-        } else {
-            cell.select()
-            addProblemArea(faceArea.id)
+        showPlanGenerationAlert() {
+            
+            let cell = tableView.cellForRow(at: indexPath) as! ProblemAreaTableViewCell
+            let faceArea = FaceArea.all[indexPath.row + 1]
+            
+            if self.problemAreas.contains(faceArea.id) {
+                cell.deselect()
+                self.removeProblemArea(faceArea.id)
+            } else {
+                cell.select()
+                self.addProblemArea(faceArea.id)
+            }
+            
+            self.problemAreas.sort()
+            
         }
-        
-        problemAreas.sort()
+    
     }
     
 }

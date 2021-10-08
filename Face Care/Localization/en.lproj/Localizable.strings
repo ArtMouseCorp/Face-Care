@@ -87,6 +87,8 @@
 "training.start"                                    = "Start training";
 "training.completed"                                = "Training is over";
 "training.takeImage"                                = "Take a photo";
+"training.exercise"                                 = "Exercise %d:\n%@";
+"training.completeDay"                              = "Complete Day %d";
 
 // MARK: - SETTINGS
 
@@ -125,6 +127,7 @@
 "alert.action.cancel"                               = "Cancel";
 "alert.action.ok"                                   = "Ok";
 "alert.action.yes"                                  = "Yes";
+"alert.action.generate"                             = "Generate";
 
 "alert.training.title"                              = "Are you sure you want to quit?";
 
@@ -140,4 +143,13 @@
 "alert.notSubscriber.title"                         = "Not restorable";
 "alert.notSubscriber.message"                       = "Unfortunately, you cannot restore your purchase because you do not have an active subscription.";
 
+"alert.mail.title"                                  = "Mail services are not available";
 
+"alert.resetProgressSure.title"                     = "Are you sure?";
+"alert.resetProgressSure.message"                   = "Your personal course will be re-generated and you can start over";
+
+"alert.problemArea.title"                           = "Choose a part of the face";
+"alert.problemArea.message"                         = "To generate a course, you need to select at least one part of the face";
+
+"alert.dailyTrainingLocked.title"                   = "Not available";
+"alert.dailyTrainingLocked.message"                 = "To open day %d you need to complete day %d";

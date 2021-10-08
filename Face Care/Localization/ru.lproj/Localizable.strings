@@ -87,6 +87,8 @@
 "training.start"                                    = "Начать тренировку";
 "training.completed"                                = "Тренировка заверешена";
 "training.takeImage"                                = "Сделать фото";
+"training.exercise"                                 = "Упражнение %d:\n%@";
+"training.completeDay"                              = "Завершите День %d";
 
 // MARK: - SETTINGS
 
@@ -125,6 +127,7 @@
 "alert.action.cancel"                               = "Отменить";
 "alert.action.ok"                                   = "Ок";
 "alert.action.yes"                                  = "Да";
+"alert.action.generate"                             = "Сгенерировать";
 
 "alert.training.title"                              = "Вы уверены, что хотите выйти?";
 
@@ -140,4 +143,13 @@
 "alert.notSubscriber.title"                         = "Не подлежит восстановлению";
 "alert.notSubscriber.message"                       = "К сожалению, вы не можете восстановить свою покупку, потому что у вас нет активной подписки.";
 
+"alert.mail.title"                                  = "Почтовые службы не доступны";
 
+"alert.resetProgressSure.title"                     = "Вы уверены?";
+"alert.resetProgressSure.message"                   = "Ваш персональный курс будет сгенерировать заново и вы сможете начать сначала";
+
+"alert.problemArea.title"                           = "Выберите часть лица";
+"alert.problemArea.message"                         = "Для чтобы сгенерировать курс нужно выбрать хотя бы одну часть лица";
+
+"alert.dailyTrainingLocked.title"                   = "Недоступно";
+"alert.dailyTrainingLocked.message"                 = "Чтобы открыть день %d, необходимо завершить день %d";

@@ -51,7 +51,9 @@ class PhotoOfferViewController: BaseViewController {
     var isToggleOn: Bool = false
     var page = 1
     
-    var product: StoreManager.Product?
+    var trialProduct: StoreManager.Product?
+    var notTrialProduct: StoreManager.Product?
+    var selectedProduct: StoreManager.Product?
     
     var subscriptionTitle: String = ""
     var subscriptionSubtitle: String = ""
@@ -201,11 +203,12 @@ class PhotoOfferViewController: BaseViewController {
             faceImage.isHidden = true
             closeButton.isHidden = true
             configureDotViews(firstToHide: 0, secondToHide: 2)
-            toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
-            isToggleOn = true
+            self.isToggleOn = true
+            self.toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
             
+            updatePriceLabels()
             
-            self.outlineTitleLabel.isHidden = self.subscriptionTitle.isEmpty
+            outlineTitleLabel.isHidden = false
             
             self.outlineTitleLabel.text = self.subscriptionTitle
             self.outlineViewLabel.text = self.subscriptionSubtitle
@@ -229,35 +232,54 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     private func getProducts() {
-        //        StoreManager.getProducts(for: [State.shared.getOffer().purchaseId]) { products in
-        StoreManager.getProducts(for: ["com.test.1y_3d0"]) { products in
-            let product = products[0]
-            self.product = product
-            print(product)
+        
+        let productsIds = [
+            State.shared.getOffer().trialPurchaseId,
+            State.shared.getOffer().notTrialPurchaseId
+        ]
+        
+        StoreManager.getProducts(for: productsIds) { products in
             
-            if let trialPeriod = product.trialPeriod {
-                
-                self.outlineTitleLabel.isHidden = false
-                
-                self.subscriptionTitle = State.shared.getOffer().trialTitle
-                    .components(separatedBy: "\n")[0]
-                    .replacingOccurrences(of: "%trial_period%", with: trialPeriod)
-                self.subscriptionSubtitle = State.shared.getOffer().trialTitle
-                    .components(separatedBy: "\n")[1]
-                    .replacingOccurrences(of: "%subscription_price%", with: product.price)
-                    .replacingOccurrences(of: "%subscription_period%", with: product.subscriptionPeriod)
-                
-            } else {
-                
-                self.subscriptionTitle = ""
-                
-                self.subscriptionSubtitle = State.shared.getOffer().notTrialTitle
-                    .replacingOccurrences(of: "%subscription_price%", with: product.price)
-                    .replacingOccurrences(of: "%subscription_period%", with: product.subscriptionPeriod)
-                
-            }
+            guard products.count == 2 else { return }
             
+            self.trialProduct = products[0]
+            self.notTrialProduct = products[1]
+        
+            self.updatePriceLabels()
             
+        }
+        
+    }
+    
+    private func updatePriceLabels() {
+        
+        if isToggleOn {
+            
+            guard let product = trialProduct, let trialPeriod = product.trialPeriod else { return }
+
+            self.subscriptionTitle = State.shared.getOffer().trialTitle
+                .components(separatedBy: "\n")[0]
+                .replacingOccurrences(of: "%trial_period%", with: trialPeriod)
+            self.subscriptionSubtitle = State.shared.getOffer().trialTitle
+                .components(separatedBy: "\n")[1]
+                .replacingOccurrences(of: "%subscription_price%", with: product.price)
+                .replacingOccurrences(of: "%subscription_period%", with: product.subscriptionPeriod)
+            
+            self.selectedProduct = product
+            
+        } else {
+            
+            guard let product = notTrialProduct else { return }
+            
+            self.subscriptionTitle = product.skProduct.getSubscriptionPeriod(showOne: true)
+            self.subscriptionSubtitle = product.price
+            
+            self.selectedProduct = product
+        }
+        
+        if page == 3 {
+            self.outlineTitleLabel.text = self.subscriptionTitle
+            self.outlineViewLabel.text = self.subscriptionSubtitle
         }
         
     }
@@ -272,9 +294,9 @@ class PhotoOfferViewController: BaseViewController {
         
         if page == 3 {
             
-            guard let product = product else { return }
+            guard let selectedProduct = selectedProduct else { return }
             
-            StoreManager.purchase(product) {
+            StoreManager.purchase(selectedProduct) {
                 let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
                 planGenerationVC.modalPresentationStyle = .fullScreen
                 self.present(planGenerationVC, animated: false, completion: nil)
@@ -293,6 +315,10 @@ class PhotoOfferViewController: BaseViewController {
     @IBAction func toggleButtonPressed(_ sender: Any) {
         toggleButton.setImage(isToggleOn ? UIImage(named: "FC Toggle Off"): UIImage(named: "FC Toggle On"), for: .normal)
         isToggleOn = !isToggleOn
+        
+        if page == 3 {
+            updatePriceLabels()
+        }
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {

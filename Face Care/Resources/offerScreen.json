@@ -2,49 +2,49 @@
     {
         "lang": "ru",
         "trialTitle": "%trial_period% бесплатно,\nзатем %subscription_price% / %subscription_period%",
-        "notTrialTitle": "%subscription_price% / %subscription_period%",
         "button": "Продолжить",
-        "purchaseId": "fy_1y_3d0",
+        "trialPurchaseId": "fy_1y_3d0",
+        "notTrialPurchaseId": "fy_1y",
         "comment": "Занимаюсь 3 месяца, соблюдаю рекомендации, эффект просто ВАУ! Это приложение - бриллиант!"
     },
     {
         "lang": "en",
         "trialTitle": "%trial_period% free,\nthen %subscription_price% / %subscription_period%",
-        "notTrialTitle": "%subscription_price% / %subscription_period%",
         "button": "Continue",
-        "purchaseId": "fy_1y_3d0",
+        "trialPurchaseId": "fy_1y_3d0",
+        "notTrialPurchaseId": "fy_1y",
         "comment": "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!"
     },
     {
         "lang": "de",
         "trialTitle": "%trial_period% gratis,\ndann %subscription_price% / %subscription_period%",
-        "notTrialTitle": "%subscription_price% / %subscription_period%",
         "button": "Weiter",
-        "purchaseId": "fy_1y_3d0",
+        "trialPurchaseId": "fy_1y_3d0",
+        "notTrialPurchaseId": "fy_1y",
         "comment": "Ich mache es seit 3 Monaten, ich habe die Empfehlungen befolgt, und der Effekt ist einfach WOW! Diese App ist ein Diamant!"
     },
     {
         "lang": "es",
         "trialTitle": "%trial_period% gratis,\nentonces %subscription_price% / %subscription_period%",
-        "notTrialTitle": "%subscription_price% / %subscription_period%",
         "button": "Continúe con",
-        "purchaseId": "fy_1y_3d0",
+        "trialPurchaseId": "fy_1y_3d0",
+        "notTrialPurchaseId": "fy_1y",
         "comment": "¡Lo he hecho durante 3 meses, he seguido las recomendaciones, y el efecto es simplemente WOW! ¡Esta aplicación es un diamante!"
     },
     {
         "lang": "fr",
         "trialTitle": "%trial_period% gratuit,\npuis %subscription_price% / %subscription_period%",
-        "notTrialTitle": "%subscription_price% / %subscription_period%",
         "button": "Continuer",
-        "purchaseId": "fy_1y_3d0",
+        "trialPurchaseId": "fy_1y_3d0",
+        "notTrialPurchaseId": "fy_1y",
         "comment": "Je le fais depuis 3 mois, je suis les recommandations, et l'effet est juste WOW ! Cette application est un diamant !"
     },
     {
         "lang": "it",
         "trialTitle": "%trial_period% gratis,\npoi %subscription_price% / %subscription_period%",
-        "notTrialTitle": "%subscription_price% / %subscription_period%",
         "button": "Continua",
-        "purchaseId": "fy_1y_3d0",
+        "trialPurchaseId": "fy_1y_3d0",
+        "notTrialPurchaseId": "fy_1y",
         "comment": "Lo sto facendo da 3 mesi, ho seguito le raccomandazioni e l'effetto è semplicemente WOW! Questa app è un diamante!"
     }
     

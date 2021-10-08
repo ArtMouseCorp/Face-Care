@@ -7,6 +7,7 @@ public enum Popup: String, StoryboardScreen {
     
     // Progress
     case image          = "ImagePopup"
+    case demo           = "ProgressDemoPopup"
     
 }
 
@@ -24,7 +25,7 @@ extension Popup {
             return .Home
         
             // Progress
-        case .image:
+        case .image, .demo:
             return .Progress
             
         }

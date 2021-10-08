@@ -68,6 +68,8 @@ class State {
         
         Article.getAll()
         FaceArea.getAll()
+        Training.Exclusive.localizeTrainings()
+        Training.Daily.localizeTrainings()
     }
     
     // MARK: - Problem areas

@@ -18,6 +18,11 @@ public func readLocalJSONFile(forName name: String) -> Data? {
     return nil
 }
 
+func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    return paths[0]
+}
+
 func getNoun(number: Int, one: String, two: String, five: String) -> String {
     var n = abs(number)
     n %= 100
@@ -34,7 +39,7 @@ func getNoun(number: Int, one: String, two: String, five: String) -> String {
     return five
 }
 
-public func getAlert(title: String, message: String, actions: UIAlertAction...) -> UIAlertController {
+public func getAlert(title: String?, message: String? = nil, actions: UIAlertAction...) -> UIAlertController {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     actions.forEach { action in
         alert.addAction(action)

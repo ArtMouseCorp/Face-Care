@@ -41,27 +41,24 @@ class ExclusiveTrainingCollectionViewCell: UICollectionViewCell {
         
         trainingImageView.roundCorners(radius: 8, corners: .topLeft, .topRight)
         
-//        trainingImageView.whiteGradient(locations: [0, 1], opacity: 0.3)
-        
-        let gradient = CAGradientLayer()
-        
-        gradient.frame = trainingImageView.frame
-
-        gradient.colors = [
-            UIColor.FCWhite.withAlphaComponent(0).cgColor,
-            UIColor.FCWhite.withAlphaComponent(1).cgColor
-        ]
-        gradient.locations = [0, 1]
-        gradient.opacity = 0.3
-        trainingImageView.layer.addSublayer(gradient)
+//        let gradient = CAGradientLayer()
+//
+//        gradient.frame = trainingImageView.frame
+//
+//        gradient.colors = [
+//            UIColor.FCWhite.withAlphaComponent(0).cgColor,
+//            UIColor.FCWhite.withAlphaComponent(1).cgColor
+//        ]
+//        gradient.locations = [0, 1]
+//        gradient.opacity = 0.3
+//        trainingImageView.layer.addSublayer(gradient)
         
     }
     
-    public func configure(name: String, duration: String, image: UIImage) {
+    public func configure(with exclusiveTraining: Training) {
         
-        nameLabel.text = name
-        durationLabel.text = duration
-        trainingImageView.image = image
+        nameLabel.text = exclusiveTraining.name
+        trainingImageView.image = exclusiveTraining.exercises.first?.getImage() ?? UIImage()
         
     }
     

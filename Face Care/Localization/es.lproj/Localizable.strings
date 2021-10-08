@@ -87,6 +87,8 @@
 "training.start"                                    = "Comenzar la formación";
 "training.completed"                                = "El entrenamiento ha terminado";
 "training.takeImage"                                = "Tomar una foto";
+"training.exercise"                                 = "Ejercicio %d:\n%@";
+"training.completeDay"                              = "Día %d completo";
 
 // MARK: - SETTINGS
 
@@ -125,6 +127,7 @@
 "alert.action.cancel"                               = "Cancelar";
 "alert.action.ok"                                   = "Ok";
 "alert.action.yes"                                  = "Sí";
+"alert.action.generate"                             = "Generar";
 
 "alert.training.title"                              = "¿Seguro que quieres dejarlo?";
 
@@ -140,4 +143,13 @@
 "alert.notSubscriber.title"                         = "No se puede restaurar";
 "alert.notSubscriber.message"                       = "Lamentablemente, no puede restaurar su compra porque no tiene una suscripción activa.";
 
+"alert.mail.title"                                  = "Los servicios de correo no están disponibles";
 
+"alert.resetProgressSure.title"                     = "¿Está seguro?";
+"alert.resetProgressSure.message"                   = "Su curso personal se volverá a generar y podrá empezar de nuevo";
+
+"alert.problemArea.title"                           = "Elija una parte de la cara";
+"alert.problemArea.message"                         = "Para generar un curso, debe seleccionar al menos una parte de la cara";
+
+"alert.dailyTrainingLocked.title"                   = "No disponible";
+"alert.dailyTrainingLocked.message"                 = "Para abrir el día %d es necesario completar el día %d";

@@ -24,7 +24,6 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
         configureUI()
     }
     
@@ -48,8 +47,6 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         
         startBackgroundView.roundCorners(radius: 12, corners: .bottomLeft, .bottomRight)
         
-//        trainingImageView.whiteGradient(locations: [0.55, 1], opacity: 1)
-        
         let gradient = CAGradientLayer()
 
         gradient.frame = trainingImageView.frame
@@ -63,17 +60,7 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         trainingImageView.layer.addSublayer(gradient)
     }
     
-    private func localize() {
-        startLabel.localize(with: L.Training.start)
-    }
-    
-    override func prepareForReuse() {
-        self.alpha = 0.6
-    }
-    
     public func configure(with dailyTraining: Training.Daily) {
-        
-        self.alpha = 0.6
         
         let day = L.get(key: L.Home.day, args: dailyTraining.dayNumber)
         
@@ -89,8 +76,11 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         dayLabel.text = day
         durationLabel.text = duration
         trainingImageView.image = dailyTraining.training.exercises.first?.getImage() ?? UIImage()
-        
-        localize()
+    }
+    
+    public func unlock(_ unlock: Bool, dayNumber: Int) {
+        startBackgroundView.backgroundColor = .FCIris.withAlphaComponent(unlock ? 1 : 0.6)
+        startLabel.text = unlock ? L.get(key: L.Training.start) : L.get(key: L.Training.completeDay, args: dayNumber - 1)
     }
     
 }

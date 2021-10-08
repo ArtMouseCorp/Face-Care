@@ -1,20 +1,18 @@
 import UIKit
-import AVFoundation
 
-class ExerciseLoadingViewController: BaseViewController {
-    
+class ProgressDemoPopup: UIViewController {
+
     // MARK: - @IBOutlets
     
+    // Views
     // Labels
-    @IBOutlet weak var titleLabel: UILabel!
-    
+    // Buttons
     // Image Views
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    
+    // ...
+
     // MARK: - Variables
     
-    var exerciseName: String = ""
-    var exerciseNumber: Int = 0
+    var onPopupClose: (()->()) = {}
     
     // MARK: - Awake functions
     
@@ -24,21 +22,27 @@ class ExerciseLoadingViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         configureUI()
-        State.shared.setCurrentScreen(to: "Exercise Loading Screen")
+        setupGestures()
     }
     
     // MARK: - Custom functions
     
     private func configureUI() {
-        titleLabel.text = L.get(key: L.Training.exercise, args: exerciseNumber, exerciseName)
+        
     }
     
-    public func remove() {
+    private func setupGestures() {
+        self.view.addTapGesture(target: self, action: #selector(close))
+    }
+    
+    // MARK: - Gesture actions
+    
+    @objc private func close() {
+        onPopupClose()
         self.view.removeFromSuperview()
     }
     
 }
-
 
 /*
  //           _._

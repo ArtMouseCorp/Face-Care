@@ -91,7 +91,16 @@ class ProgressViewController: BaseViewController {
     }
     
     @IBAction func watchDemonstrationButtonPressed(_ sender: Any) {
-        
+        self.tabBarController?.tabBar.isHidden = true
+        let popup = ProgressDemoPopup.load(from: Popup.demo)
+        self.addChild(popup)
+        popup.view.frame = self.view.frame
+        popup.onPopupClose = {
+            self.tabBarController?.tabBar.isHidden = false
+        }
+        UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+            self.view.addSubview(popup.view)
+        }, completion: nil)
     }
     
 }

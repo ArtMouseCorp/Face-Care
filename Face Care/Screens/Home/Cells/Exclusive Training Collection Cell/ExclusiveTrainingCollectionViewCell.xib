@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,10 +33,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="152" height="244"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallImage" translatesAutoresizingMaskIntoConstraints="NO" id="wWv-Fj-LOD">
-                                        <rect key="frame" x="0.0" y="0.0" width="152" height="131"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="163"/>
                                         <color key="backgroundColor" name="FC Gainsboro"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="131" id="cBy-b8-HXs"/>
+                                            <constraint firstAttribute="height" constant="163" id="cBy-b8-HXs"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aye-U9-M1f">
@@ -62,7 +62,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="A2M-EA-3wx">
-                                        <rect key="frame" x="8" y="143" width="136" height="57"/>
+                                        <rect key="frame" x="8" y="175" width="136" height="57"/>
                                         <string key="text">Шейпинг от
 носа до 
 побородка</string>
@@ -83,18 +83,24 @@
                                     <constraint firstItem="aye-U9-M1f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G22-1D-raw" secondAttribute="leading" constant="8" id="czJ-6O-15w"/>
                                     <constraint firstItem="A2M-EA-3wx" firstAttribute="top" secondItem="wWv-Fj-LOD" secondAttribute="bottom" constant="12" id="eKA-41-rOk"/>
                                     <constraint firstAttribute="trailing" secondItem="A2M-EA-3wx" secondAttribute="trailing" constant="8" id="g04-hm-zXQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="A2M-EA-3wx" secondAttribute="bottom" constant="12" id="hHM-mZ-uLL"/>
                                     <constraint firstItem="aye-U9-M1f" firstAttribute="top" secondItem="A2M-EA-3wx" secondAttribute="bottom" constant="12" id="wY3-ka-Ky9"/>
                                     <constraint firstItem="A2M-EA-3wx" firstAttribute="leading" secondItem="G22-1D-raw" secondAttribute="leading" constant="8" id="wds-gO-EPY"/>
                                     <constraint firstItem="wWv-Fj-LOD" firstAttribute="top" secondItem="G22-1D-raw" secondAttribute="top" id="ymO-J5-isJ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="aye-U9-M1f"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="G22-1D-raw" firstAttribute="top" secondItem="gRT-mZ-T4C" secondAttribute="top" id="3IN-BH-bt9"/>
-                            <constraint firstItem="G22-1D-raw" firstAttribute="leading" secondItem="gRT-mZ-T4C" secondAttribute="leading" id="AMc-Lm-2Ps"/>
-                            <constraint firstAttribute="trailing" secondItem="G22-1D-raw" secondAttribute="trailing" id="Qrg-6X-26c"/>
-                            <constraint firstAttribute="bottom" secondItem="G22-1D-raw" secondAttribute="bottom" id="rU9-Gv-HTN"/>
+                            <constraint firstAttribute="trailing" secondItem="G22-1D-raw" secondAttribute="trailing" id="3Qd-IX-VP2"/>
+                            <constraint firstItem="G22-1D-raw" firstAttribute="top" secondItem="gRT-mZ-T4C" secondAttribute="top" id="Tp7-WK-iEc"/>
+                            <constraint firstItem="G22-1D-raw" firstAttribute="leading" secondItem="gRT-mZ-T4C" secondAttribute="leading" id="qtb-b6-mAG"/>
+                            <constraint firstAttribute="bottom" secondItem="G22-1D-raw" secondAttribute="bottom" id="tkm-S6-CmL"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -102,19 +108,19 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="gRT-mZ-T4C" secondAttribute="trailing" id="2mt-xc-y5w"/>
-                <constraint firstItem="gRT-mZ-T4C" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ahH-Rs-KsP"/>
-                <constraint firstAttribute="bottom" secondItem="gRT-mZ-T4C" secondAttribute="bottom" id="cOb-aT-EdS"/>
-                <constraint firstItem="gRT-mZ-T4C" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="egZ-M7-AMO"/>
+                <constraint firstAttribute="trailing" secondItem="gRT-mZ-T4C" secondAttribute="trailing" id="6pt-Un-aqP"/>
+                <constraint firstItem="gRT-mZ-T4C" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="B6a-9m-eLR"/>
+                <constraint firstItem="gRT-mZ-T4C" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="W8n-EP-aDd"/>
+                <constraint firstAttribute="bottom" secondItem="gRT-mZ-T4C" secondAttribute="bottom" id="lJQ-ED-ksU"/>
             </constraints>
-            <size key="customSize" width="152" height="243"/>
+            <size key="customSize" width="152" height="241"/>
             <connections>
                 <outlet property="cellBackgroundView" destination="G22-1D-raw" id="I97-j9-F2e"/>
                 <outlet property="durationLabel" destination="9c5-Jp-UfN" id="vae-ju-UYL"/>
                 <outlet property="nameLabel" destination="A2M-EA-3wx" id="5rV-qT-Tqx"/>
                 <outlet property="trainingImageView" destination="wWv-Fj-LOD" id="xlc-Op-o2P"/>
             </connections>
-            <point key="canvasLocation" x="205.79710144927537" y="69.308035714285708"/>
+            <point key="canvasLocation" x="205.79710144927537" y="67.96875"/>
         </collectionViewCell>
     </objects>
     <resources>

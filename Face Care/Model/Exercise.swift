@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
 
-struct Exercise: Codable {
+class Exercise: Codable {
     
     let id: Int
-    let name: String
-    let description: String
+    var name: String
+    var description: String
     let duration: Int
     private let image: String
     private let url: String
@@ -25,6 +25,11 @@ struct Exercise: Codable {
         return url
     }
     
+    public func localize(from localizedExercise: Exercise) {
+        self.name = localizedExercise.name
+        self.description = localizedExercise.description
+    }
+
 }
 
 /*

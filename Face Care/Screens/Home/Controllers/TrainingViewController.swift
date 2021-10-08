@@ -19,10 +19,14 @@ class TrainingViewController: BaseViewController {
     // Image Views
     @IBOutlet weak var trainingImageView: UIImageView!
     
+    // StackViews
+    @IBOutlet weak var durationStackView: UIStackView!
+    
     // MARK: - Variables
     
     var training: Training = .default
     var dayNumber: Int?
+    var isDurationHidden: Bool = false
     
     // MARK: - Awake functions
     
@@ -41,6 +45,8 @@ class TrainingViewController: BaseViewController {
     private func configureUI() {
         trainingInfoView.roundCorners(radius: 32, corners: .topLeft, .topRight)
         startButton.configure(as: .filled)
+        
+        durationStackView.isHidden = isDurationHidden
         
         trainingNameLabel.text = training.name
         trainingImageView.image = training.exercises.first?.getImage() ?? UIImage()
