@@ -43,11 +43,11 @@ enum AmplitudeEvent {
         static let ninthtPassed: String         = "Ninth Onboarding Screen Passed"
     }
     
-//    3) Какие параметры поставил
+//    3)  Какие параметры поставил
 //    4)  Какой уровень выбрал
-//    5) Сколько курсов ррошел
-//    6) На каком упреждении закрыл курс
-//    8) Вышел из курса
+//    5)  Сколько курсов прошел
+//    6)  На каком упреждении закрыл курс
+//    8)  Вышел из курса
 //    11) Прошел курс дня до конца
 }
 
@@ -64,8 +64,6 @@ public func hapticFeedback(_ type: UINotificationFeedbackGenerator.FeedbackType)
 
 
 // TODO: - currentItem of video is adding two times
-// TODO: - Replace contact email
-// TODO: - Replace offer Screen json url
 // TODO: - Daily trainings cell alpha
 
 /*

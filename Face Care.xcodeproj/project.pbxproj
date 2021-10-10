@@ -54,7 +54,6 @@
 		2896223227051BDD00DE0D60 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896223127051BDD00DE0D60 /* StoreManager.swift */; };
 		2896223427051D2800DE0D60 /* SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896223327051D2700DE0D60 /* SKProduct.swift */; };
 		2896223627051E6A00DE0D60 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896223527051E6A00DE0D60 /* Offer.swift */; };
-		2896223827051E8400DE0D60 /* offerScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = 2896223727051E8400DE0D60 /* offerScreen.json */; };
 		289623FA2705A65D00DE0D60 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289623F92705A65D00DE0D60 /* Localization.swift */; };
 		289623FC2705B86900DE0D60 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289623FB2705B86900DE0D60 /* Training.swift */; };
 		289623FE2705B8A700DE0D60 /* dailyTrainings.json in Resources */ = {isa = PBXBuildFile; fileRef = 289623FD2705B8A700DE0D60 /* dailyTrainings.json */; };
@@ -111,6 +110,7 @@
 		4A0EC25726EBD68F00F48A0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */; };
 		4A0EC25A26EBE25300F48A0C /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25926EBE25300F48A0C /* ExerciseViewController.swift */; };
 		4A0EC25C26EBE82800F48A0C /* ExerciseInfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0EC25B26EBE82800F48A0C /* ExerciseInfoPopup.swift */; };
+		4A19D1E12710E88B00B4BD47 /* offerScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A19D1E02710E88B00B4BD47 /* offerScreen.json */; };
 		4AA4A6AA26FF5F95009CF859 /* TrainingCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4A6A926FF5F95009CF859 /* TrainingCompletedViewController.swift */; };
 		4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */; };
 		4AC75F2E2702231E00FB5E6D /* articles_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AC75F2D2702231E00FB5E6D /* articles_ru.json */; };
@@ -196,7 +196,6 @@
 		2896223127051BDD00DE0D60 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		2896223327051D2700DE0D60 /* SKProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKProduct.swift; sourceTree = "<group>"; };
 		2896223527051E6A00DE0D60 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
-		2896223727051E8400DE0D60 /* offerScreen.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = offerScreen.json; sourceTree = "<group>"; };
 		289623F42705454600DE0D60 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		289623F52705454B00DE0D60 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		289623F62705454E00DE0D60 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -262,6 +261,7 @@
 		4A0EC25626EBD68F00F48A0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4A0EC25926EBE25300F48A0C /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		4A0EC25B26EBE82800F48A0C /* ExerciseInfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoPopup.swift; sourceTree = "<group>"; };
+		4A19D1E02710E88B00B4BD47 /* offerScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = offerScreen.json; sourceTree = "<group>"; };
 		4AA4A6A926FF5F95009CF859 /* TrainingCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCompletedViewController.swift; sourceTree = "<group>"; };
 		4AAD005B26EB877300B5C1B8 /* PhotoOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfferViewController.swift; sourceTree = "<group>"; };
 		4AC75F2D2702231E00FB5E6D /* articles_ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles_ru.json; sourceTree = "<group>"; };
@@ -620,11 +620,11 @@
 		28BC396E26DF7D5B00FB3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A19D1E02710E88B00B4BD47 /* offerScreen.json */,
 				4AC75F2C2702228900FB5E6D /* Articles */,
 				4ADACA3126F55F8600ADBFD2 /* onboarding.mp4 */,
 				28BC396F26DF7D6500FB3803 /* Fonts */,
 				2813BA0326F9D3A9006C8B84 /* Exercises */,
-				2896223727051E8400DE0D60 /* offerScreen.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -886,6 +886,7 @@
 				28BC397926DF7EAC00FB3803 /* Raleway-Light.ttf in Resources */,
 				2813BA0E26F9F55B006C8B84 /* LanguageTableViewCell.xib in Resources */,
 				286D332027047C6C00E6761E /* Localizable.strings in Resources */,
+				4A19D1E12710E88B00B4BD47 /* offerScreen.json in Resources */,
 				283EED7A270E6C540098F7CB /* faceAreas_en.json in Resources */,
 				28BC397A26DF7EAC00FB3803 /* Raleway-Medium.ttf in Resources */,
 				28BC397B26DF7EAC00FB3803 /* Raleway-Bold.ttf in Resources */,
@@ -897,7 +898,6 @@
 				2888400026E7885B0002292E /* DailyTrainingCollectionViewCell.xib in Resources */,
 				286D331927044CF300E6761E /* articles_es.json in Resources */,
 				286D331B27044CF300E6761E /* articles_de.json in Resources */,
-				2896223827051E8400DE0D60 /* offerScreen.json in Resources */,
 				283EED7C270E6C540098F7CB /* faceAreas_de.json in Resources */,
 				28BC397726DF7EAC00FB3803 /* Raleway-SemiBold.ttf in Resources */,
 			);
@@ -1130,7 +1130,7 @@
 				INFOPLIST_FILE = FirebaseNotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FirebaseNotificationServiceExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1142,7 +1142,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1158,7 +1158,7 @@
 				INFOPLIST_FILE = FirebaseNotificationServiceExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FirebaseNotificationServiceExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1170,7 +1170,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

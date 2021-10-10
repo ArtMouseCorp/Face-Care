@@ -112,6 +112,7 @@ class FCPlayerView: UIView {
             switch status {
             case .paused:
                 print(".paused")
+                onPauseCompletion()
                 self.isPlaying = false
             case .waitingToPlayAtSpecifiedRate:
                 print(".waitingToPlayAtSpecifiedRate")
@@ -125,6 +126,8 @@ class FCPlayerView: UIView {
             
         }
     }
+    
+    public var onPauseCompletion: (()->()) = {}
     
     public func load(from url: URL) {
         self.onLoadingStart()

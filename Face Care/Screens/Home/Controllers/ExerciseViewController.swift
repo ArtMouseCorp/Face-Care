@@ -35,6 +35,7 @@ class ExerciseViewController: BaseViewController {
     var trainingNumber: Int?
     
     var videoIndex = 0
+    var isLoadNext = false
     
     let loader = ExerciseLoadingViewController.load(from: Screen.exerciseLoading)
     
@@ -46,7 +47,6 @@ class ExerciseViewController: BaseViewController {
         setupPlayerView()
         loadVideo()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +65,13 @@ class ExerciseViewController: BaseViewController {
         self.slider.setThumbImage(UIImage(named: "FC Slider Thumb")!, for: .normal)
         self.slider.setThumbImage(UIImage(named: "FC Slider Thumb")!, for: .highlighted)
         
-        
+        playerView.onPauseCompletion = {
+            if self.slider.value == 1.0 && !self.isLoadNext {
+                self.isLoadNext = true
+                self.playerView.player?.pause()
+                self.loadNextVideo()
+            }
+        }
     }
     
     private func configureHeader() {
@@ -107,7 +113,6 @@ class ExerciseViewController: BaseViewController {
         videoView.addTapGesture(target: self, action: #selector(pauseVideo))
     }
     
-    
     private func updateVideoPlayerSlider() {
         guard let currentTime = playerView.player?.currentTime() else { return }
         let currentTimeInSeconds = CMTimeGetSeconds(currentTime)
@@ -145,6 +150,7 @@ class ExerciseViewController: BaseViewController {
             self.playerView.player?.addPeriodicTimeObserver(forInterval: interval, queue: .main, using: { elapsedTime in
                 self.updateVideoPlayerSlider()
             })
+            self.isLoadNext = false
             print("Started to play")
         }
         
@@ -156,7 +162,6 @@ class ExerciseViewController: BaseViewController {
         guard self.videoIndex != exercises.count - 1 else {
             
             // Last exercise
-            playerView.pause()
             
             if let trainingNumber = trainingNumber {
                 State.shared.completeDailyTraining(number: trainingNumber)
@@ -174,7 +179,6 @@ class ExerciseViewController: BaseViewController {
             
             return
         }
-        
         self.loadVideo(for: self.videoIndex + 1)
         
     }
@@ -218,18 +222,11 @@ class ExerciseViewController: BaseViewController {
         self.presentPanModal(infoPopup)
     }
     
-    @objc func playerDidFinishPlaying() {
-        
-        print("Finished")
-        self.loadNextVideo()
-        
-    }
-    
     // MARK: - @IBActions
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         
-        self.player.pause()
+        self.playerView.player?.pause()
         
         let alert = UIAlertController(title: L.get(key: L.Alert.Training.title), message: nil, preferredStyle: .alert)
         
@@ -238,7 +235,7 @@ class ExerciseViewController: BaseViewController {
         }
         
         let cancelAction = UIAlertAction(title: L.get(key: L.Alert.Action.cancel), style: .cancel) { _ in
-            self.player.play()
+            self.playerView.player?.play()
         }
         
         alert.addAction(confirmAction)
@@ -259,7 +256,7 @@ class ExerciseViewController: BaseViewController {
             case .began:
                 playerView.pause()
             case .moved:
-                playerView.pause()
+                ()
             case .ended:
                 playerView.play()
             default:

@@ -213,13 +213,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+                
         StoreManager.updateStatus()
         guard State.shared.isSubscribed else {
             self.showNotSubscriberAlert()
             return
         }
-        
+
         switch collectionView {
             
         case dailyTrainingsCollectionView:
@@ -237,23 +237,30 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return
             }
             
-            let trainingVC = TrainingViewController.load(from: Screen.training)
-            trainingVC.training = dailyTraining.training
-            trainingVC.dayNumber = dailyTraining.dayNumber
-
-            self.navigationController?.pushViewController(trainingVC, animated: true)
-            self.navigationController?.hidesBottomBarWhenPushed = true
+            let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
+            
+            exerciseVC.exercises = dailyTraining.training.exercises
+            exerciseVC.trainingNumber = dailyTraining.dayNumber
+            exerciseVC.modalPresentationStyle = .fullScreen
+            exerciseVC.modalTransitionStyle = .crossDissolve
+            
+            self.present(exerciseVC, animated: true) {
+                self.navigationController?.popViewController(animated: false)
+            }
             
         case exclusiveTrainingsCollectionView:
             
             let exclusiveTraining = Training.Exclusive.trainings[indexPath.row]
             
-            let trainingVC = TrainingViewController.load(from: Screen.training)
-            trainingVC.training = exclusiveTraining
-            trainingVC.isDurationHidden = true
+            let exerciseVC = ExerciseViewController.load(from: Screen.exercise)
 
-            self.navigationController?.pushViewController(trainingVC, animated: true)
-            self.navigationController?.hidesBottomBarWhenPushed = true
+            exerciseVC.exercises = exclusiveTraining.exercises
+            exerciseVC.modalPresentationStyle = .fullScreen
+            exerciseVC.modalTransitionStyle = .crossDissolve
+            
+            self.present(exerciseVC, animated: true) {
+                self.navigationController?.popViewController(animated: false)
+            }
             
         default:
             break

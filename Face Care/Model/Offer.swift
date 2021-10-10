@@ -7,8 +7,9 @@ struct Offer: Codable {
     let trialPurchaseId: String
     let notTrialPurchaseId: String
     let comment: String
+    let view: Bool
     
-    public static let defaultOffer = Offer(lang: .en, trialTitle: "", button: L.get(key: L.Onboarding.OnboardingButton.continue), trialPurchaseId: "fy_1y_3d0", notTrialPurchaseId: "fy_1y_3d0", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!")
+    public static let defaultOffer = Offer(lang: .en, trialTitle: "", button: L.get(key: L.Onboarding.OnboardingButton.continue), trialPurchaseId: "fy_1y_3d0", notTrialPurchaseId: "fy_1y_3d0", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!", view: false)
     
     public static func get() {
         fetch { result in
@@ -44,9 +45,9 @@ struct Offer: Codable {
     }
     
     private static func fetch(completion: @escaping (Result<[Offer], Error>) -> Void) {
-        
+
         // TODO: - Replace url
-        
+
         let urlString = Config.offerUrl
         guard let url = URL(string: urlString) else { fatalError() }
 

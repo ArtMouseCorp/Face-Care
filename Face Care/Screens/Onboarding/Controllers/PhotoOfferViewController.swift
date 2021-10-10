@@ -81,7 +81,6 @@ class PhotoOfferViewController: BaseViewController {
         configureGradientView()
         configureButtons()
         configureOutlineView()
-        
         configurePage()
     }
     
@@ -178,6 +177,7 @@ class PhotoOfferViewController: BaseViewController {
             break
             // Second Page
         case 2:
+            
             faceImage.isHidden = true
             outlineViewLabel.localize(with: L.Onboarding.personalPlan)
             commentLabel.isHidden = false
@@ -197,11 +197,11 @@ class PhotoOfferViewController: BaseViewController {
             break
             // Third Page
         case 3:
-            
+//            self.closeButton.isHidden = State.shared.getOffer().view
+            closeButton.isHidden = false
             State.shared.completeOnboarding()
-            
-            faceImage.isHidden = true
             closeButton.isHidden = true
+            faceImage.isHidden = true
             configureDotViews(firstToHide: 0, secondToHide: 2)
             self.isToggleOn = true
             self.toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
@@ -264,7 +264,6 @@ class PhotoOfferViewController: BaseViewController {
                 .components(separatedBy: "\n")[1]
                 .replacingOccurrences(of: "%subscription_price%", with: product.price)
                 .replacingOccurrences(of: "%subscription_period%", with: product.subscriptionPeriod)
-            
             self.selectedProduct = product
             
         } else {
@@ -293,7 +292,7 @@ class PhotoOfferViewController: BaseViewController {
         }
         
         if page == 3 {
-            
+            // TODO: - Uncomment
             guard let selectedProduct = selectedProduct else { return }
             
             StoreManager.purchase(selectedProduct) {
