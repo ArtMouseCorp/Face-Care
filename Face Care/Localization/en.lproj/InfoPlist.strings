@@ -1,0 +1,4 @@
+
+"NSCameraUsageDescription" = "This app requires access to a camera so you can take pictures of your progress";
+
+"NSPhotoLibraryUsageDescription" = "This app requires access to a photo library so you can upload photos of your progress";

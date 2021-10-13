@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280726F727173E5F0078670D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 280726F927173E5F0078670D /* InfoPlist.strings */; };
 		280CD38E27084E8A00729212 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280CD38D27084E8A00729212 /* Array.swift */; };
 		2813BA0226F9D0AC006C8B84 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813BA0126F9D0AC006C8B84 /* Exercise.swift */; };
 		2813BA0526F9D3A9006C8B84 /* faceAreas_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 2813BA0426F9D3A9006C8B84 /* faceAreas_ru.json */; };
@@ -148,6 +149,12 @@
 
 /* Begin PBXFileReference section */
 		2577E165311316F43F1C2BFB /* Pods-FirebaseNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-FirebaseNotificationServiceExtension/Pods-FirebaseNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		280726F827173E5F0078670D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		280726FA27173E600078670D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		280726FB27173E610078670D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		280726FC27173E650078670D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		280726FD27173E670078670D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		280726FE27173E6A0078670D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		280CD38D27084E8A00729212 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2813BA0126F9D0AC006C8B84 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		2813BA0426F9D3A9006C8B84 /* faceAreas_ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faceAreas_ru.json; sourceTree = "<group>"; };
@@ -542,6 +549,7 @@
 				289623F92705A65D00DE0D60 /* Localization.swift */,
 				286D331E27047C2A00E6761E /* swiftgen.yml */,
 				286D332327047C8100E6761E /* GeneratedStrings.swift */,
+				280726F927173E5F0078670D /* InfoPlist.strings */,
 				286D332227047C6C00E6761E /* Localizable.strings */,
 			);
 			path = Localization;
@@ -869,6 +877,7 @@
 				286D331327044C7800E6761E /* articles_en.json in Resources */,
 				28BC392D26DF69F200FB3803 /* LaunchScreen.storyboard in Resources */,
 				286D331827044CF300E6761E /* articles_it.json in Resources */,
+				280726F727173E5F0078670D /* InfoPlist.strings in Resources */,
 				2813BA0526F9D3A9006C8B84 /* faceAreas_ru.json in Resources */,
 				4A09D9EC26EB2B65000F573E /* ProgressTableViewCell.xib in Resources */,
 				4A09D9E426EB1D34000F573E /* ProgressCollectionViewCell.xib in Resources */,
@@ -1086,6 +1095,19 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		280726F927173E5F0078670D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				280726F827173E5F0078670D /* en */,
+				280726FA27173E600078670D /* fr */,
+				280726FB27173E610078670D /* de */,
+				280726FC27173E650078670D /* it */,
+				280726FD27173E670078670D /* es */,
+				280726FE27173E6A0078670D /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		286D332227047C6C00E6761E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1124,11 +1146,11 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FirebaseNotificationServiceExtension/FirebaseNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirebaseNotificationServiceExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FirebaseNotificationServiceExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = "Face Care";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1152,11 +1174,11 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FirebaseNotificationServiceExtension/FirebaseNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirebaseNotificationServiceExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FirebaseNotificationServiceExtension;
+				INFOPLIST_KEY_CFBundleDisplayName = "Face Care";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1301,12 +1323,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Face Care/Face Care.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Face Care/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Face Care";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera in order to work";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to photo library in order to work";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1337,11 +1361,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Face Care/Face Care.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Face Care/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Face Care";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera in order to work";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to photo library in order to work";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

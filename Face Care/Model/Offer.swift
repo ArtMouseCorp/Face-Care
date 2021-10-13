@@ -48,7 +48,7 @@ struct Offer: Codable {
 
         // TODO: - Replace url
 
-        let urlString = Config.offerUrl
+        let urlString = Config.offerURL
         guard let url = URL(string: urlString) else { fatalError() }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in

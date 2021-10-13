@@ -62,10 +62,6 @@ public func hapticFeedback(_ type: UINotificationFeedbackGenerator.FeedbackType)
     generator.notificationOccurred(type)
 }
 
-
-// TODO: - currentItem of video is adding two times
-// TODO: - Daily trainings cell alpha
-
 /*
  //           _._
  //        .-'   `

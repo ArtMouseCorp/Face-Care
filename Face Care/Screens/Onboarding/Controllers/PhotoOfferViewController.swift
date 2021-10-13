@@ -229,6 +229,8 @@ class PhotoOfferViewController: BaseViewController {
     
     private func setupGestures() {
         continueButtonView.addTapGesture(target: self, action: #selector(continueTapped))
+        bottomSecondLabel.addTapGesture(target: self, action: #selector(termsTapped))
+        bottomThirdLabel.addTapGesture(target: self, action: #selector(privacyTapped))
     }
     
     private func getProducts() {
@@ -307,6 +309,18 @@ class PhotoOfferViewController: BaseViewController {
         
         page += 1
         configurePage()
+    }
+    
+    @objc private func privacyTapped() {
+        guard page == 3 else { return }
+        guard let url = URL(string: Config.privacyURL) else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @objc private func termsTapped() {
+        guard page == 3 else { return }
+        guard let url = URL(string: Config.termsURL) else { return }
+        UIApplication.shared.open(url)
     }
     
     // MARK: - @IBActions
