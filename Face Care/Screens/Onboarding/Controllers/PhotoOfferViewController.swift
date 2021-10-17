@@ -216,7 +216,7 @@ class PhotoOfferViewController: BaseViewController {
             commentLabel.text = State.shared.getOffer().comment
             continueButtonViewLabel.text = State.shared.getOffer().button
             
-            bottomFirstLabel.localize(with: L.Subscription.planInfo)
+            bottomFirstLabel.localize(with: L.Settings.restore)
             bottomSecondLabel.localize(with: L.Subscription.termsOfUse)
             bottomThirdLabel.localize(with: L.Subscription.privacy)
             
@@ -229,6 +229,7 @@ class PhotoOfferViewController: BaseViewController {
     
     private func setupGestures() {
         continueButtonView.addTapGesture(target: self, action: #selector(continueTapped))
+        bottomFirstLabel.addTapGesture(target: self, action: #selector(restoreTapped))
         bottomSecondLabel.addTapGesture(target: self, action: #selector(termsTapped))
         bottomThirdLabel.addTapGesture(target: self, action: #selector(privacyTapped))
     }
@@ -321,6 +322,25 @@ class PhotoOfferViewController: BaseViewController {
         guard page == 3 else { return }
         guard let url = URL(string: Config.termsURL) else { return }
         UIApplication.shared.open(url)
+    }
+    
+    @objc private func restoreTapped() {
+        guard page == 3 else { return }
+        
+        guard isConnectedToNetwork() else {
+            self.showNetworkConnectionAlert()
+            return
+        }
+        
+        StoreManager.updateStatus()
+        
+        guard !State.shared.isSubscribed else {
+            self.showAlreadySubscribedAlert()
+            return
+        }
+        
+        StoreManager.restore()
+        
     }
     
     // MARK: - @IBActions
