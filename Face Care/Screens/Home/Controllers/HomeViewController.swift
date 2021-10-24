@@ -152,7 +152,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         StoreManager.updateStatus()
         guard State.shared.isSubscribed else {
-            self.showNotSubscriberAlert()
+            let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
+            photoOfferVC.modalPresentationStyle = .fullScreen
+            photoOfferVC.page = 3
+            photoOfferVC.isToggleOn = true
+            photoOfferVC.paywallSource = .home
+            self.present(photoOfferVC, animated: true)
             return
         }
         
@@ -216,7 +221,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 
         StoreManager.updateStatus()
         guard State.shared.isSubscribed else {
-            self.showNotSubscriberAlert()
+            let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
+            photoOfferVC.modalPresentationStyle = .fullScreen
+            photoOfferVC.page = 3
+            photoOfferVC.isToggleOn = true
+            photoOfferVC.paywallSource = .home
+            self.present(photoOfferVC, animated: true)
             return
         }
 

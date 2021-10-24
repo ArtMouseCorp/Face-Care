@@ -35,14 +35,14 @@ class LoadingViewController: BaseViewController {
 
             }
 
-            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
-                let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
-                photoOfferVC.modalPresentationStyle = .fullScreen
-                photoOfferVC.page = 3
-                photoOfferVC.isToggleOn = true
-                self.present(photoOfferVC, animated: true)
-                return
-            }
+//            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
+//                let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
+//                photoOfferVC.modalPresentationStyle = .fullScreen
+//                photoOfferVC.page = 3
+//                photoOfferVC.isToggleOn = true
+//                self.present(photoOfferVC, animated: true)
+//                return
+//            }
 
             let tabBar = TabBarController.load(from: Screen.tabBar)
             tabBar.modalPresentationStyle = .fullScreen
@@ -61,7 +61,7 @@ class LoadingViewController: BaseViewController {
         
         StoreManager.updateStatus()
         
-        if !State.shared.isFirstLaunch() && State.shared.isOnboardingCompleted() && State.shared.isSubscribed {
+        if !State.shared.isFirstLaunch() && State.shared.isOnboardingCompleted() {
             Training.Daily.loadFromJson()
             Training.Exclusive.loadFromJson()
         }

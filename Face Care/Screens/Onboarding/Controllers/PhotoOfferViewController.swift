@@ -35,7 +35,12 @@ class PhotoOfferViewController: BaseViewController {
     
     // MARK: - Variables
     
+    internal enum PaywallSource {
+        case onboarding, home
+    }
+    
     // Player
+    
     var playerLayer: AVPlayerLayer!
     fileprivate var playerObserver: Any?
     fileprivate var player: AVPlayer? {
@@ -47,6 +52,9 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     // Other
+    
+    var paywallSource: PaywallSource = .onboarding
+    
     var isSubviewed = false
     var isToggleOn: Bool = false
     var page = 1
@@ -197,10 +205,9 @@ class PhotoOfferViewController: BaseViewController {
             break
             // Third Page
         case 3:
-//            self.closeButton.isHidden = State.shared.getOffer().view
-            closeButton.isHidden = false
+
             State.shared.completeOnboarding()
-            closeButton.isHidden = true
+            closeButton.isHidden = false
             faceImage.isHidden = true
             configureDotViews(firstToHide: 0, secondToHide: 2)
             self.isToggleOn = true
@@ -299,9 +306,18 @@ class PhotoOfferViewController: BaseViewController {
             guard let selectedProduct = selectedProduct else { return }
             
             StoreManager.purchase(selectedProduct) {
-                let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
-                planGenerationVC.modalPresentationStyle = .fullScreen
-                self.present(planGenerationVC, animated: false, completion: nil)
+                
+                if self.paywallSource == .onboarding {
+                    
+                    let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+                    planGenerationVC.modalPresentationStyle = .fullScreen
+                    self.present(planGenerationVC, animated: false, completion: nil)
+                }
+                
+                if self.paywallSource == .home {
+                    self.dismiss(animated: true)
+                }
+
             }
             
             return
@@ -339,7 +355,20 @@ class PhotoOfferViewController: BaseViewController {
             return
         }
         
-        StoreManager.restore()
+        StoreManager.restore() {
+            
+            if self.paywallSource == .onboarding {
+                
+                let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+                planGenerationVC.modalPresentationStyle = .fullScreen
+                self.present(planGenerationVC, animated: false, completion: nil)
+            }
+            
+            if self.paywallSource == .home {
+                self.dismiss(animated: true)
+            }
+            
+        }
         
     }
     
@@ -355,9 +384,21 @@ class PhotoOfferViewController: BaseViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
-        planGenerationVC.modalPresentationStyle = .fullScreen
-        self.present(planGenerationVC, animated: false, completion: nil)
+        
+        if paywallSource == .onboarding {
+            
+            let planGenerationVC = PlanGenerationViewController.load(from: Screen.planGeneration)
+            planGenerationVC.modalPresentationStyle = .fullScreen
+            self.present(planGenerationVC, animated: false, completion: nil)
+            return
+        }
+        
+        if paywallSource == .home {
+            
+            self.dismiss(animated: true)
+            
+        }
+        
     }
     
 }
