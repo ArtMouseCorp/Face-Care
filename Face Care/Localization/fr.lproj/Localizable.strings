@@ -74,6 +74,7 @@
 "home.title"                                        = "Recommandé pour aujourd'hui";
 
 "home.day"                                          = "Jour %d";
+"home.dailyTraining"                                = "Formation du jour %d";
 
 "home.duration.minutes.one"                         = "%d minute";
 "home.duration.minutes.two"                         = "%d minutes";
@@ -89,6 +90,8 @@
 "training.takeImage"                                = "Prenez une photo";
 "training.exercise"                                 = "Exercice %d:\n%@";
 "training.completeDay"                              = "Complet Jour %d";
+"training.captureCover.title"                       = "Oups...";
+"training.captureCover.description"                 = "Désolé, nous sommes préoccupés par la confidentialité du contenu. Veuillez désactiver l'enregistrement d'écran pour regarder la vidéo.";
 
 // MARK: - SETTINGS
 
@@ -152,4 +155,4 @@
 "alert.problemArea.message"                         = "Pour générer un cours, vous devez sélectionner au moins une partie du visage.";
 
 "alert.dailyTrainingLocked.title"                   = "Non disponible";
-"alert.dailyTrainingLocked.message"                 = "Pour ouvrir le jour %d vous devez compléter le jour %d";
+"alert.dailyTrainingLocked.message"                 = "Le jour %d sera ouvert le jour suivant la fin du jour %d";

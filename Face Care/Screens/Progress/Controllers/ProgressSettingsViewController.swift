@@ -51,7 +51,6 @@ class ProgressSettingsViewController: BaseViewController {
             
             State.shared.updateProblemAreas(to: self.problemAreas)
             Training.Daily.createTrainings()
-            State.shared.clearCompletedDailyTrainings()
             print("Trainings updated")
             
         }

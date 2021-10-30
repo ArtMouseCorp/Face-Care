@@ -72,13 +72,21 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         )
         let duration = L.get(key: minutesNounKey, args: dailyTraining.training.duration)
         
-        nameLabel.text = dailyTraining.training.name
+        nameLabel.text = L.get(key: L.Home.dailyTraining, args: dailyTraining.dayNumber)
         dayLabel.text = day
         durationLabel.text = duration
         trainingImageView.image = dailyTraining.training.exercises.first?.getImage() ?? UIImage()
+        
+        
+        startBackgroundView.backgroundColor = .FCIris.withAlphaComponent(dailyTraining.isOpen() ? 1 : 0.6)
+        startLabel.text = dailyTraining.isOpen() ? L.get(key: L.Training.start) : L.get(key: L.Training.completeDay, args: dailyTraining.dayNumber - 1)
+        
     }
     
     public func unlock(_ unlock: Bool, dayNumber: Int) {
+        
+        let unlock = (unlock && isNextTrainingShouldBeOpen()) || (unlock && dayNumber == 1)
+        
         startBackgroundView.backgroundColor = .FCIris.withAlphaComponent(unlock ? 1 : 0.6)
         startLabel.text = unlock ? L.get(key: L.Training.start) : L.get(key: L.Training.completeDay, args: dayNumber - 1)
     }

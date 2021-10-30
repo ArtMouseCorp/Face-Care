@@ -1,123 +1,39 @@
 import Foundation
 
-class Training: Codable {
-    
-    var name: String
-    var description: String
-    let duration: Int
-    let exercises: [Exercise]
-    
-    init(name: String, description: String, duration: Int, exercises: [Exercise]) {
-        self.name = name
-        self.description = description
-        self.duration = duration
-        self.exercises = exercises
-    }
-    
-    public static let `default` = Training(name: "Training", description: "Training description", duration: 7, exercises: [])
-    
-    struct Exclusive {
-        
-        public static var trainings: [Training] = []
-        
-        public static func createTrainings() {
-            
-            trainings.removeAll()
-            
-            for faceArea in FaceArea.all {
-                
-                if let exercise = faceArea.exercises.randomElement() {
-                    
-                    let training = Training(name: exercise.name, description: exercise.description, duration: exercise.duration, exercises: [exercise])
-                    
-                    trainings.append(training)
-                    
-                }
-                    
-            }
-            
-            saveToJson()
-            
-        }
-        
-        public static func localizeTrainings() {
-            
-            let allExercises = FaceArea.getAllExercises()
-            
-            for training in trainings {
-                
-                for exercise in training.exercises {
-
-                    if let localizedExercise = allExercises.first(where: { $0.id == exercise.id }) {
-                        exercise.localize(from: localizedExercise)
-                        training.name = localizedExercise.name
-                        training.description = localizedExercise.description
-                    }
-
-                }
-                
-            }
-            
-        }
-        
-        public static func saveToJson() {
-            
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-
-            do {
-                let jsonData = try encoder.encode(trainings)
-
-                if let jsonString = String(data: jsonData, encoding: .utf8) {
-                    
-                    let filename = getDocumentsDirectory().appendingPathComponent("exclusiveTrainings.json")
-                    do {
-                        try jsonString.write(to: filename, atomically: true, encoding: .utf8)
-                        print("Exclusive trainings successfully saved to \(filename)")
-                    } catch {
-                        // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
-                        print("Failed writing to URL: \(filename), Error: " + error.localizedDescription)
-                    }
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-            
-        }
-        
-        public static func loadFromJson() {
-            
-            let filename = getDocumentsDirectory().appendingPathComponent("exclusiveTrainings.json")
-            
-            do {
-                let jsonData = try Data(contentsOf: filename)
-                
-                print("Loaded from \(filename)")
-
-                let decoder = JSONDecoder()
-
-                let exclusiveTrainings = try decoder.decode([Training].self, from: jsonData)
-                self.trainings = exclusiveTrainings
-                self.localizeTrainings()
-                
-            } catch {
-                print("error: \(error.localizedDescription)")
-            }
-            
-            
-        }
-        
-    }
+extension Training {
     
     struct Daily: Codable {
         
-        private static let MAX_EXERCISES = 7
+        private static let MAX_EXERCISES = 8
         
         let dayNumber: Int
-        let isOpen: Bool
         let training: Training
         
         public static var trainings: [Daily] = []
+        
+        // MARK: - Object functions
+        
+        public func isOpen() -> Bool {
+            
+            if self.dayNumber == State.shared.getOpenedDailyTrainingNumber() {
+                return isNextTrainingShouldBeOpen()
+            }
+            
+            return self.dayNumber < State.shared.getOpenedDailyTrainingNumber()
+            
+        }
+        
+        // MARK: - Static functions
+        
+        public static func completeTraining() {
+            
+            let openedTrainingNumber = State.shared.getOpenedDailyTrainingNumber()
+            
+            // open next training
+            State.shared.setOpenedDailyTrainingNumber(to: openedTrainingNumber + 1)
+            State.shared.setCompletedDailyTrainingDate(to: Date())
+            
+        }
         
         public static func createTrainings() {
             
@@ -125,11 +41,8 @@ class Training: Codable {
             
             parseDailyData { faceAreaDailyData in
                 
-//                print("Problem areas array: ", State.shared.getProblemAreas())
                 let faceAreaDailyData = faceAreaDailyData.filter { State.shared.getProblemAreas().contains($0.faceAreaId) }
-//                print(faceAreaDailyData)
                 let exercisesCount = Int(MAX_EXERCISES / faceAreaDailyData.count)
-//                print("Exercises count: ", exercisesCount)
                 
                 for i in 0 ..< 7 {
                     
@@ -145,9 +58,6 @@ class Training: Codable {
                         } else {
                             exercisesIds = faceAreaTraining.days[i].random(elements: exercisesCount)
                         }
-                        
-//                        print("Face area trainings: ", faceAreaTraining)
-//                        print("Ids: ", exercisesIds)
                      
                         
                         if let faceArea = FaceArea.all.first(where: {$0.id == faceAreaTraining.faceAreaId} ) {
@@ -161,20 +71,26 @@ class Training: Codable {
                         
                     }
                     
-//                    print("Exercises: ", exercises)
-                    
                     let training = Training(
                         name: "Day \(i + 1) training",
                         description: "Day \(i + 1) training description",
                         duration: Int(trainingDuration / 60),
                         exercises: exercises
                     )
-                    let dailyTraining = Daily(dayNumber: i + 1, isOpen: i == 0 ? true : false, training: training)
+                    let dailyTraining = Daily(dayNumber: i + 1, training: training)
                     trainings.append(dailyTraining)
                     
                 }
                 
                 saveToJson()
+                
+                var yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()
+                var components = Calendar.current.dateComponents([.year, .month, .day], from: yesterday)
+                components.timeZone = TimeZone(secondsFromGMT: 0)
+                yesterday = Calendar.current.date(from: components) ?? yesterday
+                
+                State.shared.setCompletedDailyTrainingDate(to: yesterday)
+                State.shared.setOpenedDailyTrainingNumber(to: 1)
                 
             }
             
@@ -261,17 +177,22 @@ class Training: Codable {
             
         }
         
-        private struct Response: Codable {
-            let facaAreaDailyTrainings: [FaceAreaDailyData]
-        }
         
-        private struct FaceAreaDailyData: Codable {
-            let faceAreaId: Int
-            let days: [[Int]]
-        }
         
     }
     
+}
+
+extension Training.Daily {
+    
+    private struct Response: Codable {
+        let facaAreaDailyTrainings: [FaceAreaDailyData]
+    }
+    
+    private struct FaceAreaDailyData: Codable {
+        let faceAreaId: Int
+        let days: [[Int]]
+    }
     
 }
 

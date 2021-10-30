@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		280726F727173E5F0078670D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 280726F927173E5F0078670D /* InfoPlist.strings */; };
+		280AC1C6272D506200AD0723 /* DailyTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AC1C5272D506200AD0723 /* DailyTraining.swift */; };
+		280AC1C8272D507100AD0723 /* ExclusiveTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AC1C7272D507100AD0723 /* ExclusiveTraining.swift */; };
 		280CD38E27084E8A00729212 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280CD38D27084E8A00729212 /* Array.swift */; };
 		2813BA0226F9D0AC006C8B84 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813BA0126F9D0AC006C8B84 /* Exercise.swift */; };
 		2813BA0526F9D3A9006C8B84 /* faceAreas_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 2813BA0426F9D3A9006C8B84 /* faceAreas_ru.json */; };
@@ -49,6 +51,7 @@
 		2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */; };
 		2888400D26E7B0F60002292E /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400C26E7B0F60002292E /* PanModal */; };
 		2888401026E7B1190002292E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400F26E7B1190002292E /* IQKeyboardManagerSwift */; };
+		28896583272A868A0002B10C /* CaptureCoverViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28896582272A868A0002B10C /* CaptureCoverViewConrtoller.swift */; };
 		28962224270517B200DE0D60 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28962223270517B200DE0D60 /* NotificationService.swift */; };
 		28962228270517B200DE0D60 /* FirebaseNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 28962221270517B200DE0D60 /* FirebaseNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		289622302705189200DE0D60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896222F2705189200DE0D60 /* StoreKit.framework */; };
@@ -155,6 +158,8 @@
 		280726FC27173E650078670D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		280726FD27173E670078670D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		280726FE27173E6A0078670D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		280AC1C5272D506200AD0723 /* DailyTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTraining.swift; sourceTree = "<group>"; };
+		280AC1C7272D507100AD0723 /* ExclusiveTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusiveTraining.swift; sourceTree = "<group>"; };
 		280CD38D27084E8A00729212 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2813BA0126F9D0AC006C8B84 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		2813BA0426F9D3A9006C8B84 /* faceAreas_ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faceAreas_ru.json; sourceTree = "<group>"; };
@@ -194,6 +199,7 @@
 		2888400526E788910002292E /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		2888400626E788910002292E /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
 		2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
+		28896582272A868A0002B10C /* CaptureCoverViewConrtoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCoverViewConrtoller.swift; sourceTree = "<group>"; };
 		28962221270517B200DE0D60 /* FirebaseNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FirebaseNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		28962223270517B200DE0D60 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		28962225270517B200DE0D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -304,6 +310,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280AC1C4272D504D00AD0723 /* Trainings */ = {
+			isa = PBXGroup;
+			children = (
+				289623FB2705B86900DE0D60 /* Training.swift */,
+				280AC1C5272D506200AD0723 /* DailyTraining.swift */,
+				280AC1C7272D507100AD0723 /* ExclusiveTraining.swift */,
+			);
+			path = Trainings;
+			sourceTree = "<group>";
+		};
 		2813BA0326F9D3A9006C8B84 /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +526,7 @@
 				28F3152926FDF56800409FE9 /* ExerciseLoadingViewController.swift */,
 				28F3152C26FDFBBC00409FE9 /* TrainingViewController.swift */,
 				4AA4A6A926FF5F95009CF859 /* TrainingCompletedViewController.swift */,
+				28896582272A868A0002B10C /* CaptureCoverViewConrtoller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -566,7 +583,7 @@
 				2813BA0826F9E111006C8B84 /* Language.swift */,
 				2896223527051E6A00DE0D60 /* Offer.swift */,
 				289623FF2705C2C200DE0D60 /* FaceArea.swift */,
-				289623FB2705B86900DE0D60 /* Training.swift */,
+				280AC1C4272D504D00AD0723 /* Trainings */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1017,9 +1034,11 @@
 				2818359926E3A4210038E826 /* Article.swift in Sources */,
 				28BC396526DF7CBF00FB3803 /* UIView.swift in Sources */,
 				4AAD005C26EB877300B5C1B8 /* PhotoOfferViewController.swift in Sources */,
+				28896583272A868A0002B10C /* CaptureCoverViewConrtoller.swift in Sources */,
 				281835A826E3E08A0038E826 /* UILabel.swift in Sources */,
 				28BC398126DF7FC300FB3803 /* State.swift in Sources */,
 				28BC398326DF7FE600FB3803 /* Util.swift in Sources */,
+				280AC1C8272D507100AD0723 /* ExclusiveTraining.swift in Sources */,
 				28E5B42A26EA831F004FECF8 /* OnboardingViewController.swift in Sources */,
 				4A0EC25C26EBE82800F48A0C /* ExerciseInfoPopup.swift in Sources */,
 				28BC394C26DF77EB00FB3803 /* ProgressViewController.swift in Sources */,
@@ -1071,6 +1090,7 @@
 				28BC396326DF7CA200FB3803 /* UINavigationController.swift in Sources */,
 				28BC395D26DF7B1F00FB3803 /* Cells.swift in Sources */,
 				281835A626E3DD100038E826 /* ArticleViewController.swift in Sources */,
+				280AC1C6272D506200AD0723 /* DailyTraining.swift in Sources */,
 				28BC395926DF7A1100FB3803 /* Storyboards.swift in Sources */,
 				28E5B42626EA2E6D004FECF8 /* PlanGenerationViewController.swift in Sources */,
 				28E5B42226EA2B2C004FECF8 /* StartViewController.swift in Sources */,
@@ -1146,7 +1166,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FirebaseNotificationServiceExtension/FirebaseNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirebaseNotificationServiceExtension/Info.plist;
@@ -1158,7 +1178,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1174,7 +1194,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FirebaseNotificationServiceExtension/FirebaseNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirebaseNotificationServiceExtension/Info.plist;
@@ -1186,7 +1206,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1323,7 +1343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Face Care/Face Care.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1343,7 +1363,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1361,7 +1381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Face Care/Face Care.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RWP244W4UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Face Care/Info.plist";
@@ -1380,7 +1400,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

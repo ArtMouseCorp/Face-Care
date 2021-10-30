@@ -8,7 +8,7 @@ class Exercise: Codable {
     var description: String
     let duration: Int
     private let image: String
-    private let url: String
+    private var url: String
 
     public func getVideoURL(completion: ((URL) -> ())) {
         if let url = URL(string: self.url) {
@@ -28,6 +28,7 @@ class Exercise: Codable {
     public func localize(from localizedExercise: Exercise) {
         self.name = localizedExercise.name
         self.description = localizedExercise.description
+        self.url = localizedExercise.url
     }
 
 }

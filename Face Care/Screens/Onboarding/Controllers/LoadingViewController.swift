@@ -4,16 +4,20 @@ class LoadingViewController: BaseViewController {
     
     // MARK: - @IBOutlets
     
-    // Indicator
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    // Views
+    @IBOutlet weak var progressBarView: UIView!
+    
+    // MARK: - Variables
+    
+    let LOADING_DURATION: Double = 2
     
     // MARK: - Awake functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.startAnimating()
         
         fetchData()
+        checkIfLastTrainingCompleted()
         
     }
     
@@ -22,7 +26,10 @@ class LoadingViewController: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        
+        self.startLoading()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + LOADING_DURATION) {
             
             StoreManager.updateStatus()
             
@@ -34,16 +41,7 @@ class LoadingViewController: BaseViewController {
                 return
 
             }
-
-//            if State.shared.isOnboardingCompleted() && !State.shared.isSubscribed {
-//                let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
-//                photoOfferVC.modalPresentationStyle = .fullScreen
-//                photoOfferVC.page = 3
-//                photoOfferVC.isToggleOn = true
-//                self.present(photoOfferVC, animated: true)
-//                return
-//            }
-
+            
             let tabBar = TabBarController.load(from: Screen.tabBar)
             tabBar.modalPresentationStyle = .fullScreen
             self.present(tabBar, animated: true)
@@ -52,6 +50,26 @@ class LoadingViewController: BaseViewController {
     }
     
     // MARK: - Custom functions
+    
+    private func startLoading() {
+        
+        progressBarView.capsuleCorners()
+        progressBarView.backgroundColor = UIColor(red: 0.304, green: 0.3, blue: 0.75, alpha: 1)
+        
+        let view = UIView()
+        
+        view.frame = CGRect(x: 0, y: 0, width: 0, height: progressBarView.frame.height)
+        
+        view.backgroundColor = .FCWhite
+        view.capsuleCorners()
+        
+        progressBarView.addSubview(view)
+        
+        UIView.animate(withDuration: LOADING_DURATION) {
+            view.frame.size.width = self.progressBarView.frame.width
+        }
+        
+    }
     
     private func fetchData() {
         
@@ -64,6 +82,14 @@ class LoadingViewController: BaseViewController {
         if !State.shared.isFirstLaunch() && State.shared.isOnboardingCompleted() {
             Training.Daily.loadFromJson()
             Training.Exclusive.loadFromJson()
+        }
+        
+    }
+    
+    private func checkIfLastTrainingCompleted() {
+        
+        if State.shared.getOpenedDailyTrainingNumber() == 8 && isNextTrainingShouldBeOpen() {
+            Training.Daily.createTrainings()
         }
         
     }

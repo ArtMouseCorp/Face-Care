@@ -21,9 +21,6 @@ class State {
         public var age: Int = 0
     }
     
-    private var openedDailyTrainings: [Bool] = [true, false, false, false, false, false, false]
-    
-    
     // MARK: - Functions
     
     // MARK: - App launches
@@ -31,6 +28,7 @@ class State {
     public func newAppLaunch() {
         self.appLaunch = self.getAppLaunchCount() + 1
         userDefaults.set(self.appLaunch, forKey: UDKeys.appLaunchCount)
+        self.isFirstLaunch() ? self.setCustomLanguageChange(to: false) : ()
     }
     
     public func getAppLaunchCount() -> Int {
@@ -58,8 +56,22 @@ class State {
     
     // MARK: - Language
     
+    public func setCustomLanguageChange(to bool: Bool) {
+        userDefaults.set(bool, forKey: UDKeys.isCustomLanguageChange)
+    }
+    
+    public func isCustomLanguageChange() -> Bool {
+        return userDefaults.bool(forKey: UDKeys.isCustomLanguageChange)
+    }
+    
     public func getLanguage() -> Language.Code {
-        let code = userDefaults.string(forKey: UDKeys.language) ?? "en"
+        
+        var code = Bundle.main.preferredLocalizations.first ?? "en"
+        
+        if self.isCustomLanguageChange() {
+            code = userDefaults.string(forKey: UDKeys.language) ?? "en"
+        }
+        
         return Language.Code.init(code)
     }
     
@@ -148,34 +160,20 @@ class State {
     
     // MARK: - Open daily trainings
     
-    public func getOpenedDailyTrainings() -> [Bool] {
-        self.openedDailyTrainings = userDefaults.array(forKey: UDKeys.openedDailyTrainings) as? [Bool] ?? [true, false, false, false, false, false, false]
-        return self.openedDailyTrainings
+    public func setOpenedDailyTrainingNumber(to number: Int) {
+        userDefaults.set(number, forKey: UDKeys.openedDailyTrainingNumber)
     }
     
-    public func clearOpenedDailyTrainings() {
-        self.openedDailyTrainings = [true, false, false, false, false, false, false]
-        userDefaults.set(openedDailyTrainings, forKey: UDKeys.openedDailyTrainings)
+    public func getOpenedDailyTrainingNumber() -> Int {
+        return userDefaults.integer(forKey: UDKeys.openedDailyTrainingNumber)
     }
     
-    public func completeDailyTraining(number: Int) {
-        
-        if number > getCompletedDailyTrainings() {
-            userDefaults.set(number, forKey: UDKeys.completedDailyTrainings)            
-        }
-        
-        guard number != 7 else { return }
-        self.openedDailyTrainings = getOpenedDailyTrainings()
-        self.openedDailyTrainings[number] = true
-        userDefaults.set(openedDailyTrainings, forKey: UDKeys.openedDailyTrainings)
+    public func setCompletedDailyTrainingDate(to date: Date) {
+        userDefaults.set(date.timeIntervalSince1970, forKey: UDKeys.lastCompletedTrainingDate)
     }
     
-    public func getCompletedDailyTrainings() -> Int {
-        return userDefaults.integer(forKey: UDKeys.completedDailyTrainings)
-    }
-    
-    public func clearCompletedDailyTrainings() {
-        userDefaults.set(0, forKey: UDKeys.completedDailyTrainings)
+    public func getCompletedDailyTrainingDate() -> Date {
+        return Date(timeIntervalSince1970: userDefaults.double(forKey: UDKeys.lastCompletedTrainingDate))
     }
     
 }

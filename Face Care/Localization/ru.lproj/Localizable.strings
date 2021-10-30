@@ -74,6 +74,7 @@
 "home.title"                                        = "Рекоммендуется на сегодня";
 
 "home.day"                                          = "День %d";
+"home.dailyTraining"                                = "День %d";
 
 "home.duration.minutes.one"                         = "%d минута";
 "home.duration.minutes.two"                         = "%d минуты";
@@ -89,6 +90,8 @@
 "training.takeImage"                                = "Сделать фото";
 "training.exercise"                                 = "Упражнение %d:\n%@";
 "training.completeDay"                              = "Завершите День %d";
+"training.captureCover.title"                       = "Упс...";
+"training.captureCover.description"                 = "Извините, мы волнуемся за конфеденциальность контента. Пожалуйста, выключите запись экрана для просмотра видео.";
 
 // MARK: - SETTINGS
 
@@ -152,4 +155,4 @@
 "alert.problemArea.message"                         = "Для чтобы сгенерировать курс нужно выбрать хотя бы одну часть лица";
 
 "alert.dailyTrainingLocked.title"                   = "Недоступно";
-"alert.dailyTrainingLocked.message"                 = "Чтобы открыть день %d, необходимо завершить день %d";
+"alert.dailyTrainingLocked.message"                 = "День %d будет открыт на следующий день после прохождения дня %d";

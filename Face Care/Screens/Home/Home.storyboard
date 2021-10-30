@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bL6-vy-nuf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bL6-vy-nuf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+        </array>
         <array key="Raleway-Medium.ttf">
             <string>Raleway-Medium</string>
         </array>
@@ -141,7 +144,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="J2X-L3-0we">
-                                                <rect key="frame" x="146.5" y="584.5" width="121.5" height="12"/>
+                                                <rect key="frame" x="129.5" y="584.5" width="155.5" height="12"/>
                                                 <color key="tintColor" name="FC Iris"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="9ec-7M-3pd"/>
@@ -652,7 +655,7 @@
                                                         </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LanguageTableViewCell" rowHeight="52" id="hNz-T5-whb" customClass="LanguageTableViewCell" customModule="Face_Care" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="24.5" width="414" height="52"/>
+                                                                <rect key="frame" x="0.0" y="44.5" width="414" height="52"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hNz-T5-whb" id="Hjk-Sx-mrz">
                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
@@ -1176,16 +1179,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="eCf-wK-Ey6">
-                                <rect key="frame" x="16" y="413.5" width="382" height="69"/>
+                                <rect key="frame" x="16" y="392.5" width="382" height="111.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-bV-5xs">
-                                        <rect key="frame" x="191" y="0.0" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-bV-5xs">
+                                        <rect key="frame" x="143.5" y="0.0" width="95" height="42.5"/>
                                         <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="36"/>
                                         <color key="textColor" name="FC White"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="IP3-Pz-1Gc">
-                                        <rect key="frame" x="172.5" y="32" width="37" height="37"/>
+                                        <rect key="frame" x="172.5" y="74.5" width="37" height="37"/>
                                         <color key="color" name="FC White"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -1212,6 +1215,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rne-yd-aBa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4014" y="-908"/>
+        </scene>
+        <!--Capture Cover View Conrtoller-->
+        <scene sceneID="aiw-Nr-Kyk">
+            <objects>
+                <viewController storyboardIdentifier="CaptureCoverViewConrtoller" id="6Ce-Wq-Ha3" customClass="CaptureCoverViewConrtoller" customModule="Face_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9V-hf-Gvw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="pTo-LJ-Xi2">
+                                <rect key="frame" x="32" y="361" width="350.5" height="174"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ooops..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZy-8q-rhz">
+                                        <rect key="frame" x="118.5" y="0.0" width="113.5" height="35.5"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="30"/>
+                                        <color key="textColor" name="FC White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, we're worried about the privacy of the content. Please turn off screen recording to watch the video." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kx-Ei-gjE">
+                                        <rect key="frame" x="0.0" y="70.5" width="350.5" height="103.5"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="22"/>
+                                        <color key="textColor" name="FC White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ESV-5j-FO1"/>
+                        <color key="backgroundColor" name="FC Gainsboro"/>
+                        <constraints>
+                            <constraint firstItem="ESV-5j-FO1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pTo-LJ-Xi2" secondAttribute="trailing" constant="22" id="1S1-Mq-Dwo"/>
+                            <constraint firstItem="pTo-LJ-Xi2" firstAttribute="centerX" secondItem="m9V-hf-Gvw" secondAttribute="centerX" id="EOf-7N-PwC"/>
+                            <constraint firstItem="pTo-LJ-Xi2" firstAttribute="centerY" secondItem="m9V-hf-Gvw" secondAttribute="centerY" id="bLH-j5-Ezn"/>
+                            <constraint firstItem="pTo-LJ-Xi2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ESV-5j-FO1" secondAttribute="leading" constant="22" id="fgq-2G-qnE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="5Kx-Ei-gjE" id="B5f-qG-NSB"/>
+                        <outlet property="titleLabel" destination="fZy-8q-rhz" id="9JL-4e-ud8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JT4-FE-ncj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4746" y="-907"/>
         </scene>
     </scenes>
     <resources>

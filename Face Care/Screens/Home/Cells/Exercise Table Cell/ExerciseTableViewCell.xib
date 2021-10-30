@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="width" constant="60" id="5RM-Qf-Bt3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Избавление от хмурого взгляда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-qn-GMp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Избавление от хмурого взгляда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="jAH-qn-GMp">
                                 <rect key="frame" x="72" y="8" width="227" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Tmm-UG-20E"/>

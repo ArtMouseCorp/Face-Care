@@ -1,10 +1,6 @@
 import UIKit
 import SystemConfiguration
 
-public func print(_ items: Any...) {
-    print("\n\n\n", items, "\n\n\n")
-}
-
 public func readLocalJSONFile(forName name: String) -> Data? {
     do {
         if let filePath = Bundle.main.path(forResource: name, ofType: "json") {
@@ -81,6 +77,19 @@ public func topController() -> UIViewController {
         topController = presentedViewController
     }
     return topController!
+}
+
+public func isNextTrainingShouldBeOpen() -> Bool {
+    
+    let calendar = Calendar.current
+    let lastTrainingDate = State.shared.getCompletedDailyTrainingDate()
+    var nextDayDate = calendar.date(byAdding: .day, value: 1, to: lastTrainingDate) ?? lastTrainingDate
+
+    var components = calendar.dateComponents([.year, .month, .day], from: nextDayDate)
+    components.timeZone = TimeZone(secondsFromGMT: 0)
+    nextDayDate = calendar.date(from: components) ?? nextDayDate
+    
+    return Date() >= nextDayDate
 }
 
 /*

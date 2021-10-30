@@ -38,11 +38,14 @@ class ExerciseViewController: BaseViewController {
     var isLoadNext = false
     
     let loader = ExerciseLoadingViewController.load(from: Screen.exerciseLoading)
+    let captureCover = CaptureCoverViewConrtoller.load(from: Screen.captureCover)
     
     // MARK: - Awake functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(preventScreenRecording), name: UIScreen.capturedDidChangeNotification, object: nil)
         
         setupPlayerView()
         loadVideo()
@@ -100,7 +103,6 @@ class ExerciseViewController: BaseViewController {
         playerView.heightAnchor.constraint(equalTo: videoView.widthAnchor).isActive = true
         playerView.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
         
-        
     }
     
     private func configurePlayer() {
@@ -152,6 +154,8 @@ class ExerciseViewController: BaseViewController {
             })
             self.isLoadNext = false
             print("Started to play")
+            
+            self.showCaptureCover()
         }
         
         self.configureHeader()
@@ -161,10 +165,11 @@ class ExerciseViewController: BaseViewController {
         
         guard self.videoIndex != exercises.count - 1 else {
             
-            // Last exercise
+            // This was last exercise
             
-            if let trainingNumber = trainingNumber {
-                State.shared.completeDailyTraining(number: trainingNumber)
+            if let trainingNumber = trainingNumber, trainingNumber == State.shared.getOpenedDailyTrainingNumber() {
+                Training.Daily.completeTraining()
+                print("Daily training \(trainingNumber) completed")
             }
             
             let trainingCompletedVC = TrainingCompletedViewController.load(from: Screen.trainingEnded)
@@ -179,6 +184,7 @@ class ExerciseViewController: BaseViewController {
             
             return
         }
+        
         self.loadVideo(for: self.videoIndex + 1)
         
     }
@@ -195,6 +201,25 @@ class ExerciseViewController: BaseViewController {
     
     private func hideLoader() {
         loader.remove()
+    }
+    
+    private func showCaptureCover() {
+        if UIScreen.main.isCaptured {
+            
+            self.playerView.pause()
+            self.view.addSubview(captureCover.view)
+            
+        } else {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.captureCover.view.removeFromSuperview()
+                self.playerView.play()
+            }
+        }
+    }
+    
+    @objc private func preventScreenRecording() {
+        showCaptureCover()
     }
     
     
@@ -226,16 +251,17 @@ class ExerciseViewController: BaseViewController {
     
     @IBAction func closeButtonPressed(_ sender: Any) {
         
-        self.playerView.player?.pause()
+        self.playerView.pause()
         
         let alert = UIAlertController(title: L.get(key: L.Alert.Training.title), message: nil, preferredStyle: .alert)
         
         let confirmAction = UIAlertAction(title: L.get(key: L.Alert.Action.yes), style: .default) { _ in
+            self.playerView.pause()
             self.dismiss(animated: true)
         }
         
         let cancelAction = UIAlertAction(title: L.get(key: L.Alert.Action.cancel), style: .cancel) { _ in
-            self.playerView.player?.play()
+            self.playerView.play()
         }
         
         alert.addAction(confirmAction)

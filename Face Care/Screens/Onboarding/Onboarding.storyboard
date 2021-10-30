@@ -47,6 +47,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jSs-9R-Gzd">
                                 <rect key="frame" x="96" y="151" width="222" height="56"/>
+                                <color key="tintColor" name="FC Iris"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="qDA-mU-o9d"/>
                                 </constraints>
@@ -691,29 +692,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="JE0-n1-HvN">
-                                <rect key="frame" x="63" y="172" width="288" height="412"/>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zdY-lm-uGG">
-                                <rect key="frame" x="188.5" y="654" width="37" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="drH-4w-hR4"/>
-                                    <constraint firstAttribute="width" constant="37" id="xnU-Iq-Qui"/>
-                                </constraints>
-                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="hE7-96-3Yj">
+                                <rect key="frame" x="26" y="375.5" width="362" height="145"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="8ui-Id-1d0">
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="85"/>
+                                        <color key="tintColor" name="FC White"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="85" id="fIx-BF-50k"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bW8-ij-HVy">
+                                        <rect key="frame" x="0.0" y="137" width="362" height="8"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="Ffo-sQ-pe8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jxo-KI-vEe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="FC Iris"/>
                         <constraints>
-                            <constraint firstItem="zdY-lm-uGG" firstAttribute="centerX" secondItem="gs6-ba-KzL" secondAttribute="centerX" id="AHg-EP-FFH"/>
-                            <constraint firstItem="JE0-n1-HvN" firstAttribute="centerX" secondItem="gs6-ba-KzL" secondAttribute="centerX" id="DRk-TZ-cSb"/>
-                            <constraint firstItem="JE0-n1-HvN" firstAttribute="centerY" secondItem="gs6-ba-KzL" secondAttribute="centerY" constant="-70" id="ogb-9p-fHw"/>
-                            <constraint firstItem="zdY-lm-uGG" firstAttribute="top" secondItem="JE0-n1-HvN" secondAttribute="bottom" constant="70" id="zk0-12-dsb"/>
+                            <constraint firstItem="hE7-96-3Yj" firstAttribute="centerX" secondItem="gs6-ba-KzL" secondAttribute="centerX" id="2wY-1c-fHA"/>
+                            <constraint firstItem="hE7-96-3Yj" firstAttribute="leading" secondItem="jxo-KI-vEe" secondAttribute="leading" constant="26" id="Cbn-lp-jjb"/>
+                            <constraint firstItem="jxo-KI-vEe" firstAttribute="trailing" secondItem="hE7-96-3Yj" secondAttribute="trailing" constant="26" id="Ybh-c2-a1P"/>
+                            <constraint firstItem="hE7-96-3Yj" firstAttribute="centerY" secondItem="gs6-ba-KzL" secondAttribute="centerY" id="Zv5-CU-owU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zI8-Kf-Exs"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="zdY-lm-uGG" id="ezF-Wn-fvD"/>
+                        <outlet property="progressBarView" destination="bW8-ij-HVy" id="FnZ-wb-wXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spt-r6-7r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -811,7 +821,6 @@
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="demonstrationImages" width="375" height="280"/>
-        <image name="launchscreen" width="288" height="412"/>
         <image name="logo" width="222" height="56"/>
         <image name="plan-generation-image-1" width="267" height="338"/>
         <image name="plan-generation-image-2" width="281" height="338"/>

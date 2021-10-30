@@ -175,7 +175,7 @@ extension ProgressViewController: UITableViewDelegate, UITableViewDataSource {
         
         let faceArea = FaceArea.all.first { $0.id ==  State.shared.getProblemAreas()[indexPath.row] }
         
-        let stat = State.shared.getCompletedDailyTrainings()
+        let stat = State.shared.getOpenedDailyTrainingNumber() - 1
         
         cell.titleLabel.text = faceArea?.name
         cell.statLabel.text = "\(stat)/7"

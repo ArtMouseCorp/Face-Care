@@ -4,12 +4,6 @@ class TabBarController: UITabBarController {
 
     // MARK: - Variables
     
-    open override var shouldAutorotate: Bool {
-        get {
-            return false
-        }
-    }
-    
     // MARK: - Awake functions
     
     override func viewDidLoad() {

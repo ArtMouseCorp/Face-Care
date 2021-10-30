@@ -106,7 +106,7 @@ class HomeViewController: BaseViewController {
     
     private func configureTableViews() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             for i in 0 ..< self.exercisesTableViews.count {
                 
                 self.exercisesTableViews[i].layer.masksToBounds = false
@@ -143,7 +143,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let exercise = FaceArea.all[index].exercises[indexPath.row]
             
         cell.configure(name: exercise.name, description: exercise.description, image: exercise.getImage())
-            
+        self.configureTableViews()
+        
         return cell
         
     }
@@ -199,7 +200,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let dailyTraining = Training.Daily.trainings[indexPath.row]
             
             cell.configure(with: dailyTraining)
-            cell.unlock(indexPath.row <= State.shared.getCompletedDailyTrainings(), dayNumber: dailyTraining.dayNumber)
             
             return cell
             
@@ -236,15 +236,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             let dailyTraining = Training.Daily.trainings[indexPath.row]
             
-            guard indexPath.row <= State.shared.getCompletedDailyTrainings() else {
+            guard dailyTraining.isOpen() else {
                 
                 let title = L.get(key: L.Alert.DailyTrainingLocked.title)
                 let message = L.get(key: L.Alert.DailyTrainingLocked.message, args: dailyTraining.dayNumber, dailyTraining.dayNumber - 1)
-                
+
                 let okAction = UIAlertAction(title: L.get(key: L.Alert.Action.ok), style: .default)
                 let alert = getAlert(title: title, message: message, actions: okAction)
                 self.present(alert, animated: true)
+                
                 return
+                
             }
             
             let exerciseVC = ExerciseViewController.load(from: Screen.exercise)

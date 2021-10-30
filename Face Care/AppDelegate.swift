@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         State.shared.newAppLaunch()
         
+        
         // It enables intelligent text field behavior when the keyboard is covering the text field.
         IQKeyboardManager.shared.enable = true
         
@@ -27,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Amplitude.instance().logEvent(State.shared.isFirstLaunch() ? AmplitudeEvent.appStartedFirst : AmplitudeEvent.appStarted)
         
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return .portrait
     }
 
     // MARK: UISceneSession Lifecycle

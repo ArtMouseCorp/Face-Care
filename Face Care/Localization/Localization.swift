@@ -88,6 +88,8 @@ internal enum L {
     internal enum Home {
         /// Day %d
         internal static let day = "home.day"
+        /// Day %d training
+        internal static let dailyTraining = "home.dailyTraining"
         /// Exclusive trainings
         internal static let exclusiveTrainings = "home.exclusiveTrainings"
         /// List of exercises
@@ -296,6 +298,13 @@ internal enum L {
         internal static let takeImage = "training.takeImage"
         /// Complete Day %d
         internal static let completeDay = "training.completeDay"
+        
+        internal enum CaptureCover {
+            /// Ooops...
+            internal static let title = "training.captureCover.title"
+            /// Sorry, we're worried about the privacy of the content. Please turn off screen recording to watch the video.
+            internal static let description = "training.captureCover.description"
+        }
     }
 }
 

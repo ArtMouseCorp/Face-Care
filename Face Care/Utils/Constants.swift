@@ -3,14 +3,17 @@ import UIKit
 let userDefaults = UserDefaults.standard
 
 enum UDKeys {
-    static let appLaunchCount: String           = "appLaunchCount"
-    static let userName: String                 = "userName"
-    static let userAge: String                  = "userAge"
-    static let userProblemAreas: String         = "userProblemAreas"
-    static let language: String                 = "language"
-    static let isOnboardingCompleted: String    = "isOnboardingCompleted"
-    static let openedDailyTrainings: String     = "openedDailyTrainings"
-    static let completedDailyTrainings: String  = "completedDailyTrainings"
+    static let appLaunchCount: String               = "appLaunchCount"
+    static let userName: String                     = "userName"
+    static let userAge: String                      = "userAge"
+    static let userProblemAreas: String             = "userProblemAreas"
+    static let language: String                     = "language"
+    static let isOnboardingCompleted: String        = "isOnboardingCompleted"
+    static let openedDailyTrainings: String         = "openedDailyTrainings"
+    static let completedDailyTrainings: String      = "completedDailyTrainings"
+    static let lastCompletedTrainingDate: String    = "lastCompletedTrainingDate"
+    static let openedDailyTrainingNumber: String    = "openedDailyTrainingNumber"
+    static let isCustomLanguageChange: String       = "isCustomLanguageChange"
 }
 
 enum Keys {

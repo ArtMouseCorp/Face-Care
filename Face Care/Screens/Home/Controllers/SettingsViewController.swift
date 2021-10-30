@@ -159,6 +159,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        State.shared.setCustomLanguageChange(to: true)
         State.shared.setLanguage(to: Language.languages[indexPath.row].code)
         DispatchQueue.main.async {
             self.localize()

@@ -12,12 +12,6 @@ class BaseViewController: UIViewController {
         return .darkContent
     }
     
-    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-        get {
-            return .portrait
-        }
-    }
-    
     // MARK: - Awake functions
     
     override func viewDidLoad() {

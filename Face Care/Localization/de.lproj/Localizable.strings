@@ -74,21 +74,24 @@
 "home.title"                                        = "Empfohlen für heute";
 
 "home.day"                                          = "Tag %d";
+"home.dailyTraining"                                = "Tag %d Training";
 
 "home.duration.minutes.one"                         = "%d Minute";
 "home.duration.minutes.two"                         = "%d Minuten";
 "home.duration.minutes.five"                        = "%d Minuten";
 
-"home.exclusiveTrainings"                           = "Exklusive Schulungen";
+"home.exclusiveTrainings"                           = "Exklusive Trainings";
 "home.exercisesList"                                = "Liste der Übungen";
 
 // MARK: - TRAINING
 
-"training.start"                                    = "Beginn der Ausbildung";
+"training.start"                                    = "Beginn der Training";
 "training.completed"                                = "Die Training ist vorbei";
 "training.takeImage"                                = "Ein Foto machen";
 "training.exercise"                                 = "Übung %d:\n%@";
 "training.completeDay"                              = "Vollständiger Tag %d";
+"training.captureCover.title"                       = "Ooops...";
+"training.captureCover.description"                 = "Tut uns leid, wir sind besorgt um die Privatsphäre des Contents. Bitte schalten Sie die Bildschirmaufzeichnung aus, um das Video anzusehen.";
 
 // MARK: - SETTINGS
 
@@ -152,4 +155,4 @@
 "alert.problemArea.message"                         = "Um einen Kurs zu erstellen, müssen Sie mindestens einen Teil des Gesichts auswählen";
 
 "alert.dailyTrainingLocked.title"                   = "Nicht verfügbar";
-"alert.dailyTrainingLocked.message"                 = "Um Tag %d zu öffnen, müssen Sie Tag %d abschließen";
+"alert.dailyTrainingLocked.message"                 = "Tag %d wird am Tag nach Abschluss von Tag %d eröffnet";
