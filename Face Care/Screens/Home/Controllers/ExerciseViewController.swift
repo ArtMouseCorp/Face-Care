@@ -244,7 +244,11 @@ class ExerciseViewController: BaseViewController {
             
         }
         
-        self.presentPanModal(infoPopup)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            self.presentPanModaliPad(infoPopup, animated: true)
+        } else {
+            self.presentPanModal(infoPopup)
+        }
     }
     
     // MARK: - @IBActions

@@ -1,4 +1,5 @@
 import UIKit
+import PanModal
 
 extension UIViewController {
     
@@ -62,6 +63,18 @@ extension UIViewController {
         }, completion: nil)
         popup.didMove(toParent: self)
     }
+    
+    public func presentPanModaliPad(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        if let presentableController = viewControllerToPresent as? PanModalPresentable, let controller = presentableController as? UIViewController {
+            controller.modalPresentationStyle = .custom
+            controller.modalPresentationCapturesStatusBarAppearance = true
+            controller.transitioningDelegate = PanModalPresentationDelegate.default
+            self.present(controller, animated: flag, completion: completion)
+            return
+        }
+        self.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
+    
     
 }
 

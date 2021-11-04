@@ -101,6 +101,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="articleImageView" destination="VZR-bE-won" id="E8G-27-JvW"/>
+                                            <outlet property="articleImageViewHeightConstraint" destination="THY-2W-9cX" id="Zw3-8a-yuT"/>
                                             <outlet property="articleTitleLabel" destination="cZO-gB-fsU" id="hX5-Ys-WHz"/>
                                             <outlet property="cellBackgroundView" destination="gES-Hx-9zN" id="gOz-FY-NQn"/>
                                             <outlet property="cellTopConstraint" destination="CHe-Uw-7MK" id="l2x-gq-OKm"/>
@@ -265,6 +266,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                         <outlet property="articleTitleLabel" destination="aUR-eE-seM" id="jgB-hu-ZD2"/>
                         <outlet property="backButton" destination="bpd-id-hRL" id="Eie-ot-8I1"/>
                         <outlet property="imageBackgroundView" destination="WK1-Mw-4aB" id="rmA-9k-uKQ"/>
+                        <outlet property="imageBackgroundViewHeightConstraing" destination="3YK-W7-dXL" id="sbz-d6-EYb"/>
                         <outlet property="titleLabel" destination="Bps-JK-Rl9" id="uQZ-5H-V81"/>
                     </connections>
                 </viewController>

@@ -28,9 +28,12 @@ class HomeViewController: BaseViewController {
     
     // MARK: - Variables
     
+    let MAX_CELL_WIDTH: CGFloat = 439 / 1.3093093093093
+    let MAX_CELL_HEIGHT: CGFloat = 439
+    
     var isSubviewed = false
-    let cellWidth: CGFloat = UIScreen.main.bounds.width - 42
-    let cellHeight: CGFloat = 436
+    var cellHeight: CGFloat = 0//(UIScreen.main.bounds.width - 42) * 1.3093093093093
+    var cellWidth: CGFloat = 0//UIScreen.main.bounds.width - 42
     var sectionCount: Int = 2
     
     // MARK: - Awake functions
@@ -63,6 +66,11 @@ class HomeViewController: BaseViewController {
     // MARK: - Custom functions
     
     private func configureUI() {
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            dots.hide()
+        }
+        
     }
     
     private func localize() {
@@ -91,11 +99,19 @@ class HomeViewController: BaseViewController {
         
         let layout = PagingCollectionViewLayout()
         
+        cellWidth = min((UIScreen.main.bounds.width - 42), MAX_CELL_WIDTH)
+        cellHeight = min((UIScreen.main.bounds.width - 42) * 1.3093093093093, MAX_CELL_HEIGHT)
+        
+        print(cellWidth)
+        print(cellHeight)
+        
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 16)
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.minimumLineSpacing = 8
         layout.velocityThresholdPerPage = 5
+        
+        print(layout.itemSize)
         
         dailyTrainingsCollectionView.decelerationRate = .fast
         dailyTrainingsCollectionView.collectionViewLayout = layout
@@ -199,6 +215,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             let dailyTraining = Training.Daily.trainings[indexPath.row]
             
+            DispatchQueue.main.async {
+                cell.configureGradientOverlay()
+            }
             cell.configure(with: dailyTraining)
             
             return cell

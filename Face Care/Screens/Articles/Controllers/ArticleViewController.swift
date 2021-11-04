@@ -19,6 +19,7 @@ class ArticleViewController: BaseViewController {
     @IBOutlet weak var articleImageView: UIImageView!
     
     // Constraint
+    @IBOutlet weak var imageBackgroundViewHeightConstraing: NSLayoutConstraint!
     @IBOutlet weak var articleTextLabelHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Variables
@@ -47,22 +48,26 @@ class ArticleViewController: BaseViewController {
         articleTitleLabel.text = article.title
         articleImageView.image = UIImage(named: article.image)
         
-        let gradient = CAGradientLayer()
+        imageBackgroundViewHeightConstraing.constant = min((UIScreen.main.bounds.width - 32) / 1.2035087719, 600)
         
-        gradient.frame = self.articleImageView.frame
-        
-        gradient.colors = [
-            UIColor.FCBlack.withAlphaComponent(0).cgColor,
-            UIColor.FCBlack.withAlphaComponent(0.5).cgColor
-        ]
-        gradient.locations = [0.5, 1]
-        
-        self.articleImageView.layer.addSublayer(gradient)
-        
-        // Labels
-        self.styledArticleText()
         DispatchQueue.main.async {
+            
+            let gradient = CAGradientLayer()
+            
+            gradient.frame = self.articleImageView.frame
+            
+            gradient.colors = [
+                UIColor.FCBlack.withAlphaComponent(0).cgColor,
+                UIColor.FCBlack.withAlphaComponent(0.5).cgColor
+            ]
+            gradient.locations = [0.5, 1]
+            
+            self.articleImageView.layer.addSublayer(gradient)
+            
+            // Labels
+            self.styledArticleText()
             self.articleTextLabelHeightConstraint.constant = self.articleTextLabel.contentHeight(lineSpacing: 4)
+            
         }
         
     }
@@ -97,7 +102,7 @@ class ArticleViewController: BaseViewController {
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: UIFont.ralewayFont(ofSize: 16, weight: .bold)
             ]
-
+            
             attributedString.setAttributes(attributes, range: range)
             
         }

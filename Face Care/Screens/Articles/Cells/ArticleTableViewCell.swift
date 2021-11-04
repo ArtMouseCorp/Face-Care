@@ -14,6 +14,7 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var articleImageView: UIImageView!
     
     // Constraints
+    @IBOutlet weak var articleImageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var cellTopConstraint: NSLayoutConstraint!
     
     // MARK: - Variables
@@ -34,6 +35,8 @@ class ArticleTableViewCell: UITableViewCell {
     private func configureUI() {
         cellBackgroundView.roundCorners(radius: 16, corners: .allCorners)
         cellBackgroundView.clipsToBounds = true
+        
+        articleImageViewHeightConstraint.constant = min((UIScreen.main.bounds.width - 32) / 1.2035087719, 600)
         
         DispatchQueue.main.async {
             

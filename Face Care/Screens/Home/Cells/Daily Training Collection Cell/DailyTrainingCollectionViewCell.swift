@@ -47,17 +47,10 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         
         startBackgroundView.roundCorners(radius: 12, corners: .bottomLeft, .bottomRight)
         
-        let gradient = CAGradientLayer()
-
-        gradient.frame = trainingImageView.frame
-
-        gradient.colors = [
-            UIColor.FCWhite.withAlphaComponent(0).cgColor,
-            UIColor.FCWhite.withAlphaComponent(1).cgColor
-        ]
-        gradient.locations = [0.55, 1]
-
-        trainingImageView.layer.addSublayer(gradient)
+    }
+    
+    override func prepareForReuse() {
+        trainingImageView.layer.sublayers?.removeAll()
     }
     
     public func configure(with dailyTraining: Training.Daily) {
@@ -77,10 +70,23 @@ class DailyTrainingCollectionViewCell: UICollectionViewCell {
         durationLabel.text = duration
         trainingImageView.image = dailyTraining.training.exercises.first?.getImage() ?? UIImage()
         
-        
         startBackgroundView.backgroundColor = .FCIris.withAlphaComponent(dailyTraining.isOpen() ? 1 : 0.6)
         startLabel.text = dailyTraining.isOpen() ? L.get(key: L.Training.start) : L.get(key: L.Training.completeDay, args: dailyTraining.dayNumber - 1)
         
+    }
+    
+    public func configureGradientOverlay() {
+        let gradient = CAGradientLayer()
+
+        gradient.frame = trainingImageView.frame
+
+        gradient.colors = [
+            UIColor.FCWhite.withAlphaComponent(0).cgColor,
+            UIColor.FCWhite.withAlphaComponent(1).cgColor
+        ]
+        gradient.locations = [0.55, 1]
+
+        trainingImageView.layer.addSublayer(gradient)
     }
     
     public func unlock(_ unlock: Bool, dayNumber: Int) {
