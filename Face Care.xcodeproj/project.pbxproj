@@ -17,6 +17,7 @@
 		2813BA0926F9E111006C8B84 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813BA0826F9E111006C8B84 /* Language.swift */; };
 		2813BA0D26F9F55B006C8B84 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813BA0B26F9F55B006C8B84 /* LanguageTableViewCell.swift */; };
 		2813BA0E26F9F55B006C8B84 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2813BA0C26F9F55B006C8B84 /* LanguageTableViewCell.xib */; };
+		2817E5EB273ABBF100457FD2 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2817E5EA273ABBF100457FD2 /* FacebookCore */; };
 		2818359926E3A4210038E826 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818359826E3A4210038E826 /* Article.swift */; };
 		2818359C26E3A56F0038E826 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818359B26E3A56F0038E826 /* TabBarController.swift */; };
 		281835A426E3CA0D0038E826 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */; };
@@ -301,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2888400D26E7B0F60002292E /* PanModal in Frameworks */,
+				2817E5EB273ABBF100457FD2 /* FacebookCore in Frameworks */,
 				2888401026E7B1190002292E /* IQKeyboardManagerSwift in Frameworks */,
 				D805FD554C9558472F4D8061 /* Pods_Face_Care.framework in Frameworks */,
 				289622302705189200DE0D60 /* StoreKit.framework in Frameworks */,
@@ -826,6 +828,7 @@
 			packageProductDependencies = (
 				2888400C26E7B0F60002292E /* PanModal */,
 				2888400F26E7B1190002292E /* IQKeyboardManagerSwift */,
+				2817E5EA273ABBF100457FD2 /* FacebookCore */,
 			);
 			productName = "Face Care";
 			productReference = 28BC391D26DF69EE00FB3803 /* Face Care.app */;
@@ -866,6 +869,7 @@
 			packageReferences = (
 				2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */,
 				2888400E26E7B1190002292E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				2817E5E9273ABBF100457FD2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 28BC391E26DF69EE00FB3803 /* Products */;
 			projectDirPath = "";
@@ -1178,7 +1182,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1206,7 +1210,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1351,6 +1355,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Face Care";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera in order to work";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to photo library in order to work";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to create a customized experience tailored to your interests";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1364,7 +1369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1389,6 +1394,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Face Care";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera in order to work";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to photo library in order to work";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to create a customized experience tailored to your interests";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1402,7 +1408,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1444,6 +1450,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2817E5E9273ABBF100457FD2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/slackhq/PanModal.git";
@@ -1463,6 +1477,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2817E5EA273ABBF100457FD2 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2817E5E9273ABBF100457FD2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
 		2888400C26E7B0F60002292E /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */;

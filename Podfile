@@ -7,6 +7,7 @@ target 'Face Care' do
   pod 'Firebase/Messaging'
   pod 'Amplitude'
   pod 'ApphudSDK'
+  pod 'AppsFlyerFramework'
   
 end
 

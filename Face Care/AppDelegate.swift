@@ -4,10 +4,13 @@ import IQKeyboardManagerSwift
 import Firebase
 import Amplitude
 import ApphudSDK
+import FacebookCore
+import AppsFlyerLib
+import AppTrackingTransparency
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         State.shared.newAppLaunch()
@@ -24,16 +27,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         integrateAmplitude()
         integrateFirebase()
         integrateFirebaseMessaging(for: application)
+        integrateAppsFlyer()
+        
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         
         Amplitude.instance().logEvent(State.shared.isFirstLaunch() ? AmplitudeEvent.appStartedFirst : AmplitudeEvent.appStarted)
         
         return true
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
+    }
+    
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return .portrait
     }
-
+    
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -55,6 +73,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                       ])
     }
     
+    // SceneDelegate support - start AppsFlyer SDK
+    @objc private func sendLaunch() {
+        AppsFlyerLib.shared().start()
+        
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization() { status in }
+        }
+    }
+    
     // MARK: - Services integration functions
     
     private func integrateFirebase() {
@@ -68,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { bool, _ in
             Amplitude.instance().logEvent(bool ? AmplitudeEvent.pushNotificationsEnabled : AmplitudeEvent.pushNotificationsDisabled )
         }
-//        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+        //        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
         application.registerForRemoteNotifications()
         
         Messaging.messaging().delegate = self
@@ -86,6 +113,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func integrateApphud() {
         Apphud.enableDebugLogs()
         Apphud.start(apiKey: Keys.apphudApiKey)
+    }
+    
+    private func integrateAppsFlyer() {
+        AppsFlyerLib.shared().appsFlyerDevKey = Keys.appsFlyerDevKey
+        AppsFlyerLib.shared().appleAppID = Keys.appleAppId
+        
+        /* Uncomment the following line to see AppsFlyer debug logs */
+        // AppsFlyerLib.shared().isDebug = true
+        // Must be called AFTER setting appsFlyerDevKey and appleAppID
+        AppsFlyerLib.shared().delegate = self
+        
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
+        
+        // SceneDelegate support
+        NotificationCenter.default.addObserver(self, selector: NSSelectorFromString("sendLaunch"), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     // MARK: - Core Data stack
@@ -131,6 +173,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+}
+
+// MARK: - AppsFlyerLibDelegate
+
+extension AppDelegate: AppsFlyerLibDelegate {
+    
+    func onConversionDataSuccess(_ conversionInfo: [AnyHashable : Any]) {
+        return
+    }
+    
+    func onConversionDataFail(_ error: Error) {
+        return
     }
     
 }

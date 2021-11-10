@@ -2,3 +2,5 @@
 "NSCameraUsageDescription" = "Esta aplicación requiere acceso a una cámara para que puedas tomar fotos de tu progreso";
 
 "NSPhotoLibraryUsageDescription" = "Esta aplicación requiere acceso a una biblioteca de fotos para que puedas subir fotos de tu progreso";
+
+"NSUserTrackingUsageDescription" = "Sus datos se utilizarán para crear una experiencia personalizada adaptada a sus intereses";

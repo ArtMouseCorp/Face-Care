@@ -1,6 +1,9 @@
 PODS:
   - Amplitude (8.3.1)
   - ApphudSDK (2.3.0)
+  - AppsFlyerFramework (6.4.2):
+    - AppsFlyerFramework/Main (= 6.4.2)
+  - AppsFlyerFramework/Main (6.4.2)
   - Firebase/CoreOnly (8.7.0):
     - FirebaseCore (= 8.7.0)
   - Firebase/Crashlytics (8.7.0):
@@ -70,6 +73,7 @@ PODS:
 DEPENDENCIES:
   - Amplitude
   - ApphudSDK
+  - AppsFlyerFramework
   - Firebase/Crashlytics
   - Firebase/Messaging
 
@@ -77,6 +81,7 @@ SPEC REPOS:
   trunk:
     - Amplitude
     - ApphudSDK
+    - AppsFlyerFramework
     - Firebase
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -91,6 +96,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Amplitude: c25a44ad72b84e684fcf67c478c1fb5c95e286a3
   ApphudSDK: 2bc3e25d844ba63d96afc4d21531241f96017d6f
+  AppsFlyerFramework: 2303994c0bda3afa48eba93680ab5fe48f46cd94
   Firebase: bc9325d5ee2041524bac78a5213d0e530c651309
   FirebaseCore: f4804c1d3f4bbbefc88904d15653038f2c99ddf7
   FirebaseCoreDiagnostics: b63732f581a1c6a453ec7241f9ab60b3a5bd3450
@@ -102,6 +108,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 2b3994da6b94f882aa8b862434e170311bfb81ba
+PODFILE CHECKSUM: beb2efdb71f0a31c2cba6b1faa143cd1fb4aa8cf
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2
