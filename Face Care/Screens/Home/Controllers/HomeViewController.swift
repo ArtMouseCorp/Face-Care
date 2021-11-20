@@ -172,7 +172,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
             photoOfferVC.modalPresentationStyle = .fullScreen
             photoOfferVC.page = 3
-            photoOfferVC.isToggleOn = true
             photoOfferVC.paywallSource = .home
             self.present(photoOfferVC, animated: true)
             return
@@ -243,7 +242,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
             photoOfferVC.modalPresentationStyle = .fullScreen
             photoOfferVC.page = 3
-            photoOfferVC.isToggleOn = true
             photoOfferVC.paywallSource = .home
             self.present(photoOfferVC, animated: true)
             return

@@ -21,14 +21,9 @@ struct StoreManager {
     
     public static func getProducts(for productIds: [String], completion: @escaping (([Product]) -> ())) {
         
-        print("Get products")
-        
         var foundProducts: [StoreManager.Product] = []
         
         Apphud.paywallsDidLoadCallback { paywalls in
-            
-            
-            print("retrieve current paywall with identifier")
             
             // retrieve current paywall with identifier
             
@@ -40,31 +35,31 @@ struct StoreManager {
                 products = paywall.products
             }
             
-            print(products)
-            
-            for apphudProduct in products {
+            for productId in productIds {
                 
-                print(apphudProduct.productId)
-                guard productIds.contains(apphudProduct.productId) else { continue }
-                guard let skProduct = apphudProduct.skProduct else {
-                    print("not found skProduct")
-                    return
+                for apphudProduct in products {
+                    
+                    guard productId == apphudProduct.productId else { continue }
+                    guard let skProduct = apphudProduct.skProduct else {
+                        print("not found skProduct")
+                        return
+                    }
+                    
+                    print(skProduct)
+                    
+                    // Product price
+                    let price = skProduct.localizedPrice ?? skProduct.price.stringValue
+                    
+                    let subscriptionPeriod = skProduct.getSubscriptionPeriod()
+                    let trialPeriod = skProduct.getTrialPeriod()
+                    
+                    let customProduct = Product(id: skProduct.productIdentifier, price: price, subscriptionPeriod: subscriptionPeriod, trialPeriod: trialPeriod, apphudProduct: apphudProduct, skProduct: skProduct)
+                    
+                    foundProducts.append(customProduct)
                 }
                 
-                print(skProduct)
-                
-                // Product price
-                let price = skProduct.localizedPrice ?? skProduct.price.stringValue
-                
-                let subscriptionPeriod = skProduct.getSubscriptionPeriod()
-                let trialPeriod = skProduct.getTrialPeriod()
-                
-                let customProduct = Product(id: skProduct.productIdentifier, price: price, subscriptionPeriod: subscriptionPeriod, trialPeriod: trialPeriod, apphudProduct: apphudProduct, skProduct: skProduct)
-                
-                foundProducts.append(customProduct)
             }
             
-            print("Completion")
             completion(foundProducts)
             
         }
@@ -72,9 +67,13 @@ struct StoreManager {
     }
     
     public static func purchase(_ product: Product, completion: (() -> ())? = nil) {
-
+        
+        topController().showLoader()
+        
         Apphud.purchase(product.apphudProduct) { purchaseResult in
-                
+            
+            topController().hideLoader()
+            
             if let subscription = purchaseResult.subscription, subscription.isActive() {
                 
                 Amplitude.instance().logEvent(AmplitudeEvent.subscriptionPurchased,
@@ -83,7 +82,7 @@ struct StoreManager {
                                                 "Transaction date": purchaseResult.transaction?.transactionDate ?? Date(),
                                                 "Transaction product identifier": purchaseResult.transaction?.payment.productIdentifier ?? ""
                                               ])
-
+                
                 print("Purchase Success: \(product.id)")
                 State.shared.isSubscribed = true
                 completion?() ?? ()
@@ -95,21 +94,28 @@ struct StoreManager {
     
     public static func restore(completion: (() -> ())? = nil) {
         
+        topController().showLoader()
+        
         Apphud.restorePurchases{ subscriptions, purchases, error in
             
-            if Apphud.hasActiveSubscription() {
+            topController().hideLoader {
                 
-                State.shared.isSubscribed = true
-                topController().showRestoredAlert() {
-                    completion?() ?? ()
+                if Apphud.hasActiveSubscription() {
+                    
+                    State.shared.isSubscribed = true
+                    topController().showRestoredAlert() {
+                        completion?() ?? ()
+                    }
+                    
+                } else {
+                    
+                    // no active subscription found, check non-renewing purchases or error
+                    topController().showNotSubscriberAlert()
+                    
                 }
                 
-            } else {
-                
-                // no active subscription found, check non-renewing purchases or error
-                topController().showNotSubscriberAlert()
-                
             }
+            
         }
         
     }

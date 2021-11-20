@@ -57,6 +57,10 @@ internal enum L {
             /// Are you sure you want to quit?
             internal static let title = "alert.training.title"
         }
+        internal enum Loading {
+            /// Please wait
+            internal static let message = "alert.loading.message"
+        }
         internal enum DailyTrainingLocked {
             /// To open day %d you need to complete day %d
             internal static let message = "alert.dailyTrainingLocked.message"

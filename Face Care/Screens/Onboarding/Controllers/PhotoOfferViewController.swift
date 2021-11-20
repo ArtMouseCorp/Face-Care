@@ -12,16 +12,31 @@ class PhotoOfferViewController: BaseViewController {
     @IBOutlet weak var continueButtonView: UIView!
     @IBOutlet weak var outlineView: UIView!
     
+    @IBOutlet weak var firstProductView: UIView!
+    @IBOutlet weak var firstProductBorderCircleView: UIView!
+    @IBOutlet weak var firstProductInnerCircleView: UIView!
+    
+    @IBOutlet weak var secondProductView: UIView!
+    @IBOutlet weak var secondProductBorderCircleView: UIView!
+    @IBOutlet weak var secondProductInnerCircleView: UIView!
+    
     // Labels
     @IBOutlet weak var continueButtonViewLabel: UILabel!
+    
     @IBOutlet weak var outlineTitleLabel: UILabel!
     @IBOutlet weak var outlineViewLabel: UILabel!
+    
     @IBOutlet weak var commentLabel: UILabel!
     
     @IBOutlet weak var bottomFirstLabel: UILabel!
     @IBOutlet weak var bottomSecondLabel: UILabel!
     @IBOutlet weak var bottomThirdLabel: UILabel!
     
+    @IBOutlet weak var firstProductTitleLabel: UILabel!
+    @IBOutlet weak var firstProductLabel: UILabel!
+    
+    @IBOutlet weak var secondProductTitleLabel: UILabel!
+    @IBOutlet weak var secondProductLabel: UILabel!
     
     // Image Views
     @IBOutlet weak var faceImage: UIImageView!
@@ -32,6 +47,12 @@ class PhotoOfferViewController: BaseViewController {
     
     // Stack Views
     @IBOutlet weak var starStackView: UIStackView!
+    @IBOutlet weak var productsStackView: UIStackView!
+    
+    // ActivityIndicators
+    @IBOutlet weak var firstProductActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var secondProductActivityIndicator: UIActivityIndicatorView!
+    
     
     // MARK: - Variables
     
@@ -59,12 +80,14 @@ class PhotoOfferViewController: BaseViewController {
     var isToggleOn: Bool = false
     var page = 1
     
-    var trialProduct: StoreManager.Product?
-    var notTrialProduct: StoreManager.Product?
+    var firstProduct: StoreManager.Product?
+    var secondProduct: StoreManager.Product?
     var selectedProduct: StoreManager.Product?
     
-    var subscriptionTitle: String = ""
-    var subscriptionSubtitle: String = ""
+    var firstProductTitle: String = ""
+    var firstProductSubtitle: String = ""
+    var secondProductTitle: String = ""
+    var secondProductSubtitle: String = ""
     
     // MARK: - Awake functions
     
@@ -160,77 +183,103 @@ class PhotoOfferViewController: BaseViewController {
         }
     }
     
-    private func configurePage() {
-        // Page switcher
-        switch page {
-            // First Page
-        case 1:
-            
-            commentLabel.isHidden = true
-            starStackView.isHidden = true
-            outlineTitleLabel.isHidden = true
-            
-            outlineViewLabel.localize(with: L.Onboarding.loadImage)
-            
-            configureDotViews(firstToHide: 2, secondToHide: 4)
-            toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
-            isToggleOn = false
-            
-            bottomFirstLabel.localize(with: L.Onboarding.Features.first)
-            bottomSecondLabel.localize(with: L.Onboarding.Features.second)
-            bottomThirdLabel.localize(with: L.Onboarding.Features.third)
-            
-            State.shared.setCurrentScreen(to: "Onboarding: Take Photo Screen")
-            
-            break
-            // Second Page
-        case 2:
-            
-            faceImage.isHidden = true
-            outlineViewLabel.localize(with: L.Onboarding.personalPlan)
-            commentLabel.isHidden = false
-            starStackView.isHidden = false
-            outlineTitleLabel.isHidden = true
-            configureDotViews(firstToHide: 0, secondToHide: 4)
-            toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
-            isToggleOn = false
-            commentLabel.text = State.shared.getOffer().comment
-            
-            bottomFirstLabel.localize(with: L.Onboarding.Features.first)
-            bottomSecondLabel.localize(with: L.Onboarding.Features.second)
-            bottomThirdLabel.localize(with: L.Onboarding.Features.third)
-            
-            State.shared.setCurrentScreen(to: "Onboarding: Personal Plan Screen")
-            
-            break
-            // Third Page
-        case 3:
-
-            State.shared.completeOnboarding()
-            closeButton.isHidden = false
-            faceImage.isHidden = true
-            configureDotViews(firstToHide: 0, secondToHide: 2)
-            self.isToggleOn = true
-            self.toggleButton.setImage(UIImage(named: "FC Toggle On"), for: .normal)
-            
+    private func setupFirstPage() {
+        
+        faceImage.show()
+        commentLabel.hide()
+        starStackView.hide()
+        outlineTitleLabel.hide()
+        productsStackView.hide()
+        
+        outlineViewLabel.localize(with: L.Onboarding.loadImage)
+        
+        configureDotViews(firstToHide: 2, secondToHide: 4)
+        toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
+        isToggleOn = false
+        
+        bottomFirstLabel.localize(with: L.Onboarding.Features.first)
+        bottomSecondLabel.localize(with: L.Onboarding.Features.second)
+        bottomThirdLabel.localize(with: L.Onboarding.Features.third)
+        
+        State.shared.setCurrentScreen(to: "Onboarding: Take Photo Screen")
+        
+    }
+    
+    private func setupSecondPage() {
+        
+        faceImage.hide()
+        commentLabel.show()
+        starStackView.show()
+        outlineTitleLabel.hide()
+        productsStackView.hide()
+        
+        outlineViewLabel.localize(with: L.Onboarding.personalPlan)
+        
+        configureDotViews(firstToHide: 0, secondToHide: 4)
+        toggleButton.setImage(UIImage(named: "FC Toggle Off"), for: .normal)
+        isToggleOn = false
+        
+        commentLabel.text = State.shared.getOffer().comment
+        
+        bottomFirstLabel.localize(with: L.Onboarding.Features.first)
+        bottomSecondLabel.localize(with: L.Onboarding.Features.second)
+        bottomThirdLabel.localize(with: L.Onboarding.Features.third)
+        
+        State.shared.setCurrentScreen(to: "Onboarding: Personal Plan Screen")
+        
+    }
+    
+    private func setupThirdPage() {
+        
+        State.shared.completeOnboarding()
+        
+        closeButton.hide(!State.shared.getOffer().view)
+        faceImage.hide()
+        outlineView.hide()
+        productsStackView.show()
+        
+        firstProductView.roundCorners(radius: 8, corners: .allCorners)
+        firstProductView.setBorder(width: 1, color: .white)
+        
+        firstProductBorderCircleView.capsuleCorners()
+        firstProductBorderCircleView.setBorder(width: 2, color: .white)
+        firstProductBorderCircleView.backgroundColor = .clear
+        
+        firstProductInnerCircleView.capsuleCorners()
+        
+        secondProductView.roundCorners(radius: 8, corners: .allCorners)
+        secondProductView.setBorder(width: 1, color: .white)
+        
+        secondProductBorderCircleView.capsuleCorners()
+        secondProductBorderCircleView.setBorder(width: 2, color: .white)
+        secondProductBorderCircleView.backgroundColor = .clear
+        
+        secondProductInnerCircleView.capsuleCorners()
+        secondProductInnerCircleView.backgroundColor = .clear
+        
+        configureDotViews(firstToHide: 0, secondToHide: 2)
+        
+        if self.paywallSource == .onboarding {
             updatePriceLabels()
-            
-            outlineTitleLabel.isHidden = false
-            
-            self.outlineTitleLabel.text = self.subscriptionTitle
-            self.outlineViewLabel.text = self.subscriptionSubtitle
-            
-            commentLabel.text = State.shared.getOffer().comment
-            continueButtonViewLabel.text = State.shared.getOffer().button
-            
-            bottomFirstLabel.localize(with: L.Settings.restore)
-            bottomSecondLabel.localize(with: L.Subscription.termsOfUse)
-            bottomThirdLabel.localize(with: L.Subscription.privacy)
-            
-            State.shared.setCurrentScreen(to: "Onboarding: Subscription Screen")
-            break
-        default:
-            break
+        }
+        
+        commentLabel.text = State.shared.getOffer().comment
+        continueButtonViewLabel.text = State.shared.getOffer().button
+        
+        bottomFirstLabel.localize(with: L.Settings.restore)
+        bottomSecondLabel.localize(with: L.Subscription.termsOfUse)
+        bottomThirdLabel.localize(with: L.Subscription.privacy)
+        
+        State.shared.setCurrentScreen(to: "Onboarding: Subscription Screen")
+        
+    }
+    
+    private func configurePage() {
+        switch page {
+        case 1: setupFirstPage()
+        case 2: setupSecondPage()
+        case 3: setupThirdPage()
+        default: break
         }
     }
     
@@ -239,6 +288,8 @@ class PhotoOfferViewController: BaseViewController {
         bottomFirstLabel.addTapGesture(target: self, action: #selector(restoreTapped))
         bottomSecondLabel.addTapGesture(target: self, action: #selector(termsTapped))
         bottomThirdLabel.addTapGesture(target: self, action: #selector(privacyTapped))
+        firstProductView.addTapGesture(target: self, action: #selector(productViewTapped(_:)))
+        secondProductView.addTapGesture(target: self, action: #selector(productViewTapped(_:)))
     }
     
     private func getProducts() {
@@ -248,14 +299,23 @@ class PhotoOfferViewController: BaseViewController {
             State.shared.getOffer().notTrialPurchaseId
         ]
         
+        firstProductTitleLabel.hide()
+        firstProductLabel.hide()
+        secondProductTitleLabel.hide()
+        secondProductLabel.hide()
+        
         StoreManager.getProducts(for: productsIds) { products in
             
             guard products.count == 2 else { return }
             
-            self.trialProduct = products[0]
-            self.notTrialProduct = products[1]
+            print(products)
+            self.firstProduct = products[0]
+            self.secondProduct = products[1]
+            self.selectedProduct = self.firstProduct
         
-            self.updatePriceLabels()
+            DispatchQueue.main.async {
+                self.updatePriceLabels()
+            }
             
         }
         
@@ -263,32 +323,55 @@ class PhotoOfferViewController: BaseViewController {
     
     private func updatePriceLabels() {
         
-        if isToggleOn {
+        guard let firstProduct = firstProduct, let secondProduct = secondProduct else { return }
+        
+        if let trialPeriod = firstProduct.trialPeriod {
             
-            guard let product = trialProduct, let trialPeriod = product.trialPeriod else { return }
-
-            self.subscriptionTitle = State.shared.getOffer().trialTitle
+            self.firstProductTitle = State.shared.getOffer().trialTitle
                 .components(separatedBy: "\n")[0]
                 .replacingOccurrences(of: "%trial_period%", with: trialPeriod)
-            self.subscriptionSubtitle = State.shared.getOffer().trialTitle
+            self.firstProductSubtitle = State.shared.getOffer().trialTitle
                 .components(separatedBy: "\n")[1]
-                .replacingOccurrences(of: "%subscription_price%", with: product.price)
-                .replacingOccurrences(of: "%subscription_period%", with: product.subscriptionPeriod)
-            self.selectedProduct = product
+                .replacingOccurrences(of: "%subscription_price%", with: firstProduct.price)
+                .replacingOccurrences(of: "%subscription_period%", with: firstProduct.subscriptionPeriod)
             
         } else {
             
-            guard let product = notTrialProduct else { return }
+            self.firstProductTitle = firstProduct.skProduct.getSubscriptionPeriod(showOne: true)
+            self.firstProductSubtitle = firstProduct.price
             
-            self.subscriptionTitle = product.skProduct.getSubscriptionPeriod(showOne: true)
-            self.subscriptionSubtitle = product.price
+        }
+        
+        if let trialPeriod = secondProduct.trialPeriod {
             
-            self.selectedProduct = product
+            self.secondProductTitle = State.shared.getOffer().trialTitle
+                .components(separatedBy: "\n")[0]
+                .replacingOccurrences(of: "%trial_period%", with: trialPeriod)
+            self.secondProductSubtitle = State.shared.getOffer().trialTitle
+                .components(separatedBy: "\n")[1]
+                .replacingOccurrences(of: "%subscription_price%", with: secondProduct.price)
+                .replacingOccurrences(of: "%subscription_period%", with: secondProduct.subscriptionPeriod)
+            
+        } else {
+            
+            self.secondProductTitle = secondProduct.skProduct.getSubscriptionPeriod(showOne: true)
+            self.secondProductSubtitle = secondProduct.price
+            
         }
         
         if page == 3 {
-            self.outlineTitleLabel.text = self.subscriptionTitle
-            self.outlineViewLabel.text = self.subscriptionSubtitle
+            self.firstProductTitleLabel.text = self.firstProductTitle
+            self.firstProductLabel.text = self.firstProductSubtitle
+            
+            self.secondProductTitleLabel.text = self.secondProductTitle
+            self.secondProductLabel.text = self.secondProductSubtitle
+            
+            firstProductTitleLabel.show()
+            firstProductLabel.show()
+            secondProductTitleLabel.show()
+            secondProductLabel.show()
+            firstProductActivityIndicator.stopAnimating()
+            secondProductActivityIndicator.stopAnimating()
         }
         
     }
@@ -372,15 +455,32 @@ class PhotoOfferViewController: BaseViewController {
         
     }
     
+    // MARK: - Gesture Actions
+    
+    @objc private func productViewTapped(_ tapGesture: UITapGestureRecognizer) {
+        
+        guard let view = tapGesture.view else { return }
+        
+        if view == firstProductView {
+            selectedProduct = firstProduct
+            firstProductInnerCircleView.backgroundColor = .white
+            secondProductInnerCircleView.backgroundColor = .clear
+            return
+        }
+        
+        if view == secondProductView {
+            selectedProduct = secondProduct
+            firstProductInnerCircleView.backgroundColor = .clear
+            secondProductInnerCircleView.backgroundColor = .white
+            return
+        }
+    }
+    
     // MARK: - @IBActions
     
     @IBAction func toggleButtonPressed(_ sender: Any) {
         toggleButton.setImage(isToggleOn ? UIImage(named: "FC Toggle Off"): UIImage(named: "FC Toggle On"), for: .normal)
         isToggleOn = !isToggleOn
-        
-        if page == 3 {
-            updatePriceLabels()
-        }
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {

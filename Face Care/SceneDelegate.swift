@@ -1,5 +1,6 @@
 import UIKit
 import FacebookCore
+import FacebookAEM
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -26,6 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
+        AEMReporter.configure(withNetworker: nil, appID: "450010409822978")
+        AEMReporter.enable()
+        AEMReporter.handle(url)
+        
+        // Pass DeepLink URL to iOS SDK
         ApplicationDelegate.shared.application(
             UIApplication.shared,
             open: url,

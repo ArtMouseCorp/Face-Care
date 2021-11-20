@@ -17,12 +17,14 @@
 		2813BA0926F9E111006C8B84 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813BA0826F9E111006C8B84 /* Language.swift */; };
 		2813BA0D26F9F55B006C8B84 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813BA0B26F9F55B006C8B84 /* LanguageTableViewCell.swift */; };
 		2813BA0E26F9F55B006C8B84 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2813BA0C26F9F55B006C8B84 /* LanguageTableViewCell.xib */; };
-		2817E5EB273ABBF100457FD2 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2817E5EA273ABBF100457FD2 /* FacebookCore */; };
 		2818359926E3A4210038E826 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818359826E3A4210038E826 /* Article.swift */; };
 		2818359C26E3A56F0038E826 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818359B26E3A56F0038E826 /* TabBarController.swift */; };
 		281835A426E3CA0D0038E826 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A326E3CA0D0038E826 /* ArticleTableViewCell.swift */; };
 		281835A626E3DD100038E826 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A526E3DD100038E826 /* ArticleViewController.swift */; };
 		281835A826E3E08A0038E826 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281835A726E3E08A0038E826 /* UILabel.swift */; };
+		282BCE942748E36700B12A6F /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 282BCE932748E36700B12A6F /* PanModal */; };
+		282BCE9A274939C100B12A6F /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 282BCE99274939C100B12A6F /* FacebookAEM */; };
+		282BCE9C274939C100B12A6F /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 282BCE9B274939C100B12A6F /* FacebookCore */; };
 		283EED71270E35B20098F7CB /* ProblemAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283EED70270E35B20098F7CB /* ProblemAreaTableViewCell.swift */; };
 		283EED73270E516A0098F7CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 283EED72270E516A0098F7CB /* GoogleService-Info.plist */; };
 		283EED79270E6C540098F7CB /* faceAreas_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED74270E6C530098F7CB /* faceAreas_es.json */; };
@@ -31,6 +33,7 @@
 		283EED7C270E6C540098F7CB /* faceAreas_de.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED77270E6C540098F7CB /* faceAreas_de.json */; };
 		283EED7D270E6C540098F7CB /* faceAreas_fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 283EED78270E6C540098F7CB /* faceAreas_fr.json */; };
 		283EED81270F6A5A0098F7CB /* ProgressDemoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283EED80270F6A590098F7CB /* ProgressDemoPopup.swift */; };
+		284F7AC12745374B0026425E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 284F7AC02745374B0026425E /* IQKeyboardManagerSwift */; };
 		286D331327044C7800E6761E /* articles_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 286D331227044C7800E6761E /* articles_en.json */; };
 		286D331827044CF300E6761E /* articles_it.json in Resources */ = {isa = PBXBuildFile; fileRef = 286D331427044CF300E6761E /* articles_it.json */; };
 		286D331927044CF300E6761E /* articles_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 286D331527044CF300E6761E /* articles_es.json */; };
@@ -50,8 +53,6 @@
 		2888400726E788910002292E /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888400526E788910002292E /* ExerciseTableViewCell.swift */; };
 		2888400826E788910002292E /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2888400626E788910002292E /* ExerciseTableViewCell.xib */; };
 		2888400A26E7A7890002292E /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888400926E7A7880002292E /* PagingCollectionViewLayout.swift */; };
-		2888400D26E7B0F60002292E /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400C26E7B0F60002292E /* PanModal */; };
-		2888401026E7B1190002292E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2888400F26E7B1190002292E /* IQKeyboardManagerSwift */; };
 		28896583272A868A0002B10C /* CaptureCoverViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28896582272A868A0002B10C /* CaptureCoverViewConrtoller.swift */; };
 		28962224270517B200DE0D60 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28962223270517B200DE0D60 /* NotificationService.swift */; };
 		28962228270517B200DE0D60 /* FirebaseNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 28962221270517B200DE0D60 /* FirebaseNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -301,11 +302,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2888400D26E7B0F60002292E /* PanModal in Frameworks */,
-				2817E5EB273ABBF100457FD2 /* FacebookCore in Frameworks */,
-				2888401026E7B1190002292E /* IQKeyboardManagerSwift in Frameworks */,
+				284F7AC12745374B0026425E /* IQKeyboardManagerSwift in Frameworks */,
+				282BCE9C274939C100B12A6F /* FacebookCore in Frameworks */,
+				282BCE9A274939C100B12A6F /* FacebookAEM in Frameworks */,
 				D805FD554C9558472F4D8061 /* Pods_Face_Care.framework in Frameworks */,
 				289622302705189200DE0D60 /* StoreKit.framework in Frameworks */,
+				282BCE942748E36700B12A6F /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,9 +828,10 @@
 			);
 			name = "Face Care";
 			packageProductDependencies = (
-				2888400C26E7B0F60002292E /* PanModal */,
-				2888400F26E7B1190002292E /* IQKeyboardManagerSwift */,
-				2817E5EA273ABBF100457FD2 /* FacebookCore */,
+				284F7AC02745374B0026425E /* IQKeyboardManagerSwift */,
+				282BCE932748E36700B12A6F /* PanModal */,
+				282BCE99274939C100B12A6F /* FacebookAEM */,
+				282BCE9B274939C100B12A6F /* FacebookCore */,
 			);
 			productName = "Face Care";
 			productReference = 28BC391D26DF69EE00FB3803 /* Face Care.app */;
@@ -867,9 +870,9 @@
 			);
 			mainGroup = 28BC391426DF69EE00FB3803;
 			packageReferences = (
-				2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */,
-				2888400E26E7B1190002292E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				2817E5E9273ABBF100457FD2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				284F7ABF2745374B0026425E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				282BCE922748E36700B12A6F /* XCRemoteSwiftPackageReference "PanModal" */,
+				282BCE98274939C100B12A6F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 28BC391E26DF69EE00FB3803 /* Products */;
 			projectDirPath = "";
@@ -1182,7 +1185,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1210,7 +1213,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare.FirebaseNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1369,7 +1372,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1408,7 +1411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faceyoga.facecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1450,7 +1453,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2817E5E9273ABBF100457FD2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		282BCE922748E36700B12A6F /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		282BCE98274939C100B12A6F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
@@ -1458,15 +1469,7 @@
 				kind = branch;
 			};
 		};
-		2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/slackhq/PanModal.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		2888400E26E7B1190002292E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		284F7ABF2745374B0026425E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -1477,19 +1480,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2817E5EA273ABBF100457FD2 /* FacebookCore */ = {
+		282BCE932748E36700B12A6F /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2817E5E9273ABBF100457FD2 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookCore;
-		};
-		2888400C26E7B0F60002292E /* PanModal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2888400B26E7B0F60002292E /* XCRemoteSwiftPackageReference "PanModal" */;
+			package = 282BCE922748E36700B12A6F /* XCRemoteSwiftPackageReference "PanModal" */;
 			productName = PanModal;
 		};
-		2888400F26E7B1190002292E /* IQKeyboardManagerSwift */ = {
+		282BCE99274939C100B12A6F /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2888400E26E7B1190002292E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 282BCE98274939C100B12A6F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
+		};
+		282BCE9B274939C100B12A6F /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 282BCE98274939C100B12A6F /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		284F7AC02745374B0026425E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 284F7ABF2745374B0026425E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

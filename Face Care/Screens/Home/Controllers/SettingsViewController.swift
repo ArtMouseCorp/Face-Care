@@ -168,7 +168,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         Amplitude.instance().logEvent(AmplitudeEvent.languageChanged, withEventProperties: [
-            "Language Changed To": Language.languages[indexPath.row].code
+            "Language Changed To ": Language.languages[indexPath.row].code
         ])
         
     }

@@ -9,61 +9,92 @@ struct Offer: Codable {
     let comment: String
     let view: Bool
     
-    public static let defaultOffer = Offer(lang: .en, trialTitle: "", button: L.get(key: L.Onboarding.OnboardingButton.continue), trialPurchaseId: "fy_1y_3d0", notTrialPurchaseId: "fy_1y_3d0", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!", view: false)
+    public static let defaultOffer = Offer(lang: .en, trialTitle: "", button: L.get(key: L.Onboarding.OnboardingButton.continue), trialPurchaseId: "fy_1m_3d", notTrialPurchaseId: "fy_1w", comment: "I've been doing it for 3 months, I've been following the recommendations, and the effect is just WOW! This app is a diamond!", view: true)
     
-    public static func get() {
-        fetch { result in
-            switch result {
-            case .success(let offers):
-                offers.forEach { offer in
-                    if offer.lang == State.shared.getLanguage() {
-                        State.shared.setOffer(to: offer)
-                    }
-                }
-                break
-            case .failure(let error):
-                print(error.localizedDescription)
+    
+    public static func get(completion: (() -> ())? = nil) {
+        
+        
+        loadFromUrl { error in
+            
+            if let error = error {
+                
+                print("-------------------------")
+                print("Error from url decoding of subscription config:")
                 print(error)
+                print(error.localizedDescription)
+                print("-------------------------")
                 
-                let jsonData = readLocalJSONFile(forName: "offerScreen")!
-                do {
-                    let offers = try JSONDecoder().decode([Offer].self, from: jsonData)
-                    
-                    offers.forEach { offer in
-                        if offer.lang == State.shared.getLanguage() {
-                            State.shared.setOffer(to: offer)
-                        }
-                    }
-                    
-                } catch {
-                    print("error: \(error)")
+                loadFromJson {
+                    completion?() ?? ()
                 }
                 
-                break
+                return
             }
+            
+            completion?() ?? ()
+            
         }
+        
     }
     
-    private static func fetch(completion: @escaping (Result<[Offer], Error>) -> Void) {
-
-        // TODO: - Replace url
-
+    private static func loadFromUrl(completion: @escaping (Error?) -> ()) {
+        
         let urlString = Config.offerURL
         guard let url = URL(string: urlString) else { fatalError() }
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data, error == nil else {
-                completion(.failure(error!))
+                completion(error)
                 return
             }
 
             do {
                 let offers = try JSONDecoder().decode([Offer].self, from: data)
-                completion(.success(offers))
+                
+                offers.forEach { offer in
+                    if offer.lang == State.shared.getLanguage() {
+                        State.shared.setOffer(to: offer)
+                        completion(nil)
+                        print("Subsctiption config loaded from url")
+                    }
+                }
+                
             } catch {
-                completion(.failure(error))
+                completion(error)
             }
 
         }.resume()
+        
     }
+    
+    private static func loadFromJson(completion: (() -> ())) {
+        
+        guard let jsonData = readLocalJSONFile(forName: "offerScreen") else {
+            print("-------------------------")
+            print("Error from json decoding of subscription config:")
+            print("No such file found: offerScreen.json")
+            print("-------------------------")
+            return
+        }
+        do {
+            let offers = try JSONDecoder().decode([Offer].self, from: jsonData)
+            
+            offers.forEach { offer in
+                if offer.lang == State.shared.getLanguage() {
+                    State.shared.setOffer(to: offer)
+                    completion()
+                    print("Subsctiption config loaded from json file")
+                }
+            }
+            
+        } catch {
+            print("-------------------------")
+            print("Error from json decoding of subscription config:")
+            print(error)
+            print(error.localizedDescription)
+            print("-------------------------")
+        }
+    }
+    
 }

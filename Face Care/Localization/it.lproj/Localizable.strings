@@ -156,3 +156,5 @@
 
 "alert.dailyTrainingLocked.title"                   = "Non disponibile";
 "alert.dailyTrainingLocked.message"                 = "Il giorno %d sarà aperto il giorno dopo che il giorno %d è passato";
+
+"alert.loading.message"                             = "Si prega di attendere...";

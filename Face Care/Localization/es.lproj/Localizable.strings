@@ -156,3 +156,5 @@
 
 "alert.dailyTrainingLocked.title"                   = "No disponible";
 "alert.dailyTrainingLocked.message"                 = "La jornada %d se abrirá al día siguiente de la jornada %d";
+
+"alert.loading.message"                             = "Por favor, espere...";

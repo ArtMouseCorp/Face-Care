@@ -156,3 +156,5 @@
 
 "alert.dailyTrainingLocked.title"                   = "Недоступно";
 "alert.dailyTrainingLocked.message"                 = "День %d будет открыт на следующий день после прохождения дня %d";
+
+"alert.loading.message"                             = "Минутку...";

@@ -75,6 +75,19 @@ extension UIViewController {
         self.present(viewControllerToPresent, animated: flag, completion: completion)
     }
     
+    func showLoader() {
+        let alert = UIAlertController(title: nil, message: L.get(key: L.Alert.Loading.message), preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating()
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func hideLoader(completion: (() -> Void)? = nil) {
+        dismiss(animated: false, completion: completion)
+    }
     
 }
 

@@ -5,6 +5,7 @@ import Firebase
 import Amplitude
 import ApphudSDK
 import FacebookCore
+import FacebookAEM
 import AppsFlyerLib
 import AppTrackingTransparency
 
@@ -28,11 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         integrateFirebase()
         integrateFirebaseMessaging(for: application)
         integrateAppsFlyer()
-        
-        ApplicationDelegate.shared.application(
-            application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
+        integrateFacebook(for: application, with: launchOptions)
         
         Amplitude.instance().logEvent(State.shared.isFirstLaunch() ? AmplitudeEvent.appStartedFirst : AmplitudeEvent.appStarted)
         
@@ -40,7 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        ApplicationDelegate.shared.application(
+        
+        AEMReporter.configure(withNetworker: nil, appID: "450010409822978")
+        AEMReporter.enable()
+        AEMReporter.handle(url)
+        
+        // Pass DeepLink URL to iOS SDK
+        return ApplicationDelegate.shared.application(
             app,
             open: url,
             sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
@@ -75,11 +78,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // SceneDelegate support - start AppsFlyer SDK
     @objc private func sendLaunch() {
+        
+        AppEvents.shared.activateApp()
+        
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
         AppsFlyerLib.shared().start()
         
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization() { status in }
         }
+        
+        AppsFlyerLib.shared().logEvent(AFEventStartTrial, withValues: nil)
     }
     
     // MARK: - Services integration functions
@@ -95,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { bool, _ in
             Amplitude.instance().logEvent(bool ? AmplitudeEvent.pushNotificationsEnabled : AmplitudeEvent.pushNotificationsDisabled )
         }
-        //        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+        
         application.registerForRemoteNotifications()
         
         Messaging.messaging().delegate = self
@@ -124,10 +133,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Must be called AFTER setting appsFlyerDevKey and appleAppID
         AppsFlyerLib.shared().delegate = self
         
-        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
-        
         // SceneDelegate support
         NotificationCenter.default.addObserver(self, selector: NSSelectorFromString("sendLaunch"), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    private func integrateFacebook(for application: UIApplication, with launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        
+        Settings.shared.isAdvertiserTrackingEnabled = true
+        Settings.shared.isAutoLogAppEventsEnabled = true
+        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     // MARK: - Core Data stack
@@ -182,11 +197,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: AppsFlyerLibDelegate {
     
     func onConversionDataSuccess(_ conversionInfo: [AnyHashable : Any]) {
-        return
+        Apphud.addAttribution(data: conversionInfo, from: .appsFlyer, identifer: AppsFlyerLib.shared().getAppsFlyerUID()) { _ in
+            print("AppsFlyer conversion info sent to Apphud")
+        }
     }
     
     func onConversionDataFail(_ error: Error) {
-        return
+        Apphud.addAttribution(data: ["error" : error.localizedDescription], from: .appsFlyer, identifer: AppsFlyerLib.shared().getAppsFlyerUID()) { _ in }
     }
     
 }
@@ -233,6 +250,7 @@ extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging,
                    didReceiveRegistrationToken fcmToken: String?) {
         let tokenDict = ["token": fcmToken ?? ""]
+        
         NotificationCenter.default.post(
             name: Notification.Name("FCMToken"),
             object: nil,
