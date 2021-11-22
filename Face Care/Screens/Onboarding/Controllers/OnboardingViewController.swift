@@ -186,7 +186,7 @@ class OnboardingViewController: BaseViewController {
         
         firstButton.localize(with: L.Onboarding.OnboardingButton.yes)
         secondButton.localize(with: L.Onboarding.OnboardingButton.eyesWrinkles)
-        thirdButton.localize(with: L.Onboarding.OnboardingButton.yes)
+        thirdButton.localize(with: L.Onboarding.OnboardingButton.no)
         fourthButton.isHidden = true
         fifthButton.isHidden = true
         
