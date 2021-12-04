@@ -156,6 +156,9 @@ class ExerciseViewController: BaseViewController {
             print("Started to play")
             
             self.showCaptureCover()
+            if State.shared.isFreeVideoAvailable() {
+                State.shared.watchedFreeVideo()
+            }
         }
         
         self.configureHeader()
@@ -182,6 +185,22 @@ class ExerciseViewController: BaseViewController {
             
             self.present(trainingCompletedVC, animated: true)
             
+            return
+        }
+        
+        guard State.shared.isSubscribed else {
+            let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
+            photoOfferVC.modalPresentationStyle = .fullScreen
+            photoOfferVC.page = 3
+            photoOfferVC.paywallSource = .home
+            photoOfferVC.onSuccessfulPurchase = {
+                self.loadNextVideo()
+            }
+            photoOfferVC.onCloseButtonPress = {
+                self.playerView.pause()
+                self.dismiss(animated: true)
+            }
+            self.present(photoOfferVC, animated: true)
             return
         }
         
@@ -239,6 +258,20 @@ class ExerciseViewController: BaseViewController {
             if self.videoIndex == index {
                 self.playerView.play()
             } else {
+                guard State.shared.isSubscribed else {
+                    let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
+                    photoOfferVC.modalPresentationStyle = .fullScreen
+                    photoOfferVC.page = 3
+                    photoOfferVC.paywallSource = .home
+                    photoOfferVC.onSuccessfulPurchase = {
+                        self.loadVideo(for: index)
+                    }
+                    photoOfferVC.onCloseButtonPress = {
+                        self.playerView.play()
+                    }
+                    self.present(photoOfferVC, animated: true)
+                    return
+                }
                 self.loadVideo(for: index)
             }
             

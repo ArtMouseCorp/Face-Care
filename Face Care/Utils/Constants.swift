@@ -14,6 +14,7 @@ enum UDKeys {
     static let lastCompletedTrainingDate: String    = "lastCompletedTrainingDate"
     static let openedDailyTrainingNumber: String    = "openedDailyTrainingNumber"
     static let isCustomLanguageChange: String       = "isCustomLanguageChange"
+    static let isFreeVideoAvailable: String         = "isFreeVideoAvailable"
 }
 
 enum Keys {

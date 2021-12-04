@@ -89,6 +89,9 @@ class PhotoOfferViewController: BaseViewController {
     var secondProductTitle: String = ""
     var secondProductSubtitle: String = ""
     
+    var onSuccessfulPurchase: (() -> ())? = nil
+    var onCloseButtonPress: (() -> ())? = nil
+    
     // MARK: - Awake functions
     
     override func viewDidLoad() {
@@ -399,6 +402,7 @@ class PhotoOfferViewController: BaseViewController {
                 
                 if self.paywallSource == .home {
                     self.dismiss(animated: true)
+                    self.onSuccessfulPurchase?() ?? ()
                 }
 
             }
@@ -449,6 +453,7 @@ class PhotoOfferViewController: BaseViewController {
             
             if self.paywallSource == .home {
                 self.dismiss(animated: true)
+                self.onSuccessfulPurchase?() ?? ()
             }
             
         }
@@ -495,7 +500,7 @@ class PhotoOfferViewController: BaseViewController {
         
         if paywallSource == .home {
             
-            self.dismiss(animated: true)
+            self.dismiss(animated: true, completion: self.onCloseButtonPress)
             
         }
         

@@ -168,7 +168,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         StoreManager.updateStatus()
-        guard State.shared.isSubscribed else {
+        guard State.shared.isFreeVideoAvailable() || State.shared.isSubscribed else {
             let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
             photoOfferVC.modalPresentationStyle = .fullScreen
             photoOfferVC.page = 3
@@ -238,7 +238,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 
         StoreManager.updateStatus()
-        guard State.shared.isSubscribed else {
+        guard State.shared.isFreeVideoAvailable() || State.shared.isSubscribed else {
             let photoOfferVC = PhotoOfferViewController.load(from: Screen.photoOffer)
             photoOfferVC.modalPresentationStyle = .fullScreen
             photoOfferVC.page = 3

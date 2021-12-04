@@ -28,7 +28,10 @@ class State {
     public func newAppLaunch() {
         self.appLaunch = self.getAppLaunchCount() + 1
         userDefaults.set(self.appLaunch, forKey: UDKeys.appLaunchCount)
-        self.isFirstLaunch() ? self.setCustomLanguageChange(to: false) : ()
+        if self.isFirstLaunch() {
+            self.setCustomLanguageChange(to: false)
+            self.watchedFreeVideo(false)
+        }
     }
     
     public func getAppLaunchCount() -> Int {
@@ -38,6 +41,16 @@ class State {
     
     public func isFirstLaunch() -> Bool {
         return self.appLaunch == 1
+    }
+    
+    // MARK: - First Video
+    
+    public func watchedFreeVideo(_ bool: Bool = true) {
+        userDefaults.set(!bool, forKey: UDKeys.isFreeVideoAvailable)
+    }
+    
+    public func isFreeVideoAvailable() -> Bool {
+        userDefaults.bool(forKey: UDKeys.isFreeVideoAvailable)
     }
     
     // MARK: - Offer
